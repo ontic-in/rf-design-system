@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Editorial Article" description="The light 'Economist' blog post — rubric, drop-cap lede, ruled pull-quote, byline" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  .rf-art { font-family: var(--font-serif); color: var(--rf-ed-ink); }
+  .rf-art .lede::first-letter {
+    float: left; font-weight: 700; font-size: 76px; line-height: 0.82;
+    padding: 6px 8px 0 0; margin-top: 4px; color: var(--rf-ed-ink);
+  }
+  .rf-art ul.sq { list-style: none; padding: 0; margin: 0 0 18px; }
+  .rf-art ul.sq li { position: relative; padding-left: 20px; margin: 0 0 14px; line-height: 1.55; }
+  .rf-art ul.sq li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; background: var(--rf-ed-red); }
+</style>
+</helmet>
+<div data-theme="editorial" class="rf-art" style="background:#fff; min-height:100vh;">
+  <article style="max-width:660px; margin:0 auto; padding:56px 24px 96px;">
+
+    <x-import component-from-global-scope="RealfastDesignSystem_e02a4e.Rubric" section="Insights" sub="The realfast view" href="#" hint-size="240px,20px" style="display:block; margin-bottom:18px;"></x-import>
+
+    <h1 style="font-family:var(--font-serif); font-size:44px; line-height:1.05; letter-spacing:-0.015em; font-weight:600; margin:0 0 16px;">Your headline goes here, set in Source Serif</h1>
+
+    <p style="font-family:var(--font-serif); font-size:20px; line-height:1.4; color:var(--rf-ed-ink-soft); font-weight:400; margin:0 0 28px;">A one-sentence standfirst that frames the argument — the dek sits between the headline and the share button.</p>
+
+    <div style="margin-bottom:32px;">
+      <x-import component-from-global-scope="RealfastDesignSystem_e02a4e.ShareButton" label="Share" hint-size="92px,34px"></x-import>
+    </div>
+
+    <figure style="margin:0 0 12px;">
+      <img src="../../assets/illustrations/stacked-slabs.png" alt="" style="display:block; width:100%; height:auto;" />
+      <figcaption style="font-family:var(--font-sans); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--rf-ed-muted); margin-top:8px;">Illustration: realfast</figcaption>
+    </figure>
+
+    <p style="font-family:var(--font-sans); font-size:13px; color:var(--rf-ed-muted); margin:18px 0 28px;">May 21st 2026 <span style="color:var(--rf-ed-rule); margin:0 8px;">|</span> 6 min read</p>
+
+    <hr style="border:0; border-top:1px solid var(--rf-ed-rule); margin:0 0 28px;" />
+
+    <div style="font-family:var(--font-serif); font-size:18px; line-height:1.6;">
+      <p class="lede" style="margin:0 0 18px;">Open with the lede paragraph. The first letter becomes a drop cap automatically, setting the editorial tone before the argument gets going. Keep the measure narrow — this is a reading column, not a docs page.</p>
+
+      <p style="margin:0 0 18px;">A second paragraph carries the body. Use <strong style="font-weight:700;">bold lead-ins</strong> for emphasis and <em style="font-style:italic; color:var(--rf-ed-ink-soft);">italics</em> for asides. The body is set at 18px on a 1.6 line-height for comfortable reading.</p>
+
+      <h2 style="font-family:var(--font-serif); font-size:22px; font-weight:700; line-height:1.2; letter-spacing:-0.005em; margin:36px 0 14px;">A subhead to break the argument</h2>
+
+      <ul class="sq">
+        <li><strong style="font-weight:700;">First point.</strong> Red-square bullets mark each item.</li>
+        <li><strong style="font-weight:700;">Second point.</strong> Keep them tight and parallel.</li>
+        <li><strong style="font-weight:700;">Third point.</strong> Three is usually enough.</li>
+      </ul>
+
+      <x-import component-from-global-scope="RealfastDesignSystem_e02a4e.PullQuote" hint-size="100%,120px">The one line you want the reader to remember, set as a centered, ruled pull-quote.</x-import>
+
+      <p style="margin:0 0 18px;">Close by landing the point. The byline footer sits below a final hairline rule.</p>
+    </div>
+
+    <p style="font-family:var(--font-sans); font-size:13px; color:var(--rf-ed-muted); margin:40px 0 0; padding-top:22px; border-top:1px solid var(--rf-ed-rule);">By <strong style="color:var(--rf-ed-ink); font-weight:600;">Author Name</strong>, realfast</p>
+
+  </article>
+</div>
+</x-dc>
+</body>
+</html>

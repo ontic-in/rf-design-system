@@ -1,0 +1,99 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Color tokens
+ *
+ * ONE surface: the light, serif "Economist" editorial system. White / warm-cream
+ * paper, ink body text, a red rubric accent, and the four canonical brand colors
+ * (blue, navy, red, ink) used as accents. The base brand ramps live on :root;
+ * the semantic aliases below ARE the editorial surface — no dark mode.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Brand core (the four canonical brand colors) ─────────────────────── */
+  --rf-blue: #362cff; /* electric brand blue — primary action / links */
+  --rf-navy: #191970; /* midnight navy — deep brand, gradients, headers */
+  --rf-red: #f7394d; /* signal red — accents, alerts, the single hot hue */
+  --rf-ink: #111111; /* near-black — product background, body ink */
+
+  /* ── Blue ramp (derived from --rf-blue) ──────────────────────────────── */
+  --rf-blue-50: #eeedff;
+  --rf-blue-100: #dcd9ff;
+  --rf-blue-200: #b9b3ff;
+  --rf-blue-300: #968cff;
+  --rf-blue-400: #6359ff;
+  --rf-blue-500: #362cff;
+  --rf-blue-600: #2a22d6;
+  --rf-blue-700: #211baa;
+  --rf-blue-800: #191970;
+  --rf-blue-900: #11104a;
+
+  /* ── Red ramp (derived from --rf-red) ────────────────────────────────── */
+  --rf-red-50: #ffecee;
+  --rf-red-100: #ffd2d7;
+  --rf-red-200: #ffa6b0;
+  --rf-red-300: #fb7080;
+  --rf-red-400: #f7394d;
+  --rf-red-500: #e3120b; /* editorial rubric red — the shipped blog accent */
+  --rf-red-600: #c40f23;
+  --rf-red-700: #9c0c1c;
+
+  /* ── Neutral ramp (warm-cool balanced grey) ──────────────────────────── */
+  --rf-white: #ffffff;
+  --rf-neutral-50: #f6f6f7;
+  --rf-neutral-100: #ececee;
+  --rf-neutral-200: #d6d6da;
+  --rf-neutral-300: #b4b4bb;
+  --rf-neutral-400: #8a8a93;
+  --rf-neutral-500: #62626b;
+  --rf-neutral-600: #45454d;
+  --rf-neutral-700: #2c2c32;
+  --rf-neutral-800: #1b1b1f;
+  --rf-neutral-900: #111111;
+  --rf-black: #000000;
+
+  /* ── Editorial paper & ink ramp (the "Economist" surface) ─────────────── */
+  --rf-paper: #ffffff;
+  --rf-paper-cream: #f5f3ef; /* warm featured-band tint */
+  --rf-paper-cream-2: #f1ebe0;
+  --rf-ed-ink: #121212;
+  --rf-ed-ink-soft: #2a2a2a;
+  --rf-ed-muted: #6e6e6e;
+  --rf-ed-faint: #9a9a9a;
+  --rf-ed-rule: #d8d8d8;
+  --rf-ed-rule-soft: #ececec;
+  --rf-ed-rule-warm: #d9cfc4;
+  --rf-ed-red: #e3120b; /* the brand-defining color of the editorial theme */
+  --rf-ed-blue: #1370fb;
+
+  /* ──────────────────────────────────────────────────────────────────────
+   * SEMANTIC ALIASES — the editorial (light) surface. This is the only
+   * surface; there is no dark mode. Components read these names directly.
+   * ────────────────────────────────────────────────────────────────────── */
+  --surface-page: var(--rf-paper); /* page background — white paper */
+  --surface-raised: var(--rf-paper-cream); /* featured bands, callouts */
+  --surface-overlay: var(--rf-white); /* popovers, menus */
+  --surface-inset: #f6f4ef; /* wells, pull-out blocks */
+
+  --text-strong: var(--rf-ed-ink); /* headlines */
+  --text-body: var(--rf-ed-ink); /* body copy */
+  --text-muted: var(--rf-ed-muted); /* secondary, meta */
+  --text-faint: var(--rf-ed-faint); /* tertiary */
+  --text-on-accent: var(--rf-white); /* text atop red/blue fills */
+
+  --accent: var(--rf-ed-red); /* primary accent — the rubric red */
+  --accent-hover: var(--rf-red-600);
+  --accent-press: var(--rf-red-700);
+  --signal: var(--rf-ed-red);
+  --link: var(--rf-ed-blue); /* editorial link blue */
+
+  --border: var(--rf-ed-rule); /* the 1px hairline */
+  --border-strong: var(--rf-ed-ink); /* 2px masthead under-rule */
+  --border-focus: var(--rf-ed-blue);
+
+  --success: #1f9d6b;
+  --warning: #e0a93f;
+  --danger: var(--rf-ed-red);
+}
+
+/* The [data-theme="editorial"] wrapper is no longer required — the editorial
+ * surface is the :root default. The attribute is still accepted as a harmless
+ * no-op so existing markup keeps working. */

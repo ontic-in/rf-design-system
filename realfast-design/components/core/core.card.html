@@ -1,0 +1,72 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Core — Button, Badge, Card" subtitle="Brand primitives on the editorial surface" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--text-on-accent); font-family: var(--font-sans); color: var(--text-body); padding: 24px; }
+  .sec { margin-bottom: 22px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  h3 { margin: 0 0 6px; font-size: 16px; color: var(--text-strong); font-weight: 700; }
+  p { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+</style>
+</head>
+<body data-theme="editorial">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { Button, Badge, Card } = window.RealfastDesignSystem_e02a4e;
+    function Demo() {
+      return (
+        <div>
+          <div className="sec">
+            <div className="lbl">Button — variants</div>
+            <div className="row">
+              <Button variant="primary">Book a Demo</Button>
+              <Button variant="blue" iconRight={<span>→</span>}>Get started</Button>
+              <Button variant="navy">Read insights</Button>
+              <Button variant="secondary">Learn more</Button>
+              <Button variant="ink">Platform</Button>
+              <Button variant="ghost">Skip</Button>
+            </div>
+          </div>
+          <div className="sec">
+            <div className="lbl">Button — sizes</div>
+            <div className="row">
+              <Button size="sm">Small</Button>
+              <Button size="md">Medium</Button>
+              <Button size="lg">Large</Button>
+            </div>
+          </div>
+          <div className="sec">
+            <div className="lbl">Badge</div>
+            <div className="row">
+              <Badge tone="blue">ExoWork</Badge>
+              <Badge tone="navy">ExoCode</Badge>
+              <Badge tone="red" outline>Insights</Badge>
+              <Badge tone="success">Live</Badge>
+              <Badge tone="neutral">Beta</Badge>
+              <Badge tone="ink">Enterprise</Badge>
+            </div>
+          </div>
+          <div className="sec">
+            <div className="lbl">Card</div>
+            <div className="cards">
+              <Card interactive accentTop padding={18}><h3>ExoCode</h3><p>Secure, compliant AI development for regulated enterprises.</p></Card>
+              <Card interactive padding={18}><h3>ExoWork</h3><p>Enterprise AI app builder for non-technical teams.</p></Card>
+              <Card interactive padding={18}><h3>ExoCortex</h3><p>Enterprise context graphs for ops and finance leaders.</p></Card>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+  </script>
+</body>
+</html>

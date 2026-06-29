@@ -1,0 +1,20 @@
+<!-- @dsCard group="Brand" viewport="700x140" name="Logo" subtitle="realfast wordmark — on paper, on cream" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); display:flex; }
+  .pane { flex:1; height: 140px; display:flex; align-items:center; justify-content:center; }
+  .paper { background: var(--rf-paper); }
+  .cream { background: var(--rf-paper-cream); border-left: 1px solid var(--rf-ed-rule-warm); }
+  /* The supplied logo is white-fill; invert to ink for the light editorial surface */
+  .pane img { height: 30px; filter: brightness(0); }
+</style>
+</head>
+<body>
+  <div class="pane paper"><img src="../assets/logos/realfast-logo-white.svg" alt="realfast" /></div>
+  <div class="pane cream"><img src="../assets/logos/realfast-logo-white.svg" alt="realfast" /></div>
+</body>
+</html>

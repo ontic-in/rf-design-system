@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Presentation Deck" description="Editorial light proposal/pitch deck — title, opportunity, approach, outcomes, roadmap table, proof, investment, close" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; background: #e9e7e2; }
+</style>
+</helmet>
+<div ref="{{ rootRef }}">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- 01 · TITLE -->
+  <section data-theme="editorial" data-label="Title" data-screen-label="01 Title" style="position:relative; width:100%; height:100%; box-sizing:border-box; background:#fff; color:var(--rf-ed-ink); display:grid; grid-template-columns:1.15fr 0.85fr; overflow:hidden;">
+    <div style="padding:104px 96px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; align-items:center; justify-content:space-between;">
+        <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="height:52px; filter:brightness(0);" />
+        <span style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600;">Proposal</span>
+      </div>
+      <div>
+        <div style="font-family:var(--font-sans); font-size:20px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--rf-ed-muted); margin-bottom:24px;">Client &middot; Engagement name</div>
+        <h1 style="font-family:var(--font-serif); font-size:104px; line-height:0.96; letter-spacing:-0.025em; font-weight:600; margin:0;">An AI-first platform proposal</h1>
+        <p style="font-family:var(--font-serif); font-size:30px; line-height:1.4; color:var(--rf-ed-ink-soft); font-weight:400; margin:30px 0 0; max-width:760px;">A one-line framing of the engagement &mdash; what you'll deliver and why it matters now.</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:24px; font-family:var(--font-sans); font-size:20px; color:var(--rf-ed-muted);">
+        <span>April 2026</span>
+        <span style="width:6px; height:6px; background:var(--rf-acc, var(--rf-ed-red));"></span>
+        <span>Prepared by realfast</span>
+      </div>
+    </div>
+    <div style="position:relative; background:var(--rf-paper-cream); border-left:1px solid var(--rf-ed-rule); overflow:hidden;">
+      <img data-hero src="../../assets/illustrations/a1.png" alt="" style="position:absolute; inset:56px; width:calc(100% - 112px); height:calc(100% - 112px); object-fit:contain; object-position:center; mix-blend-mode:multiply;" />
+    </div>
+  </section>
+
+  <!-- 02 · THE OPPORTUNITY -->
+  <section data-theme="editorial" data-label="Opportunity" data-screen-label="02 Opportunity" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:#fff; color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">The Opportunity</div>
+    <h2 style="font-family:var(--font-serif); font-size:62px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0; max-width:1340px;">The platform is already API-first &mdash; the natural next step is AI-first</h2>
+    <p style="font-family:var(--font-serif); font-size:29px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:24px 0 0; max-width:1180px;">Frame the shift in one or two sentences. AI agents are becoming the primary way people discover, compare, and act &mdash; and the infrastructure that's ready first wins distribution.</p>
+    <div style="margin-top:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:2px solid var(--rf-ed-ink);">
+      <div style="padding:34px 36px 8px 0; border-right:1px solid var(--rf-ed-rule);">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:18px;" data-brand-seq>01</div>
+        <h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:0 0 12px; letter-spacing:-0.01em;">Speed to market</h3>
+        <p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Agent-ready infrastructure compresses partner onboarding from weeks to days.</p>
+      </div>
+      <div style="padding:34px 36px 8px 36px; border-right:1px solid var(--rf-ed-rule);">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:18px;" data-brand-seq>02</div>
+        <h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:0 0 12px; letter-spacing:-0.01em;">First-mover advantage</h3>
+        <p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Be discoverable when AI search becomes the default distribution channel.</p>
+      </div>
+      <div style="padding:34px 0 8px 36px;">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:18px;" data-brand-seq>03</div>
+        <h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:0 0 12px; letter-spacing:-0.01em;">Built on what exists</h3>
+        <p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">The APIs are the system. We add the agent layer on top of proven foundations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · WHAT WE PROPOSE -->
+  <section data-theme="editorial" data-label="Approach" data-screen-label="03 What we propose" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:#fff; color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">What We Propose</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 44px; max-width:1300px;">Two parallel streams &mdash; one identifies what to build, the other proves we can deliver fast</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; flex:1;">
+      <div data-brand-seq data-seq-prop="borderTopColor" style="border-top:3px solid var(--rf-acc, var(--rf-ed-red)); padding-top:30px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--font-mono); font-size:20px; letter-spacing:0.08em; text-transform:uppercase; color:var(--rf-ed-muted); margin-bottom:14px;">Stream 1</div>
+        <h3 style="font-family:var(--font-serif); font-size:38px; font-weight:700; margin:0 0 18px; letter-spacing:-0.01em;">Discovery + Architecture Review</h3>
+        <p style="font-family:var(--font-serif); font-size:27px; line-height:1.55; color:var(--rf-ed-ink-soft); margin:0 0 auto;">Identify the highest-impact AI features, then assess how the platform can support them &mdash; and what needs to be added.</p>
+        <div style="margin-top:30px; padding-top:22px; border-top:1px solid var(--rf-ed-rule); display:flex; justify-content:space-between; font-family:var(--font-sans); font-size:22px;">
+          <span style="color:var(--rf-ed-muted);">Outcome: <strong style="color:var(--rf-ed-ink); font-weight:600;">Prioritised roadmap</strong></span>
+          <span style="color:var(--rf-ed-muted);">4 weeks</span>
+        </div>
+      </div>
+      <div data-brand-seq data-seq-prop="borderTopColor" style="border-top:3px solid var(--rf-ed-ink); padding-top:30px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--font-mono); font-size:20px; letter-spacing:0.08em; text-transform:uppercase; color:var(--rf-ed-muted); margin-bottom:14px;">Stream 2</div>
+        <h3 style="font-family:var(--font-serif); font-size:38px; font-weight:700; margin:0 0 18px; letter-spacing:-0.01em;">Speed to Market</h3>
+        <p style="font-family:var(--font-serif); font-size:27px; line-height:1.55; color:var(--rf-ed-ink-soft); margin:0 0 auto;">Take one real unit of work from the backlog and deliver it end-to-end. Proof of delivery speed, not a conversation about it.</p>
+        <div style="margin-top:30px; padding-top:22px; border-top:1px solid var(--rf-ed-rule); display:flex; justify-content:space-between; font-family:var(--font-sans); font-size:22px;">
+          <span style="color:var(--rf-ed-muted);">Outcome: <strong style="color:var(--rf-ed-ink); font-weight:600;">Completed work</strong></span>
+          <span style="color:var(--rf-ed-muted);">4 weeks</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--font-serif); font-size:24px; font-style:italic; color:var(--rf-ed-ink-soft); margin:40px 0 0; text-align:center;">Together: what to build, whether the platform supports it, and evidence that we can deliver.</p>
+  </section>
+
+  <!-- 04 · OUTCOMES -->
+  <section data-theme="editorial" data-label="Outcomes" data-screen-label="04 Outcomes" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:var(--rf-paper-cream); color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">Outcomes</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 48px;">Four tangible deliverables</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:0; flex:1; border-top:1px solid var(--rf-ed-rule-warm); border-left:1px solid var(--rf-ed-rule-warm);">
+      <div style="padding:36px 48px 36px 0; border-bottom:1px solid var(--rf-ed-rule-warm); padding-left:48px; display:flex; gap:28px; align-items:flex-start;">
+        <span style="font-family:var(--font-serif); font-size:60px; font-weight:600; line-height:0.9; color:var(--rf-acc, var(--rf-ed-red));" data-brand-seq>01</span>
+        <div><h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:4px 0 10px;">Prioritised use-case roadmap</h3><p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Ranked list tied to business metrics, validated with stakeholders, benchmarked against competitors.</p></div>
+      </div>
+      <div style="padding:36px 0 36px 48px; border-bottom:1px solid var(--rf-ed-rule-warm); border-left:1px solid var(--rf-ed-rule-warm); display:flex; gap:28px; align-items:flex-start;">
+        <span style="font-family:var(--font-serif); font-size:60px; font-weight:600; line-height:0.9; color:var(--rf-acc, var(--rf-ed-red));" data-brand-seq>02</span>
+        <div><h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:4px 0 10px;">Use-case-driven solution design</h3><p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Each use case mapped to the reference architecture. What exists, what to enhance, what to add.</p></div>
+      </div>
+      <div style="padding:36px 48px 0 48px; display:flex; gap:28px; align-items:flex-start;">
+        <span style="font-family:var(--font-serif); font-size:60px; font-weight:600; line-height:0.9; color:var(--rf-acc, var(--rf-ed-red));" data-brand-seq>03</span>
+        <div><h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:4px 0 10px;">AI-readiness assessment</h3><p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Evaluated against best practices &mdash; integration, orchestration, security, data, reusability.</p></div>
+      </div>
+      <div style="padding:36px 0 0 48px; border-left:1px solid var(--rf-ed-rule-warm); display:flex; gap:28px; align-items:flex-start;">
+        <span style="font-family:var(--font-serif); font-size:60px; font-weight:600; line-height:0.9; color:var(--rf-acc, var(--rf-ed-red));" data-brand-seq>04</span>
+        <div><h3 style="font-family:var(--font-serif); font-size:30px; font-weight:700; margin:4px 0 10px;">Completed unit of work</h3><p style="font-family:var(--font-serif); font-size:27px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">One real backlog item delivered end-to-end with test cases and documentation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · ROADMAP TABLE -->
+  <section data-theme="editorial" data-label="Roadmap" data-screen-label="05 Roadmap" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:#fff; color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">Execution Roadmap</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 40px;">Both streams run in parallel</h2>
+    <table style="width:100%; border-collapse:collapse; font-family:var(--font-serif); flex:1;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--rf-ed-ink);">
+          <th style="width:120px; text-align:left; font-family:var(--font-sans); font-size:20px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-muted); font-weight:600; padding:0 24px 18px 0;">Week</th>
+          <th style="text-align:left; font-family:var(--font-sans); font-size:20px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; padding:0 24px 18px;" data-brand-seq>Stream 1 &middot; Discovery + Architecture</th>
+          <th style="text-align:left; font-family:var(--font-sans); font-size:20px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-ink); font-weight:600; padding:0 0 18px 24px;" data-brand-seq>Stream 2 &middot; Speed to Market</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+          <td style="font-family:var(--font-serif); font-size:34px; font-weight:600; padding:24px 24px 24px 0; color:var(--rf-acc, var(--rf-ed-red));">1</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px; color:var(--rf-ed-ink-soft);">Competitive landscape delivered. Stakeholder interviews conducted.</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px 0 24px 24px; color:var(--rf-ed-ink-soft);">Backlog item selected. Option agreed. Pod deployed.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+          <td style="font-family:var(--font-serif); font-size:34px; font-weight:600; padding:24px 24px 24px 0; color:var(--rf-acc, var(--rf-ed-red));">2</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px; color:var(--rf-ed-ink-soft);">Use cases mapped to business metrics. Architecture walkthrough.</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px 0 24px 24px; color:var(--rf-ed-ink-soft);">Pod begins delivery.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+          <td style="font-family:var(--font-serif); font-size:34px; font-weight:600; padding:24px 24px 24px 0; color:var(--rf-acc, var(--rf-ed-red));">3</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px; color:var(--rf-ed-ink-soft);">Feature-to-architecture mapping. Best-practices assessment.</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px 0 24px 24px; color:var(--rf-ed-ink-soft);">Mid-sprint checkpoint.</td>
+        </tr>
+        <tr>
+          <td style="font-family:var(--font-serif); font-size:34px; font-weight:600; padding:24px 24px 24px 0; color:var(--rf-acc, var(--rf-ed-red));">4</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px; color:var(--rf-ed-ink-soft);">All deliverables presented.</td>
+          <td style="font-size:26px; line-height:1.45; padding:24px 0 24px 24px; color:var(--rf-ed-ink-soft);">Unit of work delivered with tests and docs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 06 · PROOF / CASE STUDIES -->
+  <section data-theme="editorial" data-label="Proof" data-screen-label="06 Proof" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:var(--rf-ed-ink); color:#fff; display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:#fff; font-weight:600; margin-bottom:20px; opacity:0.6;">Case Studies</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 56px; color:#fff;">Proof, not theory</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:72px; flex:1; align-content:center;">
+      <div data-brand-seq data-seq-prop="borderLeftColor" style="border-left:3px solid var(--rf-acc, var(--rf-ed-red)); padding-left:36px;">
+        <div style="font-family:var(--font-serif); font-size:84px; font-weight:600; line-height:1; letter-spacing:-0.02em; margin-bottom:24px;">2 days &rarr; 10 min</div>
+        <div style="font-family:var(--font-sans); font-size:22px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:14px;">Pre-eminent university</div>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.55; color:rgba(255,255,255,0.82); margin:0;">A 2-day reconciliation process cut to 10 minutes &mdash; productionised within a single 10-day sprint.</p>
+      </div>
+      <div data-brand-seq data-seq-prop="borderLeftColor" style="border-left:3px solid var(--rf-acc, var(--rf-ed-red)); padding-left:36px;">
+        <div style="font-family:var(--font-serif); font-size:84px; font-weight:600; line-height:1; letter-spacing:-0.02em; margin-bottom:24px;">20+ yrs &rarr; 1 wk</div>
+        <div style="font-family:var(--font-sans); font-size:22px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:14px;">Global financial services firm</div>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.55; color:rgba(255,255,255,0.82); margin:0;">Reverse-engineered 20+ years of legacy code in under a week &mdash; surfacing critical bugs the team didn't know existed.</p>
+      </div>
+    </div>
+    <p style="font-family:var(--font-sans); font-size:21px; color:rgba(255,255,255,0.5); margin:48px 0 0;">Full case studies with methodology and outcomes available under NDA upon request.</p>
+  </section>
+
+  <!-- 07 · INVESTMENT -->
+  <section data-theme="editorial" data-label="Investment" data-screen-label="07 Investment" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:#fff; color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">Investment</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 48px;">Fixed-fee engagement</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; flex:1;">
+      <div data-brand-seq data-seq-prop="borderTopColor" style="border:1px solid var(--rf-ed-rule); border-top:3px solid var(--rf-ed-rule); border-radius:2px; padding:48px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--font-mono); font-size:20px; letter-spacing:0.08em; text-transform:uppercase; color:var(--rf-ed-muted); margin-bottom:20px;">Stream 1</div>
+        <h3 style="font-family:var(--font-serif); font-size:34px; font-weight:700; margin:0 0 8px;">Discovery + Architecture</h3>
+        <p style="font-family:var(--font-sans); font-size:22px; color:var(--rf-ed-muted); margin:0 0 auto;">Timeline: 4 weeks</p>
+        <div style="font-family:var(--font-serif); font-size:64px; font-weight:600; letter-spacing:-0.02em; margin-top:36px;">$40&ndash;45k</div>
+      </div>
+      <div data-brand-seq data-seq-prop="borderTopColor" style="border:1px solid var(--rf-ed-ink); border-top:3px solid var(--rf-acc, var(--rf-ed-red)); border-radius:2px; padding:48px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--font-mono); font-size:20px; letter-spacing:0.08em; text-transform:uppercase; color:var(--rf-ed-muted); margin-bottom:20px;">Stream 2</div>
+        <h3 style="font-family:var(--font-serif); font-size:34px; font-weight:700; margin:0 0 8px;">Speed to Market</h3>
+        <p style="font-family:var(--font-sans); font-size:22px; color:var(--rf-ed-muted); margin:0 0 auto;">Timeline: 4 weeks</p>
+        <div style="font-family:var(--font-serif); font-size:64px; font-weight:600; letter-spacing:-0.02em; margin-top:36px;">$30&ndash;35k</div>
+      </div>
+    </div>
+    <p style="font-family:var(--font-sans); font-size:21px; color:var(--rf-ed-muted); margin:32px 0 0;">Assumes reasonable scope likely to finish in the given timeline. Subject to discussion on exact scope.</p>
+  </section>
+
+  <!-- 08 · WHAT WE NEED / CLOSE -->
+  <section data-theme="editorial" data-label="Close" data-screen-label="08 Close" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:104px 96px; background:var(--rf-paper-cream); color:var(--rf-ed-ink); display:flex; flex-direction:column; overflow:hidden;">
+    <div style="font-family:var(--font-sans); font-size:20px; letter-spacing:0.16em; text-transform:uppercase; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:20px;">What We Need for Mutual Success</div>
+    <h2 style="font-family:var(--font-serif); font-size:58px; line-height:1.05; letter-spacing:-0.02em; font-weight:600; margin:0 0 48px; max-width:1200px;">Four things from your side</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; flex:1; border-top:2px solid var(--rf-ed-ink);">
+      <div style="padding:34px 32px 0 0; border-right:1px solid var(--rf-ed-rule-warm);">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:16px;" data-brand-seq>1</div>
+        <h3 style="font-family:var(--font-serif); font-size:26px; font-weight:700; margin:0 0 10px; line-height:1.15;">Stakeholder time in week 1</h3>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Interviews with 3&ndash;5 people across business and tech.</p>
+      </div>
+      <div style="padding:34px 32px 0 32px; border-right:1px solid var(--rf-ed-rule-warm);">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:16px;" data-brand-seq>2</div>
+        <h3 style="font-family:var(--font-serif); font-size:26px; font-weight:700; margin:0 0 10px; line-height:1.15;">Architecture walkthrough</h3>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">A walk-through of the microservices and orchestration layer.</p>
+      </div>
+      <div style="padding:34px 32px 0 32px; border-right:1px solid var(--rf-ed-rule-warm);">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:16px;" data-brand-seq>3</div>
+        <h3 style="font-family:var(--font-serif); font-size:26px; font-weight:700; margin:0 0 10px; line-height:1.15;">One backlog item</h3>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">Small, self-contained, with clear acceptance criteria.</p>
+      </div>
+      <div style="padding:34px 0 0 32px;">
+        <div style="font-family:var(--font-mono); font-size:22px; color:var(--rf-acc, var(--rf-ed-red)); font-weight:600; margin-bottom:16px;" data-brand-seq>4</div>
+        <h3 style="font-family:var(--font-serif); font-size:26px; font-weight:700; margin:0 0 10px; line-height:1.15;">A point of contact</h3>
+        <p style="font-family:var(--font-serif); font-size:25px; line-height:1.5; color:var(--rf-ed-ink-soft); margin:0;">One person who can unblock questions.</p>
+      </div>
+    </div>
+    <div style="margin-top:48px; padding-top:32px; border-top:1px solid var(--rf-ed-rule-warm); display:flex; align-items:center; justify-content:space-between;">
+      <p style="font-family:var(--font-serif); font-size:28px; font-style:italic; color:var(--rf-ed-ink); margin:0;">Let's build the proof point.</p>
+      <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="height:40px; filter:brightness(0);" />
+    </div>
+  </section>
+
+</x-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;red&quot;,&quot;blue&quot;,&quot;navy&quot;,&quot;ink&quot;],&quot;default&quot;:&quot;red&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Brand sequence&quot;,&quot;Single accent&quot;],&quot;default&quot;:&quot;Brand sequence&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heroImage&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:36,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  applyTweaks() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const map = {
+      red: "var(--rf-ed-red)",
+      blue: "var(--rf-ed-blue)",
+      navy: "var(--rf-navy)",
+      ink: "var(--rf-ed-ink)",
+    };
+    // Canonical brand order (matches the Button variant set). Rotate it so the
+    // sequence leads with whatever accent is chosen — pick blue and you get
+    // blue → navy → ink → red.
+    const order = ["red", "blue", "navy", "ink"];
+    const start = Math.max(0, order.indexOf(this.props.accent || "red"));
+    const rot = order.slice(start).concat(order.slice(0, start)).map((k) => map[k]);
+    const acc = rot[0];
+    const useSeq = (this.props.palette || "Brand sequence") !== "Single accent";
+
+    // Eyebrows / dots / the single-accent spine follow the chosen accent.
+    root.querySelectorAll("section").forEach((s) => s.style.setProperty("--rf-acc", acc));
+
+    // Enumerated marks (the 01/02/03 numbers, stream rules, case-study bars)
+    // cycle through the brand palette, restarting per slide.
+    const counters = new Map();
+    root.querySelectorAll("[data-brand-seq]").forEach((el) => {
+      const group = el.closest("section") || root;
+      const i = counters.get(group) || 0;
+      counters.set(group, i + 1);
+      const color = useSeq ? rot[i % rot.length] : acc;
+      const prop = el.getAttribute("data-seq-prop") || "color";
+      el.style[prop] = color;
+    });
+  }
+
+  // The brand illustration pool (assets/illustrations/a1…a36.png). The title
+  // hero is drawn from it so every deck made from this template leads with a
+  // different image. heroImage = 0 picks at random (once, on load); 1–36 pins
+  // a specific illustration.
+  applyHero() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const img = root.querySelector("[data-hero]");
+    if (!img) return;
+    const N = 36;
+    const pool = Array.from({ length: N }, (_, i) => "../../assets/illustrations/a" + (i + 1) + ".png");
+    const pick = Math.round(Number(this.props.heroImage) || 0);
+    let src;
+    if (pick >= 1 && pick <= N) {
+      src = pool[pick - 1];
+    } else {
+      if (!this._heroSrc) this._heroSrc = pool[Math.floor(Math.random() * N)];
+      src = this._heroSrc;
+    }
+    if (img.getAttribute("src") !== src) img.setAttribute("src", src);
+  }
+
+  componentDidMount() { this.applyTweaks(); this.applyHero(); }
+  componentDidUpdate() { this.applyTweaks(); this.applyHero(); }
+
+  renderVals() {
+    return { rootRef: this.rootRef };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!-- @dsCard group="Type" viewport="700x430" name="Typefaces in use" subtitle="The two families (plus system mono) that carry the system" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--rf-white); color: var(--rf-ed-ink); padding: 24px 30px; }
+  .fam { padding: 16px 0; border-top: 1px solid var(--rf-ed-rule); }
+  .fam:first-of-type { border-top: 0; padding-top: 0; }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 4px; }
+  .name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .token { font-family: var(--font-mono); font-size: 11px; color: var(--rf-ed-blue); white-space: nowrap; }
+  .role { font-family: var(--font-sans); font-size: 12px; color: var(--rf-ed-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .specimen { font-size: 28px; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .weights { display: flex; flex-wrap: wrap; gap: 18px; }
+  .w { font-size: 17px; line-height: 1; }
+  .w span { display: block; font-family: var(--font-mono); font-size: 9px; color: var(--rf-ed-faint); margin-top: 5px; letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+  <!-- Source Serif 4 -->
+  <div class="fam">
+    <div class="head">
+      <div class="name" style="font-family: var(--font-serif); font-weight: 600;">Source Serif 4</div>
+      <div class="token">--font-serif</div>
+    </div>
+    <div class="role">Editorial · headlines, dek, body &amp; pull-quotes</div>
+    <div class="specimen" style="font-family: var(--font-serif); font-weight: 600;">The question to ask before adding AI</div>
+    <div class="weights" style="font-family: var(--font-serif);">
+      <div class="w" style="font-weight: 400;">Regular<span>400</span></div>
+      <div class="w" style="font-weight: 600;">Semibold<span>600</span></div>
+      <div class="w" style="font-weight: 700;">Bold<span>700</span></div>
+      <div class="w" style="font-weight: 400; font-style: italic;">Italic<span>400 italic</span></div>
+    </div>
+  </div>
+
+  <!-- IBM Plex Sans Condensed -->
+  <div class="fam">
+    <div class="head">
+      <div class="name" style="font-family: var(--font-sans); font-weight: 600;">IBM Plex Sans Condensed</div>
+      <div class="token">--font-sans</div>
+    </div>
+    <div class="role">Editorial furniture · rubric, meta, captions &amp; UI</div>
+    <div class="specimen" style="font-family: var(--font-sans); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; font-size: 22px;">Science &amp; Technology — 6 min read</div>
+    <div class="weights" style="font-family: var(--font-sans);">
+      <div class="w" style="font-weight: 400;">Regular<span>400</span></div>
+      <div class="w" style="font-weight: 500;">Medium<span>500</span></div>
+      <div class="w" style="font-weight: 600;">Semibold<span>600</span></div>
+      <div class="w" style="font-weight: 700;">Bold<span>700</span></div>
+    </div>
+  </div>
+
+  <!-- System monospace -->
+  <div class="fam">
+    <div class="head">
+      <div class="name" style="font-family: var(--font-mono); font-weight: 600;">System monospace</div>
+      <div class="token">--font-mono</div>
+    </div>
+    <div class="role">Code, tokens &amp; figures · the system UI mono stack</div>
+    <div class="specimen" style="font-family: var(--font-mono); font-weight: 500; font-size: 22px;">0.33% → 1.93% &middot; p99 −95%</div>
+  </div>
+</body>
+</html>

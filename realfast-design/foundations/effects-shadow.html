@@ -1,0 +1,20 @@
+<!-- @dsCard group="Effects" viewport="700x160" name="Shadows" subtitle="Editorial near-flat elevation — hairline rules over shadow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-mono); }
+  .pane { padding: 28px 24px; display:flex; gap:24px; align-items:center; flex-wrap:wrap; background: var(--rf-neutral-50); }
+  .card { width: 96px; height: 64px; border-radius: 2px; display:flex; align-items:flex-end; justify-content:center; padding-bottom:7px; font-size:10px; background:#fff; color:#8a8a93; }
+</style>
+</head>
+<body>
+  <div class="pane">
+    <div class="card" style="box-shadow:var(--shadow-ed-card)">ed-card</div>
+    <div class="card" style="box-shadow:var(--shadow-ed-raise)">ed-raise</div>
+    <div class="card" style="border:1px solid var(--rf-ed-rule); box-shadow:none">hairline</div>
+  </div>
+</body>
+</html>

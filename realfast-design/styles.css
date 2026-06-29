@@ -1,0 +1,17 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast Design System — global stylesheet entry point.
+ *
+ * This is the ONE file consumers link. It is a manifest of @import lines only;
+ * never add rules here. Everything it transitively imports — tokens and
+ * @font-face declarations — ships to consuming projects.
+ *
+ * One surface: the light, serif "Economist" editorial system (white/cream paper,
+ * Source Serif 4 + IBM Plex Sans Condensed, red accent). The semantic tokens are
+ * this surface by default — there is no dark mode and no theme wrapper to apply.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/effects.css";

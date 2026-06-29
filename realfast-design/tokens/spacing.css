@@ -1,0 +1,47 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Spacing & layout tokens
+ *
+ * A 4px base step. Editorial rhythm values are pulled straight from the shipped
+ * blog (660px measure, 24/18px gutters, 56/96px section padding, etc.) so
+ * components and specimens never drift from production.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Base scale (4px step) ────────────────────────────────────────────── */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Editorial rhythm (from production blog) ──────────────────────────── */
+  --measure: 660px; /* the non-negotiable narrow column */
+  --measure-index: 880px; /* listing / index width */
+  --gutter: 24px; /* desktop column gutter */
+  --gutter-mobile: 18px;
+  --section-top: 56px; /* post section top padding */
+  --section-bottom: 96px; /* post section bottom padding */
+  --para-gap: 18px; /* paragraph spacing */
+
+  /* ── Page containers ──────────────────────────────────────────────────── */
+  --container: 1000px; /* report / document max-width */
+  --container-wide: 1200px; /* wide layouts, cover spreads */
+
+  /* ── Radii — the system is square. 2px on every button, badge & card. ──── */
+  --radius-xs: 2px; /* inline code, tiny chips */
+  --radius-sm: 2px; /* buttons, badges, cards (canonical) */
+  --radius-pill: 999px; /* the one exception: pill rubric badges */
+
+  /* ── Border widths ────────────────────────────────────────────────────── */
+  --border-hair: 1px; /* the editorial hairline default */
+  --border-rule: 2px; /* masthead under-rule */
+}

@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Blue Ramp" subtitle="Electric brand blue — primary action & links" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); }
+  .ramp { display: grid; grid-template-columns: repeat(10, 1fr); gap: 0; padding: 20px; }
+  .cell { height: 64px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; }
+  .cell span { font-family: var(--font-mono); font-size: 10px; }
+  .lab { text-align: center; font-size: 10px; color: var(--rf-neutral-500); padding-top: 6px; font-family: var(--font-mono); }
+  .wrap { padding: 0 20px 18px; }
+</style>
+</head>
+<body>
+  <div class="ramp">
+    <div class="cell" style="background:var(--rf-blue-50)"></div>
+    <div class="cell" style="background:var(--rf-blue-100)"></div>
+    <div class="cell" style="background:var(--rf-blue-200)"></div>
+    <div class="cell" style="background:var(--rf-blue-300)"></div>
+    <div class="cell" style="background:var(--rf-blue-400)"></div>
+    <div class="cell" style="background:var(--rf-blue-500);color:#fff"><span>500</span></div>
+    <div class="cell" style="background:var(--rf-blue-600)"></div>
+    <div class="cell" style="background:var(--rf-blue-700);color:#fff"><span>700</span></div>
+    <div class="cell" style="background:var(--rf-blue-800);color:#fff"><span>800</span></div>
+    <div class="cell" style="background:var(--rf-blue-900);color:#fff"><span>900</span></div>
+  </div>
+  <div class="wrap"><div class="lab">50 · 100 · 200 · 300 · 400 · 500 (#362CFF) · 600 · 700 · 800 (navy #191970) · 900</div></div>
+</body>
+</html>

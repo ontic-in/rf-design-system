@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Red Ramp" subtitle="Signal red — accents & the editorial rubric" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); }
+  .ramp { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; padding: 20px 20px 0; }
+  .cell { height: 64px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; }
+  .cell span { font-family: var(--font-mono); font-size: 10px; }
+  .lab { text-align: center; font-size: 10px; color: var(--rf-neutral-500); padding: 8px 20px 18px; font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div class="ramp">
+    <div class="cell" style="background:var(--rf-red-50)"></div>
+    <div class="cell" style="background:var(--rf-red-100)"></div>
+    <div class="cell" style="background:var(--rf-red-200)"></div>
+    <div class="cell" style="background:var(--rf-red-300)"></div>
+    <div class="cell" style="background:var(--rf-red-400);color:#fff"><span>400</span></div>
+    <div class="cell" style="background:var(--rf-red-500);color:#fff"><span>500</span></div>
+    <div class="cell" style="background:var(--rf-red-700);color:#fff"><span>700</span></div>
+  </div>
+  <div class="lab">400 = brand #F7394D &nbsp;·&nbsp; 500 = editorial rubric #E3120B</div>
+</body>
+</html>

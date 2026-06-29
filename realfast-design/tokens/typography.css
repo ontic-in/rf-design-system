@@ -1,0 +1,78 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Typography tokens
+ *
+ * Families (the editorial system uses exactly two typefaces + system mono)
+ *   --font-serif   Source Serif 4         headlines, dek, body, pull-quotes
+ *   --font-sans    IBM Plex Sans Condensed furniture: rubric, meta, caption, UI
+ *   --font-mono    system monospace        code, tokens, numerals
+ *
+ * The editorial type SCALE (sizes/weights) is documented as named tokens so
+ * specimen cards and components stay in lockstep with the shipped blog CSS.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Families ─────────────────────────────────────────────────────────── */
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia,
+    "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans Condensed", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  /* ── Weights ──────────────────────────────────────────────────────────── */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+
+  /* ── Editorial type scale (matches src/styles/editorial.css) ──────────── */
+  /* Headline / H1 */
+  --type-headline-size: 44px;
+  --type-headline-line: 1.05;
+  --type-headline-track: -0.015em;
+  --type-headline-weight: 600;
+  /* Dek / standfirst */
+  --type-dek-size: 20px;
+  --type-dek-line: 1.4;
+  --type-dek-weight: 400;
+  /* Body paragraph */
+  --type-body-size: 18px;
+  --type-body-line: 1.6;
+  --type-body-weight: 400;
+  /* Subhead / H2 */
+  --type-h2-size: 22px;
+  --type-h2-line: 1.2;
+  --type-h2-track: -0.005em;
+  --type-h2-weight: 700;
+  /* Pull-quote (serif italic) */
+  --type-quote-size: 24px;
+  --type-quote-line: 1.35;
+  --type-quote-weight: 600;
+  /* Drop cap */
+  --type-dropcap-size: 76px;
+  --type-dropcap-line: 0.82;
+  /* Rubric (sans) */
+  --type-rubric-size: 14px;
+  --type-rubric-weight: 500;
+  /* Meta line (sans) */
+  --type-meta-size: 13px;
+  /* Figure caption (sans, uppercase) */
+  --type-caption-size: 11px;
+  --type-caption-track: 0.08em;
+
+  /* ── Display scale (Source Serif 4 — for covers, slides, large titles) ── */
+  --type-display-1: clamp(40px, 6vw, 104px);
+  --type-display-2: clamp(32px, 4.5vw, 62px);
+  --type-title: clamp(24px, 3vw, 34px);
+  --type-lead: 20px;
+  --type-ui: 15px;
+  --type-ui-sm: 13px;
+  --type-label: 12px;
+
+  /* ── Letter-spacing helpers ───────────────────────────────────────────── */
+  --track-tight: -0.02em; /* @kind other */
+  --track-snug: -0.01em; /* @kind other */
+  --track-normal: 0; /* @kind other */
+  --track-wide: 0.04em; /* @kind other */
+  --track-caps: 0.08em; /* @kind other */
+}

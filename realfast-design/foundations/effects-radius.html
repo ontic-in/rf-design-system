@@ -1,0 +1,20 @@
+<!-- @dsCard group="Effects" viewport="700x150" name="Radius & Borders" subtitle="The system is square — a uniform 2px everywhere" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-mono); background: var(--rf-white); padding: 22px; display:flex; gap:22px; align-items:flex-end; flex-wrap:wrap; }
+  .item { text-align:center; }
+  .box { width: 64px; height: 64px; background: var(--rf-red-50); border: 1.5px solid var(--rf-ed-red); }
+  .lab { font-size: 10px; color: var(--rf-neutral-500); margin-top: 8px; }
+</style>
+</head>
+<body>
+  <div class="item"><div class="box" style="border-radius:var(--radius-sm)"></div><div class="lab">2px · buttons, badges, cards</div></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-pill)"></div><div class="lab">pill · rubric badge only</div></div>
+  <div class="item"><div class="box" style="background:#fff;border:1px solid var(--rf-ed-rule);border-radius:0"></div><div class="lab">hair 1px rule</div></div>
+  <div class="item"><div class="box" style="background:#fff;border:2px solid var(--rf-ed-ink);border-radius:0"></div><div class="lab">2px masthead rule</div></div>
+</body>
+</html>

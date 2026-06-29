@@ -1,0 +1,60 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Editorial — Rubric, Share, Pull-quote, Cards" subtitle="The Economist publication primitives" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="editorial">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: #fff; font-family: var(--font-serif); padding: 26px 28px; }
+  .lbl { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rf-ed-faint); margin: 0 0 12px; }
+  .sec { margin-bottom: 26px; }
+</style>
+</head>
+<body>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { Rubric, ShareButton, PullQuote, EditorialBlogCard } = window.RealfastDesignSystem_e02a4e;
+    function Demo() {
+      return (
+        <div>
+          <div className="sec">
+            <p className="lbl">Rubric</p>
+            <Rubric section="Insights" sub="The realfast view" />
+          </div>
+          <div className="sec">
+            <p className="lbl">Share button</p>
+            <ShareButton />
+          </div>
+          <div className="sec">
+            <p className="lbl">Pull-quote</p>
+            <PullQuote cite="Paulomi Gudka, realfast">Use tokens like a scalpel, not a sword.</PullQuote>
+          </div>
+          <div className="sec">
+            <p className="lbl">Featured card</p>
+            <EditorialBlogCard featured
+              section="Insights" sub="The realfast view"
+              title="Your AI Roadmap Probably Has Too Much AI"
+              dek="Most production systems should use AI at the edges and deterministic code in the core."
+              date="May 21st 2026" readTime="6 min read"
+              image="../../assets/illustrations/stacked-slabs.png" />
+          </div>
+          <div className="sec">
+            <p className="lbl">Row card</p>
+            <EditorialBlogCard
+              section="realfast labs" sub="From the Labs"
+              title="Nobody Sets Out to Build a Context Graph"
+              dek="We tried to fix our timesheets and accidentally built a context graph."
+              date="Jan 30th 2026" readTime="7 min read"
+              image="../../assets/illustrations/crane-paperwork.png" />
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+  </script>
+</body>
+</html>

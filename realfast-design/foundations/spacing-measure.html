@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Editorial Measure & Rhythm" subtitle="660px column — the non-negotiable" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--rf-neutral-50); padding: 20px; }
+  .frame { background: #fff; border: 1px solid var(--rf-ed-rule); max-width: 360px; margin: 0 auto; padding: 18px 22px; position: relative; }
+  .frame::before { content:"24px gutter"; position:absolute; left:22px; top:4px; font-family:var(--font-mono); font-size:8px; color:var(--rf-neutral-400); }
+  .l { height: 8px; background: var(--rf-neutral-200); border-radius: 2px; margin-bottom: 9px; }
+  .l.s { width: 60%; }
+  .cap { text-align:center; font-family:var(--font-mono); font-size:10px; color:var(--rf-neutral-500); margin-top:12px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="l" style="width:80%"></div>
+    <div class="l"></div><div class="l"></div><div class="l s"></div>
+  </div>
+  <div class="cap">measure 660px · gutter 24/18px · section 56→96px · para 18px</div>
+</body>
+</html>

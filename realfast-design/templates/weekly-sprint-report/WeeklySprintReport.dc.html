@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Weekly Sprint Report" description="Internal status report — masthead, R/Y/G summary, per-workstream milestone trackers, pending table" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  .rf-rep { font-family: var(--font-serif); color: var(--rf-ed-ink); -webkit-font-smoothing: antialiased; }
+  .rf-rep h1, .rf-rep h2, .rf-rep h3 { font-family: var(--font-serif); }
+  .rf-rep .mono { font-family: var(--font-mono); }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" data-theme="editorial" class="rf-rep" data-screen-label="Weekly Report" style="background:#fff; min-height:100vh; --rf-acc: var(--rf-ed-red);">
+  <div style="max-width:1000px; margin:0 auto; padding:48px 40px 96px;">
+
+    <!-- Masthead -->
+    <header style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding-bottom:16px; border-bottom:2px solid var(--rf-ed-ink);">
+      <div>
+        <div class="mono" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--rf-acc); font-weight:600; margin-bottom:10px;">Weekly Delivery Report</div>
+        <h1 style="font-size:40px; line-height:1; letter-spacing:-0.02em; font-weight:600; margin:0;">Week 08</h1>
+        <p class="mono" style="font-size:13px; color:var(--rf-ed-muted); margin:10px 0 0; letter-spacing:0.02em;">15&ndash;19 Jun 2026 &nbsp;&middot;&nbsp; Prepared by the realfast delivery team</p>
+      </div>
+      <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="height:34px; filter:brightness(0); opacity:0.9;" />
+    </header>
+
+    <!-- Summary -->
+    <section style="margin-top:40px;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:18px;">
+        <h2 style="font-size:13px; font-family:var(--font-sans); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin:0; color:var(--rf-ed-ink);">Summary</h2>
+        <div style="display:flex; gap:18px;" sc-if-attr>
+          <span class="legend" style="display:inline-flex; align-items:center; gap:7px; font-size:12px; color:var(--rf-ed-muted);"><i style="width:9px; height:9px; background:#1f9d6b; display:inline-block;"></i> On track</span>
+          <span class="legend" style="display:inline-flex; align-items:center; gap:7px; font-size:12px; color:var(--rf-ed-muted);"><i style="width:9px; height:9px; background:#e0a93f; display:inline-block;"></i> At risk</span>
+          <span class="legend" style="display:inline-flex; align-items:center; gap:7px; font-size:12px; color:var(--rf-ed-muted);"><i style="width:9px; height:9px; background:#c40f23; display:inline-block;"></i> Blocked</span>
+        </div>
+      </div>
+
+      <ul style="list-style:none; margin:0; padding:0; border-top:1px solid var(--rf-ed-rule);">
+        <li style="display:grid; grid-template-columns:14px 230px 1fr; gap:16px; align-items:start; padding:13px 0; border-bottom:1px solid var(--rf-ed-rule);">
+          <i style="width:10px; height:10px; background:#1f9d6b; margin-top:5px;"></i>
+          <strong style="font-weight:600; font-size:17px;">Contract Generation</strong>
+          <span style="font-size:17px; line-height:1.45; color:var(--rf-ed-ink-soft);">CFS contract generation live. Monday-to-Monday intake operationalised.</span>
+        </li>
+        <li style="display:grid; grid-template-columns:14px 230px 1fr; gap:16px; align-items:start; padding:13px 0; border-bottom:1px solid var(--rf-ed-rule);">
+          <i style="width:10px; height:10px; background:#1f9d6b; margin-top:5px;"></i>
+          <strong style="font-weight:600; font-size:17px;">Portfolio Intelligence</strong>
+          <span style="font-size:17px; line-height:1.45; color:var(--rf-ed-ink-soft);">Daily Digest live since Monday. Q&amp;A bot ready to launch.</span>
+        </li>
+        <li style="display:grid; grid-template-columns:14px 230px 1fr; gap:16px; align-items:start; padding:13px 0; border-bottom:1px solid var(--rf-ed-rule);">
+          <i style="width:10px; height:10px; background:#1f9d6b; margin-top:5px;"></i>
+          <strong style="font-weight:600; font-size:17px;">Data Visualization</strong>
+          <span style="font-size:17px; line-height:1.45; color:var(--rf-ed-ink-soft);">34 of 37 dashboard feedback points closed. Hypercare wrapping up.</span>
+        </li>
+        <li style="display:grid; grid-template-columns:14px 230px 1fr; gap:16px; align-items:start; padding:13px 0; border-bottom:1px solid var(--rf-ed-rule);">
+          <i style="width:10px; height:10px; background:#c40f23; margin-top:5px;"></i>
+          <strong style="font-weight:600; font-size:17px;">Payment Automation</strong>
+          <span style="font-size:17px; line-height:1.45; color:var(--rf-ed-ink-soft);">Still blocked on external API access. Build fully paused.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Workstream detail -->
+    <section style="margin-top:48px;">
+      <h2 style="font-size:13px; font-family:var(--font-sans); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 4px; color:var(--rf-ed-ink);">Workstreams</h2>
+
+      <!-- Workstream block: repeat this block per workstream -->
+      <article style="padding:28px 0; border-top:1px solid var(--rf-ed-rule);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <span class="mono" style="font-size:12px; font-weight:600; color:var(--rf-ed-muted); letter-spacing:0.04em;" data-brand-seq>RF-02</span>
+          <h3 style="font-size:22px; font-weight:700; letter-spacing:-0.01em; margin:0;">Contract Generation</h3>
+          <span style="margin-left:6px; display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; padding:4px 9px; border-radius:2px; background:#e4f6ee; color:#157a52; border:1px solid #bfe6d4;"><i style="width:7px; height:7px; background:#1f9d6b; display:inline-block;"></i> On track</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:start;">
+          <!-- Milestone tracker -->
+          <div>
+            <div class="mono" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--rf-ed-faint); margin-bottom:12px;">Milestones</div>
+            <ul style="list-style:none; margin:0; padding:0;">
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4;"><i style="width:9px; height:9px; margin-top:4px; background:var(--rf-ed-ink); flex:none;"></i><span><strong style="font-weight:600;">M1</strong> Infrastructure <span style="color:var(--rf-ed-faint);">— Complete</span></span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4;"><i style="width:9px; height:9px; margin-top:4px; background:var(--rf-ed-ink); flex:none;"></i><span><strong style="font-weight:600;">M2</strong> First Contract Type <span style="color:var(--rf-ed-faint);">— Complete</span></span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4;"><i style="width:9px; height:9px; margin-top:4px; background:var(--rf-ed-ink); flex:none;"></i><span><strong style="font-weight:600;">M3</strong> CFS Operationalized <span style="color:var(--rf-ed-faint);">— Complete</span></span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4;"><i style="width:9px; height:9px; margin-top:4px; background:var(--rf-acc); flex:none;"></i><span><strong style="font-weight:600;">M4</strong> All Types &middot; UAT <span style="color:var(--rf-acc); font-weight:600;">— In progress</span></span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4; color:var(--rf-ed-faint);"><i style="width:9px; height:9px; margin-top:4px; background:transparent; border:1px solid var(--rf-ed-rule); flex:none;"></i><span><strong style="font-weight:600;">M5</strong> External Integrations <span>— Pending</span></span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:15px; line-height:1.4; color:var(--rf-ed-faint);"><i style="width:9px; height:9px; margin-top:4px; background:transparent; border:1px solid var(--rf-ed-rule); flex:none;"></i><span><strong style="font-weight:600;">M6</strong> Go-Live <span>— Pending</span></span></li>
+            </ul>
+          </div>
+
+          <!-- Delivered / plan / pending -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px 36px;">
+            <div>
+              <div class="mono" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--rf-ed-faint); margin-bottom:10px;">Delivered this week</div>
+              <ul style="list-style:none; margin:0; padding:0;">
+                <li style="position:relative; padding-left:18px; margin-bottom:9px; font-size:16px; line-height:1.5;"><i style="position:absolute; left:0; top:7px; width:7px; height:7px; background:var(--rf-acc);"></i>CFS contract generation live in production.</li>
+                <li style="position:relative; padding-left:18px; margin-bottom:9px; font-size:16px; line-height:1.5;"><i style="position:absolute; left:0; top:7px; width:7px; height:7px; background:var(--rf-acc);"></i>Monday-to-Monday intake operationalised.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="mono" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--rf-ed-faint); margin-bottom:10px;">Next week</div>
+              <ul style="list-style:none; margin:0; padding:0;">
+                <li style="position:relative; padding-left:18px; margin-bottom:9px; font-size:16px; line-height:1.5;"><i style="position:absolute; left:0; top:7px; width:7px; height:7px; background:var(--rf-ed-ink);"></i>Requester team go-live.</li>
+                <li style="position:relative; padding-left:18px; margin-bottom:9px; font-size:16px; line-height:1.5;"><i style="position:absolute; left:0; top:7px; width:7px; height:7px; background:var(--rf-ed-ink);"></i>Ad-hoc discovery for the next variant.</li>
+              </ul>
+            </div>
+            <div style="grid-column:1 / -1;">
+              <div class="mono" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--rf-ed-faint); margin-bottom:10px;">Open / pending</div>
+              <ul style="list-style:none; margin:0; padding:0;">
+                <li style="position:relative; padding-left:18px; margin-bottom:9px; font-size:16px; line-height:1.5; color:var(--rf-ed-ink-soft);"><i style="position:absolute; left:0; top:7px; width:7px; height:7px; background:transparent; border:1px solid var(--rf-ed-muted);"></i>Board access for two engineers <span class="mono" style="font-size:11px; color:var(--rf-ed-faint);">[carry over]</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Second workstream block (blocked example) -->
+      <article style="padding:28px 0; border-top:1px solid var(--rf-ed-rule);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <span class="mono" style="font-size:12px; font-weight:600; color:var(--rf-ed-muted); letter-spacing:0.04em;" data-brand-seq>RF-04</span>
+          <h3 style="font-size:22px; font-weight:700; letter-spacing:-0.01em; margin:0;">Payment Automation</h3>
+          <span style="margin-left:6px; display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; padding:4px 9px; border-radius:2px; background:#ffecee; color:#c40f23; border:1px solid #ffd2d7;"><i style="width:7px; height:7px; background:#c40f23; display:inline-block;"></i> Blocked</span>
+        </div>
+        <p style="font-size:17px; line-height:1.55; color:var(--rf-ed-ink-soft); margin:0; max-width:660px;"><strong style="font-weight:600;">No change this week.</strong> Hard blocker: external API access not granted. Build remains fully paused pending the dependency below.</p>
+      </article>
+    </section>
+
+    <!-- Pending table -->
+    <section style="margin-top:44px;" sc-if-table>
+      <h2 style="font-size:13px; font-family:var(--font-sans); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 16px; color:var(--rf-ed-ink);">Pending &mdash; client side</h2>
+      <table style="width:100%; border-collapse:collapse; font-family:var(--font-serif);">
+        <thead>
+          <tr style="border-top:2px solid var(--rf-ed-ink); border-bottom:1px solid var(--rf-ed-rule);">
+            <th style="font-family:var(--font-sans); text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-muted); font-weight:600; padding:10px 12px 10px 0;">Item</th>
+            <th style="font-family:var(--font-sans); text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-muted); font-weight:600; padding:10px 12px;">Why it matters</th>
+            <th style="font-family:var(--font-sans); text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-muted); font-weight:600; padding:10px 12px;">Owner</th>
+            <th style="font-family:var(--font-sans); text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rf-ed-muted); font-weight:600; padding:10px 0 10px 12px;">When</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+            <td style="font-size:16px; padding:13px 12px 13px 0; line-height:1.45;">Discovery session scheduling</td>
+            <td style="font-size:16px; padding:13px 12px; color:var(--rf-ed-ink-soft); line-height:1.45;">Unblocks next milestone</td>
+            <td style="font-size:16px; padding:13px 12px; color:var(--rf-ed-ink-soft);">Client / June</td>
+            <td style="font-size:16px; padding:13px 0 13px 12px; color:var(--rf-ed-ink-soft);">This week</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+            <td style="font-size:16px; padding:13px 12px 13px 0; line-height:1.45;">Full-team tool access</td>
+            <td style="font-size:16px; padding:13px 12px; color:var(--rf-ed-ink-soft); line-height:1.45;">Relevance-scoring iteration</td>
+            <td style="font-size:16px; padding:13px 12px; color:var(--rf-ed-ink-soft);">Client</td>
+            <td style="font-size:16px; padding:13px 0 13px 12px; color:var(--rf-ed-ink-soft);">This week</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rf-ed-rule);">
+            <td style="font-size:16px; padding:13px 12px 13px 0; line-height:1.45;">External API access</td>
+            <td style="font-size:16px; padding:13px 12px; color:#c40f23; line-height:1.45; font-weight:500;">RF-04 fully blocked</td>
+            <td style="font-size:16px; padding:13px 12px; color:var(--rf-ed-ink-soft);">Client IT</td>
+            <td style="font-size:16px; padding:13px 0 13px 12px; color:var(--rf-ed-ink-soft);">Open</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="mono" style="font-size:12px; color:var(--rf-ed-faint); margin:40px 0 0; padding-top:20px; border-top:1px solid var(--rf-ed-rule);">realfast &middot; Ontic Pte Ltd &nbsp;&middot;&nbsp; confidential</p>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:760},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;red&quot;,&quot;blue&quot;,&quot;navy&quot;,&quot;ink&quot;],&quot;default&quot;:&quot;red&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Brand sequence&quot;,&quot;Single accent&quot;],&quot;default&quot;:&quot;Single accent&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showLegend&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showPendingTable&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  applyAccent() {
+    const el = this.rootRef.current;
+    if (!el) return;
+    const map = {
+      red: "var(--rf-ed-red)",
+      blue: "var(--rf-ed-blue)",
+      navy: "var(--rf-navy)",
+      ink: "var(--rf-ed-ink)",
+    };
+    // Rotate the canonical brand order to lead with the chosen accent.
+    const order = ["red", "blue", "navy", "ink"];
+    const start = Math.max(0, order.indexOf(this.props.accent || "red"));
+    const rot = order.slice(start).concat(order.slice(0, start)).map((k) => map[k]);
+    el.style.setProperty("--rf-acc", rot[0]);
+
+    // Each workstream's reference code takes the next brand color, giving the
+    // streams a harmonious multi-color identity (status R/Y/G stays untouched).
+    const useSeq = (this.props.palette || "Brand sequence") !== "Single accent";
+    el.querySelectorAll("[data-brand-seq]").forEach((node, i) => {
+      const prop = node.getAttribute("data-seq-prop") || "color";
+      node.style[prop] = useSeq ? rot[i % rot.length] : rot[0];
+    });
+
+    // toggle the optional sections
+    const legend = el.querySelector("[sc-if-attr]");
+    if (legend) legend.style.display = (this.props.showLegend ?? true) ? "flex" : "none";
+    const table = el.querySelector("[sc-if-table]");
+    if (table) table.style.display = (this.props.showPendingTable ?? true) ? "block" : "none";
+  }
+
+  componentDidMount() { this.applyAccent(); }
+  componentDidUpdate() { this.applyAccent(); }
+
+  renderVals() {
+    return { rootRef: this.rootRef };
+  }
+}
+</script>
+</body>
+</html>

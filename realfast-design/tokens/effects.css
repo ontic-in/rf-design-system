@@ -1,0 +1,34 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Effects: shadows, borders-in-use, motion
+ *
+ * The system is almost shadowless — it relies on hairline rules, not elevation.
+ * The two shadow tokens below are barely-there, for the rare raised callout.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Shadows — editorial (light) surface — barely-there ───────────────── */
+  --shadow-ed-card: 0 1px 3px rgba(18, 18, 18, 0.06);
+  --shadow-ed-raise: 0 6px 24px rgba(18, 18, 18, 0.08);
+
+  /* ── Focus ring ───────────────────────────────────────────────────────── */
+  --focus-ring-ed: 0 0 0 3px rgba(19, 112, 251, 0.35);
+
+  /* ── Motion ───────────────────────────────────────────────────────────── */
+  /* default UI ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  /* entrances */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  /* ── Z-index scale ────────────────────────────────────────────────────── */
+  --z-base: 0; /* @kind other */
+  --z-raised: 10; /* @kind other */
+  --z-sticky: 100; /* @kind other */
+  --z-nav: 200; /* @kind other */
+  --z-overlay: 300; /* @kind other */
+  --z-modal: 400; /* @kind other */
+  --z-toast: 500; /* @kind other */
+}

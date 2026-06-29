@@ -1,0 +1,30 @@
+<!-- @dsCard group="Brand" viewport="700x150" name="Editorial Marks" subtitle="Red-square bullets, hairline rules, ordinal dates" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-serif); background: var(--rf-white); padding: 22px 28px; color: var(--rf-ed-ink); display:flex; gap:40px; }
+  ul { list-style: none; padding: 0; margin: 0; font-size: 16px; }
+  li { position: relative; padding-left: 20px; margin-bottom: 12px; }
+  li::before { content:""; position:absolute; left:0; top:0.55em; width:8px; height:8px; background: var(--rf-ed-red); }
+  .right { font-family: var(--font-sans); }
+  .right .row { display:flex; align-items:center; gap:10px; margin-bottom:14px; font-size:13px; color:var(--rf-ed-muted); }
+  hr { border:0; border-top:1px solid var(--rf-ed-rule); margin:0; flex:1; }
+  hr.b { border-top: 2px solid var(--rf-ed-ink); }
+</style>
+</head>
+<body>
+  <ul>
+    <li>Cost is now legible</li>
+    <li>Latency compounds</li>
+    <li>Reliability varies</li>
+  </ul>
+  <div class="right">
+    <div class="row"><span>Hairline</span><hr /></div>
+    <div class="row"><span>Masthead rule</span><hr class="b" /></div>
+    <div class="row" style="font-family:var(--font-sans)">May 21st 2026 &nbsp;|&nbsp; 6 min read</div>
+  </div>
+</body>
+</html>

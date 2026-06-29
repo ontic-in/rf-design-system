@@ -16,6 +16,30 @@ The house style for everything **realfast** (Ontic Pte Ltd) puts in front of a r
 
 ---
 
+## Install & use
+
+This system ships as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills) — Claude Code auto-discovers it, reads the brand rules, and builds on-brand HTML or production UI from the terminal.
+
+**Install** — copy the `realfast-design/` folder into a skills directory (keep it intact; `SKILL.md` is the entry point):
+
+```bash
+# Per repo (shared with anyone who clones — recommended)
+mkdir -p .claude/skills && cp -R realfast-design .claude/skills/
+
+# Or for all your projects (personal)
+mkdir -p ~/.claude/skills && cp -R realfast-design ~/.claude/skills/
+```
+
+**Use** — name it directly, or let Claude pull it in when a request matches:
+
+```
+> use the realfast-design skill to build a pricing page
+```
+
+See [`INSTALL.md`](INSTALL.md) for the full guide.
+
+---
+
 ## What you can make (and how)
 
 The system ships **ready-to-fill templates**. You don't design anything — you open a template, replace the placeholder words and numbers with yours, and you have a finished, on-brand document. Find them under the **Templates** picker.

@@ -64,6 +64,17 @@
   --rf-ed-red: #e3120b; /* the brand-defining color of the editorial theme */
   --rf-ed-blue: #1370fb;
 
+  /* ── Illustration palette (muted, chalky — for MidJourney spot art) ───── */
+  /* Accents lead with these; signal-red held in reserve as a rare spark.   */
+  --rf-illus-dusty-blue: #7d97b5;   /* muted brand blue — lead accent / 2nd plane */
+  --rf-illus-slate-navy: #3e4c6e;   /* muted navy — depth & focal marks */
+  --rf-illus-dusty-violet: #8b84a8; /* muted violet — soft third accent */
+  --rf-illus-charcoal: #3a3733;     /* warm charcoal — the mass (replaces flat black) */
+  --rf-illus-grey: #9a948c;         /* warm grey — mid-tones, shadow speckle */
+  --rf-illus-pale-blue: #c3d0dc;    /* pale blue — depth faces, tints */
+  --rf-illus-bone: #edeae4;         /* bone — secondary surfaces */
+  /* ground = --rf-paper-cream (#f5f3ef, already defined); spark = --rf-ed-red (#e3120b) */
+
   /* ──────────────────────────────────────────────────────────────────────
    * SEMANTIC ALIASES — the editorial (light) surface. This is the only
    * surface; there is no dark mode. Components read these names directly.

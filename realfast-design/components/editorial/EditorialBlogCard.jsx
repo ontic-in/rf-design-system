@@ -17,8 +17,10 @@ export function EditorialBlogCard({
   readTime,
   image,
   href = "#",
+  author,
   featured = false,
 }) {
+  const pipe = <span style={{ color: "var(--rf-ed-rule)", margin: "0 8px" }}>|</span>;
   const meta = (
     <p
       style={{
@@ -28,8 +30,14 @@ export function EditorialBlogCard({
         margin: 0,
       }}
     >
+      {author && (
+        <>
+          By <span style={{ color: "var(--rf-ed-ink-soft)" }}>{author}</span>
+          {pipe}
+        </>
+      )}
       {date}
-      <span style={{ color: "var(--rf-ed-rule)", margin: "0 8px" }}>|</span>
+      {pipe}
       {readTime}
     </p>
   );
@@ -42,9 +50,9 @@ export function EditorialBlogCard({
         fontWeight: 600,
         letterSpacing: "-0.01em",
         color: "var(--rf-ed-ink)",
-        margin: featured ? "0 0 12px" : "0 0 8px",
-        fontSize: featured ? 34 : 24,
-        lineHeight: featured ? 1.08 : 1.12,
+        margin: featured ? "0 0 12px" : "0 0 18px",
+        fontSize: featured ? 34 : 29,
+        lineHeight: featured ? 1.08 : 1.14,
         transition: "color var(--dur-base) var(--ease-standard)",
       }}
     >
@@ -83,7 +91,7 @@ export function EditorialBlogCard({
         }}
       >
         <div>
-          <Rubric section={section} sub={sub} href={href} style={{ marginBottom: 14 }} />
+          <Rubric section={section} sub={sub} href={href} plain style={{ marginBottom: 14 }} />
           {headline}
           {dek && (
             <p
@@ -116,38 +124,51 @@ export function EditorialBlogCard({
       onMouseLeave={hoverOut}
       style={{
         ...linkStyle,
-        gridTemplateColumns: "1fr 132px",
-        gap: 24,
-        padding: "26px 0",
+        gridTemplateColumns: "1fr",
+        gap: 0,
+        padding: "34px 0",
       }}
     >
-      <div>
-        <Rubric section={section} sub={sub} href={href} style={{ marginBottom: 12 }} />
-        {headline}
+      <Rubric section={section} sub={sub} href={href} plain style={{ marginBottom: 14 }} />
+      {headline}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: image ? "minmax(0, 0.82fr) 1fr" : "1fr",
+          gap: 36,
+          alignItems: "start",
+          marginBottom: 18,
+        }}
+      >
+        {image && (
+          <img
+            src={image}
+            alt=""
+            style={{
+              display: "block",
+              width: "100%",
+              aspectRatio: "3 / 2",
+              objectFit: "cover",
+              borderRadius: 8,
+              background: "var(--rf-paper-cream)",
+            }}
+          />
+        )}
         {dek && (
           <p
             style={{
               fontFamily: "var(--font-serif)",
-              fontSize: 16,
-              lineHeight: 1.4,
+              fontSize: 19,
+              lineHeight: 1.5,
               color: "var(--rf-ed-ink-soft)",
-              margin: "0 0 10px",
+              margin: 0,
             }}
           >
             {dek}
           </p>
         )}
-        {meta}
       </div>
-      {image && (
-        <div>
-          <img
-            src={image}
-            alt=""
-            style={{ display: "block", width: 132, height: 92, objectFit: "cover" }}
-          />
-        </div>
-      )}
+      {meta}
     </a>
   );
 }

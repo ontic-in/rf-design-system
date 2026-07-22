@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Case Study" description="The realfast client case study spine - outcome-first hero, sticky chapter rail, alternating bands, comparison-bar metric callout, inbuilt book-a-demo and PDF" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html,body{margin:0;background:var(--rf-paper);}
+  .rf-cs{font-family:var(--font-serif);color:var(--rf-ed-ink);}
+  .rf-cs ::selection{background:var(--rf-ed-red);color:#fff;}
+  .rf-cs .rf{font-style:italic;}
+  @keyframes rfcsUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .rf-cs [data-reveal].is-in{animation:rfcsUp .7s var(--ease-out) both;}
+  .rf-cs a{color:var(--rf-ed-blue);text-decoration:none;}
+  .rf-cs a:hover{text-decoration:underline;}
+  .rf-cs .kicker{font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--rf-ed-red);margin:0 0 14px;}
+  .rf-cs .raillink{color:var(--rf-ed-muted);text-decoration:none;transition:color var(--dur-base) var(--ease-standard);}
+  .rf-cs .raillink:hover{color:var(--rf-ed-ink);text-decoration:none;}
+  .rf-cs .raillink.is-active{color:var(--rf-ed-ink);}
+  .rf-cs .raillink.is-active .railtick{background:var(--rf-ed-red);width:26px;}
+  .rf-cs .mj{border:1px solid var(--rf-ed-ink);background:var(--rf-paper-cream);}
+  .rf-cs .mj-hd{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rf-ed-rule);gap:12px;}
+  .rf-cs .mj-lbl{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-muted);}
+  .rf-cs .mj-pre{margin:0;padding:16px;font-family:var(--font-mono);font-size:12.5px;line-height:1.6;color:var(--rf-illus-charcoal);white-space:pre-wrap;word-break:break-word;}
+  .rf-cs .rf-copy{font-family:var(--font-sans);font-size:12px;font-weight:600;color:#fff;background:var(--rf-ed-ink);border:0;padding:6px 14px;cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;}
+  .rf-cs .rf-copy:hover{background:var(--rf-red-700);}
+  .rf-cs .fld{font-family:var(--font-sans);font-size:15px;padding:12px 14px;border:1px solid var(--rf-ed-rule);background:#fff;color:var(--rf-ed-ink);border-radius:var(--radius-sm);width:100%;box-sizing:border-box;}
+  .rf-cs .fld:focus{outline:none;border-color:var(--rf-ed-ink);box-shadow:var(--focus-ring-ed);}
+  .rf-cs .lbl{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-muted);margin-bottom:8px;display:block;}
+  .rf-cs .rf-btn{font-family:var(--font-sans);font-weight:600;font-size:15px;background:var(--rf-ed-red);color:#fff;border:none;padding:14px 28px;border-radius:var(--radius-sm);cursor:pointer;align-self:flex-start;}
+  .rf-cs .rf-btn:hover{background:var(--rf-red-700);}
+  .rf-cs .metric .bar-row{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:16px;margin-bottom:14px;}
+  .rf-cs .metric .bar-lbl{font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);}
+  .rf-cs .metric .bar-track{height:24px;}
+  .rf-cs .metric .bar-fill{height:100%;}
+  .rf-cs .metric .bar-val{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);white-space:nowrap;}
+  .rf-cs .metric .proc{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:6px;padding-top:24px;}
+  .rf-cs .metric .proc::before{content:"";position:absolute;top:5px;left:6px;right:6px;height:2px;background:var(--rf-ed-rule);}
+  .rf-cs .metric .proc-step{position:relative;padding-left:22px;}
+  .rf-cs .metric .proc-step::before{content:"";position:absolute;top:1px;left:0;width:12px;height:12px;border-radius:50%;background:var(--rf-illus-dusty-blue);}
+  .rf-cs .metric .proc-step:last-child::before{background:var(--rf-ed-red);}
+  .rf-cs .metric .proc-k{font-family:var(--font-sans);font-size:12px;font-weight:700;color:var(--rf-ed-red);margin-bottom:6px;}
+  .rf-cs .metric .proc-t{font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);line-height:1.4;}
+  .rf-guide{max-width:var(--container);margin:0 auto;font-family:var(--font-sans);}
+  .rf-guide summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--rf-ed-muted);padding:14px 0;list-style:none;}
+  .rf-guide summary::before{content:"+ ";color:var(--rf-ed-red);}
+  .rf-guide[open] summary::before{content:"\2212 ";}
+  .rf-guide .g-body{font-family:var(--font-serif);font-size:15px;line-height:1.6;color:var(--rf-ed-ink-soft);padding:0 0 20px;border-bottom:1px solid var(--rf-ed-rule);}
+  @media(max-width:900px){.rf-cs .rail{display:none!important;}.rf-cs .stage{grid-template-columns:1fr!important;}.rf-cs .rf-demo>div{grid-template-columns:1fr!important;}.rf-cs .metric .proc{grid-template-columns:1fr 1fr;}.rf-cs .rf-dlcta{flex-direction:column;align-items:flex-start!important;gap:16px;}}
+  @media print{
+    @page{margin:14mm 16mm;}
+    html,body{background:#fff!important;}
+    .rf-cs,.rf-cs *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+    .rf-cs .rail,.rf-cs .rf-demo,.rf-cs .rf-dlcta,.rf-guide,.rf-cs .rf-copy,.rf-cs .mj{display:none!important;}
+    .rf-cs .stage{grid-template-columns:1fr!important;gap:0!important;padding:0!important;}
+    .rf-cs main{padding-top:8px!important;}
+    .rf-cs header,.rf-cs figure,.rf-cs .stage,.rf-cs main>div{padding-left:0!important;padding-right:0!important;}
+    .rf-cs [data-reveal]{opacity:1!important;animation:none!important;transform:none!important;}
+    .rf-cs [data-chapter],.rf-cs figure,.rf-cs blockquote,.rf-cs .metric>div{break-inside:avoid;page-break-inside:avoid;}
+    .rf-cs h1,.rf-cs h2,.rf-cs h3{break-after:avoid;page-break-after:avoid;}
+    .rf-cs #problem{break-before:auto;}
+    .rf-cs #metric{break-before:page;}
+  }
+</style>
+</helmet>
+<div class="rf-cs" data-theme="editorial" style="background:var(--rf-paper);min-height:100vh;">
+
+  <details class="rf-guide" style="padding:20px 40px 0;">
+    <summary>How to use this template</summary>
+    <div class="g-body">
+      <p style="margin:0 0 12px;">Bring the author&rsquo;s raw material in any format - call notes, a transcript, a metrics sheet, a rough paragraph - and map each piece onto the fixed spine below. You don&rsquo;t have to write in order; fill sections as the content fits, then delete this panel.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Stay original to the source content.</strong> Use the author&rsquo;s words as close to verbatim as possible - don&rsquo;t paraphrase, condense away details, or add narrative of your own. The only edits allowed are the house rules (hyphens for dashes, <em class="rf">realfast</em> lowercase italic, sentence case). If the source has section detail (setup, tooling, lists, learnings), carry it over in full rather than summarising.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">The spine:</strong> Hero &rsaquo; The problem &rsaquo; Why it mattered &rsaquo; What we did &rsaquo; The build &rsaquo; The metric moved &rsaquo; In their words &rsaquo; What&rsquo;s next.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Lead with the outcome.</strong> Never open on the process. The single biggest metric goes in the hero headline and again, larger, in The metric moved. Every metric is shown as a large number, never buried in prose.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">The metric moved</strong> is the signature moment: use the before / after comparison bars plus the &ldquo;how it moved&rdquo; steps already built into that section. Swap in the real numbers.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Imagery.</strong> One hero visual, 16:9. Generate it from the MidJourney prompt card in the hero (Copy button), then replace the card with the image. Do the same for any supporting visual. All art follows the muted illustration style (see Brand &rsaquo; Illustration).</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Charts &amp; data.</strong> If the source has a chart, recreate it exactly - same title, subtitle, series, totals and per-week values - never approximate or invent data points. Restyle it to the system: a light ground (never a black band), the <code>pale-blue &rsaquo; dusty-blue &rsaquo; slate-navy</code> value ramp with <code>--success</code> for the completed series (see Charts &rsaquo; Stacked bar chart), totals set above each bar, legend below. Never invent chart colours, and never use black or signal red as a data series.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">In their words is optional.</strong> Include the quote block only if the client actually gave a quote - never fabricate or paraphrase one. If there is no quote, delete that section (and its rail entry) and renumber.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Never edit the raw numbers into approximations</strong> - use what the client verified. If a figure isn&rsquo;t confirmed, leave the <code>[X]</code> placeholder rather than guessing.</p>
+      <p style="margin:0 0 12px;"><strong style="color:var(--rf-ed-ink);font-weight:700;">Book a demo &amp; Download PDF</strong> are built in at the foot of every case study - leave them in place; wire the form to your backend on integration.</p>
+      <p style="margin:0;"><strong style="color:var(--rf-ed-ink);font-weight:700;">House rules:</strong> keep <em class="rf">realfast</em> lowercase and italic everywhere, all headings and rubrics in sentence case (never all-caps), and use spaced hyphens, never em-dashes.</p>
+    </div>
+  </details>
+
+  <!-- ══ HERO - lead with the outcome ══ -->
+  <header style="max-width:var(--container);margin:0 auto;padding:48px 40px 8px;">
+    <div data-reveal style="display:flex;align-items:center;gap:14px;margin-bottom:26px;">
+      <span style="font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--rf-ed-red);">Case study</span>
+      <span style="height:1px;flex:1;background:var(--rf-ed-rule);"></span>
+      <span style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);">Industry &middot; Applied AI</span>
+    </div>
+    <p data-reveal style="font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--rf-ed-ink-soft);margin:0 0 18px;">Client name</p>
+    <h1 data-reveal style="font-family:var(--font-serif);font-size:clamp(40px,6.4vw,88px);line-height:1.0;letter-spacing:var(--track-tight);font-weight:600;margin:0 0 8px;max-width:15ch;">Moved [metric] by <span style="color:var(--rf-ed-red);">[X]</span>.</h1>
+    <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-dek-size);line-height:var(--type-dek-line);color:var(--rf-ed-ink-soft);margin:20px 0 0;max-width:54ch;">One sentence that frames the outcome in plain language - what changed for the client, and how big it was.</p>
+  </header>
+
+  <!-- Hero visual: generate from this MidJourney prompt, then replace the card with the 16:9 image -->
+  <figure data-reveal style="max-width:var(--container);margin:36px auto 0;padding:0 40px;">
+    <div class="mj">
+      <div class="mj-hd"><span class="mj-lbl">Hero visual &middot; MidJourney prompt &middot; 16:9</span><button class="rf-copy" type="button">Copy</button></div>
+      <pre class="mj-pre">[ your hero concept - one clear object or figure that shows the outcome, e.g. a small suited figure crossing a single red finish tape ], muted editorial spot illustration, pure white #FFFFFF background with only a faint warm cream #F5F3EF tint, chalky risograph grain, restrained Nordic palette built from muted brand shades - dusty blue #7D97B5, slate navy #3E4C6E and dusty violet #8B84A8 for accent and second plane, soft warm charcoal #3A3733 and warm greys #9A948C for mass, signal-red #E3120B reserved for a single rare focal detail, low gentle contrast, generous negative space, minimal and calm, premium, screen-print texture --ar 16:9 --style raw --stylize 120 --no pure black, harsh shadows, neon, electric blue, glossy 3d render, high saturation, cream fill background, beige background, off-white paper --p m7465697161997451288</pre>
+    </div>
+    <figcaption style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Generate in MidJourney, then replace this card with the image. One hero visual per case study, 16:9, illustration: <em class="rf">realfast</em>.</figcaption>
+  </figure>
+
+  <!-- headline metric strip, so the outcome lands before any prose -->
+  <div data-reveal style="max-width:var(--container);margin:36px auto 0;padding:0 40px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rf-ed-rule);border:1px solid var(--rf-ed-rule);">
+      <div style="background:var(--rf-paper);padding:28px 24px;">
+        <div style="font-family:var(--font-serif);font-size:52px;line-height:1;font-weight:600;color:var(--rf-ed-red);">[X]</div>
+        <div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Headline result</div>
+      </div>
+      <div style="background:var(--rf-paper);padding:28px 24px;">
+        <div style="font-family:var(--font-serif);font-size:52px;line-height:1;font-weight:600;color:var(--rf-ed-ink);">[X]</div>
+        <div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Second proof point</div>
+      </div>
+      <div style="background:var(--rf-paper);padding:28px 24px;">
+        <div style="font-family:var(--font-serif);font-size:52px;line-height:1;font-weight:600;color:var(--rf-ed-ink);">[X]</div>
+        <div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Time to impact</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ STAGE - sticky chapter rail + narrative spine ══ -->
+  <div class="stage" style="max-width:var(--container);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;">
+
+    <nav class="rail" style="position:sticky;top:48px;padding-top:96px;font-family:var(--font-sans);">
+      <div style="font-size:13px;font-weight:600;color:var(--rf-ed-faint);margin-bottom:20px;">The story</div>
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+        <li><a class="raillink" href="#problem" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The problem</a></li>
+        <li><a class="raillink" href="#mattered" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>Why it mattered</a></li>
+        <li><a class="raillink" href="#did" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>What we did</a></li>
+        <li><a class="raillink" href="#build" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The build</a></li>
+        <li><a class="raillink" href="#metric" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The metric moved</a></li>
+        <li><a class="raillink" href="#words" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>In their words</a></li>
+        <li><a class="raillink" href="#next" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>What&rsquo;s next</a></li>
+      </ol>
+    </nav>
+
+    <main style="min-width:0;padding-top:88px;padding-bottom:72px;">
+
+      <section id="problem" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:2px solid var(--rf-ed-ink);">
+        <div data-reveal class="kicker" style="margin-top:20px;">01 &middot; The problem</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">State the urgent, high-stakes problem in one plain line.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 18px;max-width:var(--measure);">Two or three sentences on the problem the client faced, in plain language. No jargon, no setup - just the situation and why it was hard.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0;max-width:var(--measure);">Land the constraint that made this genuinely difficult.</p>
+      </section>
+
+      <section id="mattered" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">02 &middot; Why it mattered</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">Name the cost of inaction and the business stakes.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 24px;max-width:var(--measure);">What was at risk if nothing changed - revenue, growth, risk, reputation. Make the stakes concrete.</p>
+        <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rf-ed-rule);border:1px solid var(--rf-ed-rule);max-width:var(--measure);">
+          <div style="background:var(--rf-paper-cream);padding:22px 24px;"><div style="font-family:var(--font-serif);font-size:34px;font-weight:600;line-height:1;">[X]</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:8px;">stat that sizes the risk</div></div>
+          <div style="background:var(--rf-paper-cream);padding:22px 24px;"><div style="font-family:var(--font-serif);font-size:34px;font-weight:600;line-height:1;">[X]</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:8px;">stat that sizes the cost</div></div>
+        </div>
+      </section>
+
+      <section id="did" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">03 &middot; What we did</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:24ch;">Explain the applied-AI approach in plain language, not jargon.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 22px;max-width:var(--measure);">A short paragraph on the strategy and the engineering - what you decided to do and why it was the right call.</p>
+        <ul data-reveal style="list-style:none;padding:0;margin:0;max-width:var(--measure);display:flex;flex-direction:column;gap:14px;">
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Strategy.</strong> The one decision that shaped everything else.</li>
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Engineering.</strong> What was built to make it real.</li>
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Guardrails.</strong> How quality and trust were kept.</li>
+        </ul>
+      </section>
+
+      <section id="build" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">04 &middot; The build</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">Name the product or platform delivered.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 28px;max-width:var(--measure);">Describe what shipped and how it fits into the client&rsquo;s workflow. Keep it concrete.</p>
+        <figure data-reveal style="margin:0;">
+          <div class="mj">
+            <div class="mj-hd"><span class="mj-lbl">Supporting visual &middot; MidJourney prompt</span><button class="rf-copy" type="button">Copy</button></div>
+            <pre class="mj-pre">[ a diagram-like object that stands for the product, e.g. a minimal conveyor belt carrying neat sealed parcels, top-down three-quarter view ], muted editorial spot illustration, pure white #FFFFFF background with only a faint warm cream #F5F3EF tint, chalky risograph grain, restrained Nordic palette built from muted brand shades - dusty blue #7D97B5, slate navy #3E4C6E and dusty violet #8B84A8 for accent, soft warm charcoal #3A3733 and warm greys #9A948C for mass, signal-red #E3120B reserved for a single rare focal detail, low gentle contrast, generous negative space, minimal and calm, premium, screen-print texture --ar 16:9 --style raw --stylize 120 --no pure black, harsh shadows, neon, electric blue, glossy 3d render, high saturation, cream fill background, beige background, off-white paper --p m7465697161997451288</pre>
+          </div>
+          <figcaption style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Supporting visual, product screen, or architecture diagram. Replace with the real asset.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 6 · THE METRIC MOVED - the signature moment -->
+      <section id="metric" data-chapter class="metric" style="scroll-margin-top:48px;margin:8px 0 64px;">
+        <div style="background:var(--rf-paper-cream);border:1px solid var(--rf-ed-rule);padding:56px 48px;">
+          <div data-reveal class="kicker" style="margin-bottom:20px;">05 &middot; The metric moved</div>
+          <div data-reveal style="font-family:var(--font-serif);font-size:clamp(44px,7vw,96px);line-height:0.95;font-weight:700;margin:0 0 10px;"><span style="color:var(--rf-ed-red);">[X]</span> <span style="color:var(--rf-ed-ink);">better</span></div>
+          <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-dek-size);color:var(--rf-ed-ink-soft);margin:0 0 40px;max-width:46ch;">One line naming the headline result in the client&rsquo;s own terms.</p>
+
+          <div data-reveal style="max-width:680px;margin-bottom:40px;">
+            <div class="bar-row"><div class="bar-lbl">Before</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--rf-illus-dusty-blue);"></div></div><div class="bar-val" style="color:var(--rf-ed-muted);">[before]</div></div>
+            <div class="bar-row"><div class="bar-lbl">After</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:var(--rf-ed-red);"></div></div><div class="bar-val">[after]</div></div>
+          </div>
+
+          <div data-reveal style="font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-red);margin-bottom:2px;">How it moved</div>
+          <div data-reveal class="proc">
+            <div class="proc-step"><div class="proc-k">Step 1</div><div class="proc-t">First milestone in the journey.</div></div>
+            <div class="proc-step"><div class="proc-k">Step 2</div><div class="proc-t">The cadence that built momentum.</div></div>
+            <div class="proc-step"><div class="proc-k">Step 3</div><div class="proc-t">Where it compounded.</div></div>
+            <div class="proc-step"><div class="proc-k">Result</div><div class="proc-t">The metric lands.</div></div>
+          </div>
+
+          <div style="height:1px;background:var(--rf-ed-rule);margin:40px 0 28px;"></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">[X]</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">supporting proof point</div></div>
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">[X]</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">supporting proof point</div></div>
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">[X]</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">supporting proof point</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="words" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;margin-bottom:28px;">06 &middot; In their words <span style="color:var(--rf-ed-faint);font-weight:600;">(optional - only if the client gave a quote)</span></div>
+        <blockquote data-reveal style="margin:0;max-width:var(--measure);">
+          <p style="font-family:var(--font-serif);font-style:italic;font-size:clamp(24px,3.2vw,34px);line-height:1.3;font-weight:600;letter-spacing:var(--track-snug);margin:0 0 24px;">&ldquo;A short, specific quote from the client that captures the change in their own voice.&rdquo;</p>
+          <footer style="font-family:var(--font-sans);font-size:14px;color:var(--rf-ed-muted);display:flex;align-items:center;gap:12px;"><span style="width:28px;height:2px;background:var(--rf-ed-red);"></span><span><strong style="color:var(--rf-ed-ink);font-weight:600;">Name or role</strong>, Client name</span></footer>
+        </blockquote>
+      </section>
+
+      <section id="next" data-chapter style="scroll-margin-top:48px;padding:8px 0 8px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">07 &middot; What&rsquo;s next</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">Where the work goes from here.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0;max-width:var(--measure);">Ongoing work or the next expansion - what&rsquo;s being built next, and why it matters.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ══ BOOK A DEMO - inbuilt lead form ══ -->
+  <section class="rf-demo" id="demo" style="background:var(--rf-paper-cream);border-top:2px solid var(--rf-ed-ink);">
+    <div style="max-width:var(--container);margin:0 auto;padding:64px 40px 72px;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start;">
+      <div>
+        <div class="kicker">Book a demo</div>
+        <h2 style="font-family:var(--font-serif);font-size:clamp(28px,3.6vw,46px);line-height:1.04;letter-spacing:var(--track-tight);font-weight:600;margin:0 0 18px;max-width:15ch;">Experience the power of agents, firsthand.</h2>
+        <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);color:var(--rf-ed-ink-soft);margin:0;max-width:44ch;">Tell us where you want to move faster. We&rsquo;ll set up a working session and show you agent-scale delivery on your own stack.</p>
+      </div>
+      <div data-rf-lead-form>
+        <form data-rf-lead style="display:flex;flex-direction:column;gap:18px;">
+          <div><label class="lbl">Your name *</label><input class="fld" name="name" required></div>
+          <div><label class="lbl">Work email *</label><input class="fld" type="email" name="email" required></div>
+          <div><label class="lbl">Company name *</label><input class="fld" name="company" required></div>
+          <div><label class="lbl">LinkedIn profile</label><input class="fld" name="linkedin"></div>
+          <div><label class="lbl">How did you hear about us? *</label><select class="fld" name="source" required><option value="">Select an option</option><option>Google / Search Engine</option><option>LinkedIn</option><option>Referral from colleague or friend</option><option>Blog / Article</option><option>Event or Webinar</option><option>Other</option></select></div>
+          <button type="submit" class="rf-btn">Book a demo &rarr;</button>
+        </form>
+        <div data-rf-lead-success style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
+          <div class="kicker" style="margin-bottom:12px;">Let&rsquo;s go</div>
+          <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;margin:0;">Thanks, we&rsquo;ll be in touch shortly to set up your session.</p>
+        </div>
+        <div data-rf-lead-error style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
+          <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;margin:0;">Something went wrong. <button type="button" data-rf-lead-retry style="font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--rf-ed-red);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;">Try again</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DOWNLOAD PDF - CTA ══ -->
+  <div class="rf-dlcta" style="max-width:var(--container);margin:0 auto;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <div>
+      <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 6px;">Take this case study with you</h3>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--rf-ed-muted);margin:0;">Save a clean, print-ready PDF to share internally or send to your team.</p>
+    </div>
+    <button class="rf-btn" data-dl type="button" style="background:var(--rf-ed-ink);">Download PDF</button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    const reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const show = (el) => { el.style.opacity = ''; el.classList.add('is-in'); };
+      const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight || 0) && r.bottom > 0; };
+      reveals.forEach(el => { if (!inView(el)) el.style.opacity = '0'; });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+      setTimeout(() => reveals.forEach(el => { if (el.style.opacity === '0') show(el); }), 1000);
+    }
+    const links = Array.from(root.querySelectorAll('.raillink'));
+    const chapters = Array.from(root.querySelectorAll('[data-chapter]'));
+    if (chapters.length && links.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { const id = e.target.id; links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id)); } });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      chapters.forEach(c => spy.observe(c));
+    }
+    links.forEach(l => l.addEventListener('click', (ev) => {
+      const id = l.getAttribute('href');
+      const target = root.querySelector(id);
+      if (target) { ev.preventDefault(); const y = target.getBoundingClientRect().top + window.pageYOffset - 40; window.scrollTo({ top: y, behavior: 'smooth' }); }
+    }));
+    const dl = root.querySelector('[data-dl]');
+    if (dl) dl.addEventListener('click', () => window.print());
+    const form = root.querySelector('[data-rf-lead]');
+    const ok = root.querySelector('[data-rf-lead-success]');
+    const err = root.querySelector('[data-rf-lead-error]');
+    const retry = root.querySelector('[data-rf-lead-retry]');
+    if (form) form.addEventListener('submit', (ev) => { ev.preventDefault(); form.style.display = 'none'; if (err) err.style.display = 'none'; if (ok) ok.style.display = 'block'; });
+    if (retry) retry.addEventListener('click', () => { if (err) err.style.display = 'none'; if (form) form.style.display = 'flex'; });
+    root.querySelectorAll('.rf-copy').forEach(btn => btn.addEventListener('click', () => {
+      const pre = btn.closest('.mj').querySelector('.mj-pre'); if (!pre) return;
+      const t = pre.innerText;
+      const done = () => { const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = o; }, 1400); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done();
+    }));
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

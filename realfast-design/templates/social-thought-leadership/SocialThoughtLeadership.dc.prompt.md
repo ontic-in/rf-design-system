@@ -1,0 +1,1 @@
+Use the standalone image for a single sharp claim, or the 3-slide carousel for a short argument. Lead with the source's strongest insight; keep the tone credibility-first, not salesy. Pair with an author attribution when posted from a person's account - it earns far more reshares.

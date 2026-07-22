@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Case Study - APAC (example)" description="Filled case study on the spine: APAC Corporate Services SaaS - entering a new market in 10 weeks" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html,body{margin:0;background:var(--rf-paper);}
+  .rf-cs{font-family:var(--font-serif);color:var(--rf-ed-ink);}
+  .rf-cs ::selection{background:var(--rf-ed-red);color:#fff;}
+  .rf-cs .rf{font-style:italic;}
+  @keyframes rfcsUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .rf-cs [data-reveal].is-in{animation:rfcsUp .7s var(--ease-out) both;}
+  .rf-cs a{color:var(--rf-ed-blue);text-decoration:none;}
+  .rf-cs a:hover{text-decoration:underline;}
+  .rf-cs .kicker{font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--rf-ed-red);margin:0 0 14px;}
+  .rf-cs .raillink{color:var(--rf-ed-muted);text-decoration:none;transition:color var(--dur-base) var(--ease-standard);}
+  .rf-cs .raillink:hover{color:var(--rf-ed-ink);text-decoration:none;}
+  .rf-cs .raillink.is-active{color:var(--rf-ed-ink);}
+  .rf-cs .raillink.is-active .railtick{background:var(--rf-ed-red);width:26px;}
+  .rf-cs .mj{border:1px solid var(--rf-ed-ink);background:var(--rf-paper-cream);}
+  .rf-cs .mj-hd{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rf-ed-rule);gap:12px;}
+  .rf-cs .mj-lbl{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-muted);}
+  .rf-cs .mj-pre{margin:0;padding:16px;font-family:var(--font-mono);font-size:12.5px;line-height:1.6;color:var(--rf-illus-charcoal);white-space:pre-wrap;word-break:break-word;}
+  .rf-cs .rf-copy{font-family:var(--font-sans);font-size:12px;font-weight:600;color:#fff;background:var(--rf-ed-ink);border:0;padding:6px 14px;cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;}
+  .rf-cs .rf-copy:hover{background:var(--rf-red-700);}
+  .rf-cs .fld{font-family:var(--font-sans);font-size:15px;padding:12px 14px;border:1px solid var(--rf-ed-rule);background:#fff;color:var(--rf-ed-ink);border-radius:var(--radius-sm);width:100%;box-sizing:border-box;}
+  .rf-cs .fld:focus{outline:none;border-color:var(--rf-ed-ink);box-shadow:var(--focus-ring-ed);}
+  .rf-cs .lbl{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-muted);margin-bottom:8px;display:block;}
+  .rf-cs .rf-btn{font-family:var(--font-sans);font-weight:600;font-size:15px;background:var(--rf-ed-red);color:#fff;border:none;padding:14px 28px;border-radius:var(--radius-sm);cursor:pointer;align-self:flex-start;}
+  .rf-cs .rf-btn:hover{background:var(--rf-red-700);}
+  .rf-cs .metric .bar-row{display:grid;grid-template-columns:170px 1fr auto;align-items:center;gap:16px;margin-bottom:14px;}
+  .rf-cs .metric .bar-lbl{font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);}
+  .rf-cs .metric .bar-track{height:24px;}
+  .rf-cs .metric .bar-fill{height:100%;}
+  .rf-cs .metric .bar-val{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);white-space:nowrap;}
+  .rf-cs .metric .proc{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:6px;padding-top:24px;}
+  .rf-cs .metric .proc::before{content:"";position:absolute;top:5px;left:6px;right:6px;height:2px;background:var(--rf-ed-rule);}
+  .rf-cs .metric .proc-step{position:relative;padding-left:22px;}
+  .rf-cs .metric .proc-step::before{content:"";position:absolute;top:1px;left:0;width:12px;height:12px;border-radius:50%;background:var(--rf-illus-dusty-blue);}
+  .rf-cs .metric .proc-step:last-child::before{background:var(--rf-ed-red);}
+  .rf-cs .metric .proc-k{font-family:var(--font-sans);font-size:12px;font-weight:700;color:var(--rf-ed-red);margin-bottom:6px;}
+  .rf-cs .metric .proc-t{font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);line-height:1.4;}
+  .rf-cs .chart{background:var(--rf-paper);border:1px solid var(--rf-ed-rule);padding:36px 36px 26px;}
+  .rf-cs .chart-title{font-family:var(--font-serif);font-size:clamp(24px,3vw,32px);font-weight:600;color:var(--rf-ed-ink);margin:0 0 8px;letter-spacing:var(--track-snug);}
+  .rf-cs .chart-sub{font-family:var(--font-sans);font-size:15px;color:var(--rf-ed-muted);margin:0 0 34px;}
+  .rf-cs .chart-cols{display:grid;grid-template-columns:repeat(7,1fr);gap:24px;align-items:end;height:340px;padding-top:36px;}
+  .rf-cs .chart-col{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;}
+  .rf-cs .chart-stack{position:relative;width:100%;max-width:120px;display:flex;flex-direction:column;justify-content:flex-end;}
+  .rf-cs .chart-seg{width:100%;}
+  .rf-cs .chart-total{position:absolute;left:0;right:0;bottom:calc(100% + 8px);text-align:center;font-family:var(--font-sans);font-size:22px;font-weight:600;color:var(--rf-ed-ink);}
+  .rf-cs .chart-x{display:grid;grid-template-columns:repeat(7,1fr);gap:24px;margin-top:12px;}
+  .rf-cs .chart-x span{font-family:var(--font-sans);font-size:15px;color:var(--rf-ed-muted);text-align:center;}
+  .rf-cs .chart-legend{display:flex;flex-wrap:wrap;gap:24px;margin-top:26px;}
+  .rf-cs .chart-legend span{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:14px;color:var(--rf-ed-ink-soft);}
+  .rf-cs .chart-legend i{width:13px;height:13px;display:inline-block;}
+  .rf-cs .sqlist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .rf-cs .sqlist li{position:relative;padding-left:18px;font-family:var(--font-serif);font-size:16px;line-height:1.45;}
+  .rf-cs .sqlist li::before{content:"";position:absolute;left:0;top:0.5em;width:7px;height:7px;background:var(--rf-ed-red);}
+  @media(max-width:900px){.rf-cs .rail{display:none!important;}.rf-cs .stage{grid-template-columns:1fr!important;}.rf-cs .rf-demo>div{grid-template-columns:1fr!important;}.rf-cs .metric .proc{grid-template-columns:1fr 1fr;}.rf-cs .rf-dlcta{flex-direction:column;align-items:flex-start!important;gap:16px;}}
+  @media print{
+    @page{margin:14mm 16mm;}
+    html,body{background:#fff!important;}
+    .rf-cs,.rf-cs *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+    .rf-cs .rail,.rf-cs .rf-demo,.rf-cs .rf-dlcta,.rf-cs .rf-copy,.rf-cs .mj{display:none!important;}
+    .rf-cs .stage{grid-template-columns:1fr!important;gap:0!important;padding:0!important;}
+    .rf-cs main{padding-top:8px!important;}
+    .rf-cs header,.rf-cs figure,.rf-cs .stage,.rf-cs main>div{padding-left:0!important;padding-right:0!important;}
+    .rf-cs [data-reveal]{opacity:1!important;animation:none!important;transform:none!important;}
+    .rf-cs [data-chapter],.rf-cs figure,.rf-cs blockquote,.rf-cs .metric>div{break-inside:avoid;page-break-inside:avoid;}
+    .rf-cs h1,.rf-cs h2,.rf-cs h3{break-after:avoid;page-break-after:avoid;}
+    .rf-cs #metric{break-before:page;}
+  }
+</style>
+</helmet>
+<div class="rf-cs" data-theme="editorial" style="background:var(--rf-paper);min-height:100vh;">
+
+  <!-- ══ HERO - lead with the outcome ══ -->
+  <header style="max-width:var(--container);margin:0 auto;padding:56px 40px 8px;">
+    <div data-reveal style="display:flex;align-items:center;gap:14px;margin-bottom:26px;">
+      <span style="font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--rf-ed-red);">Case study</span>
+      <span style="height:1px;flex:1;background:var(--rf-ed-rule);"></span>
+      <span style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);">Corporate Services SaaS &middot; APAC</span>
+    </div>
+    <p data-reveal style="font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--rf-ed-ink-soft);margin:0 0 18px;">APAC Corporate Services SaaS &middot; $150M revenue</p>
+    <h1 data-reveal style="font-family:var(--font-serif);font-size:clamp(40px,6.4vw,88px);line-height:1.0;letter-spacing:var(--track-tight);font-weight:600;margin:0 0 8px;max-width:15ch;">Entering a new market in <span style="color:var(--rf-ed-red);">10 weeks</span>.</h1>
+    <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-dek-size);line-height:var(--type-dek-line);color:var(--rf-ed-ink-soft);margin:20px 0 0;max-width:56ch;">A leading APAC Corporate Services SaaS firm with over $150M in revenue needed to extend their platform into a new geography. The scope was broad, the deadline was fixed, and the deeply interconnected, multi-market platform was one of the most complex codebases we&rsquo;ve seen.</p>
+    <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;color:var(--rf-ed-ink);margin:16px 0 0;max-width:56ch;"><strong style="font-weight:700;">Decades of business logic. Ten weeks to extend it into a new market. Eight <em class="rf">realfast</em> engineers.</strong></p>
+  </header>
+
+  <figure data-reveal style="max-width:var(--container);margin:36px auto 0;padding:0 40px;">
+    <div class="mj">
+      <div class="mj-hd"><span class="mj-lbl">Hero visual &middot; MidJourney prompt &middot; 16:9</span><button class="rf-copy" type="button">Copy</button></div>
+      <pre class="mj-pre">a vintage wooden hand-cart hitched to a modern jet engine mid-launch, the cart trailing a faint dust streak, a small suited figure steadying it, on a pure white ground, muted editorial spot illustration, pure white #FFFFFF background with only a faint warm cream #F5F3EF tint, chalky risograph grain, restrained Nordic palette built from muted brand shades - dusty blue #7D97B5, slate navy #3E4C6E and dusty violet #8B84A8 for accent and second plane, soft warm charcoal #3A3733 and warm greys #9A948C for mass, signal-red #E3120B reserved for a single rare focal detail on the engine intake, low gentle contrast, generous negative space, minimal and calm, premium, screen-print texture --ar 16:9 --style raw --stylize 120 --no pure black, harsh shadows, neon, electric blue, glossy 3d render, high saturation, cream fill background, beige background, off-white paper --p m7465697161997451288</pre>
+    </div>
+    <figcaption style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Generate in MidJourney, then replace this card with the image. One hero visual, 16:9, illustration: <em class="rf">realfast</em>.</figcaption>
+  </figure>
+
+  <div data-reveal style="max-width:var(--container);margin:36px auto 0;padding:0 40px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rf-ed-rule);border:1px solid var(--rf-ed-rule);">
+      <div style="background:var(--rf-paper);padding:28px 24px;"><div style="font-family:var(--font-serif);font-size:48px;line-height:1;font-weight:600;color:var(--rf-ed-red);">3.5x</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Faster delivery</div></div>
+      <div style="background:var(--rf-paper);padding:28px 24px;"><div style="font-family:var(--font-serif);font-size:48px;line-height:1;font-weight:600;color:var(--rf-ed-ink);">48 hrs</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">To first verified deliverable</div></div>
+      <div style="background:var(--rf-paper);padding:28px 24px;"><div style="font-family:var(--font-serif);font-size:48px;line-height:1;font-weight:600;color:var(--rf-ed-ink);">&lt;1 wk</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Analysis per scope (vs 1-3 mo)</div></div>
+      <div style="background:var(--rf-paper);padding:28px 24px;"><div style="font-family:var(--font-serif);font-size:48px;line-height:1;font-weight:600;color:var(--rf-ed-ink);">65%</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Of pipeline in QA/UAT by week 8</div></div>
+    </div>
+  </div>
+
+  <div class="stage" style="max-width:var(--container);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;">
+
+    <nav class="rail" style="position:sticky;top:48px;padding-top:96px;font-family:var(--font-sans);">
+      <div style="font-size:13px;font-weight:600;color:var(--rf-ed-faint);margin-bottom:20px;">The story</div>
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+        <li><a class="raillink" href="#problem" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The problem</a></li>
+        <li><a class="raillink" href="#mattered" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>Why it mattered</a></li>
+        <li><a class="raillink" href="#did" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>What we did</a></li>
+        <li><a class="raillink" href="#build" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The build</a></li>
+        <li><a class="raillink" href="#metric" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>The metric moved</a></li>
+        <li><a class="raillink" href="#learned" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>What we learned</a></li>
+        <li><a class="raillink" href="#next" style="display:flex;align-items:center;gap:12px;font-size:14px;"><span class="railtick" style="height:2px;width:14px;background:var(--rf-ed-rule);transition:all var(--dur-base) var(--ease-standard);"></span>What&rsquo;s next</a></li>
+      </ol>
+    </nav>
+
+    <main style="min-width:0;padding-top:88px;padding-bottom:72px;">
+
+      <section id="problem" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:2px solid var(--rf-ed-ink);">
+        <div data-reveal class="kicker" style="margin-top:20px;">01 &middot; The problem</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">Extend a decades-old platform into a new market. Internal estimate: 8 to 9 months.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 18px;max-width:var(--measure);">The client - a leading APAC Corporate Services SaaS ($150M revenue) - needed to extend their platform into a new geography - a major expansion that touched payments, compliance, reporting, and multiple interconnected modules built over decades. The internal estimate for this work was 8-9 months.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0;max-width:var(--measure);">The legacy platform itself was a challenging constraint. Five million lines of code, multi-currency, multi-market - where any change in one module carried downstream consequences across others. This was precision surgery on a live, complex system that serves customers across APAC.</p>
+      </section>
+
+      <section id="mattered" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">02 &middot; Why it mattered</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">The scope was broad, the deadline was fixed, and the platform could not break.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 24px;max-width:var(--measure);">A fixed launch date meant the market-entry window could not slip. But the platform was live, interconnected, and unforgiving: a mistake in payments or compliance would ripple across every market it already served. Moving fast and breaking things was not an option; the work had to be both fast and exact.</p>
+        <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rf-ed-rule);border:1px solid var(--rf-ed-rule);max-width:var(--measure);">
+          <div style="background:var(--rf-paper-cream);padding:22px 24px;"><div style="font-family:var(--font-serif);font-size:34px;font-weight:600;line-height:1;">5M</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:8px;">lines of interconnected code</div></div>
+          <div style="background:var(--rf-paper-cream);padding:22px 24px;"><div style="font-family:var(--font-serif);font-size:34px;font-weight:600;line-height:1;">8-9 mo</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:8px;">the internal delivery estimate</div></div>
+        </div>
+      </section>
+
+      <section id="did" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">03 &middot; What we did</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:24ch;">We ran an AI-first delivery model: agents for speed, engineers for judgement.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 22px;max-width:var(--measure);">The <em class="rf">realfast</em> approach to AI-first delivery emerges out of two areas of expertise: our mastery of frontier models and coding tools, and building human+AI hybrid teams that combine AI-driven speed with human-driven judgment.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 22px;max-width:var(--measure);">In practice, this translates into three layers of execution: what we fully delegate to agents, how agents amplify our engineers, and where human judgment remains irreplaceable. Underpinning these are deep code intelligence across the full codebase, and continuous tooling research so the team is always working with the best available models for the job.</p>
+        <ul data-reveal style="list-style:none;padding:0;margin:0;max-width:var(--measure);display:flex;flex-direction:column;gap:14px;">
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Delegate.</strong> Templated documentation, weekly status reports from Jira, and discovery-call transcripts, handled by agents.</li>
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Amplify.</strong> Agents navigated the codebase, drafted implementation plans, queried data models, and mapped dependencies alongside our engineers.</li>
+          <li style="position:relative;padding-left:22px;font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;"><span style="position:absolute;left:0;top:0.55em;width:8px;height:8px;background:var(--rf-ed-red);"></span><strong style="font-weight:700;">Judge.</strong> No single agent catches everything at this scale, so work was cross-verified across 2 to 3 agents, with engineers owning every tradeoff.</li>
+        </ul>
+      </section>
+
+      <section id="build" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">04 &middot; The build</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">A daily delivery cadence, running on agent-scale infrastructure.</h2>
+        <h3 data-reveal style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 10px;">Engagement setup</h3>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 18px;max-width:var(--measure);">The moment we were onboarded, our infrastructure kicked in: agents indexing the client&rsquo;s codebase, mapping critical paths across their multi-market platform, tracing flows from UI to database. Skills and MCP integrations were configured for their specific toolchain - Jira, TestRail, Mantis, and the internal systems their teams use daily. By the time the first sprint started, our team had the scaffolding to navigate a codebase they&rsquo;d never seen before.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 28px;max-width:var(--measure);">The first technical analysis, covering a scope the client&rsquo;s internal teams had estimated at 1-3 months, was delivered in under a week.</p>
+        <h3 data-reveal style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 10px;">Agent usage</h3>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 20px;max-width:var(--measure);">From there, we structured agent usage across two layers:</p>
+        <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:var(--measure);margin:0 0 28px;">
+          <div>
+            <div style="font-family:var(--font-sans);font-size:13px;font-weight:700;color:var(--rf-ed-red);margin-bottom:12px;">Fully delegated to agents</div>
+            <ul class="sqlist">
+              <li>Documents structured as templates and populated in TestRail, Mantis, and the client&rsquo;s internal tools.</li>
+              <li>Weekly status reports generated from the client&rsquo;s Jira data.</li>
+              <li>Discovery call transcripts parsed, screenshots extracted from raw video so the team could reference the exact client conversation later.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:var(--font-sans);font-size:13px;font-weight:700;color:var(--rf-ed-red);margin-bottom:12px;">Agents amplifying our engineers</div>
+            <ul class="sqlist">
+              <li>Navigating the client&rsquo;s codebase alongside their call recordings and scope documents, making informed tradeoffs without waiting for the next overlap window.</li>
+              <li>Drafting implementation plans, querying the client&rsquo;s databases to understand their data models, and setting up exact test data matching their production schemas.</li>
+              <li>Building custom code indexers to map dependencies across the platform, and custom UIs to turn agent-generated markdown into navigable architectural views.</li>
+            </ul>
+          </div>
+        </div>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 28px;max-width:var(--measure);">At this scale, no single agent catches everything. We cross-verified work across 2-3 agents, each catching things the others missed.</p>
+        <h3 data-reveal style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 10px;">Tooling agility</h3>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 18px;max-width:var(--measure);">Claude Code was our primary tool from day one. As the engagement progressed, Codex emerged as a powerful option as well. Given the complexity of the codebase and the fixed deadline, we adopted both - leveraging the unique strengths of each tool to give our engineers broader coverage across five million lines of code, maintaining delivery velocity without any drop in quality.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 28px;max-width:var(--measure);">AI tools and model capabilities are improving every day. Our true edge at <em class="rf">realfast</em> isn&rsquo;t a specific tool, it&rsquo;s the operational framework that turns these models into outcomes.</p>
+        <h3 data-reveal style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 10px;">Delivery in motion</h3>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0 0 28px;max-width:var(--measure);">From the second week of the engagement, the client had deliverables moving through the system. Every 24 hours, the client&rsquo;s team had something to review: a PR ready for sign-off, a clarification on a scope decision, tickets moving into QA.</p>
+        <figure data-reveal data-om-raster style="margin:0;">
+          <div class="chart">
+            <div class="chart-title">Delivery Pipeline: Week 2 to Week 8</div>
+            <div class="chart-sub">54 feature tickets across 5 scopes. Zero tickets in development by week 8.</div>
+            <div class="chart-cols">
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">5</div><div class="chart-seg" style="height:6px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:22px;background:var(--rf-illus-dusty-blue);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">17</div><div class="chart-seg" style="height:11px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:67px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:11px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:6px;background:var(--success);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">22</div><div class="chart-seg" style="height:17px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:44px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:33px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:28px;background:var(--success);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">38</div><div class="chart-seg" style="height:22px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:11px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:139px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:39px;background:var(--success);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">47</div><div class="chart-seg" style="height:39px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:50px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:89px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:83px;background:var(--success);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">53</div><div class="chart-seg" style="height:44px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:50px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:11px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:189px;background:var(--success);"></div></div></div>
+              <div class="chart-col"><div class="chart-stack"><div class="chart-total">54</div><div class="chart-seg" style="height:17px;background:var(--rf-illus-pale-blue);"></div><div class="chart-seg" style="height:22px;background:var(--rf-illus-dusty-blue);"></div><div class="chart-seg" style="height:39px;background:var(--rf-illus-slate-navy);"></div><div class="chart-seg" style="height:222px;background:var(--success);"></div></div></div>
+            </div>
+            <div class="chart-x"><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span></div>
+            <div class="chart-legend"><span><i style="background:var(--rf-illus-pale-blue);"></i>Pre-Dev</span><span><i style="background:var(--rf-illus-dusty-blue);"></i>Active Dev</span><span><i style="background:var(--rf-illus-slate-navy);"></i>In QA</span><span><i style="background:var(--success);"></i>Cleared QA / UAT</span></div>
+          </div>
+          <figcaption style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">Delivery pipeline, week 2 to week 8.</figcaption>
+        </figure>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:28px 0 0;max-width:var(--measure);">Because agents handled documentation for every PR and systematically traced every flow in the codebase, the traceability was better than most manual processes. Our engineers even uncovered an unrelated production API issue in the client&rsquo;s existing platform, which was flagged to their engineering leadership and resolved. When the client&rsquo;s QA team raised five issues during UAT, <em class="rf">realfast</em> diagnosed, fixed, and verified four of them within a single day.</p>
+      </section>
+
+      <!-- THE METRIC MOVED -->
+      <section id="metric" data-chapter class="metric" style="scroll-margin-top:48px;margin:8px 0 64px;">
+        <div style="background:var(--rf-paper-cream);border:1px solid var(--rf-ed-rule);padding:56px 48px;">
+          <div data-reveal class="kicker" style="margin-bottom:20px;">05 &middot; The metric moved</div>
+          <div data-reveal style="font-family:var(--font-serif);font-size:clamp(44px,7vw,96px);line-height:0.95;font-weight:700;margin:0 0 10px;"><span style="color:var(--rf-ed-red);">3.5x</span> <span style="color:var(--rf-ed-ink);">faster</span></div>
+          <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-dek-size);color:var(--rf-ed-ink-soft);margin:0 0 40px;max-width:46ch;">Work the client scoped at 8 to 9 months, delivered in roughly 10 weeks.</p>
+
+          <div data-reveal style="max-width:700px;margin-bottom:40px;">
+            <div class="bar-row"><div class="bar-lbl">Internal estimate</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--rf-illus-dusty-blue);"></div></div><div class="bar-val" style="color:var(--rf-ed-muted);">8-9 mo</div></div>
+            <div class="bar-row"><div class="bar-lbl"><em class="rf">realfast</em> delivered</div><div class="bar-track"><div class="bar-fill" style="width:29%;background:var(--rf-ed-red);"></div></div><div class="bar-val">2.5 mo</div></div>
+          </div>
+
+          <div data-reveal style="font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-red);margin-bottom:2px;">How it moved</div>
+          <div data-reveal class="proc">
+            <div class="proc-step"><div class="proc-k">Week 1</div><div class="proc-t">Full-codebase context indexed and shared with the client.</div></div>
+            <div class="proc-step"><div class="proc-k">Week 2</div><div class="proc-t">Daily deliverables begin: a PR or decision every 24 hours.</div></div>
+            <div class="proc-step"><div class="proc-k">Weeks 3-7</div><div class="proc-t">Cross-verified agent delivery, new scopes absorbed mid-flight.</div></div>
+            <div class="proc-step"><div class="proc-k">Week 8</div><div class="proc-t">65% of pipeline in QA sign-off or UAT.</div></div>
+          </div>
+
+          <div style="height:1px;background:var(--rf-ed-rule);margin:40px 0 28px;"></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">48 hrs</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">to first client-verified deliverable</div></div>
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">&lt;1 wk</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">analysis per scope (vs 1-3 months)</div></div>
+            <div data-reveal><div style="font-family:var(--font-serif);font-size:40px;font-weight:600;color:var(--rf-ed-ink);line-height:1;">4 of 5</div><div style="font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);margin-top:10px;">UAT issues fixed and verified in a day</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="learned" data-chapter style="scroll-margin-top:48px;padding:8px 0 64px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">06 &middot; What we learned</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 24px;max-width:22ch;">Three things this engagement proved.</h2>
+        <div style="display:flex;flex-direction:column;gap:22px;max-width:var(--measure);">
+          <div data-reveal style="border-top:1px solid var(--rf-ed-rule);padding-top:16px;"><h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 8px;">Context compounds.</h3><p style="font-family:var(--font-serif);font-size:16px;line-height:1.55;color:var(--rf-ed-ink-soft);margin:0;">The delivery cadence - new scopes absorbed mid-flight, zero tickets stuck in development by week 8 - came from the discovery work <em class="rf">realfast</em> did before the first ticket was written. At the end of week 1, we shared complete documentation of the client&rsquo;s system and processes to build common understanding. When they started building, they did so with context.</p></div>
+          <div data-reveal style="border-top:1px solid var(--rf-ed-rule);padding-top:16px;"><h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 8px;">Agent-scale delivery requires robust infrastructure.</h3><p style="font-family:var(--font-serif);font-size:16px;line-height:1.55;color:var(--rf-ed-ink-soft);margin:0;">If not planned carefully, operating at this cadence means exponentially more commits, PRs, and deploys hitting the client&rsquo;s CI/CD pipeline every day, at volumes most pre-agentic engineering environments are not built for. We work with the clients&rsquo; product and engineering teams to ensure the SDLC can operate at this speed.</p></div>
+          <div data-reveal style="border-top:1px solid var(--rf-ed-rule);padding-top:16px;"><h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;margin:0 0 8px;">The ratio inverts.</h3><p style="font-family:var(--font-serif);font-size:16px;line-height:1.55;color:var(--rf-ed-ink-soft);margin:0;">A traditional services team of eight engineers on this engagement would have spent most of their time writing code and escalating questions. <em class="rf">realfast</em>&rsquo;s engineers spent roughly 70% of their time on understanding and judgment, 30% on code. A daily delivery cadence makes this possible. This is an example of superhuman delivery made possible with AI.</p></div>
+        </div>
+      </section>
+
+      <section id="next" data-chapter style="scroll-margin-top:48px;padding:8px 0 8px;border-top:1px solid var(--rf-ed-rule);">
+        <div data-reveal class="kicker" style="margin-top:20px;">07 &middot; What&rsquo;s next</div>
+        <h2 data-reveal style="font-family:var(--font-serif);font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:var(--track-snug);font-weight:600;margin:0 0 20px;max-width:22ch;">Agent-scale delivery is a team sport, and this partnership set the pace.</h2>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:0;max-width:var(--measure);">Agent-scale delivery is a team sport. <em class="rf">realfast</em> can compress discovery, structure agentic workflows, and maintain a daily delivery cadence. But none of that matters if the client&rsquo;s organisation isn&rsquo;t playing by agentic rules. On this engagement, the client didn&rsquo;t just keep up. They set the pace.</p>
+        <p data-reveal style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);margin:20px 0 0;max-width:var(--measure);">This is rare. Most organisations say they want to move fast. This client&rsquo;s organisation actually moved fast because the results warranted it. When a client is fully committed to an AI-native delivery cadence, the results are genuinely transformative.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ══ BOOK A DEMO ══ -->
+  <section class="rf-demo" id="demo" style="background:var(--rf-paper-cream);border-top:2px solid var(--rf-ed-ink);">
+    <div style="max-width:var(--container);margin:0 auto;padding:64px 40px 72px;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start;">
+      <div>
+        <div class="kicker">Book a demo</div>
+        <h2 style="font-family:var(--font-serif);font-size:clamp(28px,3.6vw,46px);line-height:1.04;letter-spacing:var(--track-tight);font-weight:600;margin:0 0 18px;max-width:15ch;">Experience the power of agents, firsthand.</h2>
+        <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);color:var(--rf-ed-ink-soft);margin:0;max-width:44ch;">Tell us where you want to move faster. We&rsquo;ll set up a working session and show you agent-scale delivery on your own stack.</p>
+      </div>
+      <div data-rf-lead-form>
+        <form data-rf-lead style="display:flex;flex-direction:column;gap:18px;">
+          <div><label class="lbl">Your name *</label><input class="fld" name="name" required></div>
+          <div><label class="lbl">Work email *</label><input class="fld" type="email" name="email" required></div>
+          <div><label class="lbl">Company name *</label><input class="fld" name="company" required></div>
+          <div><label class="lbl">LinkedIn profile</label><input class="fld" name="linkedin"></div>
+          <div><label class="lbl">How did you hear about us? *</label><select class="fld" name="source" required><option value="">Select an option</option><option>Google / Search Engine</option><option>LinkedIn</option><option>Referral from colleague or friend</option><option>Blog / Article</option><option>Event or Webinar</option><option>Other</option></select></div>
+          <button type="submit" class="rf-btn">Book a demo &rarr;</button>
+        </form>
+        <div data-rf-lead-success style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
+          <div class="kicker" style="margin-bottom:12px;">Let&rsquo;s go</div>
+          <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;margin:0;">Thanks, we&rsquo;ll be in touch shortly to set up your session.</p>
+        </div>
+        <div data-rf-lead-error style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
+          <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:1.5;margin:0;">Something went wrong. <button type="button" data-rf-lead-retry style="font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--rf-ed-red);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;">Try again</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DOWNLOAD PDF - CTA ══ -->
+  <div class="rf-dlcta" style="max-width:var(--container);margin:0 auto;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <div>
+      <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 6px;">Take this case study with you</h3>
+      <p style="font-family:var(--font-sans);font-size:15px;color:var(--rf-ed-muted);margin:0;">Save a clean, print-ready PDF to share internally or send to your team.</p>
+    </div>
+    <button class="rf-btn" data-dl type="button" style="background:var(--success);">Download PDF</button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    const reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const show = (el) => { el.style.opacity = ''; el.classList.add('is-in'); };
+      const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight || 0) && r.bottom > 0; };
+      reveals.forEach(el => { if (!inView(el)) el.style.opacity = '0'; });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+      setTimeout(() => reveals.forEach(el => { if (el.style.opacity === '0') show(el); }), 1000);
+    }
+    const links = Array.from(root.querySelectorAll('.raillink'));
+    const chapters = Array.from(root.querySelectorAll('[data-chapter]'));
+    if (chapters.length && links.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { const id = e.target.id; links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id)); } });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      chapters.forEach(c => spy.observe(c));
+    }
+    links.forEach(l => l.addEventListener('click', (ev) => {
+      const id = l.getAttribute('href');
+      const target = root.querySelector(id);
+      if (target) { ev.preventDefault(); const y = target.getBoundingClientRect().top + window.pageYOffset - 40; window.scrollTo({ top: y, behavior: 'smooth' }); }
+    }));
+    const dl = root.querySelector('[data-dl]');
+    if (dl) dl.addEventListener('click', () => window.print());
+    const form = root.querySelector('[data-rf-lead]');
+    const ok = root.querySelector('[data-rf-lead-success]');
+    const err = root.querySelector('[data-rf-lead-error]');
+    const retry = root.querySelector('[data-rf-lead-retry]');
+    if (form) form.addEventListener('submit', (ev) => { ev.preventDefault(); form.style.display = 'none'; if (err) err.style.display = 'none'; if (ok) ok.style.display = 'block'; });
+    if (retry) retry.addEventListener('click', () => { if (err) err.style.display = 'none'; if (form) form.style.display = 'flex'; });
+    root.querySelectorAll('.rf-copy').forEach(btn => btn.addEventListener('click', () => {
+      const pre = btn.closest('.mj').querySelector('.mj-pre'); if (!pre) return;
+      const t = pre.innerText;
+      const done = () => { const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = o; }, 1400); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done();
+    }));
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

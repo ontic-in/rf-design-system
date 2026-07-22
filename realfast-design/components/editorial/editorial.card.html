@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="700x520" name="Editorial — Rubric, Share, Pull-quote, Cards" subtitle="The Economist publication primitives" -->
+<!-- @dsCard group="Components" viewport="780x1626" name="Editorial — Article header, Author bio, Cards" subtitle="The Economist publication primitives" -->
 <!DOCTYPE html>
 <html lang="en" data-theme="editorial">
 <head>
@@ -17,10 +17,30 @@
   <script src="../../_ds_bundle.js"></script>
   <div id="root"></div>
   <script type="text/babel">
-    const { Rubric, ShareButton, PullQuote, EditorialBlogCard } = window.RealfastDesignSystem_e02a4e;
+    const { Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio } = window.RealfastDesignSystem_e02a4e;
     function Demo() {
       return (
         <div>
+          <div className="sec">
+            <p className="lbl">Article header</p>
+            <ArticleHeader
+              section="Insights" sub="The realfast view"
+              title="AI doesn't have bad taste. It's just missing constraints."
+              dek="Teams are shipping internal tools faster than ever, and the interfaces all look subtly off. The real problem is constraints — and where they now need to live."
+              author="Manas Vaze" role="UX Design Lead"
+              avatar="../../assets/illustrations/a1.png"
+              date="Jul 13th 2026" readTime="5 min read" />
+          </div>
+          <div className="sec">
+            <p className="lbl">Author bio — page header</p>
+            <AuthorBio
+              backHref="#"
+              name="Manas Vaze" role="UX Design Lead"
+              avatar="../../assets/illustrations/a1.png"
+              meta="1 post · Insights · Writing since Jul 2026"
+              bio="UX Design Lead at realfast. Writes about design systems, constraints, and building coherent product in an AI-first workflow."
+              links={[{ label: "LinkedIn", href: "#" }]} />
+          </div>
           <div className="sec">
             <p className="lbl">Rubric</p>
             <Rubric section="Insights" sub="The realfast view" />
@@ -39,7 +59,7 @@
               section="Insights" sub="The realfast view"
               title="Your AI Roadmap Probably Has Too Much AI"
               dek="Most production systems should use AI at the edges and deterministic code in the core."
-              date="May 21st 2026" readTime="6 min read"
+              author="Paulomi Gudka" date="May 21st 2026" readTime="6 min read"
               image="../../assets/illustrations/stacked-slabs.png" />
           </div>
           <div className="sec">
@@ -48,7 +68,7 @@
               section="realfast labs" sub="From the Labs"
               title="Nobody Sets Out to Build a Context Graph"
               dek="We tried to fix our timesheets and accidentally built a context graph."
-              date="Jan 30th 2026" readTime="7 min read"
+              author="Aniket Hendre" date="Jan 30th 2026" readTime="7 min read"
               image="../../assets/illustrations/crane-paperwork.png" />
           </div>
         </div>
@@ -56,5 +76,6 @@
     }
     ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
   </script>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Blog listing + article primitives. Featured (image-led) for the lead post, row for the list; every card carries a Rubric, headline and By-line. Use inside [data-theme="editorial"] with Source Serif 4 headlines.</p>
 </body>
 </html>

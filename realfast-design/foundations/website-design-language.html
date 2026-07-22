@@ -1,0 +1,303 @@
+<!-- @dsCard group="Website" viewport="1280x900" name="Website Design Language" subtitle="Additive web layer over the core editorial system — dark bands, gradient words, seamless flow, motion" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-serif); background: var(--rf-white); color: var(--rf-ed-ink); padding: 28px 34px; line-height: 1.55; }
+  .doc { max-width: 100%; }
+  .kicker { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rf-ed-red); margin: 0 0 6px; }
+  h1 { font-size: 34px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px; }
+  .intro { font-size: 17px; color: var(--rf-ed-ink-soft); margin: 0 0 6px; }
+  .intro em { font-style: italic; }
+  .core-note { font-size: 14.5px; color: var(--rf-ed-muted); margin: 10px 0 0; }
+  hr { border: 0; border-top: 1px solid var(--rf-ed-rule-warm); margin: 30px 0; }
+  section { display: grid; grid-template-columns: 150px 1fr; gap: 32px; align-items: start; margin: 0 0 30px; }
+  .sec-no { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rf-ed-red); padding-top: 4px; }
+  .sec-body h2 { font-size: 22px; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .sec-body p { font-size: 16px; margin: 0 0 14px; }
+  .sec-body p:last-child, .sec-body ul:last-child, .sec-body pre:last-child, .sec-body table:last-child { margin-bottom: 0; }
+  .sec-body strong { font-weight: 600; }
+  .sec-body ul { margin: 0 0 14px; padding-left: 20px; font-size: 15.5px; }
+  .sec-body li { margin: 0 0 6px; }
+  code { font-family: 'IBM Plex Mono',monospace; font-size: 0.86em; background: var(--rf-illus-bone); padding: 1px 5px; color: var(--rf-illus-charcoal); }
+  pre { margin: 0 0 14px; padding: 14px 16px; background: var(--rf-illus-charcoal); color: #e9e6df; font-family: 'IBM Plex Mono',monospace; font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; overflow-x: auto; }
+  pre .cm { color: #9a948c; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 0 0 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--rf-ed-rule); vertical-align: top; }
+  th { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rf-ed-muted); }
+  td code { font-size: 0.82em; }
+  .dd { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .dd h3 { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding-bottom: 8px; margin: 0 0 12px; }
+  .dd .do h3 { color: var(--rf-ed-ink); border-bottom: 2px solid var(--rf-ed-ink); }
+  .dd .dont h3 { color: var(--rf-ed-muted); border-bottom: 2px solid var(--rf-ed-muted); }
+  .dd ul { padding-left: 18px; font-size: 14.5px; }
+</style>
+</head>
+<body>
+<div class="doc">
+  <p class="kicker">Website &middot; Design language</p>
+  <h1><em>realfast</em> Website Design Language</h1>
+  <p class="intro">An <strong>additive extension</strong> to the core <em>realfast</em> editorial design system, dedicated to the <strong>marketing website</strong> (About, People &amp; Culture, Security, and future long-scroll pages). The core system stays authoritative for print/templates; this layer defines how that look behaves on a <strong>dark-punctuated, animated, full-bleed scrolling web page</strong>.</p>
+  <p class="core-note">Everything here is additive — the core rules still hold: name always lowercase + italic (<em>realfast</em>), single spaced hyphens (no em-dashes), US spelling if consistent, no emoji, one red accent used sparingly, plain-spoken and specific voice.</p>
+
+  <hr>
+
+  <section>
+    <div class="sec-no">01 &middot; In one line</div>
+    <div class="sec-body">
+      <h2>The website look in one line</h2>
+      <p><strong>An editorial newspaper that scrolls like a story.</strong> Warm paper and cream sections alternate down the page, punctuated by a few deliberately premium near-black bands. Serif headlines carry gradient-filled accent words. Everything arrives on scroll with restrained motion. No boxes, no divider lines — sections flow into one another on soft shadow alone.</p>
+      <ul>
+        <li><strong>Dark bands are never flat black.</strong> They always carry a layered gradient + red glow + hairline highlight (§4).</li>
+        <li><strong>Sections never touch with a hard line.</strong> Continuity comes from a soft shadow the band casts onto the next, not a <code>border</code> or <code>&lt;hr&gt;</code>.</li>
+        <li><strong>Accent words are gradient-filled</strong>, not flat color (§3).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">02 &middot; Color</div>
+    <div class="sec-body">
+      <h2>Color (website usage)</h2>
+      <p>Built on the core tokens; the website leans on these semantic roles.</p>
+      <table>
+        <tr><th>Role</th><th>Value</th><th>Use</th></tr>
+        <tr><td>Accent red</td><td><code>#E3120B</code> (<code>--accent</code> / <code>--rf-red-500</code>)</td><td>CTAs, rubrics, active states, focal detail</td></tr>
+        <tr><td>Light red (on dark)</td><td><code>#F0524D</code> (<code>--rf-red-400</code>)</td><td>accent words / rubrics on dark bands</td></tr>
+        <tr><td>Ink base</td><td><code>#111111</code></td><td>body text on light</td></tr>
+        <tr><td>Paper</td><td>white <code>#FFFFFF</code></td><td>primary light band</td></tr>
+        <tr><td>Cream</td><td><code>--surface-raised</code></td><td>alternating light band</td></tr>
+        <tr><td>Dark-band charcoals</td><td><code>#1d1c1a → #121211 → #0c0c0b</code></td><td>premium ink gradient (§4)</td></tr>
+        <tr><td>Final CTA black</td><td>from <code>#050505</code></td><td>deepest band, page close</td></tr>
+      </table>
+      <p>Alternating light sections <strong>white → cream → white</strong> create reading rhythm. Warm greys (<code>#57534A</code>) carry secondary UI (icon glyphs at rest) so red stays reserved.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">03 &middot; Gradient words</div>
+    <div class="sec-body">
+      <h2>Gradient accent words (signature)</h2>
+      <p>The website's single most recognizable device. Key words inside serif headlines on dark bands are <strong>gradient-filled via <code>background-clip:text</code></strong> instead of a flat color.</p>
+      <pre><span class="cm">/* red accent words: "metric", "shipped", "AI", "honest", "safe" */</span>
+background: linear-gradient(100deg, #ffb3ae 0%, var(--rf-red-400) 55%, #c00d07 100%);
+-webkit-background-clip: text; background-clip: text; color: transparent;
+
+<span class="cm">/* white accent words: "features", "humans", "architects" */</span>
+background: linear-gradient(100deg, #ffffff 15%, #d8d3c8 85%);
+-webkit-background-clip: text; background-clip: text; color: transparent;
+
+<span class="cm">/* mission / closing phrase (longer, warmer sweep) */</span>
+background: linear-gradient(100deg, #f0554f 0%, #E3120B 45%, #a30b06 100%);</pre>
+      <ul>
+        <li>Use only on <strong>1-2 words per headline</strong> — the contrast pair (AI <em>vs</em> humans, features <em>vs</em> metric). Never gradient a whole line.</li>
+        <li>On italic words add <code>padding-right:.05em</code> so the clip doesn't crop the terminal stroke.</li>
+        <li>Base headline color stays dim white (<code>rgba(255,255,255,.66)</code>) so the gradient words pop.</li>
+        <li>The pattern encodes meaning: <strong>red = machine/AI, white = human judgment.</strong> Keep that mapping consistent.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">04 &middot; Dark bands</div>
+    <div class="sec-body">
+      <h2>Premium dark bands</h2>
+      <p>Dark sections (hero, final CTA, the occasional ink chapter) are <strong>never flat <code>background:#111</code></strong>. They stack:</p>
+      <pre>background:
+  radial-gradient(ellipse 85% 65% at 50% -12%, rgba(227,18,11,.22), transparent 62%),  <span class="cm">/* red glow, top */</span>
+  radial-gradient(ellipse 60% 45% at 85% 110%, rgba(227,18,11,.08), transparent 65%),  <span class="cm">/* faint 2nd glow */</span>
+  linear-gradient(180deg, #1d1c1a 0%, #121211 55%, #0c0c0b 100%);                       <span class="cm">/* charcoal grad */</span>
+box-shadow:
+  inset 0 1px 0 rgba(255,255,255,.07),        <span class="cm">/* hairline top highlight */</span>
+  inset 0 -40px 80px rgba(0,0,0,.35);         <span class="cm">/* soft bottom vignette */</span></pre>
+      <ul>
+        <li><strong>Hero:</strong> glow radiates from the <strong>top</strong> edge (entering the page).</li>
+        <li><strong>Final CTA band:</strong> glow rises from the <strong>bottom</strong> behind the buttons; gradient runs dark-to-warm downward; starts from <code>#050505</code>.</li>
+        <li><strong>Inline ink chapter:</strong> milder — glow <code>.16</code>, gradient <code>#1c1b1a → #0e0e0d</code>, plus a faint light border so it reads as an elevated dark card within light surroundings.</li>
+      </ul>
+      <p>The intent: depth and warmth, so dark bands feel like premium print stock, not a PowerPoint black slide.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">05 &middot; Section flow</div>
+    <div class="sec-body">
+      <h2>Seamless section flow (no rules, no boxes)</h2>
+      <p>Full-bleed sections stack edge to edge. <strong>Never</strong> separate them with a <code>border</code>, <code>&lt;hr&gt;</code>, or a floating card with margins. Continuity is a soft shadow each band casts onto the next:</p>
+      <pre><span class="cm">/* light band */</span>
+box-shadow: 0 24px 40px -32px rgba(17,17,17,.14);
+position: relative; z-index: 1;
+
+<span class="cm">/* inset variant (shadow reads at top of receiving band) */</span>
+box-shadow: inset 0 28px 32px -30px rgba(17,17,17,.18);   <span class="cm">/* ink band: rgba(0,0,0,.55) */</span></pre>
+      <p>Chapters are <strong>full-bleed alternating white/cream</strong> — not rounded cards. Content cards <em>inside</em> a section still exist (§6), but the section shells themselves do not. Rubrics get <strong>no hairline rule</strong> beside them.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">06 &middot; Cards</div>
+    <div class="sec-body">
+      <h2>Cards (the "premium" content-card system)</h2>
+      <p>For content blocks <em>within</em> a light section (principle cards, strip cards, panels):</p>
+      <pre>border: 4px solid #fff;
+background: linear-gradient(165deg, #ffffff 0%, var(--surface-raised) 60%);  <span class="cm">/* not flat cream */</span>
+border-radius: 24px;  <span class="cm">/* 20px mobile · 12px tiles · 999px pills */</span>
+box-shadow: 0 6px 18px rgba(17,17,17,.08), 0 20px 44px rgba(17,17,17,.1);   <span class="cm">/* tight + ambient */</span>
+transition: transform .35s ease, box-shadow .35s ease;</pre>
+      <ul>
+        <li><strong>Hover:</strong> lift <code>translateY(-3px)</code>, shadow deepens.</li>
+        <li><strong>Padding:</strong> roomy — desktop ~36-44px sides / 40-48px bottom; mobile ~34px 30px 38px. Cards must breathe.</li>
+        <li><strong>No internal seams:</strong> an illustration container inside a card has no background of its own and no divider between image and text.</li>
+        <li>Portrait/photo cards: 4px white border + layered shadow, B&amp;W at rest → color on hover, lift <code>-5px</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">07 &middot; Icons</div>
+    <div class="sec-body">
+      <h2>Iconography</h2>
+      <p>Core system uses Lucide outline; the website adds a <strong>premium icon-chip treatment</strong> for repeated icon buttons (social/profile links, feature chips):</p>
+      <pre><span class="cm">/* 34px desktop · 40px mobile circle */</span>
+background: linear-gradient(145deg, #ffffff, var(--surface-raised));
+border: 1px solid var(--border);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 2px 6px rgba(17,17,17,.06);
+color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</span></pre>
+      <ul>
+        <li><strong>Hover:</strong> red border + red glyph + red-tinted shadow + <code>-1px</code> lift.</li>
+        <li>Feature/section icons: 56px gradient chips, hairline ring + inner highlight, finer 1.75px strokes in deep warm ink, duotone soft fills inside closed shapes.</li>
+        <li>Red is <strong>reserved</strong> — icons rest in warm grey, red only on hover or for CTAs/rubrics.</li>
+        <li>Filled Bootstrap-style 13px glyphs are OK inside small profile chips (LinkedIn / GitHub / RSS) where a filled set reads better at tiny sizes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">08 &middot; Type</div>
+    <div class="sec-body">
+      <h2>Typography (website scale)</h2>
+      <p>Core faces unchanged — <strong>Source Serif 4</strong> (headlines/body/quotes), <strong>IBM Plex Sans Condensed</strong> (labels/rubrics), monospace (counts/figures).</p>
+      <p><strong>Rubrics / kickers are SENTENCE CASE.</strong> No <code>text-transform:uppercase</code>, no letterspacing. Bold, red, sans — e.g. "About realfast", "Our mission", "The model", "Join us". They stand out by weight and color, not by shouting. <em>(Exception: tiny meta rows like a city-name strip may stay small uppercase.)</em></p>
+      <table>
+        <tr><th>Element</th><th>Desktop</th><th>Mobile</th></tr>
+        <tr><td>Hero headline (serif)</td><td>68-74px</td><td>34-44px</td></tr>
+        <tr><td>Section headline (serif)</td><td>44-88px</td><td>28-46px</td></tr>
+        <tr><td>Standfirst / lede</td><td>21-33px</td><td>16.5-21px</td></tr>
+        <tr><td>Body</td><td>17-18px</td><td>15.5-16px</td></tr>
+        <tr><td>Rubric (sans)</td><td>15-17px</td><td>14px</td></tr>
+        <tr><td>Rail numeral (serif)</td><td>44px</td><td>32px</td></tr>
+      </table>
+      <p>Titles are claims, not topics. Back claims with real numbers.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">09 &middot; Motion</div>
+    <div class="sec-body">
+      <h2>Motion</h2>
+      <p>Restrained, editorial, one-shot. Decorative motion cheapens the tone.</p>
+      <ul>
+        <li><strong>Scroll reveal:</strong> IntersectionObserver, threshold ~0.08-0.1, fade-up 14-16px, 550-600ms <code>cubic-bezier(.22,.61,.36,1)</code>, fires once. Re-observe rows rendered after filter/accordion changes.</li>
+        <li><strong>Cards:</strong> rise with a subtle scale-in (<code>translateY(30px) scale(.97)</code> → none).</li>
+        <li><strong>Directional sweep (desktop):</strong> alternating chapters slide in from opposite sides (<code>translateX(±56px)</code>).</li>
+        <li><strong>Hero "beats":</strong> line 1, then line 2 (~240ms later), then scroll cue (~400ms), each a fade-up. Scroll cue bounces gently.</li>
+        <li><strong>Draws:</strong> accent underline draws left→right on section entry.</li>
+        <li><strong>Secondary content:</strong> fades in ~400ms <em>after</em> the primary body so the eye lands on the headline first.</li>
+        <li><strong>Failsafe:</strong> only force-reveal everything if the observer <em>never</em> fired (~3s with zero <code>.is-in</code>). Do NOT blanket-reveal on a timer — it kills the scroll animations.</li>
+        <li>Wrap all motion in <code>@media (prefers-reduced-motion: reduce)</code> and disable transforms there.</li>
+        <li><strong>No</strong> parallax, no Ken Burns on faces, no auto-playing carousels of people — dignity over spectacle.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">10 &middot; CTAs</div>
+    <div class="sec-body">
+      <h2>CTAs</h2>
+      <ul>
+        <li><strong>Primary:</strong> red-fill pill (<code>--rf-red-500</code>), 999px radius, ~17px 32px padding, white text.</li>
+        <li><strong>Secondary:</strong> ghost pill — transparent, <code>1px</code> border at 65% white on dark bands (must read clearly, not barely-there), fills to solid white on hover. Identical height/padding/radius to primary so they read as a set.</li>
+        <li><strong>No arrows on CTA buttons.</strong> A hover micro-lift/glow is the affordance.</li>
+        <li><strong>Hover:</strong> soft red glow (<code>0 8px 32px rgba(227,18,11,.35)</code>) on the primary; both may rise-in with a slight stagger.</li>
+        <li>Mobile: buttons stack <strong>full-width</strong>.</li>
+        <li>Real destinations: careers → <code>/careers</code>, apply → <code>join.realfast.ai</code>, contact → <code>/contact</code>, people → <code>/people</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">11 &middot; Spine</div>
+    <div class="sec-body">
+      <h2>Long-scroll page anatomy (the "spine")</h2>
+      <p>The About page established a reusable structure for narrative pages:</p>
+      <ul>
+        <li><strong>Site nav</strong> (existing header component).</li>
+        <li><strong>Premium ink hero</strong> — sentence-case kicker, big serif headline with gradient contrast words, two-beat entrance, scroll cue. Optional dim rail numeral ("00").</li>
+        <li><strong>Mission / standfirst band</strong> (cream, centered, no rules) — one bold idea, closing phrase in the red gradient.</li>
+        <li><strong>Numbered chapters</strong> — full-bleed alternating white/cream, seamless shadow flow. Desktop: <code>170px | 1fr</code> grid with a <strong>sticky left rail</strong> (44px serif numeral + sentence-case bold label). The active chapter's numeral turns red and scales ~1.08 as it enters; one chapter may be a premium ink band.</li>
+        <li><strong>CTA band</strong> (premium black gradient) — contrast-word headline, two pills, no arrows.</li>
+        <li><strong>Footer</strong> (existing component).</li>
+      </ul>
+      <p><strong>Explicitly not part of the pattern:</strong> no sticky utility/label bar, no scroll-progress line — both add chrome without helping the narrative. Active-chapter logic: active = last chapter whose top ≤ 45% of viewport and bottom &gt; 25%.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">12 &middot; Roster</div>
+    <div class="sec-body">
+      <h2>Directory / roster pattern (People page)</h2>
+      <ul>
+        <li><strong>Filter chips</strong> (inline row, not a dropdown): All · Leadership · GTM and AI Transformation · Engineering · Salesforce · Program Management · Lead Forward Deployed Engineers · Forward Deployed Engineers. <strong>Full-length names, no abbreviations.</strong> Active chip = ink fill + white text; labels never wrap. Mono "N people" count below. No search field.</li>
+        <li><strong>Department accordions:</strong> sentence-case bold header (15px / 14px mobile) + red mono count + chevron (rotates 180° open), 1px hairline. Leadership open by default; selecting a chip auto-opens that department. Roles spelled out in full.</li>
+        <li><strong>Person row:</strong> B&amp;W photo → color on hover, name, role, then premium icon chips (§7) linking blog-author / LinkedIn / GitHub (hidden if none).</li>
+        <li><strong>Photos:</strong> subtle B&amp;W/duotone at rest; normalize crops so eyes sit on a consistent line (<code>background-position</code> tuned per person).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">13 &middot; Imagery</div>
+    <div class="sec-body">
+      <h2>Imagery</h2>
+      <ul>
+        <li>Core signature (muted risograph spot illustration on cream) still applies for editorial/illustrative slots.</li>
+        <li>The website adds <strong>B&amp;W / duotone photography</strong> for people (warm, low-contrast, not glossy) and a <strong>3D render</strong> slot for the map/locations moment (16:9 desktop / 16:10 mobile, 12-14px radius). If a diorama video is supplied use <code>&lt;video muted loop autoplay playsinline&gt;</code>; otherwise ship the still.</li>
+        <li>Investor / partner logos render in <strong>ink on light</strong> (export ink versions; don't rely on a CSS <code>brightness(0)</code> filter in production).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">14 &middot; Recap</div>
+    <div class="sec-body">
+      <h2>Do / Don't recap</h2>
+      <div class="dd">
+        <div class="do">
+          <h3>Do</h3>
+          <ul>
+            <li>Flat paper + cream rhythm, premium dark punctuation.</li>
+            <li>Gradient contrast words, sentence-case red rubrics.</li>
+            <li>Seamless shadow flow between sections.</li>
+            <li>Layered card shadows + hover lift, roomy padding.</li>
+            <li>Warm-grey icons at rest, red on hover.</li>
+            <li>One-shot scroll reveals, reduced-motion safe.</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Don't</h3>
+          <ul>
+            <li>Flat black bands, hard divider lines, floating bordered section cards.</li>
+            <li>All-caps letterspaced rubrics, arrows on CTAs, barely-there ghost borders.</li>
+            <li>Blanket timer-reveal (kills scroll motion), parallax/Ken Burns on faces.</li>
+            <li>Red on resting icons, more than 1-2 gradient words per headline.</li>
+            <li>Any color outside the brand + illustration token set.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

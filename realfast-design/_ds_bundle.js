@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"RealfastDesignSystem_e02a4e","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"EditorialBlogCard","sourcePath":"components/editorial/EditorialBlogCard.jsx"},{"name":"PullQuote","sourcePath":"components/editorial/PullQuote.jsx"},{"name":"Rubric","sourcePath":"components/editorial/Rubric.jsx"},{"name":"ShareButton","sourcePath":"components/editorial/ShareButton.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cefcae4f173a","components/core/Button.jsx":"a2fe2858dc90","components/core/Card.jsx":"8d368a2e682e","components/editorial/EditorialBlogCard.jsx":"4b3bfaafb8d8","components/editorial/PullQuote.jsx":"2c6bcfa6b3bc","components/editorial/Rubric.jsx":"892259cb53bd","components/editorial/ShareButton.jsx":"7ee00900b7b4"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"RealfastDesignSystem_e02a4e","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"ArticleHeader","sourcePath":"components/editorial/ArticleHeader.jsx"},{"name":"AuthorBio","sourcePath":"components/editorial/AuthorBio.jsx"},{"name":"EditorialBlogCard","sourcePath":"components/editorial/EditorialBlogCard.jsx"},{"name":"PullQuote","sourcePath":"components/editorial/PullQuote.jsx"},{"name":"Rubric","sourcePath":"components/editorial/Rubric.jsx"},{"name":"ShareButton","sourcePath":"components/editorial/ShareButton.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cefcae4f173a","components/core/Button.jsx":"a2fe2858dc90","components/core/Card.jsx":"8d368a2e682e","components/editorial/ArticleHeader.jsx":"d0cca79eea6f","components/editorial/AuthorBio.jsx":"c8111e9dadb5","components/editorial/EditorialBlogCard.jsx":"32fdc5602005","components/editorial/PullQuote.jsx":"2c6bcfa6b3bc","components/editorial/Rubric.jsx":"7df6ef87bf0a","components/editorial/ShareButton.jsx":"7ee00900b7b4"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -235,6 +235,121 @@ function Card({
 Object.assign(__ds_scope, { Card });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Card.jsx", error: String((e && e.message) || e) }); }
 
+// components/editorial/AuthorBio.jsx
+try { (() => {
+/**
+ * AuthorBio — the author identity block. Used two ways: as the header of an
+ * author page (with a "← All posts" back link and post-count meta) and as the
+ * "Written by" footer at the end of an article. Use inside a
+ * [data-theme="editorial"] wrapper.
+ */
+function AuthorBio({
+  name,
+  role,
+  avatar,
+  bio,
+  meta,
+  eyebrow,
+  backLabel = "All posts",
+  backHref,
+  links = []
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)"
+    }
+  }, backHref && /*#__PURE__*/React.createElement("a", {
+    href: backHref,
+    style: {
+      display: "inline-block",
+      fontFamily: "var(--font-sans)",
+      fontSize: 15,
+      fontWeight: 600,
+      color: "var(--rf-ed-red)",
+      textDecoration: "none",
+      marginBottom: 26
+    }
+  }, "\u2190 ", backLabel), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 24
+    }
+  }, avatar && /*#__PURE__*/React.createElement("img", {
+    src: avatar,
+    alt: name || "",
+    style: {
+      width: 92,
+      height: 92,
+      borderRadius: "50%",
+      objectFit: "cover",
+      flexShrink: 0,
+      display: "block"
+    }
+  }), /*#__PURE__*/React.createElement("div", null, eyebrow && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 13,
+      fontWeight: 500,
+      color: "var(--rf-ed-muted)",
+      margin: "0 0 4px"
+    }
+  }, eyebrow), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontWeight: 600,
+      letterSpacing: "-0.015em",
+      lineHeight: 1.05,
+      color: "var(--rf-ed-ink)",
+      margin: 0,
+      fontSize: "clamp(32px, 3.4vw, 46px)"
+    }
+  }, name), role && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 17,
+      fontWeight: 600,
+      color: "var(--rf-ed-red)",
+      margin: "8px 0 0"
+    }
+  }, role), meta && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 15,
+      color: "var(--rf-ed-muted)",
+      margin: "6px 0 0"
+    }
+  }, meta))), bio && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 20,
+      lineHeight: 1.5,
+      color: "var(--rf-ed-ink)",
+      margin: "26px 0 0",
+      maxWidth: "46ch"
+    }
+  }, bio), links.length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 24,
+      marginTop: 22,
+      flexWrap: "wrap"
+    }
+  }, links.map((l, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: l.href,
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 16,
+      fontWeight: 600,
+      color: "var(--rf-ed-red)",
+      textDecoration: "none"
+    }
+  }, l.label, " \u2197"))));
+}
+Object.assign(__ds_scope, { AuthorBio });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/AuthorBio.jsx", error: String((e && e.message) || e) }); }
+
 // components/editorial/PullQuote.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -295,9 +410,25 @@ function Rubric({
   sub,
   href = "#",
   as = "p",
+  plain = false,
   ...rest
 }) {
   const Tag = as;
+  const sectionEl = plain ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--rf-ed-red)",
+      fontWeight: 600
+    }
+  }, section) : /*#__PURE__*/React.createElement("a", {
+    href: href,
+    style: {
+      color: "var(--rf-ed-red)",
+      textDecoration: "none",
+      fontWeight: 600
+    },
+    onMouseEnter: e => e.currentTarget.style.textDecoration = "underline",
+    onMouseLeave: e => e.currentTarget.style.textDecoration = "none"
+  }, section);
   return /*#__PURE__*/React.createElement(Tag, _extends({
     style: {
       fontFamily: "var(--font-sans)",
@@ -308,16 +439,7 @@ function Rubric({
       color: "var(--rf-ed-ink)",
       ...(rest.style || {})
     }
-  }, rest), /*#__PURE__*/React.createElement("a", {
-    href: href,
-    style: {
-      color: "var(--rf-ed-red)",
-      textDecoration: "none",
-      fontWeight: 600
-    },
-    onMouseEnter: e => e.currentTarget.style.textDecoration = "underline",
-    onMouseLeave: e => e.currentTarget.style.textDecoration = "none"
-  }, section), sub && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+  }, rest), sectionEl, sub && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
     style: {
       color: "var(--rf-ed-rule)",
       margin: "0 8px",
@@ -351,8 +473,15 @@ function EditorialBlogCard({
   readTime,
   image,
   href = "#",
+  author,
   featured = false
 }) {
+  const pipe = /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--rf-ed-rule)",
+      margin: "0 8px"
+    }
+  }, "|");
   const meta = /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "var(--font-sans)",
@@ -360,12 +489,11 @@ function EditorialBlogCard({
       color: "var(--rf-ed-muted)",
       margin: 0
     }
-  }, date, /*#__PURE__*/React.createElement("span", {
+  }, author && /*#__PURE__*/React.createElement(React.Fragment, null, "By ", /*#__PURE__*/React.createElement("span", {
     style: {
-      color: "var(--rf-ed-rule)",
-      margin: "0 8px"
+      color: "var(--rf-ed-ink-soft)"
     }
-  }, "|"), readTime);
+  }, author), pipe), date, pipe, readTime);
   const headline = /*#__PURE__*/React.createElement("h2", {
     className: "rf-ed-headline",
     style: {
@@ -373,9 +501,9 @@ function EditorialBlogCard({
       fontWeight: 600,
       letterSpacing: "-0.01em",
       color: "var(--rf-ed-ink)",
-      margin: featured ? "0 0 12px" : "0 0 8px",
-      fontSize: featured ? 34 : 24,
-      lineHeight: featured ? 1.08 : 1.12,
+      margin: featured ? "0 0 12px" : "0 0 18px",
+      fontSize: featured ? 34 : 29,
+      lineHeight: featured ? 1.08 : 1.14,
       transition: "color var(--dur-base) var(--ease-standard)"
     }
   }, title);
@@ -409,6 +537,7 @@ function EditorialBlogCard({
       section: section,
       sub: sub,
       href: href,
+      plain: true,
       style: {
         marginBottom: 14
       }
@@ -436,35 +565,46 @@ function EditorialBlogCard({
     onMouseLeave: hoverOut,
     style: {
       ...linkStyle,
-      gridTemplateColumns: "1fr 132px",
-      gap: 24,
-      padding: "26px 0"
+      gridTemplateColumns: "1fr",
+      gap: 0,
+      padding: "34px 0"
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(__ds_scope.Rubric, {
+  }, /*#__PURE__*/React.createElement(__ds_scope.Rubric, {
     section: section,
     sub: sub,
     href: href,
+    plain: true,
     style: {
-      marginBottom: 12
+      marginBottom: 14
     }
-  }), headline, dek && /*#__PURE__*/React.createElement("p", {
+  }), headline, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "var(--font-serif)",
-      fontSize: 16,
-      lineHeight: 1.4,
-      color: "var(--rf-ed-ink-soft)",
-      margin: "0 0 10px"
+      display: "grid",
+      gridTemplateColumns: image ? "minmax(0, 0.82fr) 1fr" : "1fr",
+      gap: 36,
+      alignItems: "start",
+      marginBottom: 18
     }
-  }, dek), meta), image && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+  }, image && /*#__PURE__*/React.createElement("img", {
     src: image,
     alt: "",
     style: {
       display: "block",
-      width: 132,
-      height: 92,
-      objectFit: "cover"
+      width: "100%",
+      aspectRatio: "3 / 2",
+      objectFit: "cover",
+      borderRadius: 8,
+      background: "var(--rf-paper-cream)"
     }
-  })));
+  }), dek && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 19,
+      lineHeight: 1.5,
+      color: "var(--rf-ed-ink-soft)",
+      margin: 0
+    }
+  }, dek)), meta);
 }
 Object.assign(__ds_scope, { EditorialBlogCard });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/EditorialBlogCard.jsx", error: String((e && e.message) || e) }); }
@@ -511,11 +651,135 @@ function ShareButton({
 Object.assign(__ds_scope, { ShareButton });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ShareButton.jsx", error: String((e && e.message) || e) }); }
 
+// components/editorial/ArticleHeader.jsx
+try { (() => {
+/**
+ * ArticleHeader — the full post header on a blog article page: rubric, serif
+ * headline, standfirst, then a byline row with the author avatar, name + role,
+ * date · read-time, and a Share control. Mirrors the production article header.
+ * Use inside a [data-theme="editorial"] wrapper.
+ */
+function ArticleHeader({
+  section = "Insights",
+  sub = "The realfast view",
+  sectionHref = "#",
+  title,
+  dek,
+  author,
+  role,
+  authorHref = "#",
+  avatar,
+  date,
+  readTime,
+  onShare
+}) {
+  return /*#__PURE__*/React.createElement("header", {
+    style: {
+      fontFamily: "var(--font-serif)"
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Rubric, {
+    section: section,
+    sub: sub,
+    href: sectionHref,
+    style: {
+      marginBottom: 20
+    }
+  }), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontWeight: 600,
+      letterSpacing: "-0.015em",
+      lineHeight: 1.05,
+      color: "var(--rf-ed-ink)",
+      margin: "0 0 22px",
+      fontSize: "clamp(34px, 4vw, 58px)"
+    }
+  }, title), dek && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: "clamp(19px, 1.6vw, 24px)",
+      lineHeight: 1.4,
+      color: "var(--rf-ed-ink-soft)",
+      margin: "0 0 28px",
+      maxWidth: "44ch"
+    }
+  }, dek), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 20,
+      flexWrap: "wrap",
+      paddingTop: 22,
+      borderTop: "1px solid var(--rf-ed-rule)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 14
+    }
+  }, avatar && /*#__PURE__*/React.createElement("a", {
+    href: authorHref,
+    style: {
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: avatar,
+    alt: author || "",
+    style: {
+      width: 48,
+      height: 48,
+      borderRadius: "50%",
+      objectFit: "cover",
+      display: "block"
+    }
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 17,
+      color: "var(--rf-ed-ink)",
+      margin: 0,
+      lineHeight: 1.3
+    }
+  }, "By", " ", /*#__PURE__*/React.createElement("a", {
+    href: authorHref,
+    style: {
+      color: "var(--rf-ed-ink)",
+      fontWeight: 700,
+      textDecoration: "none"
+    }
+  }, author), role && /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--rf-ed-muted)"
+    }
+  }, ", ", role)), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-sans)",
+      fontSize: 14,
+      color: "var(--rf-ed-muted)",
+      margin: "3px 0 0"
+    }
+  }, date, readTime && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      margin: "0 8px"
+    }
+  }, "\xB7"), readTime)))), /*#__PURE__*/React.createElement(__ds_scope.ShareButton, {
+    onClick: onShare
+  })));
+}
+Object.assign(__ds_scope, { ArticleHeader });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ArticleHeader.jsx", error: String((e && e.message) || e) }); }
+
 __ds_ns.Badge = __ds_scope.Badge;
 
 __ds_ns.Button = __ds_scope.Button;
 
 __ds_ns.Card = __ds_scope.Card;
+
+__ds_ns.ArticleHeader = __ds_scope.ArticleHeader;
+
+__ds_ns.AuthorBio = __ds_scope.AuthorBio;
 
 __ds_ns.EditorialBlogCard = __ds_scope.EditorialBlogCard;
 

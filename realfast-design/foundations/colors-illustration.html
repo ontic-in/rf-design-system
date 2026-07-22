@@ -1,0 +1,63 @@
+<!-- @dsCard group="Colors" viewport="760x426" name="Illustration Palette" subtitle="Muted, chalky shades for spot art — dusty blue/navy/violet lead, red a rare spark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); padding: 16px; color: var(--rf-ed-ink); }
+  .lead { font-family: var(--font-serif); font-size: 15px; color: var(--rf-ed-ink-soft); margin: 0 0 16px; line-height: 1.45; }
+  .lead strong { color: var(--rf-ed-ink); font-weight: 600; }
+  .eyebrow { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 12px; }
+  .eyebrow.accent { color: var(--rf-blue); }
+  .eyebrow.support { color: var(--rf-ed-muted); }
+  .grid { display: grid; gap: 14px; margin-bottom: 24px; }
+  .grid.accents { grid-template-columns: repeat(3, 1fr); }
+  .grid.support { grid-template-columns: repeat(3, 1fr); }
+  .sw { border: 1px solid var(--rf-ed-rule); background: var(--rf-white); }
+  .sw .chip { height: 88px; }
+  .grid.support .sw .chip { height: 64px; }
+  .sw .meta { padding: 11px 13px; }
+  .sw .name { font-family: var(--font-serif); font-size: 15px; font-weight: 600; }
+  .sw .hex { font-family: 'IBM Plex Mono',monospace; font-size: 12.5px; color: var(--rf-ed-muted); margin-top: 2px; }
+  .sw .role { font-family: var(--font-sans); font-size: 12px; color: var(--rf-ed-faint); margin-top: 6px; }
+  .ratio { display: flex; align-items: stretch; border: 1px solid var(--rf-ed-rule); height: 34px; }
+  .ratio > div { flex: 1; }
+  .ratio .spark { flex: 0 0 4%; }
+  .note { font-family: var(--font-sans); font-size: 12px; color: var(--rf-ed-faint); margin: 8px 0 0; }
+</style>
+</head>
+<body>
+  <p class="lead"><strong>An illustration-only extension &mdash; pending sign-off.</strong> These muted shades power the MidJourney spot art; they live under <code>--rf-illus-*</code> and are not UI colours. The four canonical brand colours still run the interface.</p>
+
+  <div class="eyebrow accent">New &mdash; muted brand shades (the accents)</div>
+  <div class="grid accents">
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-dusty-blue)"></div><div class="meta"><div class="name">Dusty Blue</div><div class="hex">#7D97B5</div><div class="role">Shade of brand blue &mdash; lead accent</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-dusty-violet)"></div><div class="meta"><div class="name">Dusty Violet</div><div class="hex">#8B84A8</div><div class="role">Muted purple &mdash; soft third accent</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-slate-navy)"></div><div class="meta"><div class="name">Slate Navy</div><div class="hex">#3E4C6E</div><div class="role">Shade of navy &mdash; depth &amp; focal marks</div></div></div>
+  </div>
+
+  <div class="eyebrow support">Support &amp; carry-over</div>
+  <div class="grid support">
+    <div class="sw"><div class="chip" style="background:var(--rf-paper-cream); box-shadow:inset 0 0 0 1px var(--rf-ed-rule)"></div><div class="meta"><div class="name">Paper Cream</div><div class="hex">#F5F3EF</div><div class="role">Ground &mdash; always</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-bone)"></div><div class="meta"><div class="name">Bone</div><div class="hex">#EDEAE4</div><div class="role">Secondary surfaces</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-pale-blue)"></div><div class="meta"><div class="name">Pale Blue</div><div class="hex">#C3D0DC</div><div class="role">Depth faces, tints</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-grey)"></div><div class="meta"><div class="name">Warm Grey</div><div class="hex">#9A948C</div><div class="role">Mid-tones, shadow speckle</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-illus-charcoal)"></div><div class="meta"><div class="name">Warm Charcoal</div><div class="hex">#3A3733</div><div class="role">The mass &mdash; replaces flat black</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-ed-red)"></div><div class="meta"><div class="name">Signal Red</div><div class="hex">#E3120B</div><div class="role">Rare spark only</div></div></div>
+  </div>
+
+  <div class="ratio">
+    <div style="background:var(--rf-illus-dusty-blue)"></div>
+    <div style="background:var(--rf-illus-slate-navy)"></div>
+    <div style="background:var(--rf-illus-dusty-violet)"></div>
+    <div style="background:var(--rf-illus-charcoal)"></div>
+    <div style="background:var(--rf-illus-grey)"></div>
+    <div style="background:var(--rf-illus-pale-blue)"></div>
+    <div style="background:var(--rf-paper-cream)"></div>
+    <div class="spark" style="background:var(--rf-ed-red)"></div>
+  </div>
+  <p class="note">Rough working ratio &mdash; blue, navy and violet lead the accents; red is a thin sliver, one frame in several.</p>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Illustration-only extension (pending sign-off), under --rf-illus-*. Charcoal and grey carry the mass; dusty blue, navy and violet lead the accents; red is a rare spark. Never use these as UI colours. Beyond spot art, these same shades are the source ramp for data-viz (see Charts &rsaquo; Stacked bar chart): a light-to-dark <code>pale-blue &rsaquo; dusty-blue &rsaquo; slate-navy</code> progression, with <code>--success</code> as the terminal series &mdash; so the illustration palette and the charts stay one visual language.</p>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Feed the system a case study and a target audience. It fills the fixed 5-slide spine - hero metric on slide 1, before/after on slide 4, drawn from the source's own numbers. Swap in the real result (anonymise if not approved), edit the copy to the source, and leave the spine, logo placement and chart palette as-is. Close on a CTA that names what this client moved.

@@ -13,6 +13,8 @@ export interface RubricProps extends React.HTMLAttributes<HTMLElement> {
   href?: string;
   /** Wrapper tag. @default "p" */
   as?: "p" | "div";
+  /** Render the section as a span (no link) — use when nested inside an anchor. @default false */
+  plain?: boolean;
 }
 
 export function Rubric(props: RubricProps): React.ReactElement;

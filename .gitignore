@@ -1,1 +1,7 @@
 .DS_Store
+
+# Design-tool working materials & artifacts (not part of the deliverable)
+realfast-design/uploads/
+realfast-design/scraps/
+realfast-design/realfast-design-skill.zip
+realfast-design/_thumbnail.state.json

@@ -1,0 +1,390 @@
+<!-- @dsCard group="Social" viewport="1280x900" name="Social & Content System" subtitle="How every shareable asset is generated — templates, formats, data, voice editor, and the generation workflow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-serif); background: var(--rf-white); color: var(--rf-ed-ink); padding: 28px 34px; line-height: 1.55; }
+  .doc { max-width: 100%; }
+  .kicker { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rf-ed-red); margin: 0 0 6px; }
+  h1 { font-size: 34px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px; }
+  h1 em { font-style: italic; }
+  .intro { font-size: 17px; color: var(--rf-ed-ink-soft); margin: 0 0 6px; }
+  .intro em { font-style: italic; }
+  .core-note { font-size: 14.5px; color: var(--rf-ed-muted); margin: 10px 0 0; }
+  hr { border: 0; border-top: 1px solid var(--rf-ed-rule-warm); margin: 30px 0; }
+  section { display: grid; grid-template-columns: 150px 1fr; gap: 32px; align-items: start; margin: 0 0 30px; }
+  .sec-no { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rf-ed-red); padding-top: 4px; }
+  .sec-body h2 { font-size: 22px; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .sec-body h3 { font-family: var(--font-serif); font-size: 17px; font-weight: 600; margin: 22px 0 8px; }
+  .sec-body p { font-size: 16px; margin: 0 0 14px; }
+  .sec-body p:last-child, .sec-body ul:last-child, .sec-body pre:last-child, .sec-body table:last-child { margin-bottom: 0; }
+  .sec-body strong { font-weight: 600; }
+  .sec-body em { font-style: italic; }
+  .sec-body ul { margin: 0 0 14px; padding-left: 20px; font-size: 15.5px; }
+  .sec-body li { margin: 0 0 6px; }
+  code { font-family: 'IBM Plex Mono',monospace; font-size: 0.86em; background: var(--rf-illus-bone); padding: 1px 5px; color: var(--rf-illus-charcoal); }
+  pre { margin: 0 0 14px; padding: 14px 16px; background: var(--rf-illus-charcoal); color: #e9e6df; font-family: 'IBM Plex Mono',monospace; font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; overflow-x: auto; }
+  pre .cm { color: #9a948c; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 0 0 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--rf-ed-rule); vertical-align: top; }
+  th { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rf-ed-muted); }
+  td code { font-size: 0.82em; }
+  .usage { font-family: 'IBM Plex Sans Condensed',var(--font-sans),sans-serif; font-size: 13px; line-height: 1.55; color: var(--rf-ed-ink-soft); border-top: 1px solid var(--rf-ed-rule); margin: 16px 0 0; padding: 12px 0 0; }
+  .usage b { color: var(--rf-ed-ink); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; margin-right: 8px; }
+  .dd { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .dd h3 { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding-bottom: 8px; margin: 0 0 12px; }
+  .dd .do h3 { color: var(--rf-ed-ink); border-bottom: 2px solid var(--rf-ed-ink); }
+  .dd .dont h3 { color: var(--rf-ed-muted); border-bottom: 2px solid var(--rf-ed-muted); }
+  .dd ul { padding-left: 18px; font-size: 14.5px; }
+  .tpl-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 0; }
+  .tpl-links a { font-family: var(--font-sans); font-size: 13px; font-weight: 600; text-decoration: none; color: var(--rf-ed-ink); border: 1px solid var(--rf-ed-ink); padding: 7px 14px; }
+  .tpl-links a:hover { background: var(--rf-ed-ink); color: #fff; }
+  .modmap { border: 1px solid var(--rf-ed-rule); margin: 8px 0 0; }
+  .modmap-row { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 11px 18px; border-bottom: 1px solid var(--rf-ed-rule-soft); align-items: baseline; }
+  .modmap-row:last-child { border-bottom: 0; }
+  .modmap-row .m { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rf-ed-red); }
+  .modmap-row .t { font-family: var(--font-serif); font-size: 16px; color: var(--rf-ed-ink); }
+  .modmap-row .t b { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="doc">
+  <p class="kicker">Social &amp; content &middot; Generation system</p>
+  <h1><em>realfast</em> Social &amp; Content System</h1>
+  <p class="intro">A <strong>permanent module</strong> that turns any source material - a blog, a case study, a thought-leadership note - into ready-to-post carousels and social images that look like they came from the same company every time, with no manual design work.</p>
+  <p class="core-note">The rule above everything: <strong>content fidelity is absolute.</strong> This system only uses the words, facts, numbers and claims already in the source. It never invents a statistic, quote or claim to fill space. It follows the core editorial system and the website layer for every colour, face and spacing value, routes all data through the data visualisation system, and runs every word through the voice editor (§6). If a needed pattern does not exist yet, it flags the gap rather than improvising.</p>
+
+  <div class="modmap">
+    <div class="modmap-row"><span class="m">Module 1</span><span class="t"><b>Content type templates</b> - case study, blog, thought-leadership, standalone, metric infographic (§01)</span></div>
+    <div class="modmap-row"><span class="m">Module 2</span><span class="t"><b>Format &amp; sizing specs</b> - dimensions, safe zones, min type (§02)</span></div>
+    <div class="modmap-row"><span class="m">Module 3</span><span class="t"><b>Layout, composition &amp; rhythm</b> - grid, hierarchy, type scale, slide rhythm (§03, §05)</span></div>
+    <div class="modmap-row"><span class="m">Module 4</span><span class="t"><b>Data in social content</b> - when to visualise, which charts, the palette (§04)</span></div>
+    <div class="modmap-row"><span class="m">Module 5</span><span class="t"><b>Copy, voice &amp; the voice editor</b> - the full copy standard, CTA library (§06)</span></div>
+    <div class="modmap-row"><span class="m">Module 6</span><span class="t"><b>The generation workflow</b> - source in, on-brand assets out (§07)</span></div>
+    <div class="modmap-row"><span class="m">Module 7</span><span class="t"><b>How to prompt this system</b> - the usage guide with copy-paste examples (§08)</span></div>
+  </div>
+
+  <hr>
+
+  <section>
+    <div class="sec-no">00 &middot; Operating rules</div>
+    <div class="sec-body">
+      <h2>The six rules that govern everything generated</h2>
+      <ul>
+        <li><strong>Content fidelity is absolute.</strong> Only the words, facts, numbers and claims from the shared source. To shorten, tighten the existing words - never write a new claim to fill space.</li>
+        <li><strong>All copy passes through the voice editor</strong> (§6). Headlines, slide copy, captions, CTAs. The rules are non-negotiable and applied silently.</li>
+        <li><strong>Follow the design system, always.</strong> Every colour, face, spacing value and component comes from the existing system. No new visual language. Flag a missing pattern rather than improvise.</li>
+        <li><strong>Data uses the data visualisation system.</strong> Numbers, trends and comparisons render as charts or data callouts from the chart palette (§4), never ad-hoc styling. "8.8 days to 2.1 days" becomes a proper on-brand visual, not plain text.</li>
+        <li><strong>Logo and brand placement follow the logo guidelines.</strong> Correct clear space, approved version for the background, never distorted or recoloured.</li>
+        <li><strong>Consumable, never heavy.</strong> One idea per slide, generous whitespace, short lines. A reader grasps each slide in under three seconds. Dense slide? Split it or cut it.</li>
+      </ul>
+      <p class="usage"><b>Usage</b>These six override everything below. When any later rule seems to conflict with one of these - most often "fit more in" versus fidelity and whitespace - the rule here wins. If you cannot satisfy a rule with the source you were given, stop and flag it rather than bend the rule.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">01 &middot; Templates</div>
+    <div class="sec-body">
+      <h2>Content type templates</h2>
+      <p>One reusable template per content type. Each fixes the structure, the slide or image count, and which system components carry the load.</p>
+
+      <h3>A · Case study carousel</h3>
+      <ul>
+        <li><strong>5 slides maximum.</strong> Fixed spine: Hook (hero metric) &rarr; Problem &rarr; Approach &rarr; Result (the metric moved, with data viz) &rarr; CTA.</li>
+        <li>Slide 1 hero metric uses the large-number red-accent treatment.</li>
+        <li>The result slide always renders before/after as a chart or data callout from the data viz system (§4).</li>
+        <li>Final slide carries the signature line and one clear CTA.</li>
+      </ul>
+
+      <h3>B · Blog carousel</h3>
+      <ul>
+        <li><strong>4 to 6 slides.</strong> Structure: Hook / title &rarr; 3-4 key takeaways (one per slide) &rarr; CTA.</li>
+        <li>Pulls the core arguments from the blog, one idea per slide, faithful to source.</li>
+        <li>No data viz unless the blog itself contains data.</li>
+      </ul>
+
+      <h3>C · Thought-leadership</h3>
+      <ul>
+        <li><strong>Single image</strong> for a standalone insight or quote, or an <strong>optional 3-slide carousel</strong> for a longer argument.</li>
+        <li>Credibility tone, less salesy - the kind of thing a CXO reshares.</li>
+        <li>Leads with a sharp claim or insight pulled directly from the source.</li>
+      </ul>
+
+      <h3>D · Standalone social images</h3>
+      <ul>
+        <li>Single-frame posts that work in isolation. Three sub-types: <strong>the metric hero</strong>, <strong>the proof point</strong>, <strong>the insight</strong>.</li>
+        <li>Each stands alone even if the viewer sees nothing else.</li>
+      </ul>
+
+      <h3>E · Metric infographic</h3>
+      <ul>
+        <li><strong>Single frame</strong> (1080&times;1500). The richest data moment in the system: a headline result, before/after comparison bars, a short "how it moved" timeline, and 2-3 stat callouts.</li>
+        <li>Editorial data viz on cream - every series from the illustration ramp, red as the single spark on the "after" value. Works as a case-study result slide or a standalone post.</li>
+      </ul>
+
+      <div class="tpl-links">
+        <a href="../templates/social-case-study-carousel/SocialCaseStudyCarousel.dc.html">Case study carousel &rarr;</a>
+        <a href="../templates/social-blog-carousel/SocialBlogCarousel.dc.html">Blog carousel &rarr;</a>        <a href="../templates/social-thought-leadership/SocialThoughtLeadership.dc.html">Thought-leadership &rarr;</a>
+        <a href="../templates/social-infographic/SocialInfographic.dc.html">Metric infographic &rarr;</a>
+      </div>
+      <p class="usage"><b>Usage</b>Start every asset from the matching template DC above - they are pre-wired to the design system bundle and the voice editor, and each ships a fully worked example. Copy the template folder, replace the content with source-faithful copy, and the layout, type scale and chart palette come for free.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">02 &middot; Formats</div>
+    <div class="sec-body">
+      <h2>Format &amp; sizing specs</h2>
+      <p>Design to these exact frames. Keep all text and the logo inside the safe zone - a margin of roughly 8% of the shortest edge on every side.</p>
+      <table>
+        <tr><th>Format</th><th>Size (px)</th><th>Safe margin</th><th>Min type</th></tr>
+        <tr><td>LinkedIn carousel - square</td><td><code>1080 &times; 1080</code></td><td>88px</td><td>32px body / 30px labels</td></tr>
+        <tr><td>LinkedIn carousel - portrait</td><td><code>1080 &times; 1350</code></td><td>88px</td><td>32px body / 30px labels</td></tr>
+        <tr><td>LinkedIn single image</td><td><code>1200 &times; 1200</code></td><td>96px</td><td>34px body</td></tr>
+        <tr><td>Twitter / X image</td><td><code>1600 &times; 900</code></td><td>80px</td><td>32px body</td></tr>
+        <tr><td>Instagram (if used)</td><td><code>1080 &times; 1080</code> / <code>1080 &times; 1350</code></td><td>88px</td><td>32px body</td></tr>
+      </table>
+      <ul>
+        <li><strong>Default to portrait <code>1080 &times; 1350</code></strong> for carousels - it takes the most feed real estate on mobile.</li>
+        <li><strong>Logo placement:</strong> the real <em>realfast</em> mark (<code>assets/logos/</code>) sits <strong>top-right</strong> on the <strong>first and last slide only</strong>, at a consistent height (~48px on a 1080 frame), following the logo dos-and-don'ts. Ink version on light frames, white version on dark. Middle slides carry no logo - the set already reads as one object. A standalone single image or infographic always carries the mark.</li>
+        <li>Hero numbers may break the type scale upward (they are the focal element) but never break the safe margin.</li>
+      </ul>
+      <p class="usage"><b>Usage</b>Pick the frame from the platform in the request - LinkedIn defaults to portrait <code>1080&times;1350</code>, Twitter / X to <code>1600&times;900</code>. Build at the exact pixel size so nothing has to be rescaled later, and check every text block and the logo sit inside the safe margin before export.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">03 &middot; Layout</div>
+    <div class="sec-body">
+      <h2>Layout &amp; composition</h2>
+      <p>Slides are built on the core editorial surface: warm paper and cream grounds, ink body, one red spark. Dark punctuation slides follow the premium dark-band recipe from the Website layer (§4 there).</p>
+      <ul>
+        <li><strong>Grid:</strong> single-column, one hero element per slide. Everything else recedes around it. A slide has a rubric (top), a hero (middle), and a footer (logo + slide index).</li>
+        <li><strong>Hierarchy per slide type:</strong> metric slides lead with the number; problem/insight slides lead with the headline; result slides lead with the chart's plain-language takeaway.</li>
+        <li><strong>Whitespace minimum:</strong> at least 8% clear margin, and no slide fills more than ~60% of its area with type. If it is fuller than that, split it.</li>
+        <li><strong>Pairing illustration with text:</strong> when a spot illustration is used, it sits on its own with the text given clear air - never text laid over a busy illustration. Follow the muted illustration style (see Brand &rsaquo; Illustration Style) and generate art via the MidJourney recipes (Brand &rsaquo; Illustration Prompts), pure-white ground.</li>
+      </ul>
+      <h3>Type scale (social formats, at 1080 wide)</h3>
+      <table>
+        <tr><th>Element</th><th>Size</th><th>Face</th></tr>
+        <tr><td>Hero metric</td><td>200-320px</td><td>Serif, 600</td></tr>
+        <tr><td>Slide headline</td><td>52-72px</td><td>Serif, 600</td></tr>
+        <tr><td>Body / takeaway</td><td>32-40px</td><td>Serif, 400</td></tr>
+        <tr><td>Eyebrow / rubric</td><td>26-30px</td><td>Sans, 600, sentence case</td></tr>
+        <tr><td>Data label</td><td>26-30px</td><td>Sans / mono</td></tr>
+        <tr><td>CTA</td><td>34-40px</td><td>Serif / sans, 600</td></tr>
+      </table>
+      <p class="usage"><b>Usage</b>One hero per slide decides the layout: set the hero first (number, headline, or chart), then let everything else recede around it. If two elements are fighting to be the hero, you have two slides. Use the type scale as written - resist nudging sizes up to fill space; whitespace is the design.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">04 &middot; Data</div>
+    <div class="sec-body">
+      <h2>Data in social content</h2>
+      <p>Every number is an opportunity for a visual. But keep charts simple enough to read on a phone at thumb-scroll speed.</p>
+      <ul>
+        <li><strong>Visualise vs state:</strong> a single number (one stat) is a large-number callout, not a chart. A before/after or a trend is a chart. A comparison of 2-4 things is a simple bar. More than that, cut it down.</li>
+        <li><strong>Works at social scale:</strong> single big stat, before/after pair, simple bar (&le; 5 bars), single-line trend. <strong>Avoid:</strong> dense multi-series, stacked bars with many segments, anything needing a legend of more than three items.</li>
+        <li><strong>Colour:</strong> all charts pull from the chart palette - the value ramp <code>--rf-illus-pale-blue</code> &rarr; <code>--rf-illus-dusty-blue</code> &rarr; <code>--rf-illus-slate-navy</code>, with <code>--success</code> reserved for the terminal "done / positive" series. See Charts &rsaquo; Stacked bar chart.</li>
+        <li><strong>Never</strong> use the signal red as a data series - it stays a rare focal spark, used once per slide at most (e.g. the after-number).</li>
+        <li><strong>Lead with the takeaway, not the chart title.</strong> "76% faster", not "Resolution Time Chart". The plain-language claim is the headline; the chart supports it.</li>
+      </ul>
+      <pre><span class="cm">/* before / after callout — the signature "metric moved" moment */</span>
+before: value in <span class="cm">--rf-illus-slate-navy</span> or <span class="cm">--rf-illus-grey</span> (the old state, receding)
+after:  value in <span class="cm">--rf-ed-red</span> (the one spark) or <span class="cm">--success</span> (if the win is "completion")
+label:  <span class="cm">--rf-ed-muted</span>, sentence case, sans/mono</pre>
+      <p class="usage"><b>Usage</b>Only reach for a chart when the number is a comparison or a trend; a single figure is a large-number callout, not a chart. Write the plain-language takeaway first ("76% faster"), then build the smallest chart that proves it. If the source has no numbers, this module does not apply - do not manufacture data to fill the result slide.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">05 &middot; Composition rhythm</div>
+    <div class="sec-body">
+      <h2>Slide rhythm across a carousel</h2>
+      <p>A carousel is a story, not a stack. Alternate grounds and weight so the eye keeps moving.</p>
+      <ul>
+        <li><strong>Ground rhythm:</strong> open <strong>light</strong> - white carrying a soft brand-tinted gradient (a faint dusty-blue wash from one corner, a whisper of red from the other) so the first frame reads premium, not plain. Run the middle slides on alternating white / cream, and reserve the one premium dark band for the closing CTA. Never open on a black or red-glow slide.</li>
+        <li><strong>One hero per slide:</strong> the hook is the number, the problem is the sentence, the result is the chart, the CTA is the line. Never two heroes competing.</li>
+        <li><strong>Consistent footer:</strong> a small progress indicator (a row of dots, active dot a red pill) sits bottom-left on every slide so the set reads as one object. The logo replaces text as the brand mark on the bookend slides.</li>
+        <li><strong>Swipe affordance:</strong> a small "&rarr;" or "swipe" cue on the first slide only, never on every slide.</li>
+      </ul>
+      <p class="usage"><b>Usage</b>Read the carousel front to back before exporting: it should feel like one argument, not a stack of unrelated cards. Light open, alternating middle, one dark close. If two adjacent slides share a ground and weight, vary one of them so the eye keeps moving.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">06 &middot; Voice editor</div>
+    <div class="sec-body">
+      <h2>Copy, voice &amp; the voice editor</h2>
+      <p>All text is written to the source first, then run through the voice editor before it lands on a slide. On short-form social copy, the <em>cut</em>, <em>sharpen</em> and <em>anti-pattern</em> rules carry the most weight.</p>
+
+      <h3>Cut</h3>
+      <ul>
+        <li>Hedging and qualifiers ("I think", "arguably", "perhaps").</li>
+        <li>Filler transitions ("it's worth noting that", "having said that").</li>
+        <li>Any word removable without changing meaning.</li>
+        <li>Sentences that pre-announce the next sentence.</li>
+      </ul>
+
+      <h3>Sharpen</h3>
+      <ul>
+        <li>Replace vague claims with specific ones from the source.</li>
+        <li>If 12 words can be 8, make it 8.</li>
+        <li>Strengthen punch lines - short declaratives hit harder.</li>
+        <li>Make any paired contrast exactly parallel in structure.</li>
+      </ul>
+
+      <h3>Preserve the voice's signature devices (where they appear in source)</h3>
+      <ul>
+        <li>Italics on operative words - never caps for emphasis.</li>
+        <li>Direct reader address ("ask yourself").</li>
+        <li>Dry, targeted irreverence; the build-build-build-punch rhythm.</li>
+        <li>British spelling throughout (recognise, organise, favour, behaviour, colour).</li>
+        <li>No comma after a sentence-opening interjection ("So", "But", "Yeah").</li>
+      </ul>
+
+      <h3>Style rules, applied silently</h3>
+      <ul>
+        <li>Contractions always ("it is" &rarr; "it's").</li>
+        <li>Emphasis via italics only, never caps.</li>
+        <li>Asides use a single hyphen with spaces ( - ), never a double-dash or em-dash.</li>
+        <li>Active voice unless passive is deliberate.</li>
+        <li>Hyphenate compound modifiers. British spelling.</li>
+        <li><em>realfast</em> is always lowercase and italic.</li>
+        <li>Headlines are sentence case, never all caps.</li>
+      </ul>
+
+      <h3>Anti-patterns to fix silently</h3>
+      <ul>
+        <li>Passive-by-default &rarr; rewrite active. Topic sentences ("In this section...") &rarr; delete.</li>
+        <li>Hedge words &rarr; delete or commit. Softened address ("one might consider") &rarr; "ask yourself".</li>
+        <li>Generic jargon ("leverage", "synergy", "seamless", "unlock", "game-changing") &rarr; plain language.</li>
+        <li>Pre-summary before content &rarr; delete. Apologies for length or opinion &rarr; delete.</li>
+        <li>Em-dashes of any kind &rarr; single hyphen with spaces.</li>
+        <li>Stock analogies and extended metaphors &rarr; cut, or trim to a single short coined metaphor.</li>
+        <li><strong>AI mirror-punch</strong> ("That isn't X. That's Y with Z.") &rarr; collapse it. Drop the negative half and commit to the positive claim. Real punches land, they don't mirror.</li>
+      </ul>
+
+      <h3>CTA library (approved closing lines)</h3>
+      <ul>
+        <li>"We don't ship features. We move the metric."</li>
+        <li>"See what we can move for you."</li>
+        <li>"Book a demo." (links to <code>/contact</code>)</li>
+      </ul>
+
+      <h3>Confidentiality default</h3>
+      <p>Anonymise clients unless the source names them and it is approved - "a $100M-$1B consumer fintech", never a real name unless approved.</p>
+
+      <p class="usage"><b>Test</b>For every line: does it sound like <em>realfast</em> - direct, plain-spoken, confident, ending on the sharpest claim - or like generic marketing copy? If the latter, rewrite it or cut it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">07 &middot; Workflow</div>
+    <div class="sec-body">
+      <h2>The generation workflow</h2>
+      <p>When someone gives the system source material:</p>
+      <ul>
+        <li><strong>1.</strong> Read the source and identify the content type (blog / case study / thought-leadership).</li>
+        <li><strong>2.</strong> Select the matching template (§1).</li>
+        <li><strong>3.</strong> Extract only the usable words, facts and numbers from the source.</li>
+        <li><strong>4.</strong> Map them onto the template's structure, one idea per slide.</li>
+        <li><strong>5.</strong> Render data as on-brand charts where numbers exist (§4).</li>
+        <li><strong>6.</strong> Run all copy through the voice editor (§6).</li>
+        <li><strong>7.</strong> Apply design system tokens, logo placement and format specs (§2, §3).</li>
+        <li><strong>8.</strong> Output the finished carousel and / or social images, ready to post.</li>
+        <li><strong>9.</strong> Flag anything where the source lacked enough content to fill a template - never invent filler.</li>
+      </ul>
+      <p class="usage"><b>Usage</b>Run the steps in order - the sequence is the safeguard. Extraction (step 3) happens before layout so you never design around a claim the source does not make. If step 9 fires, deliver the shorter honest set and say what was missing, rather than holding the whole job back.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">08 &middot; How to prompt</div>
+    <div class="sec-body">
+      <h2>How to prompt this system</h2>
+      <p>The system already knows the design rules, voice, data viz and logo placement. Your prompt only supplies what to make, from what source, for whom.</p>
+      <pre>[Content type] from [source] for [platform], targeting [audience].
+[Any specific focus or angle.]</pre>
+      <h3>A good prompt includes</h3>
+      <ul>
+        <li><strong>Content type</strong> - carousel, single image, or set of social images.</li>
+        <li><strong>Source</strong> - paste the blog / case study, or attach the file. Always give the actual source so the system pulls only from it.</li>
+        <li><strong>Platform</strong> - LinkedIn carousel, LinkedIn single, Twitter / X (sets the dimensions).</li>
+        <li><strong>Audience</strong> - CXOs, engineers, candidates (calibrates angle and tone).</li>
+        <li><strong>Optional focus</strong> - a specific number, insight or angle to lead with.</li>
+      </ul>
+      <h3>Copy-paste examples</h3>
+      <pre><span class="cm">// case study carousel</span>
+Create a 5-slide LinkedIn carousel from the attached fintech case study,
+targeting CXOs. Lead with the 76% resolution improvement. Use only the
+content in the case study.
+
+<span class="cm">// single metric image</span>
+Create a single LinkedIn image from this case study showing the headline
+result. Metric hero style. For a CXO audience.
+
+<span class="cm">// thought-leadership from a blog</span>
+Create a 3-slide thought-leadership carousel from this blog post, targeting
+engineering leaders. Pull the sharpest insight as the hook. Credibility
+tone, not salesy.
+
+<span class="cm">// set of social images from one source</span>
+Create 3 standalone social images from the attached case study for employees
+to share on LinkedIn. One metric hero, one proof point, one insight.
+
+<span class="cm">// blog carousel</span>
+Turn this blog post into a LinkedIn carousel, 4 to 6 slides, one takeaway
+per slide, ending on a CTA. General business audience.</pre>
+      <h3>The one-line quick-use format (fastest path)</h3>
+      <pre>[type] &middot; [platform] &middot; [audience] &middot; [paste or attach source]
+
+Carousel &middot; LinkedIn &middot; CXOs &middot; [attached: fintech-case-study.pdf]</pre>
+      <h3>Refining after the first pass (plain language)</h3>
+      <pre>Slide 3 is too dense - split it into two.
+Make slide 1's number bigger.
+Swap the CTA to "See what we can move for you."
+Use the portrait format instead of square.</pre>
+      <p>If the source is thin, the system produces fewer slides and flags it, rather than padding with invented filler.</p>
+      <p class="usage"><b>Usage</b>Give the four inputs - type, source, platform, audience - and nothing about colour, font or layout; the system owns those. Always attach the real source. Then refine in plain language ("split slide 3", "make the number bigger", "use portrait") and the system reapplies every design and voice rule automatically.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">09 &middot; Recap</div>
+    <div class="sec-body">
+      <h2>Do / don't recap</h2>
+      <div class="dd">
+        <div class="do">
+          <h3>Do</h3>
+          <ul>
+            <li>Pull every word, number and claim from the source only.</li>
+            <li>One idea per slide, generous whitespace, under-three-second reads.</li>
+            <li>Visualise numbers with the chart palette; lead with the plain takeaway.</li>
+            <li>Open light with a soft shade; keep the single dark band for the closing CTA.</li>
+            <li>Real logo top-right on the first and last slide only; progress dots on every slide.</li>
+            <li>Run every line through the voice editor; British spelling, sentence case.</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Don't</h3>
+          <ul>
+            <li>Open on a black or red-glow slide, or stamp the logo on every slide.</li>
+            <li>Invent a stat, quote or claim to fill space - flag a thin source instead.</li>
+            <li>Introduce colours, fonts or layouts outside the system.</li>
+            <li>Use red as a data series or more than one red spark per slide.</li>
+            <li>Cram a slide, stack dense multi-series charts, or add long legends.</li>
+            <li>Use em-dashes, all-caps headlines, hype adjectives or AI mirror-punch.</li>
+            <li>Name a client unless the source names them and it is approved.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="usage"><b>Usage</b>Use this as the pre-flight check before anything ships: read the asset against both columns. One "don't" is enough to send it back. When in doubt, cut - a shorter, honest, quieter asset always beats a fuller off-brand one.</p>
+    </div>
+  </section>
+</div>
+</body>
+</html>

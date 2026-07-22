@@ -1,4 +1,4 @@
-<!-- @dsCard group="Brand" viewport="760x460" name="Illustration Style" subtitle="Grainy B&W stipple on paper, single red accent — a 36-piece pool" -->
+<!-- @dsCard group="Brand" viewport="760x526" name="Illustration Style" subtitle="Muted risograph spot on cream — dusty blue/navy/violet lead, red a rare spark" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +8,40 @@
   body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); padding: 16px; }
   .lead { font-family: var(--font-serif); font-size: 15px; color: var(--rf-ed-ink-soft); margin: 0 0 14px; line-height: 1.45; }
   .lead strong { color: var(--rf-ed-ink); font-weight: 600; }
-  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-  .art { aspect-ratio: 3/2; overflow: hidden; background: var(--rf-paper-cream); border: 1px solid var(--rf-ed-rule); }
+  .eyebrow { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rf-ed-muted); margin: 6px 0 10px; }
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 18px; }
+  .grid.muted { grid-template-columns: repeat(4, 1fr); }
+  .art { aspect-ratio: 3/2; overflow: hidden; background: var(--rf-white); border: 1px solid var(--rf-ed-rule); }
   .art img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; display: block; }
 </style>
 </head>
 <body>
-  <p class="lead"><strong>One red accent, everything else greyscale.</strong> Grainy stipple line-work and photographic objects on white or warm cream — used full-bleed or framed with generous negative space. The presentation template rotates a hero from this pool automatically.</p>
+  <p class="lead"><strong>Muted brand shades lead; red is a rare spark.</strong> Muted editorial spot illustration on a pure-white background (only a faint warm-cream tint) with chalky risograph grain — mass in warm charcoal and grey (not flat black), accents in desaturated dusty blue, slate navy and dusty violet, with signal-red held back for a single focal detail. Gentle low contrast, generous negative space. Logo and app tiles are composited in, never generated.</p>
+  <div class="eyebrow">Muted set — current direction</div>
+  <div class="grid muted" id="muted"></div>
+  <div class="eyebrow">Original pool — grainy B&amp;W, single red accent</div>
   <div class="grid" id="grid"></div>
   <script>
+    const set = [
+      ["muted/one-team.png", "One team"],
+      ["muted/applied-ai.png", "Applied AI in production"],
+      ["muted/outcomes-measured.png", "Outcomes you can measure"],
+      ["muted/move-the-metric.png", "Move the metric"],
+      ["muted/restructure-work.png", "Restructure the work"],
+      ["muted/named-accountable.png", "Named human accountable"],
+      ["muted/cadence.png", "Cadence"]
+    ];
+    const mutedGrid = document.getElementById("muted");
+    for (const [src, alt] of set) {
+      const fig = document.createElement("figure");
+      fig.className = "art";
+      fig.style.margin = "0";
+      const img = document.createElement("img");
+      img.src = "../assets/illustrations/" + src;
+      img.alt = alt;
+      fig.appendChild(img);
+      mutedGrid.appendChild(fig);
+    }
     const grid = document.getElementById("grid");
     for (let i = 1; i <= 36; i++) {
       const fig = document.createElement("figure");
@@ -29,5 +54,6 @@
       grid.appendChild(fig);
     }
   </script>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>The house illustration look. Brief MidJourney with the shared style tail and composite logos + app tiles in — never generate them. Keep red to a single rare focal detail per frame.</p>
 </body>
 </html>

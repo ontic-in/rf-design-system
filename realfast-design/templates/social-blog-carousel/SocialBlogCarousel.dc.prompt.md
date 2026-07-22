@@ -1,0 +1,1 @@
+Give the system a blog post. It lifts 3-4 core takeaways, one per slide, and closes on a CTA back to the post. Add or drop a takeaway slide to match how much the blog actually says - never pad to hit five. No chart unless the blog itself carries data.

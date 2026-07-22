@@ -20,12 +20,14 @@ artifacts _or_ production code, depending on the need.
 realfast uses **one look — a light, serif "Economist"-style editorial system**. There
 is no dark/app theme.
 - White / warm-cream paper, **Source Serif 4** (headlines + body) + **IBM Plex Sans
-  Condensed** (labels, meta, UI), a single red accent `#E3120B`, drop-cap ledes, grainy
-  B&W illustrations with one red detail, hairline rules, square 2px corners, 660px
+  Condensed** (labels, meta, UI), a single red accent `#E3120B`, drop-cap ledes, muted
+  risograph spot illustrations (pure-white background, charcoal/grey mass, muted brand shades leading, red a
+  rare spark), hairline rules, square 2px corners, 660px
   reading measure.
 - The four brand colours — red `#E3120B`, blue `#362CFF`, navy `#191970`, ink
   `#111111` — are used as accents on the light surface. The semantic tokens are the
-  editorial surface by default; no theme wrapper is needed.
+  editorial surface by default; no theme wrapper is needed. The muted illustration
+  shades (`--rf-illus-*`) are an illustration-only extension, not UI colours.
 
 The brand name is **always lowercase** (`realfast`). **No emoji.** Voice is
 plain-spoken, opinionated, specific (real numbers). Icons are **Lucide**.
@@ -38,7 +40,14 @@ plain-spoken, opinionated, specific (real numbers). Icons are **Lucide**.
 - `components/` — Button, Badge, Card, Rubric, ShareButton, PullQuote,
   EditorialBlogCard (React; exported on `window.RealfastDesignSystem_e02a4e`).
 - `templates/` — ready-to-fill starting points: `presentation/` (proposal/pitch deck),
-  `weekly-sprint-report/` (status report), `editorial-article/` (blog article).
+  `weekly-sprint-report/` (status report), `editorial-article/` (blog article),
+  `case-study/` (client case study) + `case-study-apac/` (filled example),
+  and the social set — `social-case-study-carousel/`, `social-blog-carousel/`,
+  `social-thought-leadership/`, `social-infographic/`.
+- `foundations/` — specimen cards incl. `data-viz.html` (chart palette),
+  `website-design-language.html` (the web layer) and `social-content-system.html`
+  (the Social & Content generation system: templates, formats, data, voice editor,
+  workflow, and how-to-prompt guide).
 
 When in doubt, match the foundation specimen cards in `foundations/` and the prose in
 `readme.md` rather than inventing new colors, type, or motifs.

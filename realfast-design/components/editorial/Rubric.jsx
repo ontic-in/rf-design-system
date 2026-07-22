@@ -5,8 +5,20 @@ import React from "react";
  * card: a red section word, a hairline pipe, and a grey sub-rubric. Use inside
  * a [data-theme="editorial"] wrapper.
  */
-export function Rubric({ section, sub, href = "#", as = "p", ...rest }) {
+export function Rubric({ section, sub, href = "#", as = "p", plain = false, ...rest }) {
   const Tag = as;
+  const sectionEl = plain ? (
+    <span style={{ color: "var(--rf-ed-red)", fontWeight: 600 }}>{section}</span>
+  ) : (
+    <a
+      href={href}
+      style={{ color: "var(--rf-ed-red)", textDecoration: "none", fontWeight: 600 }}
+      onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+      onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+    >
+      {section}
+    </a>
+  );
   return (
     <Tag
       style={{
@@ -20,14 +32,7 @@ export function Rubric({ section, sub, href = "#", as = "p", ...rest }) {
       }}
       {...rest}
     >
-      <a
-        href={href}
-        style={{ color: "var(--rf-ed-red)", textDecoration: "none", fontWeight: 600 }}
-        onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-        onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
-      >
-        {section}
-      </a>
+      {sectionEl}
       {sub && (
         <>
           <span style={{ color: "var(--rf-ed-rule)", margin: "0 8px", fontWeight: 400 }}>|</span>

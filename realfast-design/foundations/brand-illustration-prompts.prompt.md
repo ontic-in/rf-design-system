@@ -1,0 +1,1 @@
+Copy a prompt, swap the subject, keep the style tail and --p profile verbatim, and always name the palette hexes. New frames render on a pure-white background; reserve red for the occasional spark, not every frame.

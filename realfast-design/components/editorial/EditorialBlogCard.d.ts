@@ -19,6 +19,8 @@ export interface EditorialBlogCardProps {
   date?: string;
   /** Reading time, e.g. "6 min read". */
   readTime?: string;
+  /** Author byline, rendered as "By {author}" ahead of the date. */
+  author?: string;
   /** Cover image URL. */
   image?: string;
   /** Link target. @default "#" */

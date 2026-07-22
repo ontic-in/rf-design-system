@@ -217,7 +217,23 @@ For listing people at scale:
 
 ---
 
-## 13 · Imagery
+## 13 · Case-study index / listing pattern (Case studies page)
+
+The `/case-studies` index is a **gallery of proof**, built on the editorial case-study surface (same `rf-cs` tokens as the detail pages) so the listing reads continuously into the stories it links to. Anatomy, top to bottom:
+
+1. **Editorial masthead** - sentence-case red kicker on the left ("Case studies"), a quiet meta figure on the right ("N in production"). **No full-width connecting hairline rule** between them, and the figure is set in the **sans, not monospace** - both the connecting rule and the mono count were tried and read as templated, generated "editorial-ish" chrome.
+2. **Hero** - a serif claim that uses the **full container width** (one-two lines, never artificially capped narrow via `max-width`), one gradient accent word (§3), and a full-width standfirst.
+3. **Featured lead** - the newest / strongest story as one wide card: client × *realfast* logo lockup, big serif title, dek, a 3-metric strip (lead metric in red, §2) divided by a hairline, and the read CTA.
+4. **Card grid** - the remaining stories as a uniform grid of editorial cards (see execution below).
+5. **Closing dark band** - the single premium dark punctuation (§4) with a gradient contrast word and the matched pill set (§10).
+
+**Editorial card execution** (a variant of §6 for this surface): fill with `linear-gradient(165deg,#fff → cream)`, a soft layered shadow, and a hover lift - but **no thick white mat border** and only a **2px radius** (not the 24px rounded card). On the newspaper surface the card should read as a crisp lifted surface, not a chunky rounded box. Rubric red + sentence case; serif title turns red on hover; a two-metric row with the lead metric in red.
+
+**Card CTA affordance.** The whole card is the link, so the "Read case study" label is a styled `<span>`, **not** a nested `<button>` (redundant, and invalid inside the card's anchor) and **not** a bare arrow-text link ("Read more →" is an AI / template tell). Style it as a **red ghost pill that fills red on card hover** - it reads unmistakably as a CTA while the card stays the single click target. **No arrow.** Prefer a specific label ("Read case study") over the generic "Learn more".
+
+---
+
+## 14 · Imagery
 
 - Core signature (muted risograph spot illustration on cream) still applies for editorial/illustrative slots.
 - The website adds **B&W / duotone photography** for people (warm, low-contrast, not glossy) and a **3D render** slot for the map/locations moment (16:9 desktop / 16:10 mobile, 12-14px radius). If a diorama video is supplied use `<video muted loop autoplay playsinline>`; otherwise ship the still.
@@ -225,7 +241,7 @@ For listing people at scale:
 
 ---
 
-## 14 · Do / Don't recap
+## 15 · Do / Don't recap
 
 **Do**
 - Flat paper + cream rhythm, premium dark punctuation.
@@ -234,6 +250,8 @@ For listing people at scale:
 - Layered card shadows + hover lift, roomy padding.
 - Warm-grey icons at rest, red on hover.
 - One-shot scroll reveals, reduced-motion safe.
+- On a fully-clickable card, make the CTA a ghost→fill pill span; let the whole card be the one link.
+- Let hero headlines and standfirsts use the full width - don't cap them narrow so they stack into extra lines.
 
 **Don't**
 - Flat black bands, hard divider lines, floating bordered section cards.
@@ -241,3 +259,4 @@ For listing people at scale:
 - Blanket timer-reveal (kills scroll motion), parallax/Ken Burns on faces.
 - Red on resting icons, more than 1-2 gradient words per headline.
 - Any color outside the brand + illustration token set.
+- "Read more →" arrow links, monospace meta counts, or a full-width hairline rule tying a kicker to a figure - all read as generated / templated tells.

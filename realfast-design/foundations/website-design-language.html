@@ -258,7 +258,32 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
   </section>
 
   <section>
-    <div class="sec-no">13 &middot; Imagery</div>
+    <div class="sec-no">13 &middot; Case-study index</div>
+    <div class="sec-body">
+      <h2>Case-study index / listing pattern (Case studies page)</h2>
+      <p>The <code>/case-studies</code> index is a <strong>gallery of proof</strong>, built on the editorial case-study surface (same <code>rf-cs</code> tokens as the detail pages) so the listing reads continuously into the stories it links to. Anatomy, top to bottom:</p>
+      <ul>
+        <li><strong>Editorial masthead</strong> — sentence-case red kicker on the left ("Case studies"), a quiet meta figure on the right ("N in production"). <strong>No full-width connecting hairline rule</strong> between them, and the figure is set in the <strong>sans, not monospace</strong> — both the connecting rule and the mono count were tried and read as templated, generated "editorial-ish" chrome.</li>
+        <li><strong>Hero</strong> — a serif claim that uses the <strong>full container width</strong> (one-two lines, never capped narrow via <code>max-width</code>), one gradient accent word (§3), and a full-width standfirst.</li>
+        <li><strong>Featured lead</strong> — the newest / strongest story as one wide card: client × <em>realfast</em> logo lockup, big serif title, dek, a 3-metric strip (lead metric in red, §2) divided by a hairline, and the read CTA.</li>
+        <li><strong>Card grid</strong> — the remaining stories as a uniform grid of editorial cards.</li>
+        <li><strong>Closing dark band</strong> — the single premium dark punctuation (§4) with a gradient contrast word and the matched pill set (§10).</li>
+      </ul>
+      <p><strong>Editorial card execution</strong> (a variant of §6 for this surface): cream-gradient fill, a soft layered shadow, and a hover lift — but <strong>no thick white mat border</strong> and only a <strong>2px radius</strong> (not the 24px rounded card). On the newspaper surface the card should read as a crisp lifted surface, not a chunky rounded box. Rubric red + sentence case; serif title turns red on hover; a two-metric row with the lead metric in red.</p>
+      <p><strong>Card CTA affordance.</strong> The whole card is the link, so the "Read case study" label is a styled <code>&lt;span&gt;</code>, <strong>not</strong> a nested <code>&lt;button&gt;</code> (redundant, and invalid inside the card's anchor) and <strong>not</strong> a bare arrow-text link ("Read more →" is an AI / template tell). Style it as a <strong>red ghost pill that fills red on card hover</strong> — it reads unmistakably as a CTA while the card stays the single click target. <strong>No arrow.</strong> Prefer a specific label ("Read case study") over the generic "Learn more".</p>
+      <pre><span class="cm">/* card CTA — a styled span, not a nested button */</span>
+.cs-read {
+  display: inline-flex; align-self: flex-start;
+  padding: 9px 20px; border-radius: 999px;
+  border: 1px solid var(--rf-ed-red); color: var(--rf-ed-red);
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+}
+.cs-card:hover .cs-read { background: var(--rf-ed-red); color: #fff; }  <span class="cm">/* ghost → fill */</span></pre>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">14 &middot; Imagery</div>
     <div class="sec-body">
       <h2>Imagery</h2>
       <ul>
@@ -270,7 +295,7 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
   </section>
 
   <section>
-    <div class="sec-no">14 &middot; Recap</div>
+    <div class="sec-no">15 &middot; Recap</div>
     <div class="sec-body">
       <h2>Do / Don't recap</h2>
       <div class="dd">
@@ -283,6 +308,8 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
             <li>Layered card shadows + hover lift, roomy padding.</li>
             <li>Warm-grey icons at rest, red on hover.</li>
             <li>One-shot scroll reveals, reduced-motion safe.</li>
+            <li>On a fully-clickable card, make the CTA a ghost→fill pill span; let the whole card be the one link.</li>
+            <li>Let hero headlines and standfirsts use the full width — don't cap them narrow so they stack into extra lines.</li>
           </ul>
         </div>
         <div class="dont">
@@ -293,6 +320,7 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
             <li>Blanket timer-reveal (kills scroll motion), parallax/Ken Burns on faces.</li>
             <li>Red on resting icons, more than 1-2 gradient words per headline.</li>
             <li>Any color outside the brand + illustration token set.</li>
+            <li>"Read more →" arrow links, monospace meta counts, or a full-width hairline rule tying a kicker to a figure — generated / templated tells.</li>
           </ul>
         </div>
       </div>

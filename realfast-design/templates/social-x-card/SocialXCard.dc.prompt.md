@@ -1,0 +1,1 @@
+Landscape 16:9 for X only - it crops badly on LinkedIn. X renders the card at roughly a third of its size, so type is set large deliberately: cut words rather than shrink type. The tweet carries the argument, the card carries the one line worth screenshotting.

@@ -1,0 +1,1 @@
+The quote must be verbatim and cleared. If the client will not be named, keep the role and sector and drop the company - never invent an attribution. One sentence; use the metric variant when the number does the second half of the work.

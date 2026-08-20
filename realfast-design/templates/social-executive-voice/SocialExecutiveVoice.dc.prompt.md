@@ -1,0 +1,1 @@
+Post from a named person's profile, never the company page - personal profiles reach far further. Swap the byline and headshot for the real author, write in first person, and keep the claim to one sentence. Use the square for a standalone claim, the portrait for a short story, and the dark frame to close a carousel. Put any link in the first comment.

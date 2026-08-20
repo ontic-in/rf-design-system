@@ -57,6 +57,14 @@ A system that turns any blog, case study, or thought-leadership piece into ready
 - **Use it for:** LinkedIn / X carousels and single images from existing source material.
 - **How:** see `foundations/social-content-system.html` — supply content type, source, platform, and audience; the system handles design, data viz, and voice. Never invents claims not in the source.
 
+### 6 · Marketing Landing Page
+
+A bold, colour-blocked **homepage / landing page** — full-bleed dark hero with an oversized serif headline, marquee logo wall, problem statement, three-step method, feature grid, metric band, quote, case-study teaser and closing CTA. Scroll reveals and hover lift throughout.
+
+- **Use it for:** the company homepage, product pages, campaign pages — anywhere the sober editorial register is too quiet.
+- **How:** edit the copy in place; the **Direction** tweak switches the whole page between three treatments — `midnight` (ink→navy gradient), `electric` (brand blue) and `paper` (cream-led, closest to editorial). Motion and the logo wall can be turned off.
+- **Note:** this is the one template that reads the `--rf-mk-*` marketing tokens rather than the editorial semantic aliases.
+
 ---
 
 ## The brand kit, briefly
@@ -76,7 +84,7 @@ A system that turns any blog, case study, or thought-leadership piece into ready
 The rest of this folder is the machine-readable source for the look above — link `styles.css` and the rest follows:
 
 - **`styles.css`** — the single stylesheet to link; pulls in all tokens and the self-hosted fonts (Source Serif 4, IBM Plex Sans Condensed).
-- **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper.
+- **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`, `marketing.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper. `marketing.css` is a purely **additive** `--rf-mk-*` layer (dark grounds, gradients, oversized display scale, real elevation, motion) for landing pages — it overrides nothing in the editorial surface.
 - **`foundations/*.html`** — specimen cards (Colours, Type, Spacing, Effects, Brand) that populate the **Design System** tab.
 - **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
 - **`templates/`** — the starting points described above: `presentation/`, `weekly-sprint-report/`, `editorial-article/`, `case-study/` (+ `case-study-apac/` example), and the social set (`social-case-study-carousel/`, `social-blog-carousel/`, `social-thought-leadership/`, `social-infographic/`).
@@ -87,7 +95,7 @@ Plain-spoken, opinionated, technically credible, a little dry — an engineer-op
 
 ### Icons
 
-Use **[Lucide](https://lucide.dev)** outline icons (24×24, \~2px stroke). Don't mix in a second icon set, and never hand-draw bespoke SVG icons to fake one.
+Use **[Tabler](https://tabler.io/icons)** outline icons (24×24, 2px stroke, round cap/join, `currentColor`, never filled). Fifteen icons are sanctioned and meaning-mapped in `foundations/icons.html` — use those first; pull anything else from Tabler at the same spec. Don't mix in a second icon set, and never hand-draw bespoke SVG icons to fake one.
 
 ### Source of truth
 

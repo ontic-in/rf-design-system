@@ -1,0 +1,63 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Marketing surface tokens
+ *
+ * An ADDITIVE layer for marketing landing pages only. The editorial surface
+ * (tokens/colors.css semantic aliases) is untouched — nothing here overrides
+ * --surface-*, --text-*, --accent or --border. Marketing pages opt in by
+ * reading the --rf-mk-* names below.
+ *
+ * The editorial system is calm, hairline and shadowless. Marketing needs the
+ * opposite register: full-bleed dark grounds, colour-blocked bands, oversized
+ * display type with tight tracking, real elevation, and motion. Same four
+ * brand colours, same two typefaces — louder composition.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Grounds ──────────────────────────────────────────────────────────── */
+  --rf-mk-ink: #0b0b0d;            /* deepest ground — darker than --rf-ink */
+  --rf-mk-ink-raise: #17171b;      /* cards on the dark ground */
+  --rf-mk-navy: #191970;           /* brand navy band */
+  --rf-mk-navy-deep: #0e0e33;      /* gradient origin */
+  --rf-mk-blue: #362cff;           /* electric band */
+  --rf-mk-cream: #f5f3ef;          /* warm panel — matches illustration ground */
+  --rf-mk-cream-2: #f1ebe0;        /* deeper warm panel */
+  --rf-mk-paper: #ffffff;
+
+  /* ── Gradients ────────────────────────────────────────────────────────── */
+  --rf-mk-grad-midnight: linear-gradient(158deg, #0b0b0d 0%, #141438 48%, #191970 100%); /* @kind color */
+  --rf-mk-grad-electric: linear-gradient(148deg, #362cff 0%, #2a22d6 52%, #191970 100%); /* @kind color */
+  --rf-mk-grad-dusk: linear-gradient(180deg, #191970 0%, #0b0b0d 100%); /* @kind color */
+  --rf-mk-grad-fade: linear-gradient(180deg, rgba(11,11,13,0) 0%, rgba(11,11,13,0.85) 100%); /* @kind color */
+
+  /* ── Type on dark ─────────────────────────────────────────────────────── */
+  --rf-mk-on-dark: #ffffff;
+  --rf-mk-on-dark-muted: rgba(255, 255, 255, 0.66);
+  --rf-mk-on-dark-faint: rgba(255, 255, 255, 0.38);
+  --rf-mk-rule-dark: rgba(255, 255, 255, 0.16);
+
+  /* ── Display scale — oversized, tight ─────────────────────────────────── */
+  --rf-mk-display: clamp(3.25rem, 7.4vw, 7rem); /* @kind font */
+  --rf-mk-h2: clamp(2.25rem, 4.2vw, 4rem); /* @kind font */
+  --rf-mk-h3: clamp(1.25rem, 1.7vw, 1.75rem); /* @kind font */
+  --rf-mk-metric: clamp(3rem, 6vw, 5.5rem); /* @kind font */
+  --rf-mk-lead: clamp(1.0625rem, 1.35vw, 1.375rem); /* @kind font */
+  --rf-mk-track-display: -0.035em;                /* @kind other */
+  --rf-mk-track-tight: -0.02em;                   /* @kind other */
+  --rf-mk-track-label: 0.14em; /* @kind other */
+  --rf-mk-leading-display: 0.94;                  /* @kind other */
+
+  /* ── Elevation — marketing uses real depth ────────────────────────────── */
+  --rf-mk-shadow-card: 0 2px 4px rgba(11, 11, 13, 0.04), 0 12px 28px rgba(11, 11, 13, 0.07);
+  --rf-mk-shadow-lift: 0 8px 16px rgba(11, 11, 13, 0.07), 0 28px 60px rgba(11, 11, 13, 0.13);
+  --rf-mk-shadow-dark: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  /* ── Rhythm ───────────────────────────────────────────────────────────── */
+  --rf-mk-section-y: clamp(5rem, 9vw, 9.5rem); /* @kind spacing */
+  --rf-mk-gutter: clamp(1.5rem, 5vw, 5rem); /* @kind spacing */
+  --rf-mk-max: 1360px; /* @kind spacing */
+
+  /* ── Motion ───────────────────────────────────────────────────────────── */
+  --rf-mk-reveal-dur: 720ms;                      /* @kind other */
+  --rf-mk-reveal-ease: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --rf-mk-marquee-dur: 42s;                       /* @kind other */
+}

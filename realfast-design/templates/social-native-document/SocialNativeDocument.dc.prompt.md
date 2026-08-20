@@ -1,0 +1,1 @@
+Give the system a long-form source - a playbook, a post-mortem, a report. It lifts a cover, a contents page, four chapters and a close, then exports as one PDF for a native document post. Keep the white/cream alternation and the page counter. Add or drop chapters in pairs; if the source only carries two ideas, use the Blog Carousel instead.

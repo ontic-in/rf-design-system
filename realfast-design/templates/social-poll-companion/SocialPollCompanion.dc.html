@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social · Poll Companion" description="Square 1200×1200 image to run alongside a native poll — the question card that goes up with the poll, and the results card that closes the loop a week later." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>html,body{margin:0;}</style>
+</helmet>
+<div style="background:#dcd8d0;padding:40px;font-family:var(--font-sans);">
+  <div style="max-width:1240px;margin:0 auto 20px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+    <div>
+      <div style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rf-ed-red);">Social &middot; Poll companion</div>
+      <div style="font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);margin-top:4px;">Square 1200&times;1200 &middot; question card + results card</div>
+    </div>
+    <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:12.5px;color:var(--rf-ed-ink-soft);max-width:420px;line-height:1.5;">The poll itself is native; this is the image that frames it, and the follow-up that publishes what people said. The second card is where the reach actually is.</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:30px;zoom:0.44;padding:8px 4px 24px;align-items:flex-start;">
+
+    <!-- A · QUESTION CARD -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:12px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">A &middot; Question card &middot; goes up with the poll</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:linear-gradient(160deg,#ffffff 0%,#ffffff 46%,var(--rf-paper-cream) 100%);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:18px;">
+            <span style="width:18px;height:18px;background:var(--rf-ed-red);flex:none;"></span>
+            <span style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--rf-ed-red);">One question</span>
+          </div>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:44px;width:auto;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:52px;">
+          <div style="font-family:var(--font-serif);font-size:84px;line-height:1.1;font-weight:600;letter-spacing:-0.024em;color:var(--rf-ed-ink);text-wrap:balance;">What actually killed your last AI pilot?</div>
+          <div style="display:flex;flex-direction:column;gap:22px;">
+            <div style="display:flex;align-items:center;gap:26px;border:2px solid var(--rf-ed-rule);padding:26px 32px;"><span style="width:26px;height:26px;border:3px solid var(--rf-ed-rule);border-radius:99px;flex:none;"></span><span style="font-family:var(--font-sans);font-size:40px;color:var(--rf-ed-ink);">No agreed metric</span></div>
+            <div style="display:flex;align-items:center;gap:26px;border:2px solid var(--rf-ed-rule);padding:26px 32px;"><span style="width:26px;height:26px;border:3px solid var(--rf-ed-rule);border-radius:99px;flex:none;"></span><span style="font-family:var(--font-sans);font-size:40px;color:var(--rf-ed-ink);">Data access</span></div>
+            <div style="display:flex;align-items:center;gap:26px;border:2px solid var(--rf-ed-rule);padding:26px 32px;"><span style="width:26px;height:26px;border:3px solid var(--rf-ed-rule);border-radius:99px;flex:none;"></span><span style="font-family:var(--font-sans);font-size:40px;color:var(--rf-ed-ink);">No internal owner</span></div>
+            <div style="display:flex;align-items:center;gap:26px;border:2px solid var(--rf-ed-rule);padding:26px 32px;"><span style="width:26px;height:26px;border:3px solid var(--rf-ed-rule);border-radius:99px;flex:none;"></span><span style="font-family:var(--font-sans);font-size:40px;color:var(--rf-ed-ink);">It never shipped</span></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:32px;font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;color:var(--rf-ed-muted);">Vote in the poll &middot; tell us the story in the comments</div>
+      </div>
+    </div>
+
+    <!-- B · RESULTS CARD -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:12px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">B &middot; Results card &middot; posted a week later</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:var(--rf-paper-cream);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:18px;">
+            <span style="width:18px;height:18px;background:var(--rf-ed-red);flex:none;"></span>
+            <span style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--rf-ed-red);">You answered</span>
+          </div>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:44px;width:auto;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:44px;">
+          <div style="font-family:var(--font-serif);font-size:62px;line-height:1.14;font-weight:600;letter-spacing:-0.02em;color:var(--rf-ed-ink);text-wrap:balance;">What actually killed your last AI pilot?</div>
+          <div style="display:flex;flex-direction:column;gap:28px;">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-family:var(--font-sans);font-size:38px;font-weight:600;color:var(--rf-ed-ink);">No agreed metric</span><span style="font-family:var(--font-serif);font-size:46px;font-weight:600;color:var(--rf-ed-ink);">41%</span></div>
+              <div style="height:34px;background:#fff;border:1px solid var(--rf-ed-rule);position:relative;"><div style="position:absolute;left:0;top:0;bottom:0;width:41%;background:var(--rf-ed-red);"></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-family:var(--font-sans);font-size:38px;color:var(--rf-ed-muted);">No internal owner</span><span style="font-family:var(--font-serif);font-size:46px;font-weight:600;color:var(--rf-ed-muted);">27%</span></div>
+              <div style="height:34px;background:#fff;border:1px solid var(--rf-ed-rule);position:relative;"><div style="position:absolute;left:0;top:0;bottom:0;width:27%;background:var(--rf-illus-dusty-blue);"></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-family:var(--font-sans);font-size:38px;color:var(--rf-ed-muted);">Data access</span><span style="font-family:var(--font-serif);font-size:46px;font-weight:600;color:var(--rf-ed-muted);">19%</span></div>
+              <div style="height:34px;background:#fff;border:1px solid var(--rf-ed-rule);position:relative;"><div style="position:absolute;left:0;top:0;bottom:0;width:19%;background:var(--rf-illus-dusty-blue);"></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-family:var(--font-sans);font-size:38px;color:var(--rf-ed-muted);">It never shipped</span><span style="font-family:var(--font-serif);font-size:46px;font-weight:600;color:var(--rf-ed-muted);">13%</span></div>
+              <div style="height:34px;background:#fff;border:1px solid var(--rf-ed-rule);position:relative;"><div style="position:absolute;left:0;top:0;bottom:0;width:13%;background:var(--rf-illus-pale-blue);"></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:32px;display:flex;align-items:baseline;justify-content:space-between;gap:24px;">
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;line-height:1.4;color:var(--rf-ed-muted);max-width:760px;">Two in five said the number was never agreed. That is a planning problem, not an AI problem.</div>
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:28px;color:var(--rf-ed-faint);white-space:nowrap;">1,204 votes</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="max-width:1240px;margin:24px auto 0;font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:14px;line-height:1.6;color:var(--rf-ed-ink-soft);border-top:1px solid rgba(17,17,17,.16);padding-top:14px;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Run the poll natively and post card A with it - the image gives the question a shape people screenshot. Card A's options must match the poll's options exactly, all four of them. Card B goes up after the poll closes with the real vote counts and one line of interpretation; never publish invented percentages. Highlight only the winning bar in red.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}"></script>
+</body>
+</html>

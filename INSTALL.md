@@ -33,12 +33,15 @@ Or let Claude pull it in automatically when a request matches its description (b
 ## What's inside
 
 - `SKILL.md` / `readme.md` — the brand guide and how to use it.
-- `styles.css` + `tokens/` — the single stylesheet to link (self-hosted fonts + tokens).
-- `assets/` — Source Serif 4 + IBM Plex Sans Condensed fonts, the white-fill wordmark, five editorial illustrations.
-- `components/` — React primitives (Button, Badge, Card, Rubric, ShareButton, PullQuote, EditorialBlogCard) with `.d.ts` types and `.prompt.md` usage notes.
-- `foundations/` — specimen cards (colours, type, spacing, effects, brand).
-- `templates/` — three ready-to-fill starting points: presentation deck, weekly sprint report, editorial article.
-- `_ds_bundle.js` — compiled component bundle the templates load for preview.
+- `styles.css` + `tokens/` — the single stylesheet to link (self-hosted fonts + tokens, incl. the `--rf-marketing-*` layer used by the marketing landing template).
+- `assets/` + `fonts/` — Source Serif 4, IBM Plex Sans Condensed and Manrope, the wordmark, and the editorial illustration set.
+- `components/` — React primitives (`components/core`, `components/editorial`) with `.d.ts` types and `.prompt.md` usage notes.
+- `foundations/` — specimen cards (colours, type, spacing, effects, brand, data viz, social content system, website design language).
+- `templates/` — 19 ready-to-fill starting points:
+  - **Long-form / docs:** `editorial-article`, `weekly-sprint-report`, `case-study`, `case-study-apac`, `presentation`
+  - **Web:** `marketing-landing`
+  - **Social:** `social-announcement`, `social-blog-carousel`, `social-case-study-carousel`, `social-event-webinar`, `social-executive-voice`, `social-hiring`, `social-infographic`, `social-native-document`, `social-poll-companion`, `social-quote-card`, `social-thought-leadership`, `social-video-frames`, `social-x-card`
+- `_ds_bundle.js`, `_ds_manifest.json`, `support.js` — compiled component bundle and runtime the templates load for preview.
 
 ## Note for production work
 

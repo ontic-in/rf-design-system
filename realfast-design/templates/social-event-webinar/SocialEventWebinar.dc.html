@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social · Event & Webinar" description="Promotion set for a talk or webinar — square 1200×1200 promo with date block, landscape 1600×900 speaker card, and a 9:16 1080×1920 story reminder." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>html,body{margin:0;}</style>
+</helmet>
+<div style="background:#dcd8d0;padding:40px;font-family:var(--font-sans);">
+  <div style="max-width:1240px;margin:0 auto 20px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+    <div>
+      <div style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rf-ed-red);">Social &middot; Event &amp; webinar</div>
+      <div style="font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);margin-top:4px;">1200&times;1200 promo &middot; 1600&times;900 speaker &middot; 1080&times;1920 story</div>
+    </div>
+    <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:12.5px;color:var(--rf-ed-ink-soft);max-width:420px;line-height:1.5;">Three assets, one event: the promo that announces it, the speaker card each panellist reshares, and the story that reminds people an hour before.</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:26px;zoom:0.24;padding:8px 4px 24px;align-items:flex-start;">
+
+    <!-- A · PROMO SQUARE -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:38px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">A &middot; Promo &middot; 1200&times;1200</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 100% 0%, rgba(125,151,181,.20), transparent 60%), linear-gradient(160deg,#ffffff 0%,#ffffff 44%,var(--rf-paper-cream) 100%);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:var(--font-sans);font-size:26px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:var(--rf-ed-red);padding:12px 22px;">Live webinar</span>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:46px;width:auto;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;">
+          <div style="font-family:var(--font-serif);font-size:98px;line-height:1.04;font-weight:600;letter-spacing:-0.028em;color:var(--rf-ed-ink);text-wrap:balance;">Ten weeks to a number that moved</div>
+          <div style="font-family:var(--font-serif);font-size:46px;line-height:1.34;color:var(--rf-ed-ink-soft);max-width:900px;text-wrap:pretty;">How three APAC operations teams got out of pilot purgatory - and what it cost them.</div>
+        </div>
+        <div style="border-top:2px solid var(--rf-ed-ink);padding-top:40px;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;">
+          <div style="display:flex;align-items:stretch;gap:34px;">
+            <div style="display:flex;flex-direction:column;align-items:flex-start;">
+              <div style="font-family:var(--font-sans);font-size:26px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-red);margin-bottom:10px;">Thu 3 Sep</div>
+              <div style="font-family:var(--font-serif);font-size:76px;line-height:.9;font-weight:600;letter-spacing:-0.03em;color:var(--rf-ed-ink);">16:00</div>
+              <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:28px;color:var(--rf-ed-muted);margin-top:8px;">SGT &middot; 45 min</div>
+            </div>
+            <span style="width:1px;background:var(--rf-ed-rule);"></span>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;line-height:1.45;color:var(--rf-ed-muted);align-self:center;max-width:340px;">Free &middot; recording sent to everyone who registers</div>
+          </div>
+          <div style="font-family:var(--font-sans);font-size:32px;font-weight:700;color:#fff;background:var(--rf-ed-red);padding:22px 34px;white-space:nowrap;">Register &rarr;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B · SPEAKER CARD LANDSCAPE -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:38px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">B &middot; Speaker card &middot; 1600&times;900</div>
+      <div style="width:1600px;height:900px;position:relative;overflow:hidden;background:var(--rf-paper-cream);display:flex;box-sizing:border-box;">
+        <div style="width:600px;flex:none;position:relative;background:#e4e0d8;"><image-slot id="ew-b-face" shape="rect" fit="cover" placeholder="Speaker headshot (portrait crop)"></image-slot></div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:72px 80px;box-sizing:border-box;min-width:0;">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:var(--font-sans);font-size:30px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--rf-ed-red);">Speaking</div>
+            <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:44px;width:auto;" />
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px;">
+            <div>
+              <div style="font-family:var(--font-serif);font-size:82px;line-height:1;font-weight:600;letter-spacing:-0.028em;color:var(--rf-ed-ink);">Ravi Menon</div>
+              <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:36px;color:var(--rf-ed-muted);margin-top:14px;">Co-founder &middot; <span style="font-style:italic;">realfast</span></div>
+            </div>
+            <div style="width:80px;height:5px;background:var(--rf-ed-red);"></div>
+            <div style="font-family:var(--font-serif);font-size:48px;line-height:1.24;font-weight:600;color:var(--rf-ed-ink);text-wrap:pretty;">Ten weeks to a number that moved</div>
+          </div>
+          <div style="border-top:1px solid var(--rf-ed-rule);padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;font-weight:600;color:var(--rf-ed-ink);">Thu 3 Sep &middot; 16:00 SGT</div>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;font-weight:600;color:var(--rf-ed-red);">realfast.ai/live</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C · STORY REMINDER 9:16 -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:38px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">C &middot; Story reminder &middot; 1080&times;1920</div>
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 55% at 50% 10%, rgba(125,151,181,.20), transparent 62%), linear-gradient(180deg,#12110f 0%,#0a0a09 62%,#050505 100%);box-sizing:border-box;">
+        <div style="position:absolute;inset:220px 80px 520px;display:flex;flex-direction:column;justify-content:center;gap:56px;">
+          <div style="font-family:var(--font-sans);font-size:44px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rf-red-400);">Starts in one hour</div>
+          <div style="font-family:var(--font-serif);font-size:118px;line-height:1.04;font-weight:600;letter-spacing:-0.028em;color:rgba(255,255,255,.96);text-wrap:balance;">Ten weeks to a number that moved</div>
+          <div style="width:110px;height:6px;background:var(--rf-ed-red);"></div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="font-family:var(--font-serif);font-size:62px;line-height:1.1;font-weight:600;color:rgba(255,255,255,.9);">Thu 3 Sep &middot; 16:00 SGT</div>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:44px;color:rgba(255,255,255,.6);">45 minutes &middot; recording sent to all registrants</div>
+          </div>
+          <div style="font-family:var(--font-sans);font-size:48px;font-weight:700;color:#fff;background:var(--rf-ed-red);padding:28px 44px;align-self:flex-start;">realfast.ai/live</div>
+        </div>
+        <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="position:absolute;top:250px;left:80px;height:56px;width:auto;opacity:.92;" />
+        <div style="position:absolute;inset:220px 80px 520px;border:3px dashed rgba(227,18,11,.5);pointer-events:none;"></div>
+        <div style="position:absolute;left:88px;bottom:430px;font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:34px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,.42);pointer-events:none;">Safe zone ends &middot; platform UI below</div>
+      </div>
+    </div>
+
+  </div>
+  <div style="max-width:1240px;margin:24px auto 0;font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:14px;line-height:1.6;color:var(--rf-ed-ink-soft);border-top:1px solid rgba(17,17,17,.16);padding-top:14px;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Date, time with timezone, duration and the registration route appear on all three - a promo missing the timezone is useless across APAC. Give every speaker their own copy of card B to post from their own profile; that is where the registrations come from. Card C's dashed guide is for you, not artwork - delete it before export.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:740}}"></script>
+</body>
+</html>

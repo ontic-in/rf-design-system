@@ -1,16 +1,16 @@
-# Realfast Design System
+# *realfast* Design System
 
-The house style for everything **realfast** (Ontic Pte Ltd) puts in front of a reader — proposals, reports, articles, and one-pagers. One look, applied consistently, so anything we send out is unmistakably ours.
+The house style for everything ***realfast*** (Ontic Pte Ltd) puts in front of a reader — proposals, reports, articles, and one-pagers. One look, applied consistently, so anything we send out is unmistakably ours.
 
 ---
 
 ## The look in one line
 
-**A modern editorial style — like a serious business newspaper.** White and warm-cream paper, a classic serif for headlines and reading, a crisp condensed sans for labels and captions, a single confident **red** accent, clean hairline rules instead of heavy boxes, and square corners. Calm, credible, and content-first. 
+**A modern editorial style — like a serious business newspaper.** White and warm-cream paper, a classic serif for headlines and reading, a crisp condensed sans for labels and captions, a single confident **red** accent, clean hairline rules instead of heavy boxes, and square corners. Calm, credible, and content-first.
 
 **Three rules that keep us on-brand:**
 
-- The name is always lowercase: **realfast**.
+- The name is always lowercase and italic: ***realfast***.
 - **No emoji**, ever.
 - Voice is plain-spoken and specific — real numbers, no hype.
 
@@ -67,15 +67,37 @@ The full **"newspaper article"** layout — section rubric, big serif headline, 
 
 > **Tip:** every template has a small **Tweaks** panel (top toolbar) for quick changes like swapping the accent colour. You can also click directly on any text to edit it.
 
+### 4 · Case Study
+
+A long-scroll **client case study** with the fixed narrative spine — hero outcome, the problem, why it mattered, what we did, the build, the metric moved (the boldest data moment), a client quote, and what's next. `case-study-apac/` is a fully filled example.
+
+- **Use it for:** client results, proof stories, sales collateral.
+- **How:** lead with the outcome, keep every metric visual, and pull all copy from the source. Ships with a book-a-demo form and a PDF download.
+
+### 5 · Social & Content
+
+A system that turns any blog, case study, or thought-leadership piece into ready-to-post, on-brand assets. Content types: **case study carousel**, **blog carousel**, **thought-leadership** (single image + 3-slide), and the **metric infographic**. All light-led, logo on the first and last frame, data drawn from the chart palette, copy run through the voice editor.
+
+- **Use it for:** LinkedIn / X carousels and single images from existing source material.
+- **How:** see `foundations/social-content-system.html` — supply content type, source, platform, and audience; the system handles design, data viz, and voice. Never invents claims not in the source.
+
+### 6 · Marketing Landing Page
+
+A bold, colour-blocked **homepage / landing page** — full-bleed dark hero with an oversized serif headline, marquee logo wall, problem statement, three-step method, feature grid, metric band, quote, case-study teaser and closing CTA. Scroll reveals and hover lift throughout.
+
+- **Use it for:** the company homepage, product pages, campaign pages — anywhere the sober editorial register is too quiet.
+- **How:** edit the copy in place; the **Direction** tweak switches the whole page between three treatments — `midnight` (ink→navy gradient), `electric` (brand blue) and `paper` (cream-led, closest to editorial). Motion and the logo wall can be turned off.
+- **Note:** this is the one template that reads the `--rf-mk-*` marketing tokens rather than the editorial semantic aliases.
+
 ---
 
 ## The brand kit, briefly
 
-**Colours.** Four brand colours: **red** `#E3120B` (the accent — used sparingly), **blue** `#362CFF`, **navy** `#191970`, and **ink** `#111111` (near-black text). Backgrounds are white or warm cream. That's it — please don't introduce new colours.
+**Colours.** Four brand colours: **red** `#E3120B` (the accent — used sparingly), **blue** `#362CFF`, **navy** `#191970`, and **ink** `#111111` (near-black text). Backgrounds are white or warm cream. The four canonical brand colours remain for UI; the muted illustration shades (dusty blue, slate navy, dusty violet, warm charcoal/grey, pale blue, bone) are an illustration-only extension (pending sign-off) and live under the `--rf-illus-*` tokens. Don't introduce colours beyond these.
 
 **Type.** Two typefaces do all the work: **Source Serif 4** (headlines, body, quotes) and **IBM Plex Sans Condensed** (labels, dates, captions). Figures and code use a plain monospace.
 
-**Imagery.** The signature look is **grainy black-and-white illustration with one red detail** picked out of the scene (a crack, a crane, a finish-line tape). Five are included in `assets/illustrations/`. Avoid glossy stock photography.
+**Imagery.** The signature look is a **muted risograph spot illustration on a pure-white background** (with only a faint warm-cream tint) — warm-charcoal/grey mass, muted brand shades (dusty blue `#7D97B5`, slate navy `#3E4C6E`, dusty violet `#8B84A8`) leading the accents, and signal-red `#E3120B` reserved for a single rare focal detail. Chalky screen-print grain, gentle low contrast, generous negative space. Avoid glossy stock photography.
 
 **Logo.** The realfast wordmark lives in `assets/logos/`. On our light paper it always renders in ink (dark). Never recolour it.
 
@@ -86,10 +108,10 @@ The full **"newspaper article"** layout — section rubric, big serif headline, 
 The rest of this folder is the machine-readable source for the look above — link `styles.css` and the rest follows:
 
 - **`styles.css`** — the single stylesheet to link; pulls in all tokens and the self-hosted fonts (Source Serif 4, IBM Plex Sans Condensed).
-- **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper.
+- **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`, `marketing.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper. `marketing.css` is a purely **additive** `--rf-mk-*` layer (dark grounds, gradients, oversized display scale, real elevation, motion) for landing pages — it overrides nothing in the editorial surface.
 - **`foundations/*.html`** — specimen cards (Colours, Type, Spacing, Effects, Brand) that populate the **Design System** tab.
-- **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
-- **`templates/`** — the three starting points described above (`presentation/`, `weekly-sprint-report/`, `editorial-article/`).
+- **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
+- **`templates/`** — the starting points described above: `presentation/`, `weekly-sprint-report/`, `editorial-article/`, `case-study/` (+ `case-study-apac/` example), and the social set (`social-case-study-carousel/`, `social-blog-carousel/`, `social-thought-leadership/`, `social-infographic/`).
 
 ### Writing voice (for accurate copy)
 
@@ -97,7 +119,7 @@ Plain-spoken, opinionated, technically credible, a little dry — an engineer-op
 
 ### Icons
 
-Use **[Lucide](https://lucide.dev)** outline icons (24×24, \~2px stroke). Don't mix in a second icon set, and never hand-draw bespoke SVG icons to fake one.
+Use **[Tabler](https://tabler.io/icons)** outline icons (24×24, 2px stroke, round cap/join, `currentColor`, never filled). Fifteen icons are sanctioned and meaning-mapped in `foundations/icons.html` — use those first; pull anything else from Tabler at the same spec. Don't mix in a second icon set, and never hand-draw bespoke SVG icons to fake one.
 
 ### Source of truth
 

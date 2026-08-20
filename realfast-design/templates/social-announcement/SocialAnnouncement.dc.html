@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social · Announcement" description="Launches, partnerships, funding and milestones — square 1200×1200 launch card, landscape 1600×900 partnership lockup, and a square milestone. Date and one-line 'what changes' are mandatory." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>html,body{margin:0;}</style>
+</helmet>
+<div style="background:#dcd8d0;padding:40px;font-family:var(--font-sans);">
+  <div style="max-width:1240px;margin:0 auto 20px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+    <div>
+      <div style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rf-ed-red);">Social &middot; Announcement</div>
+      <div style="font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);margin-top:4px;">Square 1200&times;1200 &middot; landscape 1600&times;900 &middot; launches, partners, milestones</div>
+    </div>
+    <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:12.5px;color:var(--rf-ed-ink-soft);max-width:420px;line-height:1.5;">An announcement earns attention once. Lead with the thing that happened, then one line on what it changes for the reader - not a paragraph of gratitude.</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:26px;zoom:0.28;padding:8px 4px 24px;align-items:flex-start;">
+
+    <!-- A · LAUNCH (square) -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:16px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">A &middot; Launch &middot; 1200&times;1200</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 100% 0%, rgba(125,151,181,.20), transparent 60%), linear-gradient(160deg,#ffffff 0%,#ffffff 44%,var(--rf-paper-cream) 100%);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:20px;">
+            <span style="font-family:var(--font-sans);font-size:26px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:var(--rf-ed-red);padding:12px 22px;">New</span>
+            <span style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;color:var(--rf-ed-muted);">18 August 2026</span>
+          </div>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:46px;width:auto;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:38px;">
+          <div style="font-family:var(--font-serif);font-size:104px;line-height:1.02;font-weight:600;letter-spacing:-0.028em;color:var(--rf-ed-ink);text-wrap:balance;">Delivery dashboards, now in every engagement</div>
+          <div style="width:96px;height:5px;background:var(--rf-ed-red);"></div>
+          <div style="font-family:var(--font-serif);font-size:48px;line-height:1.34;color:var(--rf-ed-ink-soft);max-width:880px;text-wrap:pretty;">You see the number you hired us to move, updated daily - not in a slide at the end.</div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:34px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;font-weight:600;color:var(--rf-ed-red);">realfast.ai</div>
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;color:var(--rf-ed-muted);">Details in the comments</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B · PARTNERSHIP (landscape lockup) -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:16px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">B &middot; Partnership &middot; 1600&times;900</div>
+      <div style="width:1600px;height:900px;position:relative;overflow:hidden;background:var(--rf-paper-cream);display:flex;flex-direction:column;padding:76px 88px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:var(--font-sans);font-size:30px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--rf-ed-red);">Partnership</div>
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;color:var(--rf-ed-muted);">18 August 2026</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:52px;">
+          <div style="display:flex;align-items:center;gap:56px;">
+            <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:76px;width:auto;flex:none;" />
+            <span style="width:1px;height:96px;background:var(--rf-ed-rule);flex:none;"></span>
+            <div style="width:340px;height:96px;flex:none;position:relative;background:#fff;border:1px solid var(--rf-ed-rule);"><image-slot id="an-b-partner" shape="rect" fit="contain" placeholder="Partner logo"></image-slot></div>
+          </div>
+          <div style="font-family:var(--font-serif);font-size:76px;line-height:1.08;font-weight:600;letter-spacing:-0.024em;color:var(--rf-ed-ink);max-width:1250px;text-wrap:balance;">Bringing metric-first AI delivery to regulated financial services.</div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:26px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;line-height:1.4;color:var(--rf-ed-muted);max-width:900px;">What changes: joint delivery teams, one shared metric per engagement.</div>
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;font-weight:600;color:var(--rf-ed-red);">realfast.ai</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C · MILESTONE (square, dark) -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:16px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">C &middot; Milestone &middot; 1200&times;1200</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 50% at 50% 116%, rgba(227,18,11,.26), transparent 62%), linear-gradient(180deg,#12110f 0%,#0a0a09 60%,#050505 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--rf-red-400);">Milestone</div>
+          <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="height:46px;width:auto;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px;">
+          <div style="font-family:var(--font-serif);font-size:230px;line-height:.82;font-weight:600;letter-spacing:-0.045em;color:var(--rf-red-400);">50</div>
+          <div style="font-family:var(--font-serif);font-size:82px;line-height:1.1;font-weight:600;letter-spacing:-0.022em;color:rgba(255,255,255,.95);text-wrap:balance;">engagements shipped inside ten weeks</div>
+          <div style="font-family:var(--font-serif);font-size:44px;line-height:1.36;color:rgba(255,255,255,.62);max-width:840px;text-wrap:pretty;">Every one of them with a number agreed before the first sprint.</div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:34px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:32px;font-weight:600;color:var(--rf-red-400);">realfast.ai</div>
+          <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;color:rgba(255,255,255,.5);">Thank you to every team that trusted us</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="max-width:1240px;margin:24px auto 0;font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:14px;line-height:1.6;color:var(--rf-ed-ink-soft);border-top:1px solid rgba(17,17,17,.16);padding-top:14px;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Always carry the date and a single "what changes" line - an announcement without either is a press release nobody asked for. Card B needs the partner's logo at their approved clear space; keep both marks on the same optical weight and never restyle theirs. Card C only for milestones you can substantiate. Use A for LinkedIn, B for X or a website hero.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:660}}"></script>
+</body>
+</html>

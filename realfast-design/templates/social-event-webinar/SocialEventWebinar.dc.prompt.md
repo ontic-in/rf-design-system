@@ -1,0 +1,1 @@
+Date, time with timezone, duration and registration route go on all three assets - a promo without a timezone is useless across APAC. Give every speaker their own speaker card to post from their own profile; that is where registrations come from.

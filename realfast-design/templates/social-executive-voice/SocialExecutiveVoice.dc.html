@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social · Executive Voice" description="Personal-profile posts for a named human — square 1200×1200 claim, portrait 1080×1350 first-person story, and a dark closing lesson. Byline and headshot carry it; the logo endorses rather than leads." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>html,body{margin:0;}</style>
+</helmet>
+<div style="background:#dcd8d0;padding:40px;font-family:var(--font-sans);">
+  <div style="max-width:1240px;margin:0 auto 20px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;">
+    <div>
+      <div style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rf-ed-red);">Social &middot; Executive voice</div>
+      <div style="font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);margin-top:4px;">Square 1200&times;1200 + portrait 1080&times;1350 &middot; posted from a person</div>
+    </div>
+    <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:12.5px;color:var(--rf-ed-ink-soft);max-width:420px;line-height:1.5;">Personal profiles out-reach company pages by a wide margin. Here the byline leads and the logo endorses - never the other way round. First person, one claim, no pitch.</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:28px;zoom:0.34;padding:8px 4px 24px;align-items:flex-start;">
+
+    <!-- A · SQUARE CLAIM 1200×1200 -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:26px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">A &middot; Square claim &middot; 1200&times;1200</div>
+      <div style="width:1200px;height:1200px;position:relative;overflow:hidden;background:linear-gradient(165deg,#ffffff 0%,#ffffff 46%,var(--rf-paper-cream) 100%);display:flex;flex-direction:column;padding:100px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-red);">From the desk</div>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:42px;width:auto;opacity:.82;" />
+        </div>
+        <div style="flex:1;display:flex;align-items:center;padding:56px 0;">
+          <div style="font-family:var(--font-serif);font-size:88px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;color:var(--rf-ed-ink);text-wrap:pretty;">I have never once been asked to prove a model was accurate. I get asked, every time, <span style="font-style:italic;color:var(--rf-ed-red);">which number moved</span>.</div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:40px;display:flex;align-items:center;gap:32px;">
+          <image-slot id="ev-a-face" style="width:132px;height:132px;flex:none;" shape="circle" placeholder="Headshot"></image-slot>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--font-sans);font-size:38px;font-weight:700;color:var(--rf-ed-ink);letter-spacing:-0.01em;">Ravi Menon</div>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:30px;color:var(--rf-ed-muted);">Co-founder &middot; <span style="font-style:italic;">realfast</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B · PORTRAIT FIRST-PERSON STORY 1080×1350 -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:26px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">B &middot; First-person story &middot; 1080&times;1350</div>
+      <div style="width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--rf-paper);display:flex;flex-direction:column;padding:96px;box-sizing:border-box;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+          <div>
+            <div style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-red);">What I learned</div>
+            <div style="width:72px;height:4px;background:var(--rf-ed-red);margin-top:16px;"></div>
+          </div>
+          <img src="../../assets/logos/realfast-logo-ink.svg" alt="realfast" style="height:40px;width:auto;opacity:.82;" />
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:44px;padding:48px 0;">
+          <div style="font-family:var(--font-serif);font-size:76px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;color:var(--rf-ed-ink);text-wrap:pretty;">We killed our own pilot in week three.</div>
+          <div style="font-family:var(--font-serif);font-size:46px;line-height:1.42;color:var(--rf-ed-ink-soft);text-wrap:pretty;">Not because it didn't work - it did. Because nobody in the room could agree on the number it was supposed to move. So we stopped, wrote one metric on a whiteboard, and started again on Monday. That version shipped.</div>
+        </div>
+        <div style="border-top:1px solid var(--rf-ed-rule);padding-top:36px;display:flex;align-items:center;gap:28px;">
+          <image-slot id="ev-b-face" style="width:112px;height:112px;flex:none;" shape="circle" placeholder="Headshot"></image-slot>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-family:var(--font-sans);font-size:34px;font-weight:700;color:var(--rf-ed-ink);letter-spacing:-0.01em;">Ravi Menon</div>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:28px;color:var(--rf-ed-muted);">Co-founder &middot; <span style="font-style:italic;">realfast</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C · DARK CLOSING LESSON 1080×1350 -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:26px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-ed-muted);">C &middot; Closing lesson &middot; 1080&times;1350</div>
+      <div style="width:1080px;height:1350px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 50% at 50% 118%, rgba(227,18,11,.26), transparent 62%), linear-gradient(180deg,#12110f 0%,#0a0a09 60%,#050505 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);display:flex;flex-direction:column;padding:96px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:var(--font-sans);font-size:28px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rf-red-400);">The rule I keep</div>
+          <img src="../../assets/logos/realfast-logo-white.svg" alt="realfast" style="height:40px;width:auto;opacity:.9;" />
+        </div>
+        <div style="flex:1;display:flex;align-items:center;padding:56px 0;">
+          <div style="font-family:var(--font-serif);font-size:82px;line-height:1.12;font-weight:600;letter-spacing:-0.02em;color:rgba(255,255,255,.94);text-wrap:pretty;">If you can't name the number before you start, you're not running a pilot. You're running a <span style="font-style:italic;color:var(--rf-red-400);">demo</span>.</div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:36px;display:flex;align-items:center;gap:28px;">
+          <image-slot id="ev-c-face" style="width:112px;height:112px;flex:none;" shape="circle" placeholder="Headshot"></image-slot>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-family:var(--font-sans);font-size:34px;font-weight:700;color:rgba(255,255,255,.94);letter-spacing:-0.01em;">Ravi Menon</div>
+            <div style="font-family:'IBM Plex Sans Condensed',var(--font-sans);font-size:28px;color:rgba(255,255,255,.58);">Co-founder &middot; <span style="font-style:italic;">realfast</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="max-width:1240px;margin:24px auto 0;font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:14px;line-height:1.6;color:var(--rf-ed-ink-soft);border-top:1px solid rgba(17,17,17,.16);padding-top:14px;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Post these from a person's profile, never the company page. Swap the byline and headshot for the real author. Write in first person and keep the claim to one sentence - if it needs two, it is a carousel. Put the link in the first comment, not the post: an in-post link costs 25-35% of reach. Ravi Menon is placeholder copy.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1060}}"></script>
+</body>
+</html>

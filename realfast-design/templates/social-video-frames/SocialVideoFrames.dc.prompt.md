@@ -1,0 +1,1 @@
+Overlay furniture for a vertical clip, not a video editor. Keep the clip under 60-90 seconds and assume the sound is off, so every frame carries burnt-in type. All type stays inside the dashed safe zone - the top 220px and bottom 520px of a 9:16 frame sit under platform UI. Delete the guides before export.

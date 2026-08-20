@@ -30,7 +30,7 @@ is no dark/app theme.
   shades (`--rf-illus-*`) are an illustration-only extension, not UI colours.
 
 The brand name is **always lowercase** (`realfast`). **No emoji.** Voice is
-plain-spoken, opinionated, specific (real numbers). Icons are **Lucide**.
+plain-spoken, opinionated, specific (real numbers). Icons are **Tabler**.
 
 ## Key files
 - `readme.md` — full guide: the look, the templates, content fundamentals, brand kit.

@@ -123,7 +123,7 @@ transition: transform .35s ease, box-shadow .35s ease;
 
 ## 7 · Iconography
 
-Core system uses Lucide outline; the website adds a **premium icon-chip treatment** for repeated icon buttons (social/profile links, feature chips):
+Core system uses Tabler outline; the website adds a **premium icon-chip treatment** for repeated icon buttons (social/profile links, feature chips):
 
 ```css
 /* 34px desktop · 40px mobile circle */

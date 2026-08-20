@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"RealfastDesignSystem_e02a4e","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"ArticleHeader","sourcePath":"components/editorial/ArticleHeader.jsx"},{"name":"AuthorBio","sourcePath":"components/editorial/AuthorBio.jsx"},{"name":"EditorialBlogCard","sourcePath":"components/editorial/EditorialBlogCard.jsx"},{"name":"PullQuote","sourcePath":"components/editorial/PullQuote.jsx"},{"name":"Rubric","sourcePath":"components/editorial/Rubric.jsx"},{"name":"ShareButton","sourcePath":"components/editorial/ShareButton.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cefcae4f173a","components/core/Button.jsx":"a2fe2858dc90","components/core/Card.jsx":"8d368a2e682e","components/editorial/ArticleHeader.jsx":"d0cca79eea6f","components/editorial/AuthorBio.jsx":"c8111e9dadb5","components/editorial/EditorialBlogCard.jsx":"32fdc5602005","components/editorial/PullQuote.jsx":"2c6bcfa6b3bc","components/editorial/Rubric.jsx":"7df6ef87bf0a","components/editorial/ShareButton.jsx":"7ee00900b7b4"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"RealfastDesignSystem_e02a4e","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"ArticleHeader","sourcePath":"components/editorial/ArticleHeader.jsx"},{"name":"AuthorBio","sourcePath":"components/editorial/AuthorBio.jsx"},{"name":"EditorialBlogCard","sourcePath":"components/editorial/EditorialBlogCard.jsx"},{"name":"PullQuote","sourcePath":"components/editorial/PullQuote.jsx"},{"name":"Rubric","sourcePath":"components/editorial/Rubric.jsx"},{"name":"ShareButton","sourcePath":"components/editorial/ShareButton.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cefcae4f173a","components/core/Button.jsx":"a2fe2858dc90","components/core/Card.jsx":"8d368a2e682e","components/editorial/ArticleHeader.jsx":"d0cca79eea6f","components/editorial/AuthorBio.jsx":"c8111e9dadb5","components/editorial/EditorialBlogCard.jsx":"32fdc5602005","components/editorial/PullQuote.jsx":"2c6bcfa6b3bc","components/editorial/Rubric.jsx":"7df6ef87bf0a","components/editorial/ShareButton.jsx":"7ee00900b7b4","export/rf-marketing-landing/templates/marketing-landing/ds-base.js":"5b48c3106cf4"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -770,6 +770,26 @@ function ArticleHeader({
 }
 Object.assign(__ds_scope, { ArticleHeader });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/editorial/ArticleHeader.jsx", error: String((e && e.message) || e) }); }
+
+// export/rf-marketing-landing/templates/marketing-landing/ds-base.js
+try { (() => {
+// Loads this design system into the template. In a consuming project, point
+// base at the bound DS folder relative to this file (e.g. '_ds/<folder>' at
+// the project root, '../_ds/<folder>' one level down) — one line to edit.
+(() => {
+  const base = '../..';
+  for (const p of ["tokens/fonts.css", "tokens/colors.css", "tokens/typography.css", "tokens/spacing.css", "tokens/effects.css", "styles.css"]) {
+    const l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = base + '/' + p;
+    document.head.appendChild(l);
+  }
+  const s = document.createElement('script');
+  s.src = base + '/_ds_bundle.js';
+  s.onerror = () => console.error('ds-base.js: failed to load ' + s.src + ' — if this is a consuming project, point the base line in ds-base.js at the bound _ds/<folder> tree relative to this page (e.g. _ds/<folder> at the project root, ../_ds/<folder> one level down); in a fresh design system this can just mean the bundle is not compiled yet');
+  document.head.appendChild(s);
+})();
+})(); } catch (e) { __ds_ns.__errors.push({ path: "export/rf-marketing-landing/templates/marketing-landing/ds-base.js", error: String((e && e.message) || e) }); }
 
 __ds_ns.Badge = __ds_scope.Badge;
 

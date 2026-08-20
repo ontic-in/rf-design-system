@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing Landing Page" description="Bold, colour-blocked homepage for marketing — dark full-bleed bands, oversized serif, scroll motion. Three whole-page directions." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+html,body{margin:0;padding:0}
+*{box-sizing:border-box}
+@keyframes rf-mk-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+<div data-mk-root="1" style="--mk-page:#ffffff;--mk-fg:#121212;--mk-muted:#6e6e6e;--mk-faint:#9a9a9a;--mk-rule:#e4e2de;--mk-hero-bg:linear-gradient(158deg,#0b0b0d 0%,#141438 48%,#191970 100%);--mk-hero-fg:#ffffff;--mk-hero-muted:rgba(255,255,255,.66);--mk-hero-rule:rgba(255,255,255,.16);--mk-hero-glow:rgba(54,44,255,.5);--mk-hero-grid:.55;--mk-accent:#f7394d;--mk-panel:#f5f3ef;--mk-panel-fg:#121212;--mk-band:#0b0b0d;--mk-band-fg:#ffffff;--mk-band-muted:rgba(255,255,255,.66);--mk-band-faint:rgba(255,255,255,.38);--mk-band-rule:rgba(255,255,255,.16);--mk-metric:linear-gradient(180deg,#191970 0%,#0b0b0d 100%);--mk-metric-fg:#ffffff;--mk-metric-muted:rgba(255,255,255,.66);--mk-card:#ffffff;--mk-card-rule:#e8e6e2;--mk-cta:linear-gradient(158deg,#0b0b0d 0%,#141438 48%,#191970 100%);--mk-cta-fg:#ffffff;--mk-cta-muted:rgba(255,255,255,.66);--mk-btn-alt:#f7394d;--mk-btn-alt-fg:#ffffff;background:var(--mk-page,#ffffff);color:var(--mk-fg,#121212);-webkit-font-smoothing:antialiased">
+
+<header style="position:sticky;top:0;z-index:200;background:var(--mk-hero-bg,#0b0b0d);border-bottom:1px solid var(--mk-hero-rule,rgba(255,255,255,.16))">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:18px var(--rf-mk-gutter,2rem);display:flex;align-items:center;gap:40px">
+<a href="#" style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-weight:600;font-size:22px;letter-spacing:-.02em;color:var(--mk-hero-fg,#fff);text-decoration:none">realfast</a>
+<nav style="display:flex;gap:28px;margin-left:auto;align-items:center">
+<a href="#work" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;letter-spacing:.02em;color:var(--mk-hero-muted,rgba(255,255,255,.66));text-decoration:none;transition:color 160ms" style-hover="color:var(--mk-hero-fg,#fff)">How we work</a>
+<a href="#platform" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;letter-spacing:.02em;color:var(--mk-hero-muted,rgba(255,255,255,.66));text-decoration:none;transition:color 160ms" style-hover="color:var(--mk-hero-fg,#fff)">Platform</a>
+<a href="#proof" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;letter-spacing:.02em;color:var(--mk-hero-muted,rgba(255,255,255,.66));text-decoration:none;transition:color 160ms" style-hover="color:var(--mk-hero-fg,#fff)">Proof</a>
+<a href="#book" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.02em;padding:9px 18px;background:var(--mk-btn-alt,#f7394d);color:var(--mk-btn-alt-fg,#fff);text-decoration:none;transition:transform 160ms,filter 160ms" style-hover="filter:brightness(1.08);transform:translateY(-1px)">Book a meeting</a>
+</nav>
+</div>
+</header>
+
+<section style="position:relative;background:var(--mk-hero-bg,#0b0b0d);color:var(--mk-hero-fg,#fff);overflow:hidden">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:clamp(4.5rem,9vw,9rem) var(--rf-mk-gutter,2rem) clamp(3.5rem,6vw,6rem);position:relative;z-index:2">
+<div data-reveal="1" style="display:flex;align-items:center;gap:14px;margin-bottom:34px">
+<span style="width:9px;height:9px;background:var(--mk-accent,#f7394d);display:block"></span>
+<span style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-hero-muted,rgba(255,255,255,.66))">Applied AI · Singapore</span>
+</div>
+<h1 data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-display,6rem);line-height:var(--rf-mk-leading-display,.94);letter-spacing:var(--rf-mk-track-display,-.035em);margin:0;max-width:16ch;text-wrap:balance">AI that moves the metric, not the roadmap.</h1>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(2rem,5vw,5rem);align-items:end;margin-top:clamp(2.5rem,5vw,4.5rem)">
+<p data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.5;color:var(--mk-hero-muted,rgba(255,255,255,.66));margin:0;max-width:52ch">We embed with your team, restructure the work around AI, and ship to production in weeks. Named accountable owners. Outcomes measured against a number you pick before we start.</p>
+<div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:14px;justify-self:start">
+<a href="#book" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.02em;padding:16px 30px;background:var(--mk-btn-alt,#f7394d);color:var(--mk-btn-alt-fg,#fff);text-decoration:none;transition:transform 180ms,filter 180ms;white-space:nowrap;box-shadow:var(--rf-mk-shadow-dark,0 20px 60px rgba(0,0,0,.45))" style-hover="filter:brightness(1.08);transform:translateY(-2px)">Book a meeting</a>
+<a href="#proof" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.02em;padding:16px 30px;border:1px solid var(--mk-hero-rule,rgba(255,255,255,.16));color:var(--mk-hero-fg,#fff);text-decoration:none;white-space:nowrap;transition:background 180ms" style-hover="background:rgba(127,127,127,.14)">See the work</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 70% at 88% 18%,var(--mk-hero-glow,rgba(54,44,255,.55)) 0%,rgba(0,0,0,0) 62%)"></div>
+<div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:var(--mk-hero-grid,.5);background-image:linear-gradient(var(--mk-hero-rule,rgba(255,255,255,.16)) 1px,transparent 1px),linear-gradient(90deg,var(--mk-hero-rule,rgba(255,255,255,.16)) 1px,transparent 1px);background-size:88px 88px;mask-image:radial-gradient(80% 80% at 70% 30%,#000 0%,transparent 78%);-webkit-mask-image:radial-gradient(80% 80% at 70% 30%,#000 0%,transparent 78%)"></div>
+</section>
+
+<sc-if value="{{ showLogoWall }}" hint-placeholder-val="{{ true }}">
+<section style="background:var(--mk-page,#fff);border-bottom:1px solid var(--mk-rule,#e4e2de);padding:34px 0;overflow:hidden">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-muted,#6e6e6e);text-align:center;margin-bottom:26px">Trusted by operators at</div>
+<div style="display:flex;width:max-content;animation:rf-mk-marquee var(--rf-mk-marquee-dur,42s) linear infinite">
+<div style="display:flex;gap:clamp(3rem,6vw,6rem);padding-right:clamp(3rem,6vw,6rem);align-items:center">
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Meridian Freight</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Halcyon Bank</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Northwind Energy</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Cassia Health</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Portside Logistics</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Ardent Manufacturing</span>
+</div>
+<div aria-hidden="true" style="display:flex;gap:clamp(3rem,6vw,6rem);padding-right:clamp(3rem,6vw,6rem);align-items:center">
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Meridian Freight</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Halcyon Bank</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Northwind Energy</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Cassia Health</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Portside Logistics</span>
+<span style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;letter-spacing:-.02em;color:var(--mk-fg,#121212);opacity:.55;white-space:nowrap">Ardent Manufacturing</span>
+</div>
+</div>
+</section>
+</sc-if>
+
+<section style="background:var(--mk-panel,#f5f3ef);color:var(--mk-panel-fg,#121212);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(2rem,6vw,6rem);align-items:center">
+<div>
+<div data-reveal="1" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-accent,#f7394d);margin-bottom:22px">The problem</div>
+<h2 data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h2,3.5rem);line-height:1.02;letter-spacing:var(--rf-mk-track-display,-.035em);margin:0 0 28px;max-width:17ch;text-wrap:balance">Most AI programmes stall one floor below production.</h2>
+<p data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0 0 18px;max-width:48ch">The demo works. The pilot gets applause. Then it meets the real workflow — the approvals, the exceptions, the four systems that disagree — and it does not survive contact.</p>
+<p data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0;max-width:48ch">The gap is not model quality. It is that nobody restructured the work around the model.</p>
+</div>
+<div data-reveal="1" style="justify-self:center;width:100%;background:#efede4;display:flex;align-items:center;justify-content:center;padding:clamp(1.25rem,2.5vw,2.5rem)">
+<img src="../../assets/illustrations/stacked-slabs.png" alt="A figure standing on a stack of cracked slabs" style="width:100%;max-width:620px;display:block"/>
+</div>
+</div>
+</section>
+
+<section id="work" style="background:var(--mk-band,#0b0b0d);color:var(--mk-band-fg,#fff);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem)">
+<div data-reveal="1" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-accent,#f7394d);margin-bottom:22px">How we work</div>
+<h2 data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h2,3.5rem);line-height:1.02;letter-spacing:var(--rf-mk-track-display,-.035em);margin:0 0 clamp(3rem,5vw,5rem);max-width:20ch;text-wrap:balance">Three moves, six weeks, one number.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--mk-band-rule,rgba(255,255,255,.16))">
+<div data-reveal="1" style="background:var(--mk-band,#0b0b0d);padding:clamp(2rem,3vw,3rem) clamp(1.5rem,2.5vw,2.75rem)">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);color:var(--mk-band-faint,rgba(255,255,255,.38));margin-bottom:36px">01</div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 14px">Restructure the work</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-band-muted,rgba(255,255,255,.66));margin:0">We map the workflow end to end and decide what the model owns, what the human owns, and where the handoff sits. Two weeks, with your operators in the room.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-band,#0b0b0d);padding:clamp(2rem,3vw,3rem) clamp(1.5rem,2.5vw,2.75rem)">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);color:var(--mk-band-faint,rgba(255,255,255,.38));margin-bottom:36px">02</div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 14px">Build in production</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-band-muted,rgba(255,255,255,.66));margin:0">ExoCode ships against your real data in your environment from day one. No sandbox, no throwaway prototype, no second build to productionise.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-band,#0b0b0d);padding:clamp(2rem,3vw,3rem) clamp(1.5rem,2.5vw,2.75rem)">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);color:var(--mk-band-faint,rgba(255,255,255,.38));margin-bottom:36px">03</div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 14px">Run the cadence</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-band-muted,rgba(255,255,255,.66));margin:0">A weekly report against the metric you chose, a named owner on both sides, and a standing decision forum. Progress is visible or it is not progress.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="platform" style="background:var(--mk-page,#fff);color:var(--mk-fg,#121212);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem)">
+<div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:clamp(2.5rem,4vw,4rem)">
+<div>
+<div data-reveal="1" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-accent,#f7394d);margin-bottom:22px">The platform</div>
+<h2 data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h2,3.5rem);line-height:1.02;letter-spacing:var(--rf-mk-track-display,-.035em);margin:0;max-width:16ch;text-wrap:balance">Everything we build, you keep.</h2>
+</div>
+<p data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0;max-width:42ch">Three products, deployed inside your perimeter, handed over with the code and the runbook.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(1rem,1.6vw,1.5rem)">
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">ExoCode</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">Agentic engineering that writes, reviews and ships against your codebase. Reads your conventions, opens real pull requests.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">ExoWork</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">Workflow automation for the operations nobody wants to touch — exceptions, approvals, reconciliation. Human in the loop where it counts.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">ExoCortex</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">The retrieval layer over your documents, tickets and systems of record. Answers cite their source or they do not ship.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">Inside your perimeter</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">Deployed in your cloud, your region, your identity provider. Nothing leaves the boundary your security team already approved.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">Model agnostic</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">Frontier, open-weight or your own fine-tune. Swap the model without rebuilding the workflow around it.</p>
+</div>
+<div data-reveal="1" style="background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));padding:clamp(1.75rem,2.4vw,2.5rem);transition:transform 280ms var(--rf-mk-reveal-ease,ease),box-shadow 280ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="width:34px;height:4px;background:var(--mk-accent,#f7394d);margin-bottom:28px"></div>
+<h3 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-h3,1.6rem);letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 12px">Handover by default</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0">Your engineers pair with ours from week one. When we leave, the team that runs it has been running it for a month.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--mk-metric,#191970);color:var(--mk-metric-fg,#fff);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem)">
+<div data-reveal="1" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-metric-muted,rgba(255,255,255,.66));margin-bottom:clamp(2.5rem,4vw,4rem)">Across engagements, 2024–2026</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(2rem,3vw,3rem)">
+<div data-reveal="1" style="border-top:2px solid var(--mk-accent,#f7394d);padding-top:22px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-metric,5rem);line-height:.9;letter-spacing:var(--rf-mk-track-display,-.035em)">6</div>
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:16px;line-height:1.4;color:var(--mk-metric-muted,rgba(255,255,255,.66));margin-top:14px">weeks median from kickoff to first production release</div>
+</div>
+<div data-reveal="1" style="border-top:2px solid var(--mk-accent,#f7394d);padding-top:22px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-metric,5rem);line-height:.9;letter-spacing:var(--rf-mk-track-display,-.035em)">41%</div>
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:16px;line-height:1.4;color:var(--mk-metric-muted,rgba(255,255,255,.66));margin-top:14px">average reduction in handling time on the targeted workflow</div>
+</div>
+<div data-reveal="1" style="border-top:2px solid var(--mk-accent,#f7394d);padding-top:22px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-metric,5rem);line-height:.9;letter-spacing:var(--rf-mk-track-display,-.035em)">18</div>
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:16px;line-height:1.4;color:var(--mk-metric-muted,rgba(255,255,255,.66));margin-top:14px">workflows live in production across nine clients</div>
+</div>
+<div data-reveal="1" style="border-top:2px solid var(--mk-accent,#f7394d);padding-top:22px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-metric,5rem);line-height:.9;letter-spacing:var(--rf-mk-track-display,-.035em)">100%</div>
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:16px;line-height:1.4;color:var(--mk-metric-muted,rgba(255,255,255,.66));margin-top:14px">of engagements handed over to the client's own team</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--mk-panel,#f5f3ef);color:var(--mk-panel-fg,#121212);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:1020px;margin:0 auto;padding:0 var(--rf-mk-gutter,2rem);text-align:center">
+<div data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:64px;line-height:1;color:var(--mk-accent,#f7394d);margin-bottom:8px">&ldquo;</div>
+<blockquote data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.24;letter-spacing:var(--rf-mk-track-tight,-.02em);margin:0 0 36px;text-wrap:pretty">They arrived, sat with the claims team for a fortnight, and came back with a plan that deleted half the steps. The model was the last thing we talked about.</blockquote>
+<div data-reveal="1" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;letter-spacing:.02em;color:var(--mk-muted,#6e6e6e)">Priya Raghunathan · Chief Operating Officer, Cassia Health</div>
+</div>
+</section>
+
+<section id="proof" style="background:var(--mk-page,#fff);color:var(--mk-fg,#121212);padding:var(--rf-mk-section-y,7rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem)">
+<a href="#" data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));align-items:center;text-decoration:none;color:inherit;background:var(--mk-card,#fff);border:1px solid var(--mk-card-rule,#e8e6e2);box-shadow:var(--rf-mk-shadow-card,0 12px 28px rgba(11,11,13,.07));transition:transform 320ms var(--rf-mk-reveal-ease,ease),box-shadow 320ms" style-hover="transform:translateY(-6px);box-shadow:var(--rf-mk-shadow-lift,0 28px 60px rgba(11,11,13,.13))">
+<div style="padding:clamp(2rem,4vw,4rem)">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-accent,#f7394d);margin-bottom:22px">Case study · Logistics</div>
+<h2 style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.05;letter-spacing:var(--rf-mk-track-display,-.035em);margin:0 0 20px;text-wrap:balance">A freight desk that clears 2,400 exceptions a day with four people.</h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.55;color:var(--mk-muted,#6e6e6e);margin:0 0 28px;max-width:44ch">Meridian's exception queue grew faster than the team could hire. We rebuilt the triage path around ExoWork and cut median resolution from 51 minutes to 9.</p>
+<span style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--mk-accent,#f7394d);border-bottom:2px solid var(--mk-accent,#f7394d);padding-bottom:3px">Read the case study</span>
+</div>
+<div style="align-self:stretch;background:var(--mk-panel,#f5f3ef);display:flex;align-items:center;justify-content:center;padding:clamp(1.5rem,3vw,3rem)">
+<img src="../../assets/illustrations/muted/move-the-metric.png" alt="" style="width:100%;max-width:520px;display:block;mix-blend-mode:multiply"/>
+</div>
+</a>
+</div>
+</section>
+
+<section id="book" style="background:var(--mk-cta,#0b0b0d);color:var(--mk-cta-fg,#fff);padding:clamp(5rem,10vw,10rem) 0">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem);text-align:center">
+<h2 data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:var(--rf-mk-display,6rem);line-height:var(--rf-mk-leading-display,.94);letter-spacing:var(--rf-mk-track-display,-.035em);margin:0 auto 32px;max-width:14ch;text-wrap:balance">Pick a number. We will move it.</h2>
+<p data-reveal="1" style="font-family:'Source Serif 4',Georgia,serif;font-size:var(--rf-mk-lead,1.3rem);line-height:1.5;color:var(--mk-cta-muted,rgba(255,255,255,.66));margin:0 auto 44px;max-width:52ch">Forty-five minutes with an engineer, not a salesperson. Bring the workflow that costs you the most and we will tell you whether we can help.</p>
+<a href="#" data-reveal="1" style="display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:18px;letter-spacing:.02em;padding:20px 44px;background:var(--mk-btn-alt,#f7394d);color:var(--mk-btn-alt-fg,#fff);text-decoration:none;transition:transform 180ms,filter 180ms;box-shadow:var(--rf-mk-shadow-dark,0 20px 60px rgba(0,0,0,.45))" style-hover="filter:brightness(1.08);transform:translateY(-2px)">Book a meeting</a>
+</div>
+</section>
+
+<footer style="background:var(--mk-page,#fff);color:var(--mk-fg,#121212);border-top:1px solid var(--mk-rule,#e4e2de);padding:clamp(3rem,5vw,5rem) 0 clamp(2rem,3vw,3rem)">
+<div style="max-width:var(--rf-mk-max,1360px);margin:0 auto;padding:0 var(--rf-mk-gutter,2rem);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(2rem,4vw,4rem)">
+<div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-weight:600;font-size:24px;letter-spacing:-.02em;margin-bottom:14px">realfast</div>
+<p style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;line-height:1.5;color:var(--mk-muted,#6e6e6e);margin:0;max-width:34ch">Applied AI for operators. Ontic Pte Ltd, Singapore.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-muted,#6e6e6e)">Platform</div>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">ExoCode</a>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">ExoWork</a>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">ExoCortex</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-muted,#6e6e6e)">Company</div>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">Case studies</a>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">Writing</a>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">Careers</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:var(--rf-mk-track-label,.14em);text-transform:uppercase;color:var(--mk-muted,#6e6e6e)">Contact</div>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">hello@realfast.ai</a>
+<a href="#" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-size:15px;color:var(--mk-fg,#121212);text-decoration:none" style-hover="color:var(--mk-accent,#f7394d)">LinkedIn</a>
+</div>
+</div>
+<div style="max-width:var(--rf-mk-max,1360px);margin:clamp(2.5rem,4vw,4rem) auto 0;padding:20px var(--rf-mk-gutter,2rem) 0;border-top:1px solid var(--mk-rule,#e4e2de);font-family:'IBM Plex Sans Condensed',sans-serif;font-size:13px;color:var(--mk-muted,#6e6e6e)">&copy; 2026 Ontic Pte Ltd</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;direction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;midnight&quot;,&quot;electric&quot;,&quot;paper&quot;],&quot;default&quot;:&quot;midnight&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Direction&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Direction&quot;},&quot;showLogoWall&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+const DIRECTIONS = {
+  midnight: {
+    '--mk-page': '#ffffff', '--mk-fg': '#121212', '--mk-muted': '#6e6e6e', '--mk-faint': '#9a9a9a', '--mk-rule': '#e4e2de',
+    '--mk-hero-bg': 'linear-gradient(158deg,#0b0b0d 0%,#141438 48%,#191970 100%)', '--mk-hero-fg': '#ffffff',
+    '--mk-hero-muted': 'rgba(255,255,255,.66)', '--mk-hero-rule': 'rgba(255,255,255,.16)',
+    '--mk-hero-glow': 'rgba(54,44,255,.5)', '--mk-hero-grid': '.55',
+    '--mk-accent': '#f7394d',
+    '--mk-panel': '#f5f3ef', '--mk-panel-fg': '#121212',
+    '--mk-band': '#0b0b0d', '--mk-band-fg': '#ffffff', '--mk-band-muted': 'rgba(255,255,255,.66)', '--mk-band-faint': 'rgba(255,255,255,.38)', '--mk-band-rule': 'rgba(255,255,255,.16)',
+    '--mk-metric': 'linear-gradient(180deg,#191970 0%,#0b0b0d 100%)', '--mk-metric-fg': '#ffffff', '--mk-metric-muted': 'rgba(255,255,255,.66)',
+    '--mk-card': '#ffffff', '--mk-card-rule': '#e8e6e2',
+    '--mk-cta': 'linear-gradient(158deg,#0b0b0d 0%,#141438 48%,#191970 100%)', '--mk-cta-fg': '#ffffff', '--mk-cta-muted': 'rgba(255,255,255,.66)',
+    '--mk-btn-alt': '#f7394d', '--mk-btn-alt-fg': '#ffffff'
+  },
+  electric: {
+    '--mk-page': '#ffffff', '--mk-fg': '#121212', '--mk-muted': '#6e6e6e', '--mk-faint': '#9a9a9a', '--mk-rule': '#e4e2de',
+    '--mk-hero-bg': 'linear-gradient(148deg,#362cff 0%,#2a22d6 52%,#191970 100%)', '--mk-hero-fg': '#ffffff',
+    '--mk-hero-muted': 'rgba(255,255,255,.72)', '--mk-hero-rule': 'rgba(255,255,255,.24)',
+    '--mk-hero-glow': 'rgba(120,110,255,.55)', '--mk-hero-grid': '.5',
+    '--mk-accent': '#f7394d',
+    '--mk-panel': '#f5f3ef', '--mk-panel-fg': '#121212',
+    '--mk-band': '#191970', '--mk-band-fg': '#ffffff', '--mk-band-muted': 'rgba(255,255,255,.7)', '--mk-band-faint': 'rgba(255,255,255,.42)', '--mk-band-rule': 'rgba(255,255,255,.22)',
+    '--mk-metric': '#0b0b0d', '--mk-metric-fg': '#ffffff', '--mk-metric-muted': 'rgba(255,255,255,.66)',
+    '--mk-card': '#ffffff', '--mk-card-rule': '#e2e0ea',
+    '--mk-cta': '#362cff', '--mk-cta-fg': '#ffffff', '--mk-cta-muted': 'rgba(255,255,255,.72)',
+    '--mk-btn-alt': '#ffffff', '--mk-btn-alt-fg': '#191970'
+  },
+  paper: {
+    '--mk-page': '#ffffff', '--mk-fg': '#121212', '--mk-muted': '#6e6e6e', '--mk-faint': '#9a9a9a', '--mk-rule': '#e4e2de',
+    '--mk-hero-bg': '#f5f3ef', '--mk-hero-fg': '#121212',
+    '--mk-hero-muted': '#5c5c5c', '--mk-hero-rule': '#d9cfc4',
+    '--mk-hero-glow': 'rgba(227,18,11,.10)', '--mk-hero-grid': '.9',
+    '--mk-accent': '#e3120b',
+    '--mk-panel': '#f1ebe0', '--mk-panel-fg': '#121212',
+    '--mk-band': '#191970', '--mk-band-fg': '#ffffff', '--mk-band-muted': 'rgba(255,255,255,.7)', '--mk-band-faint': 'rgba(255,255,255,.42)', '--mk-band-rule': 'rgba(255,255,255,.22)',
+    '--mk-metric': '#121212', '--mk-metric-fg': '#ffffff', '--mk-metric-muted': 'rgba(255,255,255,.66)',
+    '--mk-card': '#ffffff', '--mk-card-rule': '#e3ddd2',
+    '--mk-cta': '#121212', '--mk-cta-fg': '#ffffff', '--mk-cta-muted': 'rgba(255,255,255,.66)',
+    '--mk-btn-alt': '#e3120b', '--mk-btn-alt-fg': '#ffffff'
+  }
+};
+
+class Component extends DCLogic {
+  componentDidMount() { this._wire(); }
+  componentDidUpdate() { this._wire(); }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+
+  _applyDirection() {
+    const root = document.querySelector('[data-mk-root]');
+    if (!root) return;
+    const vars = DIRECTIONS[this.props.direction] || DIRECTIONS.midnight;
+    Object.keys(DIRECTIONS.midnight).forEach(k => root.style.setProperty(k, vars[k]));
+  }
+
+  _wire() {
+    this._applyDirection();
+    if (this._io) this._io.disconnect();
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!nodes.length) return;
+    const motion = this.props.motion !== false;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!motion || reduce || typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(n => { n.style.opacity = ''; n.style.transform = ''; });
+      return;
+    }
+    const vh = window.innerHeight || 800;
+    const pending = [];
+    nodes.forEach(n => {
+      const top = n.getBoundingClientRect().top;
+      n.style.transition = 'opacity var(--rf-mk-reveal-dur,720ms) var(--rf-mk-reveal-ease,ease), transform var(--rf-mk-reveal-dur,720ms) var(--rf-mk-reveal-ease,ease)';
+      if (top > vh * 0.92) { n.style.opacity = '0'; n.style.transform = 'translateY(22px)'; pending.push(n); }
+      else { n.style.opacity = '1'; n.style.transform = 'none'; }
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        this._io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    pending.forEach(n => this._io.observe(n));
+    clearTimeout(this._fallback);
+    this._fallback = setTimeout(() => pending.forEach(n => { n.style.opacity = '1'; n.style.transform = 'none'; }), 4000);
+  }
+
+  renderVals() {
+    return { showLogoWall: this.props.showLogoWall !== false };
+  }
+
+  componentDidCatch() {}
+}
+
+</script>
+</body>
+</html>

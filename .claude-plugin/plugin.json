@@ -1,0 +1,13 @@
+{
+  "name": "realfast-design",
+  "displayName": "realfast Design System",
+  "version": "1.0.0",
+  "description": "The realfast (Ontic Pte Ltd) house style as a Claude Code skill — editorial brand rules, tokens, fonts, React primitives, and 19 ready-to-fill templates (documents, marketing landing, social) for building on-brand HTML and production UI",
+  "author": {
+    "name": "realfast",
+    "url": "https://github.com/ontic-in"
+  },
+  "keywords": ["design-system", "branding", "templates", "editorial", "realfast", "frontend"],
+  "license": "LicenseRef-Proprietary",
+  "repository": "https://github.com/ontic-in/rf-design-system"
+}

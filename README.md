@@ -18,16 +18,23 @@ The house style for everything ***realfast*** (Ontic Pte Ltd) puts in front of a
 
 ## Install & use
 
-This system ships as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills) — Claude Code auto-discovers it, reads the brand rules, and builds on-brand HTML or production UI from the terminal.
+This system ships as a [Claude Code plugin](https://docs.claude.com/en/docs/claude-code/plugins) carrying one skill — Claude Code auto-discovers it, reads the brand rules, and builds on-brand HTML or production UI from the terminal.
 
-**Install** — copy the `realfast-design/` folder into a skills directory (keep it intact; `SKILL.md` is the entry point):
+**Install** — via the grimoire marketplace (recommended — versioned, updatable):
+
+```
+/plugin marketplace add ontic-in/grimoire
+/plugin install realfast-design@grimoire
+```
+
+Or copy the `skills/realfast-design/` folder into a skills directory (keep it intact; `SKILL.md` is the entry point):
 
 ```bash
-# Per repo (shared with anyone who clones — recommended)
-mkdir -p .claude/skills && cp -R realfast-design .claude/skills/
+# Per repo (shared with anyone who clones)
+mkdir -p .claude/skills && cp -R skills/realfast-design .claude/skills/
 
 # Or for all your projects (personal)
-mkdir -p ~/.claude/skills && cp -R realfast-design ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R skills/realfast-design ~/.claude/skills/
 ```
 
 **Use** — name it directly, or let Claude pull it in when a request matches:

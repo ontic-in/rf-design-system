@@ -1,24 +1,31 @@
 # realfast-design — Claude Code skill
 
-This bundle is the realfast design system packaged as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills). Claude Code auto-discovers it, reads the brand rules, and can build on-brand HTML or production UI from the terminal.
+This repo is the realfast design system packaged as a [Claude Code plugin](https://docs.claude.com/en/docs/claude-code/plugins) carrying one skill. Claude Code auto-discovers it, reads the brand rules, and can build on-brand HTML or production UI from the terminal.
 
 ## Install
 
-**Per repo** (shared with anyone who clones — recommended):
+**Via the grimoire marketplace** (recommended — versioned, updatable):
+
+```
+/plugin marketplace add ontic-in/grimoire
+/plugin install realfast-design@grimoire
+```
+
+Update later with `/plugin update realfast-design`.
+
+**Manual copy** (no plugin system; goes stale silently):
 
 ```bash
+# Per repo (shared with anyone who clones)
 mkdir -p .claude/skills
-cp -R realfast-design .claude/skills/
-```
+cp -R skills/realfast-design .claude/skills/
 
-**For all your projects** (personal):
-
-```bash
+# Or for all your projects (personal)
 mkdir -p ~/.claude/skills
-cp -R realfast-design ~/.claude/skills/
+cp -R skills/realfast-design ~/.claude/skills/
 ```
 
-The skill is the `realfast-design/` folder — keep it intact; `SKILL.md` is the entry point Claude Code reads.
+The skill is the `skills/realfast-design/` folder — keep it intact; `SKILL.md` is the entry point Claude Code reads.
 
 ## Use
 

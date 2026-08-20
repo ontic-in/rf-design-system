@@ -47,7 +47,15 @@ plain-spoken, opinionated, specific (real numbers). Icons are **Tabler**.
 - `foundations/` — specimen cards incl. `data-viz.html` (chart palette),
   `website-design-language.html` (the web layer) and `social-content-system.html`
   (the Social & Content generation system: templates, formats, data, voice editor,
-  workflow, and how-to-prompt guide).
+  workflow, and how-to-prompt guide) and `anti-slop.md` (the patterns that make
+  work read as machine-generated, the four we deliberately override, and how to
+  run the detector).
 
 When in doubt, match the foundation specimen cards in `foundations/` and the prose in
 `readme.md` rather than inventing new colors, type, or motifs.
+
+Before shipping anything, read `foundations/anti-slop.md`. It is the list of patterns
+that make an interface read as machine-generated - gradient text outside the published
+recipe, glow accents, icon tiles above headings, thick side-tab borders, buzzword copy -
+plus the four flagged patterns (gradient accent words, cream paper, rubrics, serif
+display) that *realfast* runs on purpose, and the guardrails that keep them honest.

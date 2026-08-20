@@ -1,24 +1,297 @@
-<!-- @dsCard group="Effects" viewport="700x186" name="Motion" subtitle="Easing curves & durations" -->
+<!-- @dsCard group="Effects" viewport="760x2150" name="Motion" subtitle="Easing, durations & how data animates in" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="../styles.css" />
 <style>
-  body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); padding: 20px 24px; }
-  .row { display:flex; align-items:center; gap:14px; margin-bottom:10px; }
-  .track { flex:1; height: 4px; background: var(--rf-neutral-100); border-radius:2px; position:relative; overflow:hidden; }
-  .dot { position:absolute; top:-5px; left:0; width:14px; height:14px; border-radius:50%; background:var(--rf-blue); animation: slide 2.4s infinite; }
-  .e1 .dot { animation-timing-function: var(--ease-standard); }
-  .e2 .dot { animation-timing-function: var(--ease-out); }
-  .e3 .dot { animation-timing-function: var(--ease-in-out); }
-  @keyframes slide { 0%,12% { left:0 } 50%,62% { left:calc(100% - 14px) } 100% { left:0 } }
-  .lab { width: 230px; font-family: var(--font-mono); font-size: 11px; color: var(--rf-neutral-600); }
+  body{margin:0;font-family:var(--font-sans);background:var(--rf-white);color:var(--rf-ed-ink);padding:20px 24px 26px;}
+  h2{font-family:var(--font-sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--rf-ed-red);margin:0 0 12px;}
+  .sec{margin-bottom:26px;}
+
+  /* easing curves */
+  .row{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+  .track{flex:1;height:4px;background:var(--rf-neutral-100);border-radius:2px;position:relative;overflow:hidden;}
+  .dot{position:absolute;top:-5px;left:0;width:14px;height:14px;border-radius:50%;background:var(--rf-blue);animation:slide 2.4s infinite;}
+  .e1 .dot{animation-timing-function:var(--ease-standard);}
+  .e2 .dot{animation-timing-function:var(--ease-out);}
+  .e3 .dot{animation-timing-function:var(--ease-in-out);}
+  @keyframes slide{0%,12%{left:0}50%,62%{left:calc(100% - 14px)}100%{left:0}}
+  .lab{width:230px;font-family:var(--font-mono);font-size:11px;color:var(--rf-neutral-600);}
+
+  /* data motion */
+  .head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px;}
+  .replay{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--rf-ed-red);background:none;border:1px solid var(--rf-ed-rule);border-radius:2px;padding:6px 12px;cursor:pointer;white-space:nowrap;transition:background var(--dur-base) var(--ease-standard),color var(--dur-base) var(--ease-standard);}
+  .replay:hover{background:var(--rf-ed-red);color:#fff;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .panel{border:1px solid var(--rf-ed-rule);background:var(--rf-paper);padding:16px 16px 14px;display:flex;flex-direction:column;}
+  .panel h3{font-family:var(--font-sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-ed-ink);margin:0 0 3px;}
+  .panel .cap{font-size:12px;color:var(--rf-ed-muted);margin:0 0 16px;}
+  .panel .use{font-size:11.5px;line-height:1.5;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:14px 0 0;padding:9px 0 0;}
+  .panel .use b{font-weight:700;color:var(--rf-ed-red);text-transform:uppercase;letter-spacing:.05em;font-size:10px;margin-right:6px;}
+  .bars{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end;height:110px;}
+  .bar{width:100%;background:var(--rf-illus-dusty-blue);transform:scaleY(0);transform-origin:bottom;transition:transform 650ms var(--ease-out);}
+  .bar:last-child{background:var(--rf-ed-red);}
+  .go .bar{transform:scaleY(1);}
+  .stack{display:flex;flex-direction:column-reverse;height:110px;width:64px;margin:0 auto;}
+  .seg{width:100%;opacity:0;transform:translateY(14px);transition:opacity 450ms var(--ease-out),transform 550ms var(--ease-out);}
+  .go .seg{opacity:1;transform:none;}
+  .metric{display:flex;align-items:baseline;gap:8px;height:110px;align-content:center;flex-wrap:wrap;}
+  .metric .num{font-family:var(--font-serif);font-size:58px;font-weight:600;line-height:1;color:var(--rf-ed-red);letter-spacing:-.01em;}
+  .metric .unit{font-family:var(--font-serif);font-size:24px;color:var(--rf-ed-ink-soft);}
+  .metric .lbl{flex:0 0 100%;font-size:13px;color:var(--rf-ed-muted);margin-top:4px;}
+  .ba{display:flex;flex-direction:column;gap:13px;justify-content:center;height:110px;}
+  .ba-row{display:grid;grid-template-columns:56px 1fr 48px;align-items:center;gap:10px;}
+  .ba-lbl{font-size:12px;color:var(--rf-ed-muted);}
+  .ba-track{height:15px;background:var(--rf-illus-bone);position:relative;overflow:hidden;}
+  .ba-fill{height:100%;width:0;transition:width 900ms var(--ease-out);}
+  .ba-row.before .ba-fill{background:var(--rf-illus-dusty-blue);}
+  .ba-row.after .ba-fill{background:var(--rf-ed-red);}
+  .go .ba-row.before .ba-fill{width:100%;}
+  .go .ba-row.after .ba-fill{width:24%;}
+  .ba-val{font-family:var(--font-sans);font-size:14px;font-weight:600;text-align:right;}
+  .line-wrap{height:110px;display:flex;align-items:center;}
+  .ln{fill:none;stroke-width:2.5px;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1400ms var(--ease-in-out);}
+  .ln.a{stroke:var(--rf-illus-slate-navy);}
+  .ln.b{stroke:var(--rf-illus-grey);transition-delay:250ms;}
+  .go .ln{stroke-dashoffset:0;}
+  .ln-end{opacity:0;transition:opacity 400ms var(--ease-out) 1400ms;}
+  .go .ln-end{opacity:1;}
+  .donut-wrap{height:110px;display:flex;align-items:center;justify-content:center;gap:18px;}
+  .dseg{fill:none;stroke-width:16;transition:stroke-dasharray 900ms var(--ease-in-out);}
+  .dseg:nth-of-type(2){transition-delay:400ms;}
+  .dseg:nth-of-type(3){transition-delay:750ms;}
+  .dseg:nth-of-type(4){transition-delay:1000ms;}
+  .dlegend{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--rf-ed-ink-soft);}
+  .dlegend span{display:inline-flex;align-items:center;gap:6px;}
+  .dlegend i{width:10px;height:10px;display:inline-block;}
+  .hb-rows{display:flex;flex-direction:column;gap:12px;justify-content:center;height:110px;}
+  .hb-row{display:grid;grid-template-columns:72px 1fr 36px;align-items:center;gap:10px;font-size:12px;color:var(--rf-ed-muted);}
+  .hb{height:15px;background:var(--rf-illus-slate-navy);transform:scaleX(0);transform-origin:left;transition:transform 700ms var(--ease-out);}
+  .hb-row:nth-child(2) .hb{transition-delay:120ms;}.hb-row:nth-child(3) .hb{transition-delay:240ms;}.hb-row:nth-child(4) .hb{transition-delay:360ms;}
+  .go .hb{transform:scaleX(1);}
+  .hb-v{font-family:var(--font-sans);font-weight:600;color:var(--rf-ed-ink);text-align:right;}
+  .hlb{width:100%;background:var(--rf-illus-pale-blue);transform:scaleY(0);transform-origin:bottom;transition:transform 650ms var(--ease-out),background 400ms var(--ease-standard);}
+  .go .hlb{transform:scaleY(1);}
+  .go .hlb.spark{background:var(--rf-ed-red);transition:transform 650ms var(--ease-out),background 400ms var(--ease-standard) 1100ms;}
+  .combo{position:relative;height:110px;}
+  .combo .bars{position:absolute;inset:0;}
+  .combo .cbar{width:100%;background:var(--rf-illus-pale-blue);transform:scaleY(0);transform-origin:bottom;transition:transform 650ms var(--ease-out);}
+  .combo .cbar:nth-child(2){transition-delay:90ms}.combo .cbar:nth-child(3){transition-delay:180ms}.combo .cbar:nth-child(4){transition-delay:270ms}.combo .cbar:nth-child(5){transition-delay:360ms}.combo .cbar:nth-child(6){transition-delay:450ms}.combo .cbar:nth-child(7){transition-delay:540ms}
+  .go .combo .cbar{transform:scaleY(1);}
+  .combo svg{position:absolute;inset:0;width:100%;height:100%;}
+  .ln.c{stroke:var(--rf-illus-slate-navy);transition-delay:800ms;}
+  .wfcols{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;height:110px;position:relative;}
+  .wfcol{position:relative;height:100%;}
+  .wf{position:absolute;left:0;right:0;opacity:0;transform:translateY(-8px);transition:opacity 450ms var(--ease-out),transform 550ms var(--ease-out);}
+  .wfcol:nth-child(2) .wf{transition-delay:220ms}.wfcol:nth-child(3) .wf{transition-delay:440ms}.wfcol:nth-child(4) .wf{transition-delay:660ms}.wfcol:nth-child(5) .wf{transition-delay:880ms}
+  .go .wf{opacity:1;transform:none;}
+  .wf-lbl{position:absolute;left:0;right:0;bottom:-18px;font-size:10.5px;color:var(--rf-ed-muted);text-align:center;}
+  .dotp{transform:scale(0);transform-box:fill-box;transform-origin:center;transition:transform 400ms var(--ease-out);}
+  .go .dotp{transform:scale(1);}
+  .dotp:nth-of-type(2){transition-delay:80ms}.dotp:nth-of-type(3){transition-delay:160ms}.dotp:nth-of-type(4){transition-delay:240ms}.dotp:nth-of-type(5){transition-delay:320ms}.dotp:nth-of-type(6){transition-delay:400ms}.dotp:nth-of-type(7){transition-delay:480ms}.dotp:nth-of-type(8){transition-delay:560ms}.dotp:nth-of-type(9){transition-delay:640ms}.dotp:nth-of-type(10){transition-delay:720ms}
+  .dotp.spark{transition-delay:1050ms;}
+  .sc-lbl{opacity:0;transition:opacity 400ms var(--ease-out) 1350ms;}
+  .go .sc-lbl{opacity:1;}
+  .sp-meta{opacity:0;transform:translateY(6px);transition:opacity 400ms var(--ease-out) 1400ms,transform 550ms var(--ease-out) 1400ms;}
+  .go .sp-meta{opacity:1;transform:none;}
+
+  .note{font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:22px 0 0;padding:14px 0 4px;}
+  .note b{color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;}
+  .note code{font-family:var(--font-mono);font-size:11.5px;}
+  @media(prefers-reduced-motion:reduce){.bar,.seg,.ba-fill,.ln,.ln-end,.dseg,.hb,.hlb,.cbar,.wf,.dotp,.sc-lbl,.sp-meta{transition:none!important;}.dot{animation:none;}}
 </style>
 </head>
 <body>
-  <div class="row e1"><span class="lab">standard · .2,0,0,1 · 200ms</span><div class="track"><div class="dot"></div></div></div>
-  <div class="row e2"><span class="lab">out (entrance) · .16,1,.3,1 · 360ms</span><div class="track"><div class="dot"></div></div></div>
-  <div class="row e3"><span class="lab">in-out · .65,0,.35,1</span><div class="track"><div class="dot"></div></div></div>
+  <div class="sec">
+    <h2>Easing &amp; duration</h2>
+    <div class="row e1"><span class="lab">standard · .2,0,0,1 · 200ms</span><div class="track"><div class="dot"></div></div></div>
+    <div class="row e2"><span class="lab">out (entrance) · .16,1,.3,1 · 360ms</span><div class="track"><div class="dot"></div></div></div>
+    <div class="row e3"><span class="lab">in-out · .65,0,.35,1</span><div class="track"><div class="dot"></div></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="head"><h2 style="margin:0">Data motion</h2><button class="replay" id="replay" type="button">↻ replay</button></div>
+    <div class="grid" id="stage">
+      <div class="panel">
+        <h3>Grow from baseline</h3>
+        <p class="cap">Bars scale up from the axis, left to right, ~90ms apart.</p>
+        <div class="bars">
+          <div class="bar" style="height:34%"></div>
+          <div class="bar" style="height:52%"></div>
+          <div class="bar" style="height:46%"></div>
+          <div class="bar" style="height:71%"></div>
+          <div class="bar" style="height:88%"></div>
+          <div class="bar" style="height:100%"></div>
+        </div>
+        <p class="use"><b>Use</b>The default reveal for any column chart in a report, deck or case study — fires once as the chart scrolls into view.</p>
+      </div>
+      <div class="panel">
+        <h3>Stagger the stack</h3>
+        <p class="cap">Stacked segments rise bottom-up, one after another.</p>
+        <div class="stack">
+          <div class="seg" style="height:20%;background:var(--rf-illus-pale-blue)"></div>
+          <div class="seg" style="height:34%;background:var(--rf-illus-dusty-blue)"></div>
+          <div class="seg" style="height:26%;background:var(--rf-illus-slate-navy)"></div>
+          <div class="seg" style="height:20%;background:var(--success)"></div>
+        </div>
+        <p class="use"><b>Use</b>Pipeline and stage breakdowns — sprint reports, delivery funnels — where the build-up mirrors how the work flowed.</p>
+      </div>
+      <div class="panel">
+        <h3>Count up</h3>
+        <p class="cap">Headline metrics tick from 0 to value over ~1.6s.</p>
+        <div class="metric"><span class="num" id="cu" data-to="76">0</span><span class="unit">%</span><span class="lbl">faster resolution</span></div>
+        <p class="use"><b>Use</b>Hero metrics — the “metric moved” moment in a case study, a KPI on a cover slide. One count-up per view; it loses power when everything counts.</p>
+      </div>
+      <div class="panel">
+        <h3>Line draws on</h3>
+        <p class="cap">The stroke draws left to right; the end label lands last.</p>
+        <div class="line-wrap"><svg viewBox="0 0 300 110" style="width:100%;height:100%" aria-hidden="true">
+          <line x1="0" y1="100" x2="300" y2="100" stroke="var(--rf-ed-rule)" stroke-width="1"></line>
+          <path class="ln b" pathLength="1" d="M0,88 L33,84 L66,80 L100,76 L133,72 L166,70 L200,68 L233,66 L266,66 L292,65"></path>
+          <path class="ln a" pathLength="1" d="M0,92 L33,80 L66,68 L100,58 L133,46 L166,36 L200,26 L233,18 L266,12 L292,8"></path>
+          <g class="ln-end"><circle cx="292" cy="8" r="3.5" fill="var(--rf-paper)" stroke="var(--rf-illus-slate-navy)" stroke-width="2"></circle><text x="288" y="22" text-anchor="end" font-family="var(--font-sans)" font-size="11" font-weight="600" fill="var(--rf-ed-ink)">Series A</text></g>
+        </svg></div>
+        <p class="use"><b>Use</b>Trend charts in long-scroll narratives — the draw follows the time axis, so the reader reads the shape as it appears.</p>
+      </div>
+      <div class="panel">
+        <h3>Donut sweeps</h3>
+        <p class="cap">Slices sweep clockwise, largest first; the centre counts up.</p>
+        <div class="donut-wrap">
+          <svg viewBox="0 0 100 100" style="height:110px" aria-hidden="true">
+            <circle class="dseg" cx="50" cy="50" r="40" stroke="var(--rf-illus-slate-navy)" stroke-dasharray="0 251.33" data-arc="145.8" transform="rotate(-90 50 50)"></circle>
+            <circle class="dseg" cx="50" cy="50" r="40" stroke="var(--rf-illus-dusty-blue)" stroke-dasharray="0 251.33" data-arc="55.3" transform="rotate(118.8 50 50)"></circle>
+            <circle class="dseg" cx="50" cy="50" r="40" stroke="var(--rf-illus-dusty-violet)" stroke-dasharray="0 251.33" data-arc="32.7" transform="rotate(198 50 50)"></circle>
+            <circle class="dseg" cx="50" cy="50" r="40" stroke="var(--rf-illus-grey)" stroke-dasharray="0 251.33" data-arc="17.6" transform="rotate(244.8 50 50)"></circle>
+            <text x="50" y="48" text-anchor="middle" font-family="var(--font-serif)" font-size="19" font-weight="600" fill="var(--rf-ed-ink)"><tspan data-to="58">0</tspan>%</text>
+            <text x="50" y="61" text-anchor="middle" font-family="var(--font-sans)" font-size="7.5" fill="var(--rf-ed-muted)">of total</text>
+          </svg>
+          <div class="dlegend"><span><i style="background:var(--rf-illus-slate-navy)"></i>Segment A</span><span><i style="background:var(--rf-illus-dusty-blue)"></i>Segment B</span><span><i style="background:var(--rf-illus-dusty-violet)"></i>Segment C</span><span><i style="background:var(--rf-illus-grey)"></i>Segment D</span></div>
+        </div>
+        <p class="use"><b>Use</b>Share-of-total callouts where the centre number is the story — “58% of total” in a report or on the site.</p>
+      </div>
+      <div class="panel">
+        <h3>Before / after sweep</h3>
+        <p class="cap">Two tracks fill in sequence; the outcome lands in red.</p>
+        <div class="ba">
+          <div class="ba-row before"><span class="ba-lbl">Before</span><div class="ba-track"><div class="ba-fill"></div></div><span class="ba-val">8.8 d</span></div>
+          <div class="ba-row after"><span class="ba-lbl">After</span><div class="ba-track"><div class="ba-fill"></div></div><span class="ba-val" style="color:var(--rf-ed-red)">2.1 d</span></div>
+        </div>
+        <p class="use"><b>Use</b>Before/after outcome bars — the case-study comparison. The pause before “after” fills is what makes the result land.</p>
+      </div>
+      <div class="panel">
+        <h3>Ranked bars sweep</h3>
+        <p class="cap">Horizontal bars fill left-to-right, top rank first.</p>
+        <div class="hb-rows">
+          <div class="hb-row"><span>Category A</span><div class="hb"></div><span class="hb-v">420</span></div>
+          <div class="hb-row"><span>Category B</span><div class="hb" style="width:78%"></div><span class="hb-v">380</span></div>
+          <div class="hb-row"><span>Category C</span><div class="hb" style="width:55%"></div><span class="hb-v">260</span></div>
+          <div class="hb-row"><span>Category D</span><div class="hb" style="width:38%"></div><span class="hb-v">190</span></div>
+        </div>
+        <p class="use"><b>Use</b>Leaderboards and rankings — the top-first sweep reinforces the order the reader should take in.</p>
+      </div>
+      <div class="panel">
+        <h3>Highlight lands last</h3>
+        <p class="cap">Bars grow quiet; the one that carries the point turns red after.</p>
+        <div class="bars">
+          <div class="hlb" style="height:34%"></div>
+          <div class="hlb" style="height:52%"></div>
+          <div class="hlb" style="height:46%"></div>
+          <div class="hlb" style="height:71%"></div>
+          <div class="hlb" style="height:60%"></div>
+          <div class="hlb spark" style="height:100%"></div>
+        </div>
+        <p class="use"><b>Use</b>The editorial “look at this one” chart — when the title makes a claim about one bar. The late red turn is the punchline; never highlight two.</p>
+      </div>
+      <div class="panel">
+        <h3>Combo — bars, then line</h3>
+        <p class="cap">Volume bars grow first; the rate line draws over them.</p>
+        <div class="combo">
+          <div class="bars" style="grid-template-columns:repeat(7,1fr)">
+            <div class="cbar" style="height:16%"></div><div class="cbar" style="height:36%"></div><div class="cbar" style="height:52%"></div><div class="cbar" style="height:68%"></div><div class="cbar" style="height:82%"></div><div class="cbar" style="height:88%"></div><div class="cbar" style="height:96%"></div>
+          </div>
+          <svg viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path class="ln c" pathLength="1" d="M20,28 L63,42 L106,58 L149,70 L192,80 L235,88 L278,93"></path></svg>
+        </div>
+        <p class="use"><b>Use</b>Volume-vs-rate stories (shipped vs rework %) — bars set the context first, then the line delivers the argument.</p>
+      </div>
+      <div class="panel">
+        <h3>Waterfall steps in</h3>
+        <p class="cap">Start anchors, deltas drop in left-to-right, net lands last.</p>
+        <div class="wfcols" style="margin-bottom:20px">
+          <div class="wfcol"><div class="wf" style="bottom:0;height:50%;background:var(--rf-illus-grey)"></div><span class="wf-lbl">Start</span></div>
+          <div class="wfcol"><div class="wf" style="bottom:50%;height:20%;background:var(--rf-illus-slate-navy)"></div><span class="wf-lbl">+ Gain A</span></div>
+          <div class="wfcol"><div class="wf" style="bottom:70%;height:15%;background:var(--rf-illus-slate-navy)"></div><span class="wf-lbl">+ Gain B</span></div>
+          <div class="wfcol"><div class="wf" style="bottom:60%;height:25%;background:#bc4a3f"></div><span class="wf-lbl">&minus; Loss</span></div>
+          <div class="wfcol"><div class="wf" style="bottom:0;height:60%;background:var(--rf-illus-grey)"></div><span class="wf-lbl">Net</span></div>
+        </div>
+        <p class="use"><b>Use</b>Bridges — revenue, budget variance, headcount flow. The left-to-right build matches how a bridge is read aloud.</p>
+      </div>
+      <div class="panel">
+        <h3>Scatter populates</h3>
+        <p class="cap">Dots pop in; the red outlier and its label resolve last.</p>
+        <svg viewBox="0 0 300 110" style="width:100%;height:110px" aria-hidden="true">
+          <line x1="0" y1="104" x2="300" y2="104" stroke="var(--rf-ed-rule)" stroke-width="1"></line>
+          <circle class="dotp" cx="28" cy="92" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="52" cy="84" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="60" cy="70" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="84" cy="78" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="96" cy="58" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="130" cy="52" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="142" cy="38" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="176" cy="44" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp" cx="190" cy="30" r="5" fill="var(--rf-illus-dusty-blue)" opacity=".65"></circle>
+          <circle class="dotp spark" cx="252" cy="14" r="6" fill="var(--rf-ed-red)"></circle>
+          <text class="sc-lbl" x="244" y="18" text-anchor="end" font-family="var(--font-sans)" font-size="11" font-weight="600" fill="var(--rf-ed-ink)">Outlier</text>
+        </svg>
+        <p class="use"><b>Use</b>Correlation and outlier stories — the field settles quietly, then the named outlier arrives as the point of the chart.</p>
+      </div>
+      <div class="panel">
+        <h3>Sparkline settles</h3>
+        <p class="cap">The mini trend draws; the signed delta lands after it.</p>
+        <div style="display:flex;align-items:center;gap:20px;height:110px">
+          <div><span style="font-family:var(--font-serif);font-size:46px;font-weight:600;line-height:1;color:var(--rf-ed-ink)"><span data-to="24">0</span>%</span>
+            <div class="sp-meta" style="font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-illus-slate-navy);margin-top:6px">&#9650; +6pp <span style="font-weight:400;color:var(--rf-ed-muted)">vs. prior</span></div>
+          </div>
+          <svg viewBox="0 0 160 60" style="flex:1;height:60px" preserveAspectRatio="none" aria-hidden="true"><path class="ln a" pathLength="1" d="M4,50 L30,46 L56,40 L82,38 L108,26 L134,18 L156,8"></path></svg>
+        </div>
+        <p class="use"><b>Use</b>KPI cards and stat rows in dense views — the quietest reveal here; use it where many numbers sit together.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="note"><b>Usage</b>Restrained motion. State changes use <code>standard</code> (200ms); entrances use <code>out</code> (360ms); larger moves use <code>in-out</code>. <b style="all:unset;font-weight:600;color:var(--rf-ed-ink)">Data reveals</b> fire once when a chart scrolls into view (IntersectionObserver, ~35% visible), never on a loop — the looping here is demo-only. Motion should be felt, not seen: the whole build finishes inside ~1.5s, then the chart holds its final state. Bars and fills grow from the baseline via <code>transform:scaleY</code> or animated <code>width</code> with <code>--ease-out</code> over 650–900ms, siblings staggered 90–130ms so the eye tracks the build; lines draw on via <code>stroke-dashoffset</code> with <code>--ease-in-out</code> (~1.4s) and the end label lands last; donut slices sweep clockwise largest-first; headline numbers count up over ~1.6s with a long settle. Sequence by meaning — context first, the point last — and keep the red accent the final thing to resolve. One animated chart per viewport; neighbours reveal as they arrive, never all at once. Always respect <code>prefers-reduced-motion</code> — everything collapses to its final state and the static chart stays the source of truth.</p>
+
+<script>
+  var stage=document.getElementById('stage');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function easeOut(t){return 1-Math.pow(1-t,4);}
+  function countUp(el){
+    var to=+el.dataset.to,dur=1600,t0=null;
+    if(reduce){el.textContent=to;return;}
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(easeOut(p)*to);if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  function play(){
+    stage.querySelectorAll('.bar,.seg,.ba-fill,.ln,.ln-end,.dseg,.hb,.hlb,.cbar,.wf,.dotp,.sc-lbl,.sp-meta').forEach(function(el){el.style.transition='none';});
+    stage.classList.remove('go');
+    stage.querySelectorAll('.dseg').forEach(function(c){c.setAttribute('stroke-dasharray','0 251.33');});
+    void stage.offsetWidth;
+    stage.querySelectorAll('.bar,.seg,.ba-fill,.ln,.ln-end,.dseg,.hb,.hlb,.cbar,.wf,.dotp,.sc-lbl,.sp-meta').forEach(function(el){el.style.transition='';});
+    stage.querySelectorAll('.bar').forEach(function(b,i){b.style.transitionDelay=(i*90)+'ms';});
+    stage.querySelectorAll('.seg').forEach(function(s,i){s.style.transitionDelay=(i*130)+'ms';});
+    stage.querySelector('.ba-row.after .ba-fill').style.transitionDelay='500ms';
+    void stage.offsetWidth;
+    stage.classList.add('go');
+    stage.querySelectorAll('.dseg').forEach(function(c){var a=+c.dataset.arc;c.setAttribute('stroke-dasharray',a+' '+(251.33-a));});
+    stage.querySelectorAll('[data-to]').forEach(function(el){el.textContent='0';setTimeout(function(){countUp(el);},200);});
+  }
+  document.getElementById('replay').addEventListener('click',play);
+  var loop;
+  function startLoop(){if(reduce){play();return;}play();loop=setInterval(play,8000);}
+  var started=false;
+  function once(){if(started)return;started=true;startLoop();}
+  new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){once();o.disconnect();}});},{threshold:0}).observe(stage);
+  setTimeout(once,600);
+</script>
 </body>
 </html>

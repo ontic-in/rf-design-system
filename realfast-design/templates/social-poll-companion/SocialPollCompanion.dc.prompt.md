@@ -1,0 +1,1 @@
+Run the poll natively and post the question card alongside it; the options on the card must match the poll's options exactly. The results card goes up after the poll closes with real vote counts and one line of interpretation - never invented percentages. Only the winning bar is red.

@@ -1,0 +1,1 @@
+Lead with what happened, then one line on what it changes for the reader. Date is mandatory. For partnerships, use the partner's approved logo at equal optical weight and never restyle it. Milestones only when the figure can be substantiated.

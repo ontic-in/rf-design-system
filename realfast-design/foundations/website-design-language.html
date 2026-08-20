@@ -159,7 +159,7 @@ transition: transform .35s ease, box-shadow .35s ease;</pre>
     <div class="sec-no">07 &middot; Icons</div>
     <div class="sec-body">
       <h2>Iconography</h2>
-      <p>Core system uses Lucide outline; the website adds a <strong>premium icon-chip treatment</strong> for repeated icon buttons (social/profile links, feature chips):</p>
+      <p>Core system uses Tabler outline; the website adds a <strong>premium icon-chip treatment</strong> for repeated icon buttons (social/profile links, feature chips):</p>
       <pre><span class="cm">/* 34px desktop · 40px mobile circle */</span>
 background: linear-gradient(145deg, #ffffff, var(--surface-raised));
 border: 1px solid var(--border);
@@ -270,7 +270,48 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
   </section>
 
   <section>
-    <div class="sec-no">14 &middot; Recap</div>
+    <div class="sec-no">14 &middot; Case-study index</div>
+    <div class="sec-body">
+      <h2>Case-study index / listing (the "gallery of proof")</h2>
+      <p>Built on the same editorial <code>rf-cs</code> surface as the detail pages, so the listing flows continuously into them. Top to bottom: <strong>editorial masthead &rarr; full-width hero &rarr; featured lead card &rarr; uniform card grid &rarr; a single closing dark band</strong>.</p>
+
+      <h3>Masthead — de-templated (anti-AI-tell)</h3>
+      <ul>
+        <li>Sentence-case red kicker left, quiet meta figure right.</li>
+        <li><strong>No</strong> full-width connecting hairline rule between kicker and figure.</li>
+        <li>Meta count set in the <strong>sans</strong>, not monospace.</li>
+      </ul>
+
+      <h3>Hero — use the full width</h3>
+      <ul>
+        <li>Serif headline runs the <strong>full container width</strong> (1-2 lines). Do not cap it with a narrow <code>max-width</code> that forces extra wraps.</li>
+        <li>One gradient accent word only; full-width standfirst.</li>
+      </ul>
+
+      <h3>Editorial card (variant of the &sect;6 premium card, for the newspaper surface)</h3>
+      <ul>
+        <li>Fill <code>linear-gradient(165deg, #fff &rarr; cream)</code>; soft layered shadow; hover lift.</li>
+        <li><strong>No thick 4px white mat border; radius 2px</strong> (not 24px) — a crisp lifted surface, not a chunky rounded box.</li>
+        <li>Sentence-case red rubric; serif title turns red on hover; a two-metric row with the lead metric in red.</li>
+      </ul>
+
+      <h3>Card CTA affordance (reusable rule)</h3>
+      <ul>
+        <li>The <strong>whole card is the link</strong> — the "Read case study" label is a styled <code>&lt;span&gt;</code>, never a nested <code>&lt;button&gt;</code> (redundant, and invalid inside an anchor).</li>
+        <li>Styled as a <strong>red ghost pill that fills red on card hover</strong> — clearly a CTA, no arrow.</li>
+        <li>No arrow-text links ("Read more &rarr;"); use a specific label ("Read case study") over generic "Learn more".</li>
+      </ul>
+
+      <h3>Closing band + footer</h3>
+      <ul>
+        <li>A single premium dark band (&sect;4) with a gradient contrast word and the matched red / ghost pill set (&sect;10); headline 2 lines, standfirst tightened.</li>
+        <li><strong>Engineering note:</strong> any page on the case-study surface must carry the <code>footer.is-light</code> rules (now in <code>case-study-editorial.css</code>) or the white footer nav renders invisible.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-no">15 &middot; Recap</div>
     <div class="sec-body">
       <h2>Do / Don't recap</h2>
       <div class="dd">

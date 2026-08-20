@@ -1,0 +1,1 @@
+Lead with the role and one honest line about the work - the card is a job description, not a recruitment poster. Name the location and the application route every time. Use the detail card when the role needs explaining, and the board when three or more roles are open.

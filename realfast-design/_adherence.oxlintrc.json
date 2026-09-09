@@ -37,50 +37,6 @@
       {
         "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Source Serif 4|IBM Plex Sans Condensed))/i]",
         "message": "Font not provided by the design system. Available: Source Serif 4, IBM Plex Sans Condensed."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='ArticleHeader'] > JSXAttribute > JSXIdentifier[name!=/^(?:section|sub|sectionHref|title|dek|author|role|authorHref|avatar|date|readTime|onShare|key|ref|className|style|children)$/]",
-        "message": "<ArticleHeader> doesn't accept that prop. Declared props: section, sub, sectionHref, title, dek, author, role, authorHref, avatar, date, readTime, onShare."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='AuthorBioLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|key|ref|className|style|children)$/]",
-        "message": "<AuthorBioLink> doesn't accept that prop. Declared props: label, href."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|outline|key|ref|className|style|children)$/]",
-        "message": "<Badge> doesn't accept that prop. Declared props: children, tone, outline."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|iconLeft|iconRight|disabled|full|as|key|ref|className|style|children)$/]",
-        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size, iconLeft, iconRight, disabled, full, as."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:button|a)$/]",
-        "message": "<Button> as must be one of 'button' | 'a'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|padding|interactive|raised|accentTop|key|ref|className|style|children)$/]",
-        "message": "<Card> doesn't accept that prop. Declared props: children, padding, interactive, raised, accentTop."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='EditorialBlogCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:section|sub|title|dek|date|readTime|author|image|href|featured|key|ref|className|style|children)$/]",
-        "message": "<EditorialBlogCard> doesn't accept that prop. Declared props: section, sub, title, dek, date, readTime, author, image, href, featured."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='PullQuote'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|cite|key|ref|className|style|children)$/]",
-        "message": "<PullQuote> doesn't accept that prop. Declared props: children, cite."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Rubric'] > JSXAttribute > JSXIdentifier[name!=/^(?:section|sub|href|as|plain|key|ref|className|style|children)$/]",
-        "message": "<Rubric> doesn't accept that prop. Declared props: section, sub, href, as, plain."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='Rubric'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:p|div)$/]",
-        "message": "<Rubric> as must be one of 'p' | 'div'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='ShareButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|key|ref|className|style|children)$/]",
-        "message": "<ShareButton> doesn't accept that prop. Declared props: label."
       }
     ]
   },
@@ -96,12 +52,6 @@
   ],
   "x-omelette": {
     "components": {
-      "ArticleHeader": {
-        "replaces": []
-      },
-      "AuthorBioLink": {
-        "replaces": []
-      },
       "Badge": {
         "replaces": []
       },
@@ -109,6 +59,12 @@
         "replaces": []
       },
       "Card": {
+        "replaces": []
+      },
+      "ArticleHeader": {
+        "replaces": []
+      },
+      "AuthorBio": {
         "replaces": []
       },
       "EditorialBlogCard": {
@@ -232,11 +188,13 @@
       "--space-5",
       "--space-6",
       "--space-8",
+      "--space-9",
       "--success",
       "--surface-inset",
       "--surface-overlay",
       "--surface-page",
       "--surface-raised",
+      "--text-accent",
       "--text-body",
       "--text-faint",
       "--text-muted",
@@ -277,6 +235,7 @@
       "--type-rubric-weight",
       "--type-title",
       "--type-ui",
+      "--type-ui-lg",
       "--type-ui-sm",
       "--warning",
       "--z-base",
@@ -345,11 +304,12 @@
       "--surface-raised": "color",
       "--surface-overlay": "color",
       "--surface-inset": "color",
-      "--text-strong": "font",
-      "--text-body": "font",
-      "--text-muted": "font",
-      "--text-faint": "font",
-      "--text-on-accent": "font",
+      "--text-strong": "color",
+      "--text-body": "color",
+      "--text-muted": "color",
+      "--text-faint": "color",
+      "--text-accent": "color",
+      "--text-on-accent": "color",
       "--accent": "color",
       "--accent-hover": "color",
       "--accent-press": "color",
@@ -398,6 +358,7 @@
       "--type-title": "font",
       "--type-lead": "font",
       "--type-ui": "font",
+      "--type-ui-lg": "font",
       "--type-ui-sm": "font",
       "--type-label": "font",
       "--track-tight": "other",
@@ -413,6 +374,7 @@
       "--space-5": "spacing",
       "--space-6": "spacing",
       "--space-8": "spacing",
+      "--space-9": "spacing",
       "--space-10": "spacing",
       "--space-12": "spacing",
       "--space-14": "spacing",

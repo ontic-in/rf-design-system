@@ -1,5 +1,7 @@
 # *realfast* Website Design Language
 
+Rule precedence: [channel-profiles.md](channel-profiles.md) governs the exceptions below.
+
 An extension to the core *realfast* editorial design system, dedicated to the **marketing website** (About, People & Culture, Security, and future long-scroll pages). The core system defines the print/editorial look; this layer defines how that look behaves on a **dark-punctuated, animated, full-bleed scrolling web page**.
 
 Everything here is additive - the core rules still hold: name always lowercase + italic (*realfast*), single spaced hyphens (no em-dashes), US spelling fine if consistent, no emoji, one red accent used sparingly, plain-spoken and specific voice.
@@ -24,7 +26,7 @@ Built on the core tokens; the website leans on these semantic roles:
 | Role | Value | Use |
 |---|---|---|
 | Accent red | `#E3120B` (`--accent` / `--rf-red-500`) | CTAs, rubrics, active states, focal detail |
-| Light red (on dark) | `#F0524D` (`--rf-red-400`) | accent words / rubrics on dark bands |
+| Light red (on dark) | `#F7394D` (`--rf-red-400`) | accent words / rubrics on dark bands |
 | Ink base | `#111111` | body text on light |
 | Paper | white `#FFFFFF` | primary light band |
 | Cream | `--surface-raised` (warm off-white) | alternating light band |
@@ -48,7 +50,7 @@ background: linear-gradient(100deg, #ffb3ae 0%, var(--rf-red-400) 55%, #c00d07 1
 background: linear-gradient(100deg, #ffffff 15%, #d8d3c8 85%);
 -webkit-background-clip: text; background-clip: text; color: transparent;
 
-/* mission / closing phrase (longer, warmer sweep) */
+/* closing phrase on dark only (longer, warmer sweep) */
 background: linear-gradient(100deg, #f0554f 0%, #E3120B 45%, #a30b06 100%);
 ```
 
@@ -195,7 +197,7 @@ The About page established a reusable structure for narrative pages:
 
 1. **Site nav** (existing header component).
 2. **Premium ink hero** - sentence-case kicker, big serif headline with gradient contrast words, two-beat entrance, scroll cue. Optional dim rail numeral ("00").
-3. **Mission / standfirst band** (cream, centered, no rules) - one bold idea, closing phrase in the red gradient.
+3. **Mission / standfirst band** (cream, centered, no rules) - one bold idea, closing phrase in solid `--text-accent`.
 4. **Numbered chapters** - full-bleed alternating white/cream, seamless shadow flow. Desktop: `170px | 1fr` grid with a **sticky left rail** per chapter (44px serif numeral + sentence-case bold label). The **active chapter's numeral turns red and scales ~1.08** as it enters the viewport (dim grey at rest; on ink bands dim white → light red). One chapter may be a premium ink band.
 5. **CTA band** (premium black gradient) - contrast-word headline, two pills, no arrows.
 6. **Footer** (existing component).

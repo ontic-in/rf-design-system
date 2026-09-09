@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>realfast design system — workbench preview</title>
+  <link rel="stylesheet" href="realfast-design/styles.css">
+  <style>
+    :root { --wb-sidebar: 248px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text-body); background: var(--surface-page); font-family: var(--font-serif); }
+    button { font: inherit; }
+    .shell { min-height: 100vh; display: grid; grid-template-columns: var(--wb-sidebar) minmax(0, 1fr); }
+    aside { border-right: 1px solid var(--border); padding: 28px 20px; background: var(--surface-raised); font-family: var(--font-sans); }
+    .mark { width: 116px; display: block; margin: 0 0 42px; }
+    .side-label { color: var(--text-muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
+    .nav { display: grid; gap: 3px; margin-bottom: 34px; }
+    .nav button { border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--text-body); padding: 9px 10px; text-align: left; cursor: pointer; }
+    .nav button:hover, .nav button.active { background: var(--text-body); color: var(--text-on-accent); }
+    .version { border-top: 1px solid var(--border); padding-top: 18px; color: var(--text-muted); font-size: 13px; line-height: 1.35; }
+    main { min-width: 0; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 40px; border-bottom: 1px solid var(--border); font-family: var(--font-sans); }
+    .crumb { font-size: 14px; color: var(--text-muted); }
+    .crumb strong { color: var(--text-body); font-weight: var(--fw-semibold); }
+    .top-actions { display: flex; gap: 10px; align-items: center; }
+    .top-actions a { color: var(--text-body); font-size: 14px; }
+    .outline { border: 1px solid var(--border-strong); background: transparent; color: var(--text-body); border-radius: var(--radius-sm); padding: 8px 12px; cursor: pointer; font-family: var(--font-sans); font-size: 14px; }
+    .content { max-width: 1240px; padding: 52px 40px 90px; }
+    .eyebrow { color: var(--text-accent); font-family: var(--font-sans); font-size: var(--type-rubric-size); margin: 0 0 14px; }
+    h1 { font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: var(--track-tight); font-weight: var(--fw-semibold); max-width: 760px; margin: 0 0 20px; }
+    .dek { max-width: 650px; font-size: 21px; line-height: 1.45; color: var(--text-muted); margin: 0 0 44px; }
+    .toolbar { display: flex; align-items: end; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border); padding-top: 16px; margin-bottom: 28px; font-family: var(--font-sans); }
+    .toolbar h2 { font: 600 20px/1 var(--font-sans); margin: 0; }
+    .toolbar p { color: var(--text-muted); margin: 5px 0 0; font-size: 14px; }
+    .status { color: var(--text-muted); font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .specimen { border: 1px solid var(--border); background: var(--surface-page); border-radius: var(--radius-sm); min-height: 236px; display: flex; flex-direction: column; }
+    .spec-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 16px 18px; border-bottom: 1px solid var(--border); font-family: var(--font-sans); }
+    .spec-head strong { font-size: 16px; font-weight: var(--fw-semibold); }
+    .spec-head code { color: var(--text-muted); font-size: 12px; }
+    .stage { padding: 28px; display: flex; flex: 1; align-items: center; justify-content: center; }
+    .stage.stack { display: grid; justify-items: start; align-content: center; gap: 12px; }
+    .rf-button { display: inline-flex; border: 1px solid var(--rf-ed-red); background: var(--rf-ed-red); color: white; border-radius: var(--radius-sm); padding: 11px 20px; font: 600 15px/1 var(--font-sans); cursor: pointer; }
+    .rf-button.secondary { background: transparent; color: var(--text-body); border-color: var(--border-strong); }
+    .rf-button:focus-visible, .outline:focus-visible, .nav button:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 3px; }
+    .rubric { color: var(--text-accent); font: 500 14px/1 var(--font-sans); }
+    .rubric span { color: var(--text-muted); }
+    .quote { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 8px; text-align: center; font-size: 24px; line-height: 1.3; font-style: italic; max-width: 430px; }
+    .quote small { display: block; color: var(--text-muted); font: 13px var(--font-sans); font-style: normal; margin-top: 8px; }
+    .blog { width: 100%; display: grid; grid-template-columns: 1fr 120px; gap: 18px; align-items: start; }
+    .blog h3 { margin: 8px 0 12px; font-size: 25px; line-height: 1.08; font-weight: 600; }
+    .blog p { color: var(--text-muted); margin: 0; font: 14px/1.4 var(--font-sans); }
+    .blog img { width: 120px; height: 88px; object-fit: cover; border-radius: var(--radius-sm); }
+    .token-panel { margin-top: 52px; border-top: 2px solid var(--border-strong); padding-top: 18px; }
+    .token-panel h2 { font-size: 28px; margin: 0 0 18px; }
+    .tokens { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); }
+    .token { padding: 14px; border-right: 1px solid var(--border); background: var(--surface-page); }
+    .token:last-child { border-right: 0; }
+    .swatch { height: 42px; margin-bottom: 12px; border: 1px solid var(--border); }
+    .token code, .token small { display: block; font: 12px var(--font-mono); }
+    .token small { color: var(--text-muted); font-family: var(--font-sans); margin-top: 5px; }
+    .asset-panel { margin-top: 52px; }
+    .asset-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .asset { margin: 0; border: 1px solid var(--border); background: var(--surface-raised); }
+    .asset img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .asset figcaption { padding: 8px; font: 12px var(--font-sans); color: var(--text-muted); }
+    .footnote { margin-top: 44px; color: var(--text-muted); font: 14px/1.5 var(--font-sans); }
+    body.dense .content { padding-top: 32px; }
+    body.dense .specimen { min-height: 190px; }
+    body.dense .stage { padding: 18px; }
+    @media (max-width: 760px) { .shell { display: block; } aside { border-right: 0; border-bottom: 1px solid var(--border); padding: 18px; } .mark { margin-bottom: 20px; } .nav { display: flex; overflow-x: auto; margin-bottom: 18px; } .nav button { white-space: nowrap; } .version { display: none; } .topbar, .content { padding-left: 20px; padding-right: 20px; } .grid { grid-template-columns: 1fr; } .tokens { grid-template-columns: repeat(2, 1fr); } .token:nth-child(2) { border-right: 0; } .token:nth-child(-n+2) { border-bottom: 1px solid var(--border); } .asset-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <img class="mark" src="realfast-design/assets/logos/realfast-logo-ink.svg" alt="realfast">
+      <p class="side-label">Workbench</p>
+      <nav class="nav" aria-label="Workbench sections">
+        <button class="active" data-filter="all">Overview</button>
+        <button data-filter="core">Core components</button>
+        <button data-filter="editorial">Editorial patterns</button>
+        <button data-filter="tokens">Tokens</button>
+        <button data-filter="assets">Illustrations</button>
+      </nav>
+      <div class="version"><strong>realfast design system</strong><br>Preview concept · v0.1<br><br>One place to inspect the decisions, states, and output paths behind the system.</div>
+    </aside>
+    <main>
+      <div class="topbar"><div class="crumb"><strong>Design system</strong> <span aria-hidden="true">/</span> Workbench preview</div><div class="top-actions"><a href="changes.html">Review changes</a><button class="outline" id="density">Toggle density</button></div></div>
+      <div class="content">
+        <p class="eyebrow">A working surface for the system</p>
+        <h1>Inspect the decisions before you ship them.</h1>
+        <p class="dek">A browsable workbench for components, channel profiles, tokens, illustrations, and fixed-size outputs. This is the proposed shape, shown in HTML before the tooling is built.</p>
+
+        <div class="toolbar"><div><h2>Component states</h2><p>Core and editorial primitives, with real interaction examples.</p></div><span class="status" id="count">6 specimens</span></div>
+        <div class="grid" id="specimens">
+          <article class="specimen" data-kind="core"><div class="spec-head"><strong>Button</strong><code>core / action</code></div><div class="stage stack"><div><button class="rf-button" data-message="Primary button activated.">Primary action</button> <button class="rf-button secondary" data-message="Secondary button activated.">Secondary</button></div><span class="status">default · hover · focus · active</span></div></article>
+          <article class="specimen" data-kind="core"><div class="spec-head"><strong>Badge</strong><code>core / status</code></div><div class="stage stack"><div><span style="display:inline-flex;padding:6px 10px;border:1px solid var(--rf-red-200);background:var(--rf-red-50);color:var(--text-accent);border-radius:var(--radius-sm);font:600 13px var(--font-sans);">At risk</span> <span style="display:inline-flex;padding:6px 10px;border:1px solid var(--rf-blue-200);background:var(--rf-blue-50);color:var(--rf-blue-700);border-radius:var(--radius-sm);font:600 13px var(--font-sans);">In review</span></div><span class="status">tone · outline · disabled context</span></div></article>
+          <article class="specimen" data-kind="editorial"><div class="spec-head"><strong>Rubric + headline</strong><code>editorial / hierarchy</code></div><div class="stage stack"><div class="rubric">Insights <span>│ The realfast view</span></div><div style="font-size:31px;line-height:1.05;letter-spacing:-.01em;font-weight:600;">A claim should earn its space.</div><span class="status" style="font-family:var(--font-sans)">serif claim · sans furniture · hairline</span></div></article>
+          <article class="specimen" data-kind="editorial"><div class="spec-head"><strong>Pull quote</strong><code>editorial / emphasis</code></div><div class="stage"><div class="quote">The useful line is the one the reader remembers.<small>— source-backed editorial quote</small></div></div></article>
+          <article class="specimen" data-kind="editorial"><div class="spec-head"><strong>Blog card</strong><code>editorial / responsive</code></div><div class="stage"><div class="blog"><div><div class="rubric">Field notes <span>│ 6 min read</span></div><h3>The card becomes one column when the measure narrows.</h3><p>Resize the workbench to inspect the intended mobile collapse.</p></div><img src="realfast-design/assets/illustrations/stacked-slabs.png" alt="Muted stacked slabs illustration"></div></div></article>
+          <article class="specimen" data-kind="core"><div class="spec-head"><strong>Interactive card</strong><code>core / keyboard</code></div><div class="stage stack"><button class="outline" id="card-demo" style="font-family:var(--font-sans);text-align:left;padding:18px;max-width:360px;"><span style="display:block;color:var(--text-accent);font-size:13px;">Keyboard example</span><strong style="display:block;font:600 23px var(--font-serif);margin:7px 0;">Enter or Space activates this card.</strong><span style="color:var(--text-muted);font:14px var(--font-sans);">A real workbench would expose this state and the accessible contract.</span></button></div></article>
+        </div>
+
+        <div class="token-panel" data-panel="tokens"><h2>Token decisions at a glance</h2><div class="tokens"><div class="token"><div class="swatch" style="background:var(--rf-ed-red)"></div><code>--rf-red</code><small>canonical accent · #E3120B</small></div><div class="token"><div class="swatch" style="background:var(--rf-blue)"></div><code>--rf-blue</code><small>canonical action blue</small></div><div class="token"><div class="swatch" style="background:var(--surface-raised)"></div><code>--surface-raised</code><small>warm paper surface</small></div><div class="token"><div class="swatch" style="background:var(--text-body)"></div><code>--text-body</code><small>near-black reading ink</small></div></div></div>
+
+        <div class="asset-panel" data-panel="assets"><div class="toolbar"><div><h2>Illustration index</h2><p>Subject-led selection with room for approval and provenance metadata.</p></div><span class="status">48 supplied assets</span></div><div class="asset-grid"><figure class="asset"><img src="realfast-design/assets/illustrations/muted/named-accountable.png" alt="Abstract muted illustration"><figcaption>named-accountable · muted</figcaption></figure><figure class="asset"><img src="realfast-design/assets/illustrations/muted/move-the-metric.png" alt="Abstract muted illustration"><figcaption>move-the-metric · muted</figcaption></figure><figure class="asset"><img src="realfast-design/assets/illustrations/sprint-finish.png" alt="Sprint finish illustration"><figcaption>sprint-finish · red detail</figcaption></figure><figure class="asset"><img src="realfast-design/assets/illustrations/stacked-slabs.png" alt="Stacked slabs illustration"><figcaption>stacked-slabs · editorial</figcaption></figure></div></div>
+        <p class="footnote">Concept only. The navigation, filters, density toggle, component states, token panel, and asset index are the proposed workbench behavior. The underlying authoring and regression tooling has not been built yet.</p>
+      </div>
+    </main>
+  </div>
+  <script>
+    const buttons = [...document.querySelectorAll('.nav button')];
+    const specs = [...document.querySelectorAll('.specimen')];
+    const count = document.querySelector('#count');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      buttons.forEach(item => item.classList.toggle('active', item === button));
+      const filter = button.dataset.filter;
+      specs.forEach(spec => { spec.hidden = filter !== 'all' && filter !== 'tokens' && filter !== 'assets' && spec.dataset.kind !== filter; });
+      count.textContent = `${specs.filter(item => !item.hidden).length} specimens`;
+    }));
+    document.querySelectorAll('[data-message]').forEach(button => button.addEventListener('click', () => {
+      document.querySelector('#count').textContent = button.dataset.message;
+      setTimeout(() => { if (document.querySelector('#count').textContent === button.dataset.message) document.querySelector('#count').textContent = `${specs.filter(item => !item.hidden).length} specimens`; }, 1800);
+    }));
+    document.querySelector('#card-demo').addEventListener('click', () => { document.querySelector('#count').textContent = 'Interactive card activated.'; });
+    document.querySelector('#density').addEventListener('click', event => { document.body.classList.toggle('dense'); event.currentTarget.textContent = document.body.classList.contains('dense') ? 'Reset density' : 'Toggle density'; });
+  </script>
+</body>
+</html>

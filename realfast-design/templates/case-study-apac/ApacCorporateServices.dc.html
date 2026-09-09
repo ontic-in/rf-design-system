@@ -268,13 +268,14 @@
         <p style="font-family:var(--font-serif);font-size:var(--type-body-size);line-height:var(--type-body-line);color:var(--rf-ed-ink-soft);margin:0;max-width:44ch;">Tell us where you want to move faster. We&rsquo;ll set up a working session and show you agent-scale delivery on your own stack.</p>
       </div>
       <div data-rf-lead-form>
-        <form data-rf-lead style="display:flex;flex-direction:column;gap:18px;">
-          <div><label class="lbl">Your name *</label><input class="fld" name="name" required></div>
-          <div><label class="lbl">Work email *</label><input class="fld" type="email" name="email" required></div>
-          <div><label class="lbl">Company name *</label><input class="fld" name="company" required></div>
-          <div><label class="lbl">LinkedIn profile</label><input class="fld" name="linkedin"></div>
-          <div><label class="lbl">How did you hear about us? *</label><select class="fld" name="source" required><option value="">Select an option</option><option>Google / Search Engine</option><option>LinkedIn</option><option>Referral from colleague or friend</option><option>Blog / Article</option><option>Event or Webinar</option><option>Other</option></select></div>
-          <button type="submit" class="rf-btn">Book a demo &rarr;</button>
+        <p id="case-study-apac-preview" style="font-family:var(--font-sans);color:var(--text-muted);">Form preview. No information is sent or saved.</p>
+        <form aria-describedby="case-study-apac-preview" data-rf-lead style="display:flex;flex-direction:column;gap:18px;">
+          <div><label class="lbl" for="case-study-apac-name">Your name *</label><input class="fld" id="case-study-apac-name" name="name" required></div>
+          <div><label class="lbl" for="case-study-apac-email">Work email *</label><input class="fld" id="case-study-apac-email" type="email" name="email" required></div>
+          <div><label class="lbl" for="case-study-apac-company">Company name *</label><input class="fld" id="case-study-apac-company" name="company" required></div>
+          <div><label class="lbl" for="case-study-apac-linkedin">LinkedIn profile</label><input class="fld" id="case-study-apac-linkedin" name="linkedin"></div>
+          <div><label class="lbl" for="case-study-apac-source">How did you hear about us? *</label><select class="fld" id="case-study-apac-source" name="source" required><option value="">Select an option</option><option>Google / Search Engine</option><option>LinkedIn</option><option>Referral from colleague or friend</option><option>Blog / Article</option><option>Event or Webinar</option><option>Other</option></select></div>
+          <button type="submit" class="rf-btn">Preview form</button>
         </form>
         <div data-rf-lead-success style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
           <div class="kicker" style="margin-bottom:12px;">Let&rsquo;s go</div>
@@ -311,7 +312,7 @@ class Component extends DCLogic {
         entries.forEach(e => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
       reveals.forEach(el => io.observe(el));
-      setTimeout(() => reveals.forEach(el => { if (el.style.opacity === '0') show(el); }), 1000);
+      setTimeout(() => { if (!reveals.some(el => el.classList.contains('is-in'))) reveals.forEach(show); }, 3000);
     }
     const links = Array.from(root.querySelectorAll('.raillink'));
     const chapters = Array.from(root.querySelectorAll('[data-chapter]'));
@@ -324,7 +325,7 @@ class Component extends DCLogic {
     links.forEach(l => l.addEventListener('click', (ev) => {
       const id = l.getAttribute('href');
       const target = root.querySelector(id);
-      if (target) { ev.preventDefault(); const y = target.getBoundingClientRect().top + window.pageYOffset - 40; window.scrollTo({ top: y, behavior: 'smooth' }); }
+      if (target) { ev.preventDefault(); const y = target.getBoundingClientRect().top + window.pageYOffset - 40; window.scrollTo({ top: y, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
     }));
     const dl = root.querySelector('[data-dl]');
     if (dl) dl.addEventListener('click', () => window.print());
@@ -332,7 +333,7 @@ class Component extends DCLogic {
     const ok = root.querySelector('[data-rf-lead-success]');
     const err = root.querySelector('[data-rf-lead-error]');
     const retry = root.querySelector('[data-rf-lead-retry]');
-    if (form) form.addEventListener('submit', (ev) => { ev.preventDefault(); form.style.display = 'none'; if (err) err.style.display = 'none'; if (ok) ok.style.display = 'block'; });
+    if (form) form.addEventListener('submit', (ev) => { ev.preventDefault(); if (err) err.style.display = 'none'; if (ok) { ok.textContent = 'Preview complete. No information was sent or saved.'; ok.setAttribute('role', 'status'); ok.style.display = 'block'; } });
     if (retry) retry.addEventListener('click', () => { if (err) err.style.display = 'none'; if (form) form.style.display = 'flex'; });
     root.querySelectorAll('.rf-copy').forEach(btn => btn.addEventListener('click', () => {
       const pre = btn.closest('.mj').querySelector('.mj-pre'); if (!pre) return;

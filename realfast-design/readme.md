@@ -48,7 +48,7 @@ The full **"newspaper article"** layout — section rubric, big serif headline, 
 A long-scroll **client case study** with the fixed narrative spine — hero outcome, the problem, why it mattered, what we did, the build, the metric moved (the boldest data moment), a client quote, and what's next. `case-study-apac/` is a fully filled example.
 
 - **Use it for:** client results, proof stories, sales collateral.
-- **How:** lead with the outcome, keep every metric visual, and pull all copy from the source. Ships with a book-a-demo form and a PDF download.
+- **How:** lead with the outcome, keep every metric visual, and pull all copy from the source. Includes a clearly labeled form preview (no submission) and browser print-to-PDF.
 
 ### 5 · Social & Content
 
@@ -78,6 +78,7 @@ The rest of this folder is the machine-readable source for the look above — li
 - **`styles.css`** — the single stylesheet to link; pulls in all tokens and the self-hosted fonts (Source Serif 4, IBM Plex Sans Condensed).
 - **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper.
 - **`foundations/*.html`** — specimen cards (Colours, Type, Spacing, Effects, Brand) that populate the **Design System** tab.
+- **`foundations/anti-slop.md`** — the anti-slop rules: what makes work read as machine-generated, the four patterns we override on purpose, and the detector command. Read before shipping.
 - **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
 - **`templates/`** — the starting points described above: `presentation/`, `weekly-sprint-report/`, `editorial-article/`, `case-study/` (+ `case-study-apac/` example), and the social set (`social-case-study-carousel/`, `social-blog-carousel/`, `social-thought-leadership/`, `social-infographic/`).
 
@@ -91,4 +92,8 @@ Use **[Lucide](https://lucide.dev)** outline icons (24×24, \~2px stroke). Don't
 
 ### Source of truth
 
-Derived from the realfast `New-Website` editorial blog theme and the live site (`realfast.ai/blog`). Brand colours and fonts were provided; five editorial illustrations and the wordmark are included in `assets/`.
+Derived from the realfast `New-Website` editorial blog theme and the live site (`realfast.ai/blog`). Brand colours and fonts were provided; 48 editorial illustrations and the wordmark are included in `assets/`.
+
+## Rule precedence and verification
+
+Read [foundations/channel-profiles.md](foundations/channel-profiles.md) before applying channel-specific styling. It resolves the core/website/social/video exceptions. See [CONSUMING.md](CONSUMING.md) for preview behavior, production use, and upgrade notes.

@@ -3,8 +3,7 @@ import React from "react";
 /**
  * AuthorBio — the author identity block. Used two ways: as the header of an
  * author page (with a "← All posts" back link and post-count meta) and as the
- * "Written by" footer at the end of an article. Use inside a
- * [data-theme="editorial"] wrapper.
+ * "Written by" footer at the end of an article. The editorial surface is the default.
  */
 export function AuthorBio({
   name,
@@ -16,7 +15,9 @@ export function AuthorBio({
   backLabel = "All posts",
   backHref,
   links = [],
+  headingAs = "h2",
 }) {
+  const Heading = headingAs;
   return (
     <div style={{ fontFamily: "var(--font-serif)" }}>
       {backHref && (
@@ -25,9 +26,9 @@ export function AuthorBio({
           style={{
             display: "inline-block",
             fontFamily: "var(--font-sans)",
-            fontSize: 15,
-            fontWeight: 600,
-            color: "var(--rf-ed-red)",
+            fontSize: "var(--type-ui)",
+            fontWeight: "var(--fw-semibold)",
+            color: "var(--text-accent)",
             textDecoration: "none",
             marginBottom: 26,
           }}
@@ -35,7 +36,7 @@ export function AuthorBio({
           ← {backLabel}
         </a>
       )}
-      <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "var(--space-6)" }}>
         {avatar && (
           <img
             src={avatar}
@@ -55,8 +56,8 @@ export function AuthorBio({
             <p
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 13,
-                fontWeight: 500,
+                fontSize: "var(--type-meta-size)",
+                fontWeight: "var(--fw-medium)",
                 color: "var(--rf-ed-muted)",
                 margin: "0 0 4px",
               }}
@@ -64,10 +65,10 @@ export function AuthorBio({
               {eyebrow}
             </p>
           )}
-          <h1
+          <Heading
             style={{
               fontFamily: "var(--font-serif)",
-              fontWeight: 600,
+              fontWeight: "var(--fw-semibold)",
               letterSpacing: "-0.015em",
               lineHeight: 1.05,
               color: "var(--rf-ed-ink)",
@@ -76,14 +77,14 @@ export function AuthorBio({
             }}
           >
             {name}
-          </h1>
+          </Heading>
           {role && (
             <p
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 17,
-                fontWeight: 600,
-                color: "var(--rf-ed-red)",
+                fontWeight: "var(--fw-semibold)",
+                color: "var(--text-accent)",
                 margin: "8px 0 0",
               }}
             >
@@ -94,7 +95,7 @@ export function AuthorBio({
             <p
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 15,
+                fontSize: "var(--type-ui)",
                 color: "var(--rf-ed-muted)",
                 margin: "6px 0 0",
               }}
@@ -108,7 +109,7 @@ export function AuthorBio({
         <p
           style={{
             fontFamily: "var(--font-serif)",
-            fontSize: 20,
+            fontSize: "var(--type-dek-size)",
             lineHeight: 1.5,
             color: "var(--rf-ed-ink)",
             margin: "26px 0 0",
@@ -119,7 +120,7 @@ export function AuthorBio({
         </p>
       )}
       {links.length > 0 && (
-        <div style={{ display: "flex", gap: 24, marginTop: 22, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "var(--space-6)", marginTop: 22, flexWrap: "wrap" }}>
           {links.map((l, i) => (
             <a
               key={i}
@@ -127,8 +128,8 @@ export function AuthorBio({
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 16,
-                fontWeight: 600,
-                color: "var(--rf-ed-red)",
+                fontWeight: "var(--fw-semibold)",
+                color: "var(--text-accent)",
                 textDecoration: "none",
               }}
             >

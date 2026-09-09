@@ -5,7 +5,7 @@ import React from "react";
  * rubrics in pill form, platform tags (ExoCode / ExoWork / ExoCortex), and
  * status chips. Tone maps to a brand hue; `outline` swaps fill for hairline.
  */
-export function Badge({ children, tone = "neutral", outline = false, ...rest }) {
+export function Badge({ children, tone = "neutral", outline = false, style, className, ...rest }) {
   const tones = {
     neutral: { bg: "var(--rf-neutral-100)", fg: "var(--rf-neutral-700)", bd: "var(--rf-neutral-200)" },
     blue: { bg: "var(--rf-blue-50)", fg: "var(--rf-blue-700)", bd: "var(--rf-blue-200)" },
@@ -17,22 +17,23 @@ export function Badge({ children, tone = "neutral", outline = false, ...rest }) 
   const t = tones[tone] || tones.neutral;
   return (
     <span
+      className={["rf-component", className].filter(Boolean).join(" ")}
       style={{
         display: "inline-flex",
         alignItems: "center",
         gap: 6,
         fontFamily: "var(--font-sans)",
-        fontSize: 12,
-        fontWeight: 600,
+        fontSize: "var(--type-label)",
+        fontWeight: "var(--fw-semibold)",
         letterSpacing: "0.02em",
         lineHeight: 1,
         padding: "5px 10px",
-        borderRadius: "2px",
+        borderRadius: "var(--radius-sm)",
         background: outline ? "transparent" : t.bg,
         color: t.fg,
         border: `1px solid ${t.bd}`,
         whiteSpace: "nowrap",
-        ...(rest.style || {}),
+        ...style,
       }}
       {...rest}
     >

@@ -1,0 +1,22 @@
+{
+  "name": "realfast-design-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm test && npm run typecheck",
+    "preview": "python3 -m http.server 8766 --bind 127.0.0.1",
+    "typecheck": "tsc --noEmit --jsx react --esModuleInterop --lib es2020,dom --skipLibCheck tests/types.tsx",
+    "report": "node scripts/report.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.9.3",
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7"
+  }
+}

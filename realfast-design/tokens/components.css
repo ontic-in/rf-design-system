@@ -1,0 +1,16 @@
+/* Shared behavior. Geometry remains overrideable through style props. */
+.rf-component:focus-visible, .rf-component a:focus-visible {
+  outline: var(--border-rule) solid var(--border-focus);
+  outline-offset: var(--space-1);
+}
+.rf-button:not(:disabled):not([aria-disabled="true"]):hover { filter: brightness(.94); }
+.rf-button:not(:disabled):not([aria-disabled="true"]):active { transform: translateY(1px); }
+.rf-share:not(:disabled):hover { background: var(--surface-raised) !important; }
+.rf-component[data-interactive="true"]:hover { transform: translateY(-2px); box-shadow: var(--shadow-ed-card); }
+@media (max-width: 640px) {
+  .rf-blog-featured, .rf-blog-summary { grid-template-columns: minmax(0, 1fr) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rf-component, .rf-component * { transition: none !important; animation: none !important; }
+  .rf-button:active, .rf-component[data-interactive="true"]:hover { transform: none !important; }
+}

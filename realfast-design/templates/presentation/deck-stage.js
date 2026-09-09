@@ -344,7 +344,7 @@
        .overlay opacity/transform/filter transitions so visibility changes
        during the 200ms toggle window still fade instead of popping. */
     :host([data-rail-anim]) .overlay {
-      transition: margin-left 200ms cubic-bezier(.3,.7,.4,1),
+      transition: translate 200ms cubic-bezier(.3,.7,.4,1),
                   opacity 260ms ease,
                   transform 260ms cubic-bezier(.2,.8,.2,1),
                   filter 260ms ease;
@@ -1249,15 +1249,18 @@
       if (this.hasAttribute('noscale')) {
         this._canvas.style.transform = 'none';
         if (stage) stage.style.left = '0';
-        if (this._overlay) this._overlay.style.marginLeft = '0';
+        if (this._overlay) this._overlay.style.translate = '0';
         return;
       }
       const rw = this._railWidth();
       if (stage) stage.style.left = rw + 'px';
       // Overlay is centred on the viewport via left:50% + translate(-50%);
-      // marginLeft shifts the centre by rw/2 so it lands in the middle of
-      // the [rw, innerWidth] stage region.
-      if (this._overlay) this._overlay.style.marginLeft = (rw / 2) + 'px';
+      // the independent `translate` property shifts the centre by rw/2 so it
+      // lands in the middle of the [rw, innerWidth] stage region. It composites
+      // instead of triggering layout, and stacks with the .overlay `transform`
+      // (which owns the -50% centring and the show/hide scale) rather than
+      // overwriting it.
+      if (this._overlay) this._overlay.style.translate = (rw / 2) + 'px';
       const vw = window.innerWidth - rw;
       const vh = window.innerHeight;
       const s = Math.min(vw / this.designWidth, vh / this.designHeight);

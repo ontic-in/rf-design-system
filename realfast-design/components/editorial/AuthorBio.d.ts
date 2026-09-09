@@ -6,6 +6,8 @@ export interface AuthorBioLink {
 }
 
 export interface AuthorBioProps {
+  /** Use h1 only on a standalone author page; h2 for article footers. */
+  headingAs?: "h1" | "h2" | "h3";
   /** Author display name. */
   name: string;
   /** Author role, e.g. "UX Design Lead". Rendered in red. */

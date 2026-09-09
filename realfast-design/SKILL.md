@@ -36,7 +36,7 @@ plain-spoken, opinionated, specific (real numbers). Icons are **Lucide**.
 - `readme.md` — full guide: the look, the templates, content fundamentals, brand kit.
 - `styles.css` — the one stylesheet to link; pulls in tokens + self-hosted fonts.
 - `tokens/` — colors, typography, spacing, effects custom properties.
-- `assets/` — fonts, the white-fill logo, five editorial illustrations.
+- `assets/` — fonts, ink and white logos, 48 editorial illustrations.
 - `components/` — Button, Badge, Card, Rubric, ShareButton, PullQuote,
   EditorialBlogCard (React; exported on `window.RealfastDesignSystem_e02a4e`).
 - `templates/` — ready-to-fill starting points: `presentation/` (proposal/pitch deck),
@@ -47,7 +47,21 @@ plain-spoken, opinionated, specific (real numbers). Icons are **Lucide**.
 - `foundations/` — specimen cards incl. `data-viz.html` (chart palette),
   `website-design-language.html` (the web layer) and `social-content-system.html`
   (the Social & Content generation system: templates, formats, data, voice editor,
-  workflow, and how-to-prompt guide).
+  workflow, and how-to-prompt guide), plus `video-design-language.md` (the video
+  layer: color guideline, on-screen-words rule, beat structure, and the standing
+  paste block for NotebookLM and other generators) and `anti-slop.md` (the patterns
+  that make work read as machine-generated, the four we deliberately override, and
+  how to run the detector).
 
 When in doubt, match the foundation specimen cards in `foundations/` and the prose in
 `readme.md` rather than inventing new colors, type, or motifs.
+
+Before shipping anything, read `foundations/anti-slop.md`. It is the list of patterns
+that make an interface read as machine-generated - gradient text outside the published
+recipe, glow accents, icon tiles above headings, thick side-tab borders, buzzword copy -
+plus the four flagged patterns (gradient accent words, cream paper, rubrics, serif
+display) that *realfast* runs on purpose, and the guardrails that keep them honest.
+
+## Rule precedence and verification
+
+Read [foundations/channel-profiles.md](foundations/channel-profiles.md) before applying channel-specific styling. It resolves the core/website/social/video exceptions. See [CONSUMING.md](CONSUMING.md) for preview behavior, production use, and upgrade notes.

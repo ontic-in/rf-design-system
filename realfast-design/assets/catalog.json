@@ -1,0 +1,411 @@
+{
+  "note": "Inventory only; does not assert usage rights or brand approval. Manrope in fonts/ is legacy and not loaded.",
+  "assets": [
+    {
+      "path": "assets/fonts/ibm-plex-sans-condensed-latin-400-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "ibm-plex-sans-condensed-latin-400-normal"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-condensed-latin-500-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "ibm-plex-sans-condensed-latin-500-normal"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-condensed-latin-600-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "ibm-plex-sans-condensed-latin-600-normal"
+    },
+    {
+      "path": "assets/fonts/ibm-plex-sans-condensed-latin-700-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "ibm-plex-sans-condensed-latin-700-normal"
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-ext-opsz-italic.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "source-serif-4-latin-ext-opsz-italic"
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-ext-opsz-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "source-serif-4-latin-ext-opsz-normal"
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-opsz-italic.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "source-serif-4-latin-opsz-italic"
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-opsz-normal.woff2",
+      "kind": "font",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "source-serif-4-latin-opsz-normal"
+    },
+    {
+      "path": "assets/illustrations/a1.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a10.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a11.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a12.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a13.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a14.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a15.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a16.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a17.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a18.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a19.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a2.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a20.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a21.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a22.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a23.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a24.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a25.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a26.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a27.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a28.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a29.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a3.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a30.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a31.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a32.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a33.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a34.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a35.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a36.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a4.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a5.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a6.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a7.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a8.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/a9.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "uncatalogued illustration"
+    },
+    {
+      "path": "assets/illustrations/crane-paperwork.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "crane-paperwork"
+    },
+    {
+      "path": "assets/illustrations/jet-engine-cart.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "jet-engine-cart"
+    },
+    {
+      "path": "assets/illustrations/measuring-emissions.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "measuring-emissions"
+    },
+    {
+      "path": "assets/illustrations/muted/applied-ai.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "applied-ai"
+    },
+    {
+      "path": "assets/illustrations/muted/cadence.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "cadence"
+    },
+    {
+      "path": "assets/illustrations/muted/move-the-metric.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "move-the-metric"
+    },
+    {
+      "path": "assets/illustrations/muted/named-accountable.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "named-accountable"
+    },
+    {
+      "path": "assets/illustrations/muted/one-team.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "one-team"
+    },
+    {
+      "path": "assets/illustrations/muted/outcomes-measured.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "outcomes-measured"
+    },
+    {
+      "path": "assets/illustrations/muted/restructure-work.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "restructure-work"
+    },
+    {
+      "path": "assets/illustrations/sprint-finish.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "sprint-finish"
+    },
+    {
+      "path": "assets/illustrations/stacked-slabs.png",
+      "kind": "illustration",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "stacked-slabs"
+    },
+    {
+      "path": "assets/logos/realfast-logo-ink.svg",
+      "kind": "logo",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "realfast-logo-ink"
+    },
+    {
+      "path": "assets/logos/realfast-logo-white.svg",
+      "kind": "logo",
+      "approval": "unverified",
+      "provenance": "not recorded in repository",
+      "purpose": "realfast-logo-white"
+    }
+  ]
+}

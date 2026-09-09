@@ -10,7 +10,7 @@ The house style for everything **realfast** (Ontic Pte Ltd) puts in front of a r
 
 **Three rules that keep us on-brand:**
 
-- The name is always lowercase: **realfast**.
+- The name is always lowercase and italic in styled prose: **realfast**.
 - **No emoji**, ever.
 - Voice is plain-spoken and specific — real numbers, no hype.
 
@@ -75,7 +75,7 @@ The full **"newspaper article"** layout — section rubric, big serif headline, 
 
 **Type.** Two typefaces do all the work: **Source Serif 4** (headlines, body, quotes) and **IBM Plex Sans Condensed** (labels, dates, captions). Figures and code use a plain monospace.
 
-**Imagery.** The signature look is **grainy black-and-white illustration with one red detail** picked out of the scene (a crack, a crane, a finish-line tape). Five are included in `assets/illustrations/`. Avoid glossy stock photography.
+**Imagery.** The supplied imagery includes **muted risograph spot illustrations**, charcoal/grey mass and restrained brand accents. 48 are included in `assets/illustrations/`. Avoid glossy stock photography.
 
 **Logo.** The realfast wordmark lives in `assets/logos/`. On our light paper it always renders in ink (dark). Never recolour it.
 
@@ -89,7 +89,7 @@ The rest of this folder is the machine-readable source for the look above — li
 - **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper.
 - **`foundations/*.html`** — specimen cards (Colours, Type, Spacing, Effects, Brand) that populate the **Design System** tab.
 - **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
-- **`templates/`** — the three starting points described above (`presentation/`, `weekly-sprint-report/`, `editorial-article/`).
+- **`templates/`** — nine starting points: presentation, sprint report, article, case study, APAC case-study example, and four social formats (`presentation/`, `weekly-sprint-report/`, `editorial-article/`).
 
 ### Writing voice (for accurate copy)
 
@@ -101,4 +101,12 @@ Use **[Lucide](https://lucide.dev)** outline icons (24×24, \~2px stroke). Don't
 
 ### Source of truth
 
-Derived from the realfast `New-Website` editorial blog theme and the live site (`realfast.ai/blog`). Brand colours and fonts were provided; five editorial illustrations and the wordmark are included in `assets/`.
+Derived from the realfast `New-Website` editorial blog theme and the live site (`realfast.ai/blog`). Brand colours and fonts were provided; 48 editorial illustrations and the wordmark are included in `assets/`.
+
+## Current inventory and workflow
+
+Nine components, nine templates, 48 illustrations, and two active font families ship in this package. The four social templates cover case-study carousels, blog carousels, thought leadership, and infographics. [The maintained guide](realfast-design/readme.md) describes all formats.
+
+Run `npm ci` then `npm run check` to regenerate and verify the bundle, token manifest, and public types. Run `npm run preview` and open `http://127.0.0.1:8766/changes.html` for the change report.
+
+Read [channel profiles](realfast-design/foundations/channel-profiles.md) for rule precedence and [consumption guidance](realfast-design/CONSUMING.md) for preview/production boundaries.

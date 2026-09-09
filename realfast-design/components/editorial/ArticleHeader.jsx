@@ -6,7 +6,7 @@ import { ShareButton } from "./ShareButton.jsx";
  * ArticleHeader — the full post header on a blog article page: rubric, serif
  * headline, standfirst, then a byline row with the author avatar, name + role,
  * date · read-time, and a Share control. Mirrors the production article header.
- * Use inside a [data-theme="editorial"] wrapper.
+ * The editorial surface is the default; no theme wrapper is required.
  */
 export function ArticleHeader({
   section = "Insights",
@@ -28,7 +28,7 @@ export function ArticleHeader({
       <h1
         style={{
           fontFamily: "var(--font-serif)",
-          fontWeight: 600,
+          fontWeight: "var(--fw-semibold)",
           letterSpacing: "-0.015em",
           lineHeight: 1.05,
           color: "var(--rf-ed-ink)",
@@ -57,7 +57,7 @@ export function ArticleHeader({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 20,
+          gap: "var(--space-5)",
           flexWrap: "wrap",
           paddingTop: 22,
           borderTop: "1px solid var(--rf-ed-rule)",
@@ -92,7 +92,7 @@ export function ArticleHeader({
               By{" "}
               <a
                 href={authorHref}
-                style={{ color: "var(--rf-ed-ink)", fontWeight: 700, textDecoration: "none" }}
+                style={{ color: "var(--rf-ed-ink)", fontWeight: "var(--fw-bold)", textDecoration: "none" }}
               >
                 {author}
               </a>
@@ -101,7 +101,7 @@ export function ArticleHeader({
             <p
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: 14,
+                fontSize: "var(--type-rubric-size)",
                 color: "var(--rf-ed-muted)",
                 margin: "3px 0 0",
               }}

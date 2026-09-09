@@ -11,7 +11,7 @@
   /* ── Brand core (the four canonical brand colors) ─────────────────────── */
   --rf-blue: #362cff; /* electric brand blue — primary action / links */
   --rf-navy: #191970; /* midnight navy — deep brand, gradients, headers */
-  --rf-red: #f7394d; /* signal red — accents, alerts, the single hot hue */
+  --rf-red: #e3120b; /* signal red — accents, alerts, the single hot hue */
   --rf-ink: #111111; /* near-black — product background, body ink */
 
   /* ── Blue ramp (derived from --rf-blue) ──────────────────────────────── */
@@ -57,12 +57,12 @@
   --rf-ed-ink: #121212;
   --rf-ed-ink-soft: #2a2a2a;
   --rf-ed-muted: #6e6e6e;
-  --rf-ed-faint: #9a9a9a;
+  --rf-ed-faint: #6e6e6e;
   --rf-ed-rule: #d8d8d8;
   --rf-ed-rule-soft: #ececec;
   --rf-ed-rule-warm: #d9cfc4;
   --rf-ed-red: #e3120b; /* the brand-defining color of the editorial theme */
-  --rf-ed-blue: #1370fb;
+  --rf-ed-blue: #115fd1;
 
   /* ── Illustration palette (muted, chalky — for MidJourney spot art) ───── */
   /* Accents lead with these; signal-red held in reserve as a rare spark.   */
@@ -88,6 +88,7 @@
   --text-body: var(--rf-ed-ink); /* body copy */
   --text-muted: var(--rf-ed-muted); /* secondary, meta */
   --text-faint: var(--rf-ed-faint); /* tertiary */
+  --text-accent: #c40f23; /* small accent text on white or cream */
   --text-on-accent: var(--rf-white); /* text atop red/blue fills */
 
   --accent: var(--rf-ed-red); /* primary accent — the rubric red */

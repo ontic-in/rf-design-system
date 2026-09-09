@@ -5,7 +5,7 @@ import { Rubric } from "./Rubric.jsx";
  * EditorialBlogCard — the blog listing card, in two variants:
  *   • featured: image-led, two-column lead item
  *   • row (default): text-forward with a small right thumbnail
- * Use inside a [data-theme="editorial"] wrapper. Mirrors the production
+ * The editorial surface is the default; no theme wrapper is required. Mirrors the production
  * EditorialBlogCard.astro.
  */
 export function EditorialBlogCard({
@@ -25,7 +25,7 @@ export function EditorialBlogCard({
     <p
       style={{
         fontFamily: "var(--font-sans)",
-        fontSize: 13,
+        fontSize: "var(--type-meta-size)",
         color: "var(--rf-ed-muted)",
         margin: 0,
       }}
@@ -47,7 +47,7 @@ export function EditorialBlogCard({
       className="rf-ed-headline"
       style={{
         fontFamily: "var(--font-serif)",
-        fontWeight: 600,
+        fontWeight: "var(--fw-semibold)",
         letterSpacing: "-0.01em",
         color: "var(--rf-ed-ink)",
         margin: featured ? "0 0 12px" : "0 0 18px",
@@ -83,10 +83,11 @@ export function EditorialBlogCard({
         href={href}
         onMouseEnter={hoverIn}
         onMouseLeave={hoverOut}
+        className="rf-component rf-blog-featured"
         style={{
           ...linkStyle,
           gridTemplateColumns: "1.1fr 1fr",
-          gap: 32,
+          gap: "var(--space-8)",
           padding: "36px 0",
         }}
       >
@@ -97,7 +98,7 @@ export function EditorialBlogCard({
             <p
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: 18,
+                fontSize: "var(--type-body-size)",
                 lineHeight: 1.45,
                 color: "var(--rf-ed-ink-soft)",
                 margin: "0 0 14px",
@@ -122,6 +123,7 @@ export function EditorialBlogCard({
       href={href}
       onMouseEnter={hoverIn}
       onMouseLeave={hoverOut}
+      className="rf-component"
       style={{
         ...linkStyle,
         gridTemplateColumns: "1fr",
@@ -132,10 +134,11 @@ export function EditorialBlogCard({
       <Rubric section={section} sub={sub} href={href} plain style={{ marginBottom: 14 }} />
       {headline}
       <div
+        className="rf-blog-summary"
         style={{
           display: "grid",
           gridTemplateColumns: image ? "minmax(0, 0.82fr) 1fr" : "1fr",
-          gap: 36,
+          gap: "var(--space-9)",
           alignItems: "start",
           marginBottom: 18,
         }}
@@ -149,7 +152,7 @@ export function EditorialBlogCard({
               width: "100%",
               aspectRatio: "3 / 2",
               objectFit: "cover",
-              borderRadius: 8,
+              borderRadius: "var(--radius-sm)",
               background: "var(--rf-paper-cream)",
             }}
           />

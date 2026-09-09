@@ -14,12 +14,13 @@ export function Button({
   disabled = false,
   full = false,
   as = "button",
+  style, className, href, type, tabIndex, onClick,
   ...rest
 }) {
   const sizes = {
-    sm: { padding: "7px 16px", fontSize: 13, gap: 6, radius: "2px" },
-    md: { padding: "10px 20px", fontSize: 15, gap: 8, radius: "2px" },
-    lg: { padding: "14px 28px", fontSize: 16, gap: 9, radius: "2px" },
+    sm: { padding: "var(--space-2) var(--space-4)", fontSize: "var(--type-ui-sm)", gap: "var(--space-2)", radius: "var(--radius-sm)" },
+    md: { padding: "var(--space-3) var(--space-5)", fontSize: "var(--type-ui)", gap: "var(--space-2)", radius: "var(--radius-sm)" },
+    lg: { padding: "var(--space-4) var(--space-8)", fontSize: "var(--type-ui-lg)", gap: "var(--space-2)", radius: "var(--radius-sm)" },
   };
   const s = sizes[size] || sizes.md;
 
@@ -32,9 +33,9 @@ export function Button({
       border: "1px solid var(--rf-ed-red)",
     },
     blue: {
-      background: "var(--rf-ed-blue)",
+      background: "var(--rf-blue)",
       color: "var(--rf-paper)",
-      border: "1px solid var(--rf-ed-blue)",
+      border: "1px solid var(--rf-blue)",
     },
     navy: {
       background: "var(--rf-navy)",
@@ -63,6 +64,17 @@ export function Button({
   const Tag = as;
   return (
     <Tag
+      {...rest}
+      className={["rf-component rf-button", className].filter(Boolean).join(" ")}
+      type={Tag === "button" ? (type || "button") : type}
+      href={Tag === "a" && !disabled ? href : undefined}
+      role={Tag === "a" && disabled ? "link" : rest.role}
+      aria-disabled={disabled || undefined}
+      tabIndex={disabled && Tag === "a" ? -1 : tabIndex}
+      onClick={(event) => {
+        if (disabled) { event.preventDefault(); event.stopPropagation(); return; }
+        onClick?.(event);
+      }}
       disabled={Tag === "button" ? disabled : undefined}
       style={{
         display: full ? "flex" : "inline-flex",
@@ -71,7 +83,7 @@ export function Button({
         justifyContent: "center",
         gap: s.gap,
         fontFamily: "var(--font-sans)",
-        fontWeight: 600,
+        fontWeight: "var(--fw-semibold)",
         fontSize: s.fontSize,
         lineHeight: 1,
         letterSpacing: "-0.005em",
@@ -83,12 +95,8 @@ export function Button({
         whiteSpace: "nowrap",
         transition: "filter var(--dur-base) var(--ease-standard), transform var(--dur-fast) var(--ease-standard)",
         ...v,
+        ...style,
       }}
-      onMouseEnter={(e) => !disabled && (e.currentTarget.style.filter = "brightness(1.1)")}
-      onMouseLeave={(e) => (e.currentTarget.style.filter = "none")}
-      onMouseDown={(e) => !disabled && (e.currentTarget.style.transform = "translateY(1px)")}
-      onMouseUp={(e) => (e.currentTarget.style.transform = "none")}
-      {...rest}
     >
       {iconLeft}
       {children}

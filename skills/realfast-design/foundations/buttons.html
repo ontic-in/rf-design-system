@@ -1,0 +1,42 @@
+<!-- @dsCard group="Components" viewport="700x430" name="Buttons" subtitle="Primary, secondary, link and destructive — light rising from the bottom edge" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--rf-white); font-family: var(--font-sans); color: var(--text-body); }
+  .band { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 22px; }
+  .dark { background: #1e2a44; color: #fff; }
+  .lab { flex: 0 0 100%; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: -2px; }
+  .dark .lab { color: #aeb6cc; }
+  .copy { font-family: var(--font-serif); font-size: 17px; }
+  .states .rf-btn { pointer-events: none; }
+</style>
+</head>
+<body>
+  <div class="band">
+    <div class="lab">On light</div>
+    <a class="rf-btn" href="#">Book a call</a>
+    <a class="rf-btn rf-btn--secondary" href="#">See case studies</a>
+    <span class="copy">Read the <a class="rf-link" href="#">case study</a></span>
+    <button class="rf-btn rf-btn--destructive">Revoke link</button>
+  </div>
+  <div class="band dark rf-on-dark">
+    <div class="lab">On the dark band</div>
+    <a class="rf-btn" href="#">Book a call</a>
+    <a class="rf-btn rf-btn--secondary" href="#">See case studies</a>
+    <span class="copy">Read the <a class="rf-link" href="#">case study</a></span>
+    <button class="rf-btn rf-btn--destructive">Revoke link</button>
+  </div>
+  <div class="band states">
+    <div class="lab">Sizes 36 / 44 / 52 · disabled</div>
+    <a class="rf-btn rf-btn--sm" href="#">Book a call</a>
+    <a class="rf-btn" href="#">Book a call</a>
+    <a class="rf-btn rf-btn--lg" href="#">Book a call</a>
+    <button class="rf-btn" disabled>Book a call</button>
+    <button class="rf-btn rf-btn--secondary" disabled>See case studies</button>
+  </div>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>One primary per view; secondary sits beside it; links live in copy; destructive is the only red. Decks use the primary only. No arrows; an optional icon goes on the left. Add <code>.rf-on-dark</code> to navy or ink bands. Plain HTML uses <code>.rf-btn</code>, <code>.rf-btn--secondary</code>, <code>.rf-btn--destructive</code>, <code>.rf-link</code>; React uses <code>&lt;Button variant onDark size&gt;</code>.</p>
+</body>
+</html>

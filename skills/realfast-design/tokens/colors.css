@@ -102,7 +102,7 @@
 
   --success: #1f9d6b;
   --warning: #e0a93f;
-  --danger: var(--rf-ed-red);
+  --danger: #b42318; /* deeper red, distinct from the brand red — matches the destructive button */
 }
 
 /* The [data-theme="editorial"] wrapper is no longer required — the editorial

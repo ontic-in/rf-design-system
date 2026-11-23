@@ -80,108 +80,157 @@ Object.assign(__ds_scope, { Badge });
 
 // components/core/Button.jsx
 try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * realfast Button — the primary action primitive for the editorial surface.
- * Solid fills draw from the four canonical brand colors (red / blue / navy /
- * ink), plus an ink outline and a text-only ghost. Square 2px corners.
+ * realfast Button — four kinds of action, one look on light surfaces and one
+ * on the dark navy band (`onDark`). All values come from tokens/buttons.css.
+ *
+ *   primary      ultramarine light leak — the main action, one per view
+ *   secondary    periwinkle tint with pale light — the alternative
+ *   link         ultramarine, medium, underlined; hover fills with the tint
+ *   destructive  pale red tint with pale light — the only red button
+ *
+ * Sizes: sm 36px · md 44px (default) · lg 52px. 2px corners, no arrows.
+ * Legacy variants still render: blue / navy / ink / signal → primary,
+ * ghost → link, danger → destructive.
  */
+const LEGACY = { blue: "primary", navy: "primary", ink: "primary", signal: "primary", ghost: "link", danger: "destructive" };
+
+const SIZES = {
+  sm: { height: "var(--btn-h-sm)", px: "var(--btn-px-sm)", fontSize: "var(--btn-fs-sm)" },
+  md: { height: "var(--btn-h-md)", px: "var(--btn-px-md)", fontSize: "var(--btn-fs-md)" },
+  lg: { height: "var(--btn-h-lg)", px: "var(--btn-px-lg)", fontSize: "var(--btn-fs-lg)" },
+};
+
+// Token prefix per variant and surface.
+function tokens(kind, dark) {
+  if (kind === "primary") return dark ? "--btn-primary-dark" : "--btn-primary";
+  if (kind === "secondary") return dark ? "--btn-secondary-dark" : "--btn-secondary";
+  return dark ? "--btn-destructive-dark" : "--btn-destructive";
+}
+
+function buttonLook(kind, dark, state) {
+  const t = tokens(kind, dark);
+  const v = (name) => `var(${t}${name})`;
+  if (state === "disabled") {
+    return { background: v("-bg-disabled"), color: v("-fg-disabled"), borderColor: "transparent", boxShadow: "none", textShadow: "none" };
+  }
+  const bg = state === "pressed" ? v("-bg-pressed") : state === "hover" ? v("-bg-hover") : v("-bg");
+  let fg = kind === "primary" ? "var(--btn-primary-fg)" : v("-fg");
+  if (kind === "destructive" && !dark && state === "hover") fg = "var(--btn-destructive-fg-hover)";
+  if (kind === "destructive" && !dark && state === "pressed") fg = "var(--btn-destructive-fg-pressed)";
+  const hasBorder = dark;
+  const border = hasBorder ? (state === "hover" ? v("-border-hover") : v("-border")) : "transparent";
+  let shadow = v("-shadow");
+  if (state === "pressed") shadow = kind === "primary" && dark ? "var(--btn-primary-dark-shadow-pressed)" : "none";
+  else if (state === "hover" && kind === "primary" && dark) shadow = "var(--btn-primary-dark-shadow-hover)";
+  let textShadow = "none";
+  if (kind === "primary") textShadow = dark ? "var(--btn-primary-dark-text-shadow)" : "var(--btn-primary-text-shadow)";
+  if (kind === "destructive" && dark) textShadow = "var(--btn-destructive-dark-text-shadow)";
+  return { background: bg, color: fg, borderColor: border, boxShadow: shadow, textShadow };
+}
+
 function Button({
   children,
   variant = "primary",
   size = "md",
+  onDark = false,
   iconLeft,
   iconRight,
   disabled = false,
   full = false,
   as = "button",
+  style,
   ...rest
 }) {
-  const sizes = {
-    sm: {
-      padding: "7px 16px",
-      fontSize: 13,
-      gap: 6,
-      radius: "2px"
-    },
-    md: {
-      padding: "10px 20px",
-      fontSize: 15,
-      gap: 8,
-      radius: "2px"
-    },
-    lg: {
-      padding: "14px 28px",
-      fontSize: 16,
-      gap: 9,
-      radius: "2px"
-    }
+  const kind = LEGACY[variant] || variant;
+  const [hover, setHover] = React.useState(false);
+  const [pressed, setPressed] = React.useState(false);
+  const [focusRing, setFocusRing] = React.useState(false);
+  const state = disabled ? "disabled" : pressed ? "pressed" : hover ? "hover" : "rest";
+  const focusColor = onDark ? "var(--btn-focus-dark)" : kind === "destructive" ? "var(--btn-destructive-focus)" : "var(--btn-focus-light)";
+  const s = SIZES[size] || SIZES.md;
+
+  const handlers = {
+    onMouseEnter: (e) => { setHover(true); rest.onMouseEnter && rest.onMouseEnter(e); },
+    onMouseLeave: (e) => { setHover(false); setPressed(false); rest.onMouseLeave && rest.onMouseLeave(e); },
+    onMouseDown: (e) => { setPressed(true); rest.onMouseDown && rest.onMouseDown(e); },
+    onMouseUp: (e) => { setPressed(false); rest.onMouseUp && rest.onMouseUp(e); },
+    onFocus: (e) => { setFocusRing(e.currentTarget.matches(":focus-visible")); rest.onFocus && rest.onFocus(e); },
+    onBlur: (e) => { setFocusRing(false); rest.onBlur && rest.onBlur(e); },
   };
-  const s = sizes[size] || sizes.md;
-  const variants = {
-    // The four canonical brand colors, each a solid fill — used harmoniously
-    // across the action set rather than relying on red alone.
-    primary: {
-      background: "var(--rf-ed-red)",
-      color: "var(--rf-paper)",
-      border: "1px solid var(--rf-ed-red)"
-    },
-    blue: {
-      background: "var(--rf-ed-blue)",
-      color: "var(--rf-paper)",
-      border: "1px solid var(--rf-ed-blue)"
-    },
-    navy: {
-      background: "var(--rf-navy)",
-      color: "var(--rf-paper)",
-      border: "1px solid var(--rf-navy)"
-    },
-    ink: {
-      background: "var(--rf-ed-ink)",
-      color: "var(--rf-paper)",
-      border: "1px solid var(--rf-ed-ink)"
-    },
-    secondary: {
-      background: "transparent",
-      color: "var(--rf-ed-ink)",
-      border: "1px solid var(--rf-ed-ink)"
-    },
-    ghost: {
-      background: "transparent",
-      color: "var(--rf-ed-ink)",
-      border: "1px solid transparent"
-    }
-  };
-  // `signal` retained as a back-compat alias for the red primary.
-  const v = variants[variant] || (variant === "signal" ? variants.primary : variants.primary);
+
   const Tag = as;
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  const common = {
+    ...rest,
+    ...handlers,
     disabled: Tag === "button" ? disabled : undefined,
-    style: {
-      display: full ? "flex" : "inline-flex",
-      width: full ? "100%" : undefined,
-      alignItems: "center",
-      justifyContent: "center",
-      gap: s.gap,
-      fontFamily: "var(--font-sans)",
-      fontWeight: 600,
-      fontSize: s.fontSize,
-      lineHeight: 1,
-      letterSpacing: "-0.005em",
-      padding: s.padding,
-      borderRadius: s.radius,
-      cursor: disabled ? "not-allowed" : "pointer",
-      opacity: disabled ? 0.45 : 1,
-      textDecoration: "none",
-      whiteSpace: "nowrap",
-      transition: "filter var(--dur-base) var(--ease-standard), transform var(--dur-fast) var(--ease-standard)",
-      ...v
+    "aria-disabled": disabled || undefined,
+  };
+  const ring = focusRing ? { outline: `2px solid ${focusColor}`, outlineOffset: "2px" } : { outline: "none" };
+
+  if (kind === "link") {
+    return React.createElement(
+      Tag,
+      {
+        ...common,
+        style: {
+          display: "inline",
+          font: "inherit",
+          fontWeight: "var(--link-weight)",
+          color: onDark ? "var(--link-dark-fg)" : "var(--link-fg)",
+          background: hover && !disabled ? (onDark ? "var(--link-dark-hover-bg)" : "var(--link-hover-bg)") : "transparent",
+          border: 0,
+          borderRadius: "var(--btn-radius)",
+          padding: "0 0.15em",
+          margin: "0 -0.15em",
+          textDecoration: "underline",
+          textDecorationThickness: "1px",
+          textUnderlineOffset: "3px",
+          textDecorationColor: hover ? "transparent" : "currentColor",
+          cursor: disabled ? "not-allowed" : "pointer",
+          opacity: disabled ? 0.5 : 1,
+          transition: "background 180ms ease, text-decoration-color 180ms ease",
+          ...ring,
+          ...(style || {}),
+        },
+      },
+      children
+    );
+  }
+
+  return React.createElement(
+    Tag,
+    {
+      ...common,
+      style: {
+        display: full ? "flex" : "inline-flex",
+        width: full ? "100%" : undefined,
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 8,
+        minHeight: s.height,
+        padding: `0 ${s.px}`,
+        boxSizing: "border-box",
+        fontFamily: "var(--btn-font)",
+        fontWeight: "var(--btn-weight)",
+        fontSize: s.fontSize,
+        lineHeight: 1,
+        letterSpacing: "-0.005em",
+        whiteSpace: "nowrap",
+        textDecoration: "none",
+        border: "1px solid transparent",
+        borderRadius: "var(--btn-radius)",
+        cursor: disabled ? "not-allowed" : "pointer",
+        transition: "var(--btn-transition)",
+        ...buttonLook(kind, onDark, state),
+        ...ring,
+        ...(style || {}),
+      },
     },
-    onMouseEnter: e => !disabled && (e.currentTarget.style.filter = "brightness(1.1)"),
-    onMouseLeave: e => e.currentTarget.style.filter = "none",
-    onMouseDown: e => !disabled && (e.currentTarget.style.transform = "translateY(1px)"),
-    onMouseUp: e => e.currentTarget.style.transform = "none"
-  }, rest), iconLeft, children, iconRight);
+    iconLeft,
+    children,
+    iconRight
+  );
 }
 Object.assign(__ds_scope, { Button });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Button.jsx", error: String((e && e.message) || e) }); }

@@ -23,7 +23,8 @@ Built on the core tokens; the website leans on these semantic roles:
 
 | Role | Value | Use |
 |---|---|---|
-| Accent red | `#E3120B` (`--accent` / `--rf-red-500`) | CTAs, rubrics, active states, focal detail |
+| Accent red | `#E3120B` (`--accent` / `--rf-red-500`) | rubrics, active states, focal detail - never buttons (see §10) |
+| Action ultramarine | `#2E3AC8` (`--rf-ultramarine`) | buttons and links (see §10, `tokens/buttons.css`) |
 | Light red (on dark) | `#F0524D` (`--rf-red-400`) | accent words / rubrics on dark bands |
 | Ink base | `#111111` | body text on light |
 | Paper | white `#FFFFFF` | primary light band |
@@ -135,7 +136,7 @@ color: #57534A;  /* warm-grey glyph at rest - NOT red */
 
 - **Hover:** red border + red glyph + red-tinted shadow + `-1px` lift.
 - Feature/section icons: 56px gradient chips, hairline ring + inner highlight, finer 1.75px strokes in deep warm ink, duotone soft fills inside closed shapes.
-- Red is **reserved** - icons rest in warm grey, red only on hover or for CTAs/rubrics.
+- Red is **reserved** - icons rest in warm grey, red only on hover or for rubrics. Buttons are never red (§10).
 - Filled Bootstrap-style 13px glyphs are acceptable inside the small profile chips (LinkedIn / GitHub / blog-author RSS) where a consistent filled set reads better at tiny sizes.
 
 ---
@@ -180,11 +181,15 @@ Restrained, editorial, one-shot. Decorative motion cheapens the tone.
 
 ## 10 · CTAs
 
-- **Primary:** red-fill pill (`--rf-red-500`), 999px radius, ~17px 32px padding, white text.
-- **Secondary:** ghost pill - transparent, `1px` border at 65% white on dark bands (must read clearly, not barely-there), fills to solid white on hover. Identical height/padding/radius to the primary so they read as a set.
-- **No arrows on CTA buttons.** (Arrows were tried and removed - keep buttons clean; a hover micro-lift/glow is the affordance.)
-- **Hover:** soft red glow shadow (`0 8px 32px rgba(227,18,11,.35)`) on the primary; both may rise-in with a slight stagger on entry.
-- Mobile: buttons stack **full-width**.
+Buttons use the shared button system in `tokens/buttons.css` (React: `<Button>`; plain HTML: `.rf-btn`). The signature is light rising from the bottom edge.
+
+- **Primary:** ultramarine light leak - deep `#1C2286` lit from below by a periwinkle-to-lilac glow, white label with a subtle 1px text shadow. One per view. On dark bands use the brighter dark-band version (`onDark` / `.rf-on-dark`): base `#3442D9`, faint white rim, soft ultramarine halo.
+- **Secondary:** periwinkle tint `#DCE0FF` with near-white light from below, ultramarine label. On dark bands it becomes translucent glass with a faint periwinkle glow and a hairline rim.
+- **Links:** ultramarine `#2E3AC8`, medium weight, underlined; on hover the secondary tint fills in behind the word.
+- **Destructive:** pale red tint with pale light, `#B42318` label - the only red button. Never use red for a normal action.
+- **Shape and size:** 2px corners (no pills), IBM Plex Sans Condensed 600. 52px in heroes and closing bands, 44px elsewhere.
+- **No arrows on CTA buttons.** An optional icon sits on the left. Hover changes the light, never lifts or glows red.
+- Mobile: page-level buttons stack **full-width**, primary on top.
 - Real destinations: careers → `/careers`, apply → `join.realfast.ai`, contact → `/contact`, people → `/people`.
 
 ---
@@ -197,7 +202,7 @@ The About page established a reusable structure for narrative pages:
 2. **Premium ink hero** - sentence-case kicker, big serif headline with gradient contrast words, two-beat entrance, scroll cue. Optional dim rail numeral ("00").
 3. **Mission / standfirst band** (cream, centered, no rules) - one bold idea, closing phrase in the red gradient.
 4. **Numbered chapters** - full-bleed alternating white/cream, seamless shadow flow. Desktop: `170px | 1fr` grid with a **sticky left rail** per chapter (44px serif numeral + sentence-case bold label). The **active chapter's numeral turns red and scales ~1.08** as it enters the viewport (dim grey at rest; on ink bands dim white → light red). One chapter may be a premium ink band.
-5. **CTA band** (premium black gradient) - contrast-word headline, two pills, no arrows.
+5. **CTA band** (premium black gradient) - contrast-word headline, the dark-band primary + secondary buttons (§10), no arrows.
 6. **Footer** (existing component).
 
 **Explicitly not part of the pattern:** no sticky utility/label bar, no scroll-progress line. Both were tried and removed - they add chrome without helping the narrative.

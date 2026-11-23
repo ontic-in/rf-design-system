@@ -28,6 +28,12 @@ is no dark/app theme.
   `#111111` — are used as accents on the light surface. The semantic tokens are the
   editorial surface by default; no theme wrapper is needed. The muted illustration
   shades (`--rf-illus-*`) are an illustration-only extension, not UI colours.
+- **Buttons and links are ultramarine, never red.** Primary = ultramarine light
+  leak, secondary = periwinkle tint with pale light, links = ultramarine underlined,
+  destructive = pale red tint (the only red button). Use `<Button>` in React or
+  `.rf-btn` / `.rf-btn--secondary` / `.rf-btn--destructive` / `.rf-link` in plain
+  HTML (add `.rf-on-dark` on navy bands). One primary per view; decks use the
+  primary only; no arrows. See `foundations/buttons.html` and `tokens/buttons.css`.
 
 The brand name is **always lowercase** (`realfast`). **No emoji.** Voice is
 plain-spoken, opinionated, specific (real numbers). Icons are **Tabler**.
@@ -35,7 +41,8 @@ plain-spoken, opinionated, specific (real numbers). Icons are **Tabler**.
 ## Key files
 - `readme.md` — full guide: the look, the templates, content fundamentals, brand kit.
 - `styles.css` — the one stylesheet to link; pulls in tokens + self-hosted fonts.
-- `tokens/` — colors, typography, spacing, effects custom properties.
+- `tokens/` — colors, typography, spacing, effects custom properties, and `buttons.css`
+  (button tokens + plain-CSS `.rf-btn` classes).
 - `assets/` — fonts, the white-fill logo, five editorial illustrations.
 - `components/` — Button, Badge, Card, Rubric, ShareButton, PullQuote,
   EditorialBlogCard (React; exported on `window.RealfastDesignSystem_e02a4e`).

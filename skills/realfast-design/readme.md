@@ -69,7 +69,7 @@ A bold, colour-blocked **homepage / landing page** — full-bleed dark hero with
 
 ## The brand kit, briefly
 
-**Colours.** Four brand colours: **red** `#E3120B` (the accent — used sparingly), **blue** `#362CFF`, **navy** `#191970`, and **ink** `#111111` (near-black text). Backgrounds are white or warm cream. The four canonical brand colours remain for UI; the muted illustration shades (dusty blue, slate navy, dusty violet, warm charcoal/grey, pale blue, bone) are an illustration-only extension (pending sign-off) and live under the `--rf-illus-*` tokens. Don't introduce colours beyond these.
+**Colours.** Four brand colours: **red** `#E3120B` (the accent — used sparingly), **blue** `#362CFF`, **navy** `#191970`, and **ink** `#111111` (near-black text). Backgrounds are white or warm cream. The four canonical brand colours remain for UI; the muted illustration shades (dusty blue, slate navy, dusty violet, warm charcoal/grey, pale blue, bone) are an illustration-only extension (pending sign-off) and live under the `--rf-illus-*` tokens. Don't introduce colours beyond these. The one exception is the **action colour** for buttons and links — ultramarine `#2E3AC8` with its periwinkle tints (see `tokens/buttons.css`); red is never used for a normal action.
 
 **Type.** Two typefaces do all the work: **Source Serif 4** (headlines, body, quotes) and **IBM Plex Sans Condensed** (labels, dates, captions). Figures and code use a plain monospace.
 
@@ -86,7 +86,7 @@ The rest of this folder is the machine-readable source for the look above — li
 - **`styles.css`** — the single stylesheet to link; pulls in all tokens and the self-hosted fonts (Source Serif 4, IBM Plex Sans Condensed).
 - **`tokens/`** — the raw values: `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`, `marketing.css`. Semantic aliases (`--surface-page`, `--text-body`, `--accent`, `--border`, …) are the editorial light surface and need no theme wrapper. `marketing.css` is a purely **additive** `--rf-mk-*` layer (dark grounds, gradients, oversized display scale, real elevation, motion) for landing pages — it overrides nothing in the editorial surface.
 - **`foundations/*.html`** — specimen cards (Colours, Type, Spacing, Effects, Brand) that populate the **Design System** tab.
-- **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio). Buttons offer red / blue / navy / ink fills plus outline and ghost; everything sits on uniform 2px corners.
+- **`components/`** — React primitives on `window.RealfastDesignSystem_e02a4e`: `core/` (Button, Badge, Card) and `editorial/` (Rubric, ShareButton, PullQuote, EditorialBlogCard, ArticleHeader, AuthorBio). Buttons come in four kinds — primary (ultramarine light leak), secondary (periwinkle tint with pale light), link (ultramarine, underlined) and destructive (pale red tint, the only red) — each with an `onDark` look for navy bands, sizes 36 / 44 / 52px, and uniform 2px corners. Plain HTML gets the same buttons from `tokens/buttons.css` (`.rf-btn`, `.rf-btn--secondary`, `.rf-btn--destructive`, `.rf-link`, `.rf-on-dark`).
 - **`templates/`** — the starting points described above: `presentation/`, `weekly-sprint-report/`, `editorial-article/`, `case-study/` (+ `case-study-apac/` example), and the social set (`social-case-study-carousel/`, `social-blog-carousel/`, `social-thought-leadership/`, `social-infographic/`).
 
 ### Writing voice (for accurate copy)

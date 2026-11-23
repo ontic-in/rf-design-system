@@ -64,7 +64,8 @@
       <p>Built on the core tokens; the website leans on these semantic roles.</p>
       <table>
         <tr><th>Role</th><th>Value</th><th>Use</th></tr>
-        <tr><td>Accent red</td><td><code>#E3120B</code> (<code>--accent</code> / <code>--rf-red-500</code>)</td><td>CTAs, rubrics, active states, focal detail</td></tr>
+        <tr><td>Accent red</td><td><code>#E3120B</code> (<code>--accent</code> / <code>--rf-red-500</code>)</td><td>rubrics, active states, focal detail — never buttons (&sect;10)</td></tr>
+        <tr><td>Action ultramarine</td><td><code>#2E3AC8</code> (<code>--rf-ultramarine</code>)</td><td>buttons and links (&sect;10, <code>tokens/buttons.css</code>)</td></tr>
         <tr><td>Light red (on dark)</td><td><code>#F0524D</code> (<code>--rf-red-400</code>)</td><td>accent words / rubrics on dark bands</td></tr>
         <tr><td>Ink base</td><td><code>#111111</code></td><td>body text on light</td></tr>
         <tr><td>Paper</td><td>white <code>#FFFFFF</code></td><td>primary light band</td></tr>
@@ -168,7 +169,7 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
       <ul>
         <li><strong>Hover:</strong> red border + red glyph + red-tinted shadow + <code>-1px</code> lift.</li>
         <li>Feature/section icons: 56px gradient chips, hairline ring + inner highlight, finer 1.75px strokes in deep warm ink, duotone soft fills inside closed shapes.</li>
-        <li>Red is <strong>reserved</strong> — icons rest in warm grey, red only on hover or for CTAs/rubrics.</li>
+        <li>Red is <strong>reserved</strong> — icons rest in warm grey, red only on hover or for rubrics. Buttons are never red (&sect;10).</li>
         <li>Filled Bootstrap-style 13px glyphs are OK inside small profile chips (LinkedIn / GitHub / RSS) where a filled set reads better at tiny sizes.</li>
       </ul>
     </div>
@@ -217,11 +218,14 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
     <div class="sec-body">
       <h2>CTAs</h2>
       <ul>
-        <li><strong>Primary:</strong> red-fill pill (<code>--rf-red-500</code>), 999px radius, ~17px 32px padding, white text.</li>
-        <li><strong>Secondary:</strong> ghost pill — transparent, <code>1px</code> border at 65% white on dark bands (must read clearly, not barely-there), fills to solid white on hover. Identical height/padding/radius to primary so they read as a set.</li>
-        <li><strong>No arrows on CTA buttons.</strong> A hover micro-lift/glow is the affordance.</li>
-        <li><strong>Hover:</strong> soft red glow (<code>0 8px 32px rgba(227,18,11,.35)</code>) on the primary; both may rise-in with a slight stagger.</li>
-        <li>Mobile: buttons stack <strong>full-width</strong>.</li>
+        <li>Buttons use the shared system in <code>tokens/buttons.css</code> (React <code>&lt;Button&gt;</code>; plain HTML <code>.rf-btn</code>). The signature is light rising from the bottom edge.</li>
+        <li><strong>Primary:</strong> ultramarine light leak — deep <code>#1C2286</code> lit from below by a periwinkle-to-lilac glow, white label with a subtle 1px text shadow. One per view. On dark bands use the brighter dark-band version (<code>onDark</code> / <code>.rf-on-dark</code>): base <code>#3442D9</code>, faint white rim, soft ultramarine halo.</li>
+        <li><strong>Secondary:</strong> periwinkle tint <code>#DCE0FF</code> with near-white light from below, ultramarine label; on dark bands, translucent glass with a faint periwinkle glow and a hairline rim.</li>
+        <li><strong>Links:</strong> ultramarine <code>#2E3AC8</code>, medium, underlined; on hover the secondary tint fills in behind the word.</li>
+        <li><strong>Destructive:</strong> pale red tint with pale light, <code>#B42318</code> label — the only red button.</li>
+        <li><strong>Shape and size:</strong> 2px corners (no pills), IBM Plex Sans Condensed 600; 52px in heroes and closing bands, 44px elsewhere.</li>
+        <li><strong>No arrows on CTA buttons.</strong> An optional icon sits on the left. Hover changes the light; no lift, no red glow.</li>
+        <li>Mobile: page-level buttons stack <strong>full-width</strong>, primary on top.</li>
         <li>Real destinations: careers → <code>/careers</code>, apply → <code>join.realfast.ai</code>, contact → <code>/contact</code>, people → <code>/people</code>.</li>
       </ul>
     </div>
@@ -237,7 +241,7 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
         <li><strong>Premium ink hero</strong> — sentence-case kicker, big serif headline with gradient contrast words, two-beat entrance, scroll cue. Optional dim rail numeral ("00").</li>
         <li><strong>Mission / standfirst band</strong> (cream, centered, no rules) — one bold idea, closing phrase in the red gradient.</li>
         <li><strong>Numbered chapters</strong> — full-bleed alternating white/cream, seamless shadow flow. Desktop: <code>170px | 1fr</code> grid with a <strong>sticky left rail</strong> (44px serif numeral + sentence-case bold label). The active chapter's numeral turns red and scales ~1.08 as it enters; one chapter may be a premium ink band.</li>
-        <li><strong>CTA band</strong> (premium black gradient) — contrast-word headline, two pills, no arrows.</li>
+        <li><strong>CTA band</strong> (premium black gradient) — contrast-word headline, the dark-band primary + secondary buttons (&sect;10), no arrows.</li>
         <li><strong>Footer</strong> (existing component).</li>
       </ul>
       <p><strong>Explicitly not part of the pattern:</strong> no sticky utility/label bar, no scroll-progress line — both add chrome without helping the narrative. Active-chapter logic: active = last chapter whose top ≤ 45% of viewport and bottom &gt; 25%.</p>
@@ -298,13 +302,13 @@ color: #57534A;  <span class="cm">/* warm-grey glyph at rest — NOT red */</spa
       <h3>Card CTA affordance (reusable rule)</h3>
       <ul>
         <li>The <strong>whole card is the link</strong> — the "Read case study" label is a styled <code>&lt;span&gt;</code>, never a nested <code>&lt;button&gt;</code> (redundant, and invalid inside an anchor).</li>
-        <li>Styled as a <strong>red ghost pill that fills red on card hover</strong> — clearly a CTA, no arrow.</li>
+        <li>Styled as the <strong>secondary button</strong> (periwinkle tint with pale light) that turns into the primary light leak on card hover — clearly a CTA, no arrow.</li>
         <li>No arrow-text links ("Read more &rarr;"); use a specific label ("Read case study") over generic "Learn more".</li>
       </ul>
 
       <h3>Closing band + footer</h3>
       <ul>
-        <li>A single premium dark band (&sect;4) with a gradient contrast word and the matched red / ghost pill set (&sect;10); headline 2 lines, standfirst tightened.</li>
+        <li>A single premium dark band (&sect;4) with a gradient contrast word and the dark-band primary + secondary pair (&sect;10); headline 2 lines, standfirst tightened.</li>
         <li><strong>Engineering note:</strong> any page on the case-study surface must carry the <code>footer.is-light</code> rules (now in <code>case-study-editorial.css</code>) or the white footer nav renders invisible.</li>
       </ul>
     </div>

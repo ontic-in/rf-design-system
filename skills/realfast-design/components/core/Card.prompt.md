@@ -1,4 +1,4 @@
-A surface container that adapts to the active theme (dark product / light editorial). Use for platform feature cards, service tiles, and callouts.
+A surface container on the editorial light surface. Use for platform feature cards, service tiles, and callouts.
 
 ```jsx
 <Card interactive accentTop>
@@ -7,4 +7,4 @@ A surface container that adapts to the active theme (dark product / light editor
 </Card>
 ```
 
-Props: `padding`, `interactive` (hover lift), `raised` (surface token), `accentTop` (accent bar on top edge).
+Props: `padding`, `interactive` (hover lift), `raised` (surface token), `accentTop` (3px ink rule on the top edge to mark the lead card; never red).

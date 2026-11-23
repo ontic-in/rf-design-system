@@ -1,0 +1,43 @@
+<!-- @dsCard group="Colors" viewport="700x250" name="Status & data" subtitle="Good, at risk and bad — bright marks, readable text" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-page); color: var(--text-body); padding: 22px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .chips { display: flex; gap: 4px; }
+  .chips div { flex: 1; height: 30px; border-radius: 2px; }
+  .hex { font-size: 11.5px; color: var(--text-muted); }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 2px; font-size: 12.5px; font-weight: 600; width: fit-content; }
+  .badge i { width: 7px; height: 7px; border-radius: 50%; display: block; }
+  .fig { font-family: var(--font-serif); font-size: 15px; color: var(--text-strong); }
+  .fig b { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="col">
+      <div class="chips"><div style="background:var(--rf-good)"></div><div style="background:var(--rf-good-text)"></div><div style="background:var(--rf-good-tint)"></div></div>
+      <div class="hex">mark #0FA968 · text #0B7A50 · tint #E1F5EC</div>
+      <span class="badge" style="background:var(--rf-good-tint);color:var(--rf-good-text)"><i style="background:var(--rf-good)"></i>On track</span>
+      <div class="fig">Revenue <b style="color:var(--data-better)">↑ +18%</b></div>
+    </div>
+    <div class="col">
+      <div class="chips"><div style="background:var(--rf-warn)"></div><div style="background:var(--rf-warn-text)"></div><div style="background:var(--rf-warn-tint)"></div></div>
+      <div class="hex">mark #E8A317 · text #8F6100 · tint #FCF2DC</div>
+      <span class="badge" style="background:var(--rf-warn-tint);color:var(--rf-warn-text)"><i style="background:var(--rf-warn)"></i>At risk</span>
+      <div class="fig">Utilisation <b style="color:var(--warning)">↓ −6%</b></div>
+    </div>
+    <div class="col">
+      <div class="chips"><div style="background:var(--rf-bad)"></div><div style="background:var(--rf-bad-text)"></div><div style="background:var(--rf-bad-tint)"></div></div>
+      <div class="hex">mark #E5484D · text #C42B35 · tint #FDEAEA</div>
+      <span class="badge" style="background:var(--rf-bad-tint);color:var(--rf-bad-text)"><i style="background:var(--rf-bad)"></i>Overdue</span>
+      <div class="fig">Invoices over 60 days <b style="color:var(--data-worse)">↑ +9%</b></div>
+    </div>
+  </div>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--text-muted);border-top:1px solid var(--border);margin:16px 0 0;padding:12px 0 0;"><b style="color:var(--text-strong);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Bright marks for dots, arrows and bars; the text shade for labels and figures (passes 4.5:1); the tint for chip backgrounds. Always with an icon, arrow or word, never colour alone. Better is green and worse is red whichever way the number moves. Never the brand red, and never for an ordinary chart series.</p>
+</body>
+</html>

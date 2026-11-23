@@ -1,52 +1,61 @@
-<!-- @dsCard group="Charts" viewport="760x560" name="Stacked bar chart" subtitle="Ordered categorical ramp on a light ground — pale-blue → dusty-blue → slate-navy → success" -->
+<!-- @dsCard group="Charts" viewport="760x620" name="Chart colours" subtitle="Categorical, ordered, diverging and highlight — validated for colour-blind readers" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="../styles.css" />
 <style>
-  body{margin:0;font-family:var(--font-sans);background:var(--rf-paper);color:var(--rf-ed-ink);padding:20px;}
-  .ramp{display:flex;gap:0;margin:0 0 22px;border:1px solid var(--rf-ed-rule);}
-  .ramp div{flex:1;height:44px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;font-size:10px;letter-spacing:.04em;}
-  .chart{border:1px solid var(--rf-ed-rule);background:var(--rf-paper);padding:24px 24px 18px;}
-  .chart-title{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--rf-ed-ink);margin:0 0 6px;letter-spacing:var(--track-snug);}
-  .chart-sub{font-size:13px;color:var(--rf-ed-muted);margin:0 0 26px;}
-  .chart-cols{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;align-items:end;height:220px;padding-top:26px;}
-  .chart-col{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;}
-  .chart-stack{position:relative;width:100%;max-width:64px;display:flex;flex-direction:column;justify-content:flex-end;}
-  .chart-seg{width:100%;}
-  .chart-total{position:absolute;left:0;right:0;bottom:calc(100% + 6px);text-align:center;font-size:15px;font-weight:600;color:var(--rf-ed-ink);}
-  .chart-x{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;margin-top:10px;}
-  .chart-x span{font-size:12px;color:var(--rf-ed-muted);text-align:center;}
-  .chart-legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;}
-  .chart-legend span{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--rf-ed-ink-soft);}
-  .chart-legend i{width:12px;height:12px;display:inline-block;}
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-page); color: var(--text-body); padding: 20px 22px; }
+  .row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .row:last-of-type { border-bottom: 0; }
+  .name { font-family: var(--font-serif); font-weight: 700; font-size: 16px; color: var(--text-strong); }
+  .note { font-size: 12px; color: var(--text-muted); line-height: 1.4; margin-top: 4px; }
+  .sw { display: flex; gap: 2px; }
+  .sw div { flex: 1; height: 26px; display: flex; align-items: flex-end; padding: 0 0 3px 5px; font-size: 10.5px; color: #fff; }
+  .sw .lt { color: var(--text-strong); }
+  .bars { display: flex; gap: 14px; align-items: flex-end; height: 96px; border-bottom: 1px solid var(--text-body); margin-top: 10px; }
+  .grp { flex: 1; display: flex; gap: 2px; align-items: flex-end; height: 100%; }
+  .grp i { flex: 1; display: block; border-radius: 3px 3px 0 0; }
+  .stack { flex: 1; display: flex; flex-direction: column-reverse; gap: 2px; height: 100%; justify-content: flex-start; }
+  .stack i { display: block; }
+  .div { display: flex; gap: 2px; height: 22px; margin-top: 10px; }
+  .hl i { flex: 1; display: block; border-radius: 3px 3px 0 0; }
 </style>
 </head>
 <body>
-  <div class="ramp">
-    <div style="background:var(--rf-illus-pale-blue);color:var(--rf-ed-ink)">pale-blue</div>
-    <div style="background:var(--rf-illus-dusty-blue);color:#fff">dusty-blue</div>
-    <div style="background:var(--rf-illus-slate-navy);color:#fff">slate-navy</div>
-    <div style="background:var(--success);color:#fff">success</div>
-  </div>
-
-  <div class="chart">
-    <div class="chart-title">Stacked bar — ordered series</div>
-    <div class="chart-sub">Light ground, value-ramped segments, totals set above each bar.</div>
-    <div class="chart-cols">
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">5</div><div class="chart-seg" style="height:6px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:22px;background:var(--rf-illus-dusty-blue)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">17</div><div class="chart-seg" style="height:11px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:45px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:8px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:5px;background:var(--success)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">22</div><div class="chart-seg" style="height:12px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:30px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:22px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:18px;background:var(--success)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">38</div><div class="chart-seg" style="height:15px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:8px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:92px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:26px;background:var(--success)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">47</div><div class="chart-seg" style="height:26px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:33px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:59px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:55px;background:var(--success)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">53</div><div class="chart-seg" style="height:29px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:33px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:8px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:125px;background:var(--success)"></div></div></div>
-      <div class="chart-col"><div class="chart-stack"><div class="chart-total">54</div><div class="chart-seg" style="height:11px;background:var(--rf-illus-pale-blue)"></div><div class="chart-seg" style="height:15px;background:var(--rf-illus-dusty-blue)"></div><div class="chart-seg" style="height:26px;background:var(--rf-illus-slate-navy)"></div><div class="chart-seg" style="height:147px;background:var(--success)"></div></div></div>
+  <div class="row">
+    <div><div class="name">Categorical</div><div class="note">Five series, this order, never cycled. Scatter plots and maps: cat-1, 2 and 4 only.</div></div>
+    <div>
+      <div class="sw">
+        <div style="background:var(--chart-cat-1)">indigo</div><div style="background:var(--chart-cat-2)">teal</div><div style="background:var(--chart-cat-3)">purple</div><div style="background:var(--chart-cat-4)">orange</div><div style="background:var(--chart-cat-5)">magenta</div>
+      </div>
+      <div class="bars">
+        <div class="grp"><i style="height:40%;background:var(--chart-cat-1)"></i><i style="height:30%;background:var(--chart-cat-2)"></i><i style="height:22%;background:var(--chart-cat-3)"></i><i style="height:14%;background:var(--chart-cat-4)"></i><i style="height:8%;background:var(--chart-cat-5)"></i></div>
+        <div class="grp"><i style="height:62%;background:var(--chart-cat-1)"></i><i style="height:44%;background:var(--chart-cat-2)"></i><i style="height:30%;background:var(--chart-cat-3)"></i><i style="height:22%;background:var(--chart-cat-4)"></i><i style="height:10%;background:var(--chart-cat-5)"></i></div>
+        <div class="grp"><i style="height:96%;background:var(--chart-cat-1)"></i><i style="height:70%;background:var(--chart-cat-2)"></i><i style="height:54%;background:var(--chart-cat-3)"></i><i style="height:40%;background:var(--chart-cat-4)"></i><i style="height:22%;background:var(--chart-cat-5)"></i></div>
+      </div>
     </div>
-    <div class="chart-x"><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span></div>
-    <div class="chart-legend"><span><i style="background:var(--rf-illus-pale-blue)"></i>Stage 1</span><span><i style="background:var(--rf-illus-dusty-blue)"></i>Stage 2</span><span><i style="background:var(--rf-illus-slate-navy)"></i>Stage 3</span><span><i style="background:var(--success)"></i>Complete</span></div>
   </div>
-
-  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:22px 0 0;padding:14px 0 4px;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Charts sit on a light ground, never a dark band. The ramp is drawn straight from the Illustration Palette (see Colors &rsaquo; Illustration Palette, the <code>--rf-illus-*</code> tokens) so charts read in the same visual language as the spot art. For ordered or pipeline data use the value ramp <code>--rf-illus-pale-blue</code> &rsaquo; <code>--rf-illus-dusty-blue</code> &rsaquo; <code>--rf-illus-slate-navy</code>, reserving <code>--success</code> for the terminal "done / positive" series so the outcome reads at a glance. Set totals above each bar in <code>--font-sans</code>; keep axis labels and the legend in <code>--rf-ed-muted</code>. Avoid the raw illustration mid-tones side by side (grey / violet / blue) — they muddy; a single-hue light-to-dark ramp keeps multiple series legible. Never use the signal red as a data series; it stays a rare focal spark. For how these charts animate in (bars growing from the baseline, staggered segments, count-up metrics), see Effects &rsaquo; Data motion.</p>
+  <div class="row">
+    <div><div class="name">Ordered</div><div class="note">One slate hue, light to dark. 2px gap between stacked segments. Never blue.</div></div>
+    <div>
+      <div class="sw"><div class="lt" style="background:var(--chart-seq-1)">1</div><div class="lt" style="background:var(--chart-seq-2)">2</div><div style="background:var(--chart-seq-3)">3</div><div style="background:var(--chart-seq-4)">4</div><div style="background:var(--chart-seq-5)">5</div></div>
+      <div class="bars">
+        <div class="stack"><i style="height:14%;background:var(--chart-seq-1)"></i><i style="height:10%;background:var(--chart-seq-2)"></i><i style="height:8%;background:var(--chart-seq-3)"></i><i style="height:6%;background:var(--chart-seq-4)"></i><i style="height:4%;background:var(--chart-seq-5)"></i></div>
+        <div class="stack"><i style="height:12%;background:var(--chart-seq-1)"></i><i style="height:14%;background:var(--chart-seq-2)"></i><i style="height:14%;background:var(--chart-seq-3)"></i><i style="height:10%;background:var(--chart-seq-4)"></i><i style="height:8%;background:var(--chart-seq-5)"></i></div>
+        <div class="stack"><i style="height:8%;background:var(--chart-seq-1)"></i><i style="height:12%;background:var(--chart-seq-2)"></i><i style="height:18%;background:var(--chart-seq-3)"></i><i style="height:22%;background:var(--chart-seq-4)"></i><i style="height:24%;background:var(--chart-seq-5)"></i></div>
+        <div class="stack"><i style="height:6%;background:var(--chart-seq-1)"></i><i style="height:10%;background:var(--chart-seq-2)"></i><i style="height:16%;background:var(--chart-seq-3)"></i><i style="height:26%;background:var(--chart-seq-4)"></i><i style="height:36%;background:var(--chart-seq-5)"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div><div class="name">Diverging</div><div class="note">Indigo arm, cool grey middle, teal arm. Never red and green.</div></div>
+    <div class="div"><i style="flex:18;background:var(--chart-div-neg-3)"></i><i style="flex:30;background:var(--chart-div-neg-2)"></i><i style="flex:12;background:var(--chart-div-neg-1)"></i><i style="flex:14;background:var(--chart-div-mid)"></i><i style="flex:16;background:var(--chart-div-pos-1)"></i><i style="flex:6;background:var(--chart-div-pos-2)"></i><i style="flex:4;background:var(--chart-div-pos-3)"></i></div>
+  </div>
+  <div class="row">
+    <div><div class="name">Highlight one</div><div class="note">Context quiet, one bar in focus with its value printed.</div></div>
+    <div class="bars hl"><i style="height:28%;background:var(--chart-context)"></i><i style="height:36%;background:var(--chart-context)"></i><i style="height:32%;background:var(--chart-context)"></i><i style="height:40%;background:var(--chart-context)"></i><i style="height:96%;background:var(--chart-focus)"></i><i style="height:44%;background:var(--chart-context)"></i></div>
+  </div>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--text-muted);border-top:1px solid var(--border);margin:6px 0 0;padding:12px 0 0;"><b style="color:var(--text-strong);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Charts sit on light grounds. Colour has one job per chart: identity (categorical), order (ordered), polarity (diverging) or emphasis (highlight). Validated for lightness, chroma, colour-blind and normal-vision separation. cat-2 and cat-4 sit under 3:1 on white, so print values or offer a table. Status colours (--rf-good / warn / bad) never colour an ordinary series; text, values and legends stay ink.</p>
 </body>
 </html>

@@ -33,8 +33,6 @@
   .rf-cs .fld{font-family:var(--font-sans);font-size:15px;padding:12px 14px;border:1px solid var(--rf-ed-rule);background:#fff;color:var(--rf-ed-ink);border-radius:var(--radius-sm);width:100%;box-sizing:border-box;}
   .rf-cs .fld:focus{outline:none;border-color:var(--rf-ed-ink);box-shadow:var(--focus-ring-ed);}
   .rf-cs .lbl{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-ed-muted);margin-bottom:8px;display:block;}
-  .rf-cs .rf-btn{font-family:var(--font-sans);font-weight:600;font-size:15px;background:var(--rf-ed-red);color:#fff;border:none;padding:14px 28px;border-radius:var(--radius-sm);cursor:pointer;align-self:flex-start;}
-  .rf-cs .rf-btn:hover{background:var(--rf-red-700);}
   .rf-cs .metric .bar-row{display:grid;grid-template-columns:170px 1fr auto;align-items:center;gap:16px;margin-bottom:14px;}
   .rf-cs .metric .bar-lbl{font-family:var(--font-sans);font-size:13px;color:var(--rf-ed-muted);}
   .rf-cs .metric .bar-track{height:24px;}
@@ -274,7 +272,7 @@
           <div><label class="lbl">Company name *</label><input class="fld" name="company" required></div>
           <div><label class="lbl">LinkedIn profile</label><input class="fld" name="linkedin"></div>
           <div><label class="lbl">How did you hear about us? *</label><select class="fld" name="source" required><option value="">Select an option</option><option>Google / Search Engine</option><option>LinkedIn</option><option>Referral from colleague or friend</option><option>Blog / Article</option><option>Event or Webinar</option><option>Other</option></select></div>
-          <button type="submit" class="rf-btn">Book a demo &rarr;</button>
+          <button type="submit" class="rf-btn">Book a demo</button>
         </form>
         <div data-rf-lead-success style="display:none;border:1px solid var(--rf-ed-rule);background:#fff;padding:32px;">
           <div class="kicker" style="margin-bottom:12px;">Let&rsquo;s go</div>
@@ -293,7 +291,7 @@
       <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 6px;">Take this case study with you</h3>
       <p style="font-family:var(--font-sans);font-size:15px;color:var(--rf-ed-muted);margin:0;">Save a clean, print-ready PDF to share internally or send to your team.</p>
     </div>
-    <button class="rf-btn" data-dl type="button" style="background:var(--success);">Download PDF</button>
+    <button class="rf-btn rf-btn--secondary" data-dl type="button">Download PDF</button>
   </div>
 
 </div>

@@ -36,7 +36,7 @@
           </div>
           <div className="sec">
             <div className="lbl">Button — on the dark band</div>
-            <div className="row" style={{ background: "#1e2a44", padding: 16, borderRadius: 2 }}>
+            <div className="row" style={{ background: "var(--rf-navy)", padding: 16, borderRadius: 2 }}>
               <Button onDark>Book a call</Button>
               <Button variant="secondary" onDark>See case studies</Button>
               <span style={{ fontFamily: "var(--font-serif)", fontSize: 17, color: "#fff" }}>Read the <Button variant="link" as="a" href="#" onDark>case study</Button></span>
@@ -54,12 +54,13 @@
           <div className="sec">
             <div className="lbl">Badge</div>
             <div className="row">
-              <Badge tone="blue">ExoWork</Badge>
-              <Badge tone="navy">ExoCode</Badge>
-              <Badge tone="red" outline>Insights</Badge>
-              <Badge tone="success">Live</Badge>
-              <Badge tone="neutral">Beta</Badge>
-              <Badge tone="ink">Enterprise</Badge>
+              <Badge tone="product">ExoWork</Badge>
+              <Badge tone="product">Enterprise</Badge>
+              <Badge tone="category">Insights</Badge>
+              <Badge tone="good">Live</Badge>
+              <Badge tone="warn">At risk</Badge>
+              <Badge tone="bad">Overdue</Badge>
+              <Badge>Beta</Badge>
             </div>
           </div>
           <div className="sec">
@@ -75,6 +76,6 @@
     }
     ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
   </script>
-  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Brand primitives on the editorial surface. Button variant = intent (primary is the one main action, secondary the alternative, link sits in copy, destructive is the only red; add onDark inside navy bands); Badge tones label product/status; Card uses accentTop for the lead item. Mount inside [data-theme="editorial"].</p>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Brand primitives on the editorial surface. Button variant = intent (primary is the one main action, secondary the alternative, link sits in copy, destructive is the only red; add onDark inside navy bands); Badge tones label products, categories and status (tinted, never red); Card uses accentTop (an ink rule) for the lead item. Mount inside [data-theme="editorial"].</p>
 </body>
 </html>

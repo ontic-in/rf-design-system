@@ -7,7 +7,7 @@
  *   primary      ultramarine "light leak" — deep #1C2286 lit from below
  *   secondary    periwinkle tint #DCE0FF with near-white light from below
  *   link         ultramarine #2E3AC8, medium, underlined; hover fills with
- *                the secondary tint
+ *                the secondary tint. On navy: white text, 2px periwinkle underline
  *   destructive  pale red tint with light from below — the only red button
  *
  * Rules: one primary per view · decks use the primary only · red only means
@@ -20,11 +20,9 @@
 
 :root {
   /* ── Base colours ─────────────────────────────────────────────────────── */
-  --rf-ultramarine: #2e3ac8; /* the action colour — links, focus rings */
   --rf-ultramarine-hover: #2631a9;
   --rf-ultramarine-deep: #1c2286; /* primary button base on light */
   --rf-periwinkle-tint: #dce0ff; /* secondary button base on light */
-  --rf-link-on-dark: #afb8ff;
   --rf-destructive: #b42318; /* destructive label / danger red */
 
   /* ── Shared ───────────────────────────────────────────────────────────── */
@@ -111,7 +109,8 @@
   --link-fg: var(--rf-ultramarine);
   --link-weight: 500;
   --link-hover-bg: var(--btn-secondary-bg);
-  --link-dark-fg: var(--rf-link-on-dark);
+  --link-dark-fg: #ffffff; /* white text on navy, marked by a periwinkle underline */
+  --link-dark-underline: #9aa6ff;
   --link-dark-hover-bg: var(--btn-secondary-dark-bg);
 }
 
@@ -231,7 +230,7 @@
 }
 .rf-link:hover { background: var(--link-hover-bg); text-decoration-color: transparent; }
 .rf-link:focus-visible { outline: 2px solid var(--btn-focus-light); outline-offset: 2px; }
-.rf-on-dark .rf-link { color: var(--link-dark-fg); }
+.rf-on-dark .rf-link { color: var(--link-dark-fg); text-decoration-color: var(--link-dark-underline); text-decoration-thickness: 2px; }
 .rf-on-dark .rf-link:hover { background: var(--link-dark-hover-bg); }
 .rf-on-dark .rf-link:focus-visible { outline-color: var(--btn-focus-dark); }
 

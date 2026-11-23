@@ -3,7 +3,7 @@ import React from "react";
 /**
  * realfast Card — surface container for editorial callouts and tiles. Reads
  * semantic surface/border tokens (paper, hairline rule). `accentTop` adds a 3px
- * red top rule; `interactive` adds a subtle hover lift. Square 2px corners.
+ * ink top rule (the masthead rule, never red); `interactive` adds a subtle hover lift. Square 2px corners.
  */
 export function Card({
   children,
@@ -24,7 +24,7 @@ export function Card({
       style={{
         background: surfaces[raised] || surfaces.raised,
         border: "1px solid var(--border)",
-        borderTop: accentTop ? "3px solid var(--accent)" : "1px solid var(--border)",
+        borderTop: accentTop ? "3px solid var(--border-strong)" : "1px solid var(--border)",
         borderRadius: "2px",
         padding,
         color: "var(--text-body)",

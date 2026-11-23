@@ -1,4 +1,4 @@
-<!-- @dsCard group="Colors" viewport="700x216" name="Brand Core" subtitle="The four canonical realfast brand colors" -->
+<!-- @dsCard group="Colors" viewport="700x216" name="Brand Core" subtitle="Each brand colour has one job" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../styles.css" />
 <style>
   body { margin: 0; font-family: var(--font-sans); background: var(--rf-white); }
-  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 20px; }
   .sw { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--rf-neutral-200); }
   .chip { height: 78px; }
   .meta { padding: 8px 10px 10px; }
@@ -16,11 +16,12 @@
 </head>
 <body>
   <div class="row">
-    <div class="sw"><div class="chip" style="background:var(--rf-blue)"></div><div class="meta"><div class="name">Blue</div><div class="hex">#362CFF</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-blue)"></div><div class="meta"><div class="name">Logo blue</div><div class="hex">#362CFF</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-ultramarine)"></div><div class="meta"><div class="name">Ultramarine</div><div class="hex">#2E3AC8</div></div></div>
     <div class="sw"><div class="chip" style="background:var(--rf-navy)"></div><div class="meta"><div class="name">Navy</div><div class="hex">#191970</div></div></div>
-    <div class="sw"><div class="chip" style="background:var(--rf-red)"></div><div class="meta"><div class="name">Red</div><div class="hex">#F7394D</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--rf-red)"></div><div class="meta"><div class="name">Red</div><div class="hex">#E3120B</div></div></div>
     <div class="sw"><div class="chip" style="background:var(--rf-ink)"></div><div class="meta"><div class="name">Ink</div><div class="hex">#111111</div></div></div>
   </div>
-  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>The four canonical UI colours. Blue for primary action and links, Navy for depth, Red for a single emphasis, Ink for text. Don’t add new UI colours — the muted --rf-illus-* shades are illustration-only.</p>
+  <p style="font-family:'IBM Plex Sans Condensed',var(--font-sans),sans-serif;font-size:12.5px;line-height:1.55;color:var(--rf-ed-ink-soft);border-top:1px solid var(--rf-ed-rule);margin:0;padding:14px 20px 4px;flex:0 0 100%;width:100%;box-sizing:border-box;"><b style="color:var(--rf-ed-ink);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;margin-right:8px;">Usage</b>Logo blue for the logo mark only. Ultramarine for every action: buttons, links, focus. Navy for dark bands. Red for one small brand mark per view, never a button and never on navy or blue. Ink for text. The --rf-illus-* shades are illustration-only.</p>
 </body>
 </html>

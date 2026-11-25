@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: Geist Serif + Geist</title>
+<!-- Brand tokens, copied from skills/realfast-design/tokens (design/colour-tokens) -->
+<link rel="stylesheet" href="tokens/colors.css">
+<link rel="stylesheet" href="tokens/buttons.css">
+<style>
+@font-face{font-family:"Geist Serif";src:url(fonts/GeistSerifVF.woff2);font-weight:100 900}
+@font-face{font-family:Geist;src:url(fonts/Geist-Variable.woff2);font-weight:100 900}
+:root{
+  --font-sans:Geist,-apple-system,sans-serif;
+  --font-display:"Geist Serif",Georgia,serif;
+  --btn-font:var(--font-sans);
+  --btn-radius:2px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-sans);font-size:17px;line-height:1.6}
+.d{font-family:var(--font-display);font-weight:400;color:var(--text-strong);letter-spacing:-0.005em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.rub{font-size:13px;font-weight:500;color:var(--text-muted)}
+.rub .n{color:var(--text-strong);font-weight:600;margin-right:6px}
+a{color:inherit}
+
+/* badges (Badge component tones) */
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.bdg{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:2px;line-height:1}
+.bdg.category{background:var(--rf-stone-100);color:var(--rf-stone-700)}
+.bdg.category i{width:7px;height:7px;border-radius:50%;background:var(--brand-flag)}
+.bdg.neutral{background:var(--rf-stone-100);color:var(--rf-stone-700)}
+.bdg.product{background:var(--rf-navy-tint);color:var(--rf-navy)}
+.bdg.good{background:var(--rf-good-tint);color:var(--rf-good-text)}
+
+/* nav */
+nav{border-bottom:1px solid var(--border);background:var(--surface-page)}
+nav .wrap{display:flex;align-items:center;height:72px;gap:30px}
+nav img{height:22px;margin-right:auto}
+nav a.nl{font-size:14.5px;color:var(--text-body);text-decoration:none}
+nav a.nl.on{color:var(--text-strong);font-weight:600}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:64px 0 56px}
+.hero h1{font-size:60px;line-height:1.04;margin:22px 0 22px}
+.hero .dek{font-size:19.5px;line-height:1.55;margin:0 0 32px;max-width:560px}
+.hero .ctas{display:flex;gap:12px}
+.art{background:#fff;border-radius:2px}
+.art img{width:100%;display:block;mix-blend-mode:multiply}
+.credit{font-size:12px;color:var(--text-faint);margin-top:8px}
+
+/* client strip */
+.client{background:var(--surface-raised);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.client .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:28px;padding-bottom:28px}
+.client .c{padding:0 28px;border-left:1px solid var(--border)}
+.client .c:first-child{padding-left:0;border-left:0}
+.client .k{font-size:13px;color:var(--text-muted)}
+.client .v{font-size:16px;color:var(--text-strong);font-weight:600;margin-top:4px}
+.client .wide{grid-column:span 2}
+.client .wide .v{font-weight:400;font-size:15.5px;color:var(--text-body);line-height:1.5}
+
+/* results band on navy */
+.band{background:var(--rf-navy);color:#fff;position:relative;overflow:hidden}
+.band:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;background:radial-gradient(50% 50% at 50% 100%,rgba(111,124,255,.35),rgba(162,107,255,.12) 45%,transparent 75%);pointer-events:none}
+.band .wrap{position:relative;padding-top:56px;padding-bottom:60px}
+.band .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+.band .rub{color:#c9ccf5}
+.band .rub .n{color:#fff}
+.path{display:flex;align-items:center;gap:10px;font-size:13px;color:#c9ccf5}
+.path b{font-weight:600;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:5px 10px;border-radius:2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:0 36px;border-left:1px solid rgba(255,255,255,.16)}
+.stat:first-child{padding-left:0;border-left:0}
+.stat .lab{font-size:14px;color:#c9ccf5}
+.stat .num{font-family:var(--font-display);font-size:72px;line-height:1;margin:16px 0 16px;color:#fff;white-space:nowrap}
+.stat .num small{font-size:.55em;color:#9aa6ff;margin:0 .3em;vertical-align:.18em}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 10px;border-radius:2px;background:rgba(15,169,104,.16);color:#7fe0b4}
+.chip svg{width:12px;height:12px}
+.stat .sub{font-size:14.5px;color:#d9dbf2;margin-top:10px}
+
+/* body */
+.body{display:grid;grid-template-columns:220px 1fr;gap:72px;padding:88px 0 24px}
+.toc .in{position:sticky;top:24px}
+.toc ol{list-style:none;padding:0;margin:16px 0 0;border-left:1px solid var(--border)}
+.toc li{font-size:14px;padding:7px 0 7px 16px;color:var(--text-muted)}
+.toc li.on{color:var(--rf-ultramarine);font-weight:600;border-left:2px solid var(--rf-ultramarine);margin-left:-1px;padding-left:15px}
+.toc .side{margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+.toc .side .k{font-size:13px;color:var(--text-muted);margin-bottom:10px}
+main{max-width:780px}
+section{padding:0 0 88px}
+section h2{font-size:40px;line-height:1.1;margin:14px 0 18px}
+section .lead{font-size:19px;line-height:1.55;margin:0 0 32px}
+section p{margin:0 0 18px}
+
+/* chart card */
+.card{background:var(--surface-raised);border-radius:2px;padding:28px 28px 22px}
+.card h3,.h3{font-size:15px;font-weight:600;color:var(--text-strong);margin:0 0 4px}
+.card .sub{font-size:13.5px;color:var(--text-muted);margin-bottom:22px}
+.bar{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:16px;margin:12px 0}
+.bar .l{font-size:14px;color:var(--text-body)}
+.bar .t{display:flex;align-items:center;gap:14px}
+.bar i{display:block;height:44px;border-radius:0 4px 4px 0}
+.bar span{font-family:var(--font-display);font-size:30px;color:var(--text-strong)}
+.bar .note{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rf-good-text);background:var(--rf-good-tint);padding:4px 8px;border-radius:2px}
+.card .foot{font-size:12.5px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
+
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 44px}
+.mini>div{border-top:2px solid var(--text-strong);padding-top:14px}
+.mini .n{font-family:var(--font-display);font-size:42px;color:var(--text-strong);line-height:1.05}
+.mini .dd{font-size:14px;color:var(--text-muted);margin-top:6px}
+
+table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums;margin:12px 0 24px}
+th{text-align:left;font-weight:600;font-size:13px;color:var(--text-muted);padding:10px 12px;background:var(--rf-stone-50);border-bottom:1px solid var(--border-strong)}
+td{padding:12px;border-bottom:1px solid var(--border)}
+th:first-child,td:first-child{padding-left:0}
+th:first-child{padding-left:12px}
+td:first-child{color:var(--text-strong);padding-left:12px}
+th+th,td+td{text-align:right}
+td .delta{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;padding:3px 8px;border-radius:2px}
+td .delta.good{background:var(--rf-good-tint);color:var(--rf-good-text)}
+td .delta.flat{background:var(--rf-stone-100);color:var(--rf-stone-700)}
+td .delta.new{background:var(--rf-navy-tint);color:var(--rf-navy)}
+.callout{border-left:3px solid var(--rf-navy);background:var(--rf-navy-tint);padding:18px 22px;color:var(--rf-navy);font-size:16px;border-radius:0 2px 2px 0}
+.callout b{font-weight:600}
+
+/* problem: before / after compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0 8px}
+.compare>div{border-radius:2px;padding:22px}
+.compare .was{background:var(--rf-stone-100)}
+.compare .now{background:var(--rf-navy);color:#fff}
+.compare .k{font-size:13px;font-weight:600;margin-bottom:14px}
+.compare .was .k{color:var(--rf-stone-700)}
+.compare .now .k{color:#c9ccf5}
+.opt{display:block;font-size:14px;padding:9px 12px;margin:6px 0;border-radius:2px;background:#fff;border:1px solid var(--border-input);color:var(--text-body)}
+.msg{font-size:14px;padding:10px 14px;margin:8px 0;border-radius:2px;max-width:88%}
+.msg.q{background:rgba(255,255,255,.1);margin-left:auto}
+.msg.a{background:#fff;color:var(--text-body)}
+
+/* quote */
+.quote{background:var(--surface-raised);padding:32px 36px;margin:8px 0 28px;border-radius:2px;position:relative}
+.quote q{font-family:var(--font-display);font-size:31px;line-height:1.28;color:var(--rf-navy);quotes:"\201C" "\201D"}
+.quote .by{font-size:13.5px;color:var(--text-muted);margin-top:14px}
+
+/* approach */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--border)}
+.steps li:before{counter-increment:s;content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--rf-navy-tint);color:var(--rf-navy);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;color:var(--text-strong);font-weight:600;font-size:17px;margin-bottom:4px}
+.steps.plain li:before{content:"";background:var(--rf-good-tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b7a50' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/16px no-repeat}
+
+/* built */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tile{border:1px solid var(--border);border-radius:2px;padding:26px;background:#fff}
+.tile .ic{width:40px;height:40px;border-radius:2px;background:var(--rf-navy-tint);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.tile .ic svg{width:22px;height:22px;stroke:var(--rf-navy)}
+.tile h4{font-family:var(--font-display);font-weight:400;font-size:24px;color:var(--text-strong);margin:0 0 8px}
+.tile p{font-size:15px;margin:0}
+
+/* partnership */
+.owns{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.owns>div{background:var(--surface-raised);padding:22px;border-radius:2px}
+.owns .k{font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:10px}
+.owns ul{margin:0;padding-left:18px;font-size:15px}
+.owns li{margin:4px 0}
+
+/* cta */
+.cta{background:var(--rf-navy);color:#fff;position:relative;overflow:hidden}
+.cta:before{content:"";position:absolute;right:-20%;bottom:-70%;width:90%;height:140%;background:radial-gradient(50% 50% at 50% 50%,rgba(111,124,255,.32),rgba(162,107,255,.12) 45%,transparent 72%)}
+.cta .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:72px;padding-top:88px;padding-bottom:88px}
+.cta .rub{color:#c9ccf5}
+.cta h2{font-family:var(--font-display);font-weight:400;font-size:50px;line-height:1.06;margin:16px 0 20px;color:#fff}
+.cta p{color:#d9dbf2;font-size:17px;max-width:460px}
+.cta .alt{margin-top:28px;font-size:15px;color:#d9dbf2}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:28px;border-radius:2px}
+label{font-size:13px;font-weight:500;color:#d9dbf2;display:block;margin-bottom:6px}
+.f{height:46px;border-radius:2px;background:#fff;border:1px solid #fff}
+.full{grid-column:1/-1}
+.sel{display:flex;align-items:center;justify-content:space-between;padding:0 14px;color:var(--text-faint);font-size:15px}
+.fine{font-size:12.5px;color:#b9bce6;align-self:center}
+footer{background:#121258;color:#b9bce6;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:28px;padding-bottom:28px}
+footer img{height:18px}
+</style></head><body>
+
+<nav><div class="wrap">
+ <img src="logos/realfast-logo-ink.svg" alt="realfast">
+ <a class="nl">Solutions</a><a class="nl on">Case studies</a><a class="nl">Insights</a><a class="nl">Company</a>
+ <a class="rf-btn rf-btn--sm">Book a call</a>
+</div></nav>
+
+<div class="wrap">
+ <div class="hero">
+  <div>
+   <div class="badges"><span class="bdg category"><i></i>Case study</span><span class="bdg neutral">Higher education</span><span class="bdg product">Conversational AI</span><span class="bdg product">Agentforce</span></div>
+   <h1 class="d">2.3× the qualified leads for one of Singapore's largest private institutions</h1>
+   <p class="dek">A menu-driven bot made prospects pick from a list instead of asking what they wanted to know, and most dropped off before reaching an answer. They now ask in their own words, and the admissions team sees roughly twice as many converted leads a month.</p>
+   <div class="ctas"><a class="rf-btn rf-btn--lg">Talk to us</a><a class="rf-btn rf-btn--secondary rf-btn--lg">Download the PDF</a></div>
+  </div>
+  <div><div class="art"><img src="funnel.png" alt="A crowd pours into a funnel; one person in red walks out with an answer"></div><div class="credit">Illustration: realfast, made with AI</div></div>
+ </div>
+</div>
+
+<div class="client"><div class="wrap">
+ <div class="c"><div class="k">Students</div><div class="v">16,000</div></div>
+ <div class="c"><div class="k">Programs</div><div class="v">140+, with university partners worldwide</div></div>
+ <div class="c wide"><div class="k">Why it matters</div><div class="v">At this scale the website is the top of the funnel. Every drop-off is a prospective student who went to ask a competitor instead.</div></div>
+</div></div>
+
+<div class="band rf-on-dark"><div class="wrap">
+ <div class="meta"><span class="rub"><span class="n">Results</span>Same website traffic, two months each</span>
+  <span class="path"><b>Einstein Bot</b> Oct–Nov <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="#9aa6ff" stroke-width="1.6"><path d="M1 5h15M12 1l4 4-4 4"/></svg> <b>Agentforce</b> Jan–Feb</span></div>
+ <div class="stats">
+  <div class="stat"><div class="lab">Converted leads per month</div><div class="num">≈2×</div><span class="chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg>4 → 8.5</span><div class="sub">At steady conversion</div></div>
+  <div class="stat"><div class="lab">Leads per month</div><div class="num">+134%</div><span class="chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg>176 → 411</span><div class="sub">A wider top of funnel</div></div>
+  <div class="stat"><div class="lab">Human escalation</div><div class="num">10%<small>→</small>6%</div><span class="chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2.5 6.5 6 10l3.5-3.5"/></svg>−4 pts</span><div class="sub">Fewer chats sent to a live agent</div></div>
+ </div>
+</div></div>
+
+<div class="wrap"><div class="body">
+ <aside class="toc"><div class="in">
+  <div class="rub"><span class="n">The story</span></div>
+  <ol><li class="on">The results</li><li>The problem</li><li>Why it mattered</li><li>Our approach</li><li>What we built</li><li>What we learned</li><li>Partnership</li></ol>
+  <div class="side"><div class="k">Built on</div><div class="badges"><span class="bdg product">Agentforce</span><span class="bdg product">Salesforce</span><span class="bdg neutral">Agent analytics</span></div></div>
+ </div></aside>
+ <main>
+  <section>
+   <div class="rub"><span class="n">01</span>The results</div>
+   <h2 class="d">Same traffic, roughly double the qualified pipeline</h2>
+   <p class="lead">The lift came from a wider top of funnel, not a softer bar: from 176 to 411 leads a month, with conversion holding steady.</p>
+   <div class="card">
+    <h3>Leads per month</h3><div class="sub">Einstein Bot (Oct–Nov) vs Agentforce (Jan–Feb), same website traffic</div>
+    <div class="bar"><div class="l">Before · menu bot</div><div class="t"><i style="width:30%;background:var(--chart-context)"></i><span>176</span></div></div>
+    <div class="bar"><div class="l">After · conversational agent</div><div class="t"><i style="width:70%;background:var(--chart-focus)"></i><span>411</span><em class="note" style="font-style:normal">+134%</em></div></div>
+    <div class="foot">Lead conversion held near 2% in both periods.</div>
+   </div>
+   <div class="mini">
+    <div><div class="n">~80%</div><div class="dd">of queries answered from the knowledge base</div></div>
+    <div><div class="n">1,000+</div><div class="dd">published knowledge articles it draws on</div></div>
+    <div><div class="n">4.3 / 5</div><div class="dd">CSAT across 150 ratings</div></div>
+   </div>
+   <div class="h3">The full breakdown</div>
+   <table><tr><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr>
+   <tr><td>Leads per month</td><td>176</td><td>411</td><td><span class="delta good">↑ +134%</span></td></tr>
+   <tr><td>Converted leads per month</td><td>4</td><td>8.5</td><td><span class="delta good">↑ +113%</span></td></tr>
+   <tr><td>Lead conversion rate</td><td>2.3%</td><td>2.1%</td><td><span class="delta flat">Held steady</span></td></tr>
+   <tr><td>Human escalation rate</td><td>10%</td><td>6%</td><td><span class="delta good">↓ −4 pts</span></td></tr>
+   <tr><td>CSAT score</td><td>—</td><td>4.3 / 5</td><td><span class="delta new">150 ratings</span></td></tr>
+   <tr><td>Avg. session time</td><td>—</td><td>9.8 min</td><td><span class="delta new">New signal</span></td></tr></table>
+   <div class="callout"><b>Why the quality held.</b> Conversion stayed near 2% while monthly volume more than doubled. The added leads converted at the same rate the old, smaller funnel did, so the extra volume kept its quality.</div>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">02</span>The problem · why they called</div>
+   <h2 class="d">They didn't need a chatbot. They had one, and it generated noise</h2>
+   <p>The institution already had a website chatbot: a menu-driven Einstein Bot. That was the problem. Prospects had to navigate fixed options instead of simply asking what they wanted to know, so many dropped off before reaching an answer. The leads that did come through were often incomplete or unqualified, leaving the admissions team to triage rather than advise.</p>
+   <div class="compare">
+    <div class="was"><div class="k">Before · pick from a menu</div><span class="opt">Programmes</span><span class="opt">Fees and scholarships</span><span class="opt">Intakes</span><span class="opt">Talk to an advisor</span></div>
+    <div class="now"><div class="k">After · ask in your own words <span style="font-weight:400;opacity:.7">(illustrative)</span></div><div class="msg q">Can I do the data science degree part-time while working?</div><div class="msg a">Yes. The part-time track runs in the evenings, and the next intake opens soon. Want the fees and entry requirements?</div></div>
+   </div>
+   <p style="margin-top:20px">With answers spread across a large knowledge base and a separate program catalog, the bot was also slow to respond, compounding the drop-off. They needed it to actually generate pipeline.</p>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">03</span>Why it mattered · the stakes</div>
+   <h2 class="d">A bot that can't answer plainly quietly caps growth</h2>
+   <div class="quote"><q>Every drop-off is a prospective student who went to ask a competitor instead.</q></div>
+   <p>For an institution recruiting at this scale, the website is the first and often only touch a prospect has before deciding where to inquire. Every unqualified lead is advisor time spent triaging rather than converting the ones who are ready. A bot that can't answer plainly isn't a neutral cost; it caps growth at the widest part of the funnel.</p>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">04</span>Our approach · why it worked, not just what we built</div>
+   <h2 class="d">We measured first, then rebuilt the flow around what the data showed</h2>
+   <p class="lead">The gains didn't come from a bigger model.</p>
+   <ol class="steps">
+    <li><div><b>Measured before we optimized</b>We turned on agent analytics and traced every response from query to answer, and found that ~80% of prospect queries could be answered from the knowledge base alone. That finding reshaped the whole flow.</div></li>
+    <li><div><b>Made the knowledge base the source of truth</b>The agent checks knowledge first and only falls back to a live web crawl for program and fee data, cutting redundant calls and sharpening response time.</div></li>
+    <li><div><b>Added friction where it pays</b>A short pre-chat qualification form filters out spam and half-formed inquiries, so the leads that reach admissions are real and ready to advise.</div></li>
+    <li><div><b>Put the numbers in the business's hands</b>Every metric is reconciled against agreed definitions and published as native Salesforce reports, so stakeholders track the agent's impact themselves.</div></li>
+   </ol>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">05</span>What we built · delivered</div>
+   <h2 class="d">An agent that answers, captures and reports</h2>
+   <div class="grid">
+    <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6"/><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z"/></svg></div><h4>Conversational agent</h4><p>Natural-language Q&amp;A across 1,000+ published knowledge articles. Prospects ask in plain words and get an answer, not a menu.</p></div>
+    <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M16 11h6M19 8v6"/></svg></div><h4>Automated lead capture</h4><p>A pre-chat form with email validation and consent, writing qualified leads straight into Salesforce with their interests attached.</p></div>
+    <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><h4>Knowledge-first retrieval</h4><p>Answers ~80% of queries directly from the knowledge base, with a web-crawl fallback for live program and fee details.</p></div>
+    <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 17V11M11 17V7M16 17v-4M20 17V4"/></svg></div><h4>Business-ready reporting</h4><p>Salesforce-native reports on leads, conversion, escalation and CSAT, in marketing and admissions' own dashboards.</p></div>
+   </div>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">06</span>What we learned · if you're doing this too</div>
+   <h2 class="d">Three things that decide whether this works</h2>
+   <ul class="steps plain">
+    <li><div><b>Instrument before you optimize</b>The 80%-answerable finding reshaped the whole design. Without analytics on first, we'd have tuned the wrong things.</div></li>
+    <li><div><b>Let prospects ask in their own words</b>A conversational agent self-qualifies where a menu just filters: the same traffic yields more, and better, leads.</div></li>
+    <li><div><b>Friction in the right place raises quality</b>A short qualification step up front cut junk without shrinking the funnel. Volume more than doubled and conversion held.</div></li>
+   </ul>
+  </section>
+
+  <section>
+   <div class="rub"><span class="n">07</span>Partnership · what the institution owned</div>
+   <h2 class="d">They own the knowledge and the scoreboard; we built the agent on top</h2>
+   <p>The institution owned what only it could: the knowledge, the live program and fee data, and the definitions behind every metric. That last part is where most "impact" claims fall apart, so we reconciled every number against definitions the team agreed to and published them as native Salesforce reports the institution runs itself.</p>
+   <div class="owns">
+    <div><div class="k">The institution owned</div><ul><li>Knowledge base content, 1,000+ articles</li><li>Live program and fee data</li><li>The definition behind every metric</li></ul></div>
+    <div><div class="k">realfast built</div><ul><li>The conversational agent</li><li>Lead capture into Salesforce</li><li>Reconciled, native reporting</li></ul></div>
+   </div>
+  </section>
+ </main>
+</div></div>
+
+<div class="cta rf-on-dark"><div class="wrap">
+ <div><div class="rub">Talk to us</div><h2>Your bot is generating noise, not pipeline</h2><p>If your website already has a chatbot and it's generating noise instead of qualified pipeline, the fix usually isn't a bigger bot. It's measuring what prospects actually ask and rebuilding the flow around it.</p>
+  <div class="alt">Or read another <a class="rf-link" href="#">case study</a></div></div>
+ <form>
+  <div><label>Your name *</label><div class="f"></div></div>
+  <div><label>Work email *</label><div class="f"></div></div>
+  <div><label>Company name *</label><div class="f"></div></div>
+  <div><label>LinkedIn profile *</label><div class="f"></div></div>
+  <div class="full"><label>How did you hear about us? *</label><div class="f sel">Select an option<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a756c" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div></div>
+  <div><a class="rf-btn rf-btn--lg">Talk to us</a></div>
+ </form>
+</div></div>
+<footer><div class="wrap"><img src="logos/realfast-logo-white.svg" alt="realfast"><span>© 2026 realfast · Privacy · Terms</span></div></footer>
+</body></html>

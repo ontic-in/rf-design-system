@@ -1,0 +1,183 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * realfast — Color tokens
+ *
+ * ONE surface: the light, serif editorial system. White / warm-cream paper,
+ * ink text, warm stone greys. Each colour has one job:
+ *
+ *   red #E3120B         the brand flag — one small mark per view, never a
+ *                       button, never a number, never on navy or blue
+ *   ultramarine #2E3AC8 actions — buttons, links, focus (see buttons.css)
+ *   blue #362CFF        the logo mark only
+ *   navy #191970        dark bands
+ *   status (Jewel)      good / at-risk / bad — numbers and state only
+ *   chart-*             data visualisation (see the Charts block below)
+ *
+ * Old names are kept as deprecated aliases for one release so nothing breaks.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Brand core ───────────────────────────────────────────────────────── */
+  --rf-red: #e3120b; /* the one brand red */
+  --rf-ultramarine: #2e3ac8; /* the action colour */
+  --rf-blue: #362cff; /* logo mark only — never a fill or text colour */
+  --rf-navy: #191970; /* dark bands */
+  --rf-ink: #111111; /* the one ink */
+
+  /* ── Red ramp (one hue, built from #E3120B) ───────────────────────────── */
+  --rf-red-50: #fdecea;
+  --rf-red-100: #fbd5d2;
+  --rf-red-200: #f7aaa4;
+  --rf-red-300: #f07a71;
+  --rf-red-400: #ea4a3f;
+  --rf-red-500: #e3120b; /* brand flag */
+  --rf-red-600: #b80f09;
+  --rf-red-700: #8e0b07;
+
+  /* ── Blue ramp (logo blue — for the logo and illustration only) ───────── */
+  --rf-blue-50: #eeedff;
+  --rf-blue-100: #dcd9ff;
+  --rf-blue-200: #b9b3ff;
+  --rf-blue-300: #968cff;
+  --rf-blue-400: #6359ff;
+  --rf-blue-500: #362cff;
+  --rf-blue-600: #2a22d6;
+  --rf-blue-700: #211baa;
+  --rf-blue-800: #191970;
+  --rf-blue-900: #11104a;
+
+  /* ── Stone — the one grey ramp (warm, matches cream paper) ────────────── */
+  --rf-white: #ffffff;
+  --rf-stone-50: #f7f6f3;
+  --rf-stone-100: #efede8;
+  --rf-stone-200: #e2ded6; /* hairline rules */
+  --rf-stone-300: #c9c4ba; /* strong dividers */
+  --rf-stone-400: #a29d93; /* disabled, decoration — 2.7:1, never text */
+  --rf-stone-450: #8f8a80; /* input and control borders — 3.4:1 */
+  --rf-stone-500: #7a756c; /* faint text — on white only (4.6:1) */
+  --rf-stone-600: #5e5a52; /* muted text — passes on white and cream */
+  --rf-stone-700: #3d3a35;
+  --rf-stone-800: #2a2825;
+  --rf-stone-900: #111111;
+  --rf-black: #000000;
+
+  /* ── Paper ────────────────────────────────────────────────────────────── */
+  --rf-paper: #ffffff;
+  --rf-paper-cream: #f5f3ef; /* the one cream */
+
+  /* ── Status (Jewel) — bright marks for dots, arrows and bars; deeper text
+   *    shades so small labels pass 4.5:1; tints for chip backgrounds.
+   *    Always paired with an icon or a word, never colour alone. ────────── */
+  --rf-good: #0fa968;
+  --rf-good-text: #0b7a50;
+  --rf-good-tint: #e1f5ec;
+  --rf-warn: #e8a317;
+  --rf-warn-text: #8f6100;
+  --rf-warn-tint: #fcf2dc;
+  --rf-bad: #e5484d;
+  --rf-bad-text: #c42b35;
+  --rf-bad-tint: #fdeaea;
+
+  /* ── Navy tint (badges for products and tiers) ────────────────────────── */
+  --rf-navy-tint: #e3e4f3;
+
+  /* ── Charts — validated: lightness band, chroma floor, colour-blind and
+   *    normal-vision separation. Charts sit on light grounds only. ──────── */
+  /* Categorical: use in this order, never cycled, five at most.
+   * For scatter plots and maps use cat-1, cat-2 and cat-4 only.
+   * cat-2 and cat-4 sit under 3:1 on white: print values or offer a table. */
+  --chart-cat-1: #444ead; /* indigo */
+  --chart-cat-2: #32a99d; /* teal */
+  --chart-cat-3: #8c57ae; /* purple */
+  --chart-cat-4: #f0883d; /* orange */
+  --chart-cat-5: #ca518f; /* magenta */
+  /* Ordered: one slate hue, light to dark. 2px surface gap between stacked
+   * segments. Alternative teal ramp for a second ordered measure. */
+  --chart-seq-1: #b5b3d6;
+  --chart-seq-2: #9692c2;
+  --chart-seq-3: #7871ad;
+  --chart-seq-4: #5b5392;
+  --chart-seq-5: #41396f;
+  --chart-seq-alt-1: #8ebcc2;
+  --chart-seq-alt-2: #61a5ad;
+  --chart-seq-alt-3: #358891;
+  --chart-seq-alt-4: #086a73;
+  --chart-seq-alt-5: #004d54;
+  /* Diverging: indigo arm, cool grey midpoint, teal arm. */
+  --chart-div-neg-3: #4b4280;
+  --chart-div-neg-2: #726aac;
+  --chart-div-neg-1: #a9a6c9;
+  --chart-div-mid: #dadae0;
+  --chart-div-pos-1: #86b4ba;
+  --chart-div-pos-2: #358891;
+  --chart-div-pos-3: #115d65;
+  /* Highlight one: everything quiet, one bar in focus with its value printed. */
+  --chart-context: #d3d2e7;
+  --chart-focus: #6d5da5;
+
+  /* ── Illustration palette (muted, chalky — spot art only, not UI) ─────── */
+  --rf-illus-dusty-blue: #7d97b5;
+  --rf-illus-slate-navy: #3e4c6e;
+  --rf-illus-dusty-violet: #8b84a8;
+  --rf-illus-charcoal: #3a3733;
+  --rf-illus-grey: #9a948c;
+  --rf-illus-pale-blue: #c3d0dc;
+  --rf-illus-bone: #edeae4;
+
+  /* ──────────────────────────────────────────────────────────────────────
+   * SEMANTIC ALIASES — components read these names.
+   * ────────────────────────────────────────────────────────────────────── */
+  --surface-page: var(--rf-paper);
+  --surface-raised: var(--rf-paper-cream); /* featured bands, callouts */
+  --surface-overlay: var(--rf-white); /* popovers, menus */
+  --surface-inset: var(--rf-paper-cream); /* wells, pull-out blocks */
+
+  --text-strong: var(--rf-ink); /* headlines */
+  --text-body: var(--rf-stone-800); /* body copy */
+  --text-muted: var(--rf-stone-600); /* meta, captions — passes on cream */
+  --text-faint: var(--rf-stone-500); /* tertiary — white surfaces only */
+  --text-disabled: var(--rf-stone-400);
+  --text-on-accent: var(--rf-white);
+
+  --brand-flag: var(--rf-red-500); /* the single red mark per view */
+  --link: var(--rf-ultramarine);
+
+  --border: var(--rf-stone-200); /* the 1px hairline */
+  --border-strong: var(--rf-ink); /* 2px masthead under-rule */
+  --border-input: var(--rf-stone-450); /* form fields and controls */
+  --border-focus: var(--rf-ultramarine);
+
+  --success: var(--rf-good-text);
+  --warning: var(--rf-warn-text);
+  --danger: var(--rf-bad-text);
+
+  --data-better: var(--rf-good-text);
+  --data-worse: var(--rf-bad-text);
+  --data-neutral: var(--text-strong);
+
+  /* ── Deprecated aliases — kept for one release, do not use in new code ── */
+  --rf-ed-red: var(--rf-red); /* → --rf-red */
+  --rf-ed-blue: var(--rf-ultramarine); /* → --rf-ultramarine */
+  --rf-ed-ink: var(--rf-ink); /* → --rf-ink */
+  --rf-ed-ink-soft: var(--rf-stone-800); /* → --rf-stone-800 */
+  --rf-ed-muted: var(--rf-stone-600); /* → --text-muted */
+  --rf-ed-faint: var(--rf-stone-500); /* → --text-faint */
+  --rf-ed-rule: var(--rf-stone-200); /* → --border */
+  --rf-ed-rule-soft: var(--rf-stone-100);
+  --rf-ed-rule-warm: var(--rf-stone-300);
+  --rf-paper-cream-2: var(--rf-paper-cream); /* → --rf-paper-cream */
+  --rf-neutral-50: var(--rf-stone-50);
+  --rf-neutral-100: var(--rf-stone-100);
+  --rf-neutral-200: var(--rf-stone-200);
+  --rf-neutral-300: var(--rf-stone-300);
+  --rf-neutral-400: var(--rf-stone-400);
+  --rf-neutral-500: var(--rf-stone-500);
+  --rf-neutral-600: var(--rf-stone-600);
+  --rf-neutral-700: var(--rf-stone-700);
+  --rf-neutral-800: var(--rf-stone-800);
+  --rf-neutral-900: var(--rf-stone-900);
+  --accent: var(--brand-flag); /* removed — use --brand-flag or --rf-ultramarine */
+}
+
+/* The [data-theme="editorial"] wrapper is no longer required — the editorial
+ * surface is the :root default. The attribute is still accepted as a harmless
+ * no-op so existing markup keeps working. */

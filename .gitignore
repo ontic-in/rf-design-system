@@ -5,3 +5,10 @@ skills/realfast-design/uploads/
 skills/realfast-design/scraps/
 skills/realfast-design/realfast-design-skill.zip
 skills/realfast-design/_thumbnail.state.json
+
+# Local design working materials at the repo root (canvas, research captures)
+/branding_canvas.pen
+/images/
+/browser/
+/screenshot-*.png
+/embedded-image.png
